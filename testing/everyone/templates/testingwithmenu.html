@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map Testing</title>
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/menucss.css') }}"/>
+</head>
+<body>
+
+    <!-- inside the sidebar -->
+    <!-- just temporary I want to have sliders or checkboxes -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div style="color:rgb(196, 196, 196);">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <p>Value: <span id="demo"></span></p>
+            <input type="checkbox" id="choice1" name="choice1" value="C1">
+            <label for="choice1">Choice1</label><br>
+            <input type="checkbox" id="choice2" name="choice2" value="C2">
+            <label for="choice2">Choice2</label><br>
+            <a href="#">Reset</a>
+            <a href="#">Help</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+    <!-- sidebar button -->
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        <h2 style="text-align:center;">Map Testing</h2>
+    </div>
+
+    <!-- for the actual map -->
+    <div id = "map" style = "width: 900px; height: 580px; margin:auto;"></div>
+
+    <!-- js for the map -->
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script>
+        // Creating map options
+        // center is starting location currenly WMU
+        var mapOptions = {
+        center: [42.282854713740115, -85.60950279235838],
+        zoom: 10
+        }
+        
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+        
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        let markers = [];
+        map.on('click', (event)=>{
+            if(markers.length < 2){
+                // adds marker to map
+                let marker = L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
+                // get the lat and long values
+                let lat = event.latlng.lat;
+                let lng = event.latlng.lng;
+                // saves marker lat long to array
+                markers[markers.length] = [marker, lat, lng];
+                // prints lat long to console
+                console.log(markers[markers.length - 1][1], markers[markers.length - 1][2]);
+                // vals is what is gonna be sent to python
+                let vals = [markers[markers.length - 1][1], markers[markers.length - 1][2]];
+                const toPy = JSON.stringify(vals);
+                $.ajax({
+                    url:"/",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(toPy)});
+            }
+        })
+    </script>
+    <!-- js for sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+    <!-- js for slider -->
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+   
+</body>
+</html> 

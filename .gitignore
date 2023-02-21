@@ -1,1 +1,6 @@
 /testing/bdub/
+testing/mike/__pycache__/views.cpython-39.pyc
+testing/mike/main.py
+testing/mike/static/css/menucss.css
+testing/mike/templates/testingwithmenu.html
+testing/mike/views.py
