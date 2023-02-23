@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Map Testing</title>
     <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/menucss.css') }}"/>
+    <link rel = "stylesheet" href = "menucss.css"/>
 </head>
 <body>
 
@@ -28,70 +28,67 @@
     <!-- sidebar button -->
     <div id="main">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-        <h2 style="text-align:center;">Map Testing</h2>
     </div>
 
     <!-- for the actual map -->
-    <div id = "map" style = "width: 900px; height: 580px; margin:auto;"></div>
+    <div id = "map" style = "margin:auto;"></div>
 
     <!-- js for the map -->
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script>
-        // Creating map options
-        // center is starting location currenly WMU
-        var mapOptions = {
-        center: [42.282854713740115, -85.60950279235838],
-        zoom: 10
-        }
-        
         // Creating a map object
-        var map = new L.map('map', mapOptions);
+        // center is starting location currenly WMU
+        var map = new L.map('map', {
+            center: [42.282854713740115, -85.60950279235838],
+            zoom: 15, 
+            zoomControl: false
+        });
         
         // Creating a Layer object
         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-        
+
         // Adding layer to the map
         map.addLayer(layer);
 
-        let markers = [];
-        map.on('click', (event)=>{
-            if(markers.length < 2){
-                // adds marker to map
-                let marker = L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
-                // get the lat and long values
-                let lat = event.latlng.lat;
-                let lng = event.latlng.lng;
-                // saves marker lat long to array
-                markers[markers.length] = [marker, lat, lng];
-                // prints lat long to console
-                console.log(markers[markers.length - 1][1], markers[markers.length - 1][2]);
-                // vals is what is gonna be sent to python
-                let vals = [markers[markers.length - 1][1], markers[markers.length - 1][2]];
-                const toPy = JSON.stringify(vals);
-                $.ajax({
-                    url:"/",
-                    type:"POST",
-                    contentType: "application/json",
-                    data: JSON.stringify(toPy)});
+        var markers = new Map();
+
+        function createMarker(event) {
+            if (markers.size < 2) {
+                let marker = L.marker(event.latlng, {
+                    draggable: true
+                });
+                marker.id = markers.size + 1;
+                markers.set(markers.size + 1, marker._latlng);
+                marker.on("click", deleteMarker);
+                marker.on("dragend", newCoords);
+                marker.addTo(map);
             }
-        })
-    </script>
-    <!-- js for sidebar -->
-    <script>
+        }
+
+        function deleteMarker() {
+            map.removeLayer(this);
+            markers.delete(this.id);
+        }
+
+        function newCoords() {
+            markers.set(this.id, this._latlng);
+            console.log(markers)
+        }
+
+        // js for sidebar
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
             document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            document.getElementById("main").style.opacity = 0;
         }
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
             document.body.style.backgroundColor = "white";
+            document.getElementById("main").style.opacity = 1;
         }
-    </script>
-    <!-- js for slider -->
-    <script>
+        
+        // js for slider
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value; // Display the default slider value
@@ -100,6 +97,8 @@
         slider.oninput = function() {
             output.innerHTML = this.value;
         }
+
+        map.addEventListener("click", createMarker);
     </script>
    
 </body>
