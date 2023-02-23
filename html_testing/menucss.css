@@ -1,19 +1,27 @@
 body {
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
+    padding: 0;
+    margin: 0;
 }
-  
+
+html, body, #map {
+    height: 100%;
+    width: 100vw;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 2000;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    opacity: .8;
 }
 
 .sidenav a {
@@ -40,6 +48,8 @@ body {
 #main {
     transition: margin-left .5s;
     padding: 16px;
+    position: absolute;
+    z-index: 2000;
 }
 
 @media screen and (max-height: 450px) {
