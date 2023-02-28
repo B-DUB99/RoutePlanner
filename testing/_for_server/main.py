@@ -13,9 +13,10 @@ def get_env():
         host_ip = os.getenv("HOST_IP")
         host_port = os.getenv("HOST_PORT")
     else:
-        print("No .env file found. Using default values.\n")
+        print("No .env file found. Using default values.")
         host_ip = 'localhost'
         host_port = 5000
+    print(f"Host IP: {host_ip}\nHost Port: {host_port}\n")
     return host_ip, host_port
 
 
