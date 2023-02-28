@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Map Testing</title>
     <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-    <link rel = "stylesheet" href = "menucss.css"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/menucss.css') }}"/>
 </head>
 <body>
 
@@ -27,54 +27,19 @@
 
     <!-- sidebar button -->
     <div id="main">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        <span id='openNav' style="font-size:30px;cursor:pointer">&#9776;</span>
     </div>
 
     <!-- for the actual map -->
     <div id = "map" style = "margin:auto;"></div>
+    <button id="chngLayer">Layer</button>
 
     <!-- js for the map -->
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <script src="{{ url_for('static', filename='javascript/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/marker.js') }}"></script>
     <script>
-        // Creating a map object
-        // center is starting location currenly WMU
-        var map = new L.map('map', {
-            center: [42.282854713740115, -85.60950279235838],
-            zoom: 15, 
-            zoomControl: false
-        });
-        
-        // Creating a Layer object
-        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-        // Adding layer to the map
-        map.addLayer(layer);
-
-        var markers = new Map();
-
-        function createMarker(event) {
-            if (markers.size < 2) {
-                let marker = L.marker(event.latlng, {
-                    draggable: true
-                });
-                marker.id = markers.size + 1;
-                markers.set(markers.size + 1, marker._latlng);
-                marker.on("click", deleteMarker);
-                marker.on("dragend", newCoords);
-                marker.addTo(map);
-            }
-        }
-
-        function deleteMarker() {
-            map.removeLayer(this);
-            markers.delete(this.id);
-        }
-
-        function newCoords() {
-            markers.set(this.id, this._latlng);
-            console.log(markers)
-        }
-
         // js for sidebar
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -98,7 +63,7 @@
             output.innerHTML = this.value;
         }
 
-        map.addEventListener("click", createMarker);
+        document.getElementById("openNav").addEventListener("click", openNav);
     </script>
    
 </body>

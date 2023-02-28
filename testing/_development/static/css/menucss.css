@@ -52,6 +52,15 @@ html, body, #map {
     z-index: 2000;
 }
 
+#chngLayer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+    z-index: 400;
+    border-radius: 10px;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
