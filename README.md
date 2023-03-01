@@ -60,7 +60,7 @@ pip install folium
 ```bash
 pip install mysql-connector-python
 ```
-
+<br>
 
 ***
 ## Database Schema
