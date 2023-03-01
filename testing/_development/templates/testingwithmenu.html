@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Map Testing</title>
     <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel = "stylesheet" href = "{{ url_for('static', filename='css/menucss.css') }}"/>
 </head>
 <body>
@@ -13,12 +14,49 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div style="color:rgb(196, 196, 196);">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-            <p>Value: <span id="demo"></span></p>
-            <input type="checkbox" id="choice1" name="choice1" value="C1">
-            <label for="choice1">Choice1</label><br>
-            <input type="checkbox" id="choice2" name="choice2" value="C2">
-            <label for="choice2">Choice2</label><br>
+	    <button class="dropdown-btn">Transport
+		<i class="fa fa-caret-down"></i>
+	    </button>
+	    <div class="dropdown-container">
+		<input type="radio" id="walk" name="transport" value="walk">
+		<label for="walk">Walking</label><br>
+		<input type="radio" id="bike" name="transport" value="bike">
+		<label for="bike">Biking</label><br>
+		<input type="radio" id="bus" name="transport" value="bus">
+		<label for="bus">Bus</label><br><br>
+		<p>Bike Lane Stress</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <p>Value: <span id="demo"></span></p>
+	    </div>
+	    <button class="dropdown-btn">Road Types
+		<i class="fa fa-caret-down"></i> 
+	    </button>
+	    <div class="dropdown-container">
+	    	<ul>
+		    <li><input type="checkbox" id="Event" name="Event" value="C1">
+		    <label for="Event">Event/Festival Streets</label></li>
+
+		    <li><input type="checkbox" id="UrbanCenter" name="UrbanCenter" value="C2">
+		    <label for="UrbanCenter">Urban Center Streets</label></li>
+
+		    <li><input type="checkbox" id="EnhancedNeighborhood" name="EnhancedNeighborhood" value="C3">
+		    <label for="EnhancedNeighborhood">Enhanced Neighborhood Streets</label></li>
+
+		    <li><input type="checkbox" id="CommercialBusiness" name="CommercialBusiness" value="C4">
+		    <label for="CommercialBusiness">Commercial Business Streets</label></li>
+
+		    <li><input type="checkbox" id="NeighborhoodBusiness" name="NeighborhoodBusiness" value="C5">
+		    <label for="NeighborhoodBusiness">Neighborhood Business Streets</label></li>
+		    <li><input type="checkbox" id="CityConnector" name="CityConnector" value="C6">
+		    <label for="CityConnector">City Connector Streets</label></li>
+		    <li><input type="checkbox" id="DowntownMain" name="DowntownMain" value="C7">
+		    <label for="DowntownMain">Downtown Main Streets</label></li>
+		    <li><input type="checkbox" id="NeighborhoodNetwork" name="NeighborhoodNetwork" value="C8">
+		    <label for="NeighborhoodNetwork">Neighborhood Networks</label></li>
+		    <li><input type="checkbox" id="Local" name="Local" value="C9">
+		    <label for="Local">Local Neighborhoods</label></li>
+		</ul>
+	    </div>
             <a href="#">Reset</a>
             <a href="#">Help</a>
             <a href="#">About</a>
@@ -42,7 +80,7 @@
     <script>
         // js for sidebar
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.width = "275px";
             document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
             document.getElementById("main").style.opacity = 0;
         }
@@ -64,6 +102,21 @@
         }
 
         document.getElementById("openNav").addEventListener("click", openNav);
+	
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+  		dropdown[i].addEventListener("click", function() {
+    		this.classList.toggle("active");
+    		var dropdownContent = this.nextElementSibling;
+    		if (dropdownContent.style.display === "block") {
+      			dropdownContent.style.display = "none";
+    		} else {
+      			dropdownContent.style.display = "block";
+    		}
+  		});
+	}
     </script>
    
 </body>
