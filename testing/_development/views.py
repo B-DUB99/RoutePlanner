@@ -5,7 +5,7 @@ views = Blueprint(__name__, "")
 locs = []
 
 
-@views.route("/", methods=["GET","POST"])
+@views.route("/", methods=["GET", "POST"])
 def test():
     # will be post when you click on the map to put a marker
     if request.method == "POST":
