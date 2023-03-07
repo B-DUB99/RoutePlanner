@@ -66,6 +66,21 @@ try:
 	       "id TINYINT AUTO_INCREMENT," +
 	       "type CHAR(25)," +
 	       "PRIMARY KEY(id))")
+	#road types from the map that the client gave us
+	types = ["Event Festival", 
+	 "Urban Center",
+	 "Enhanced Neighborhood",
+	 "Commercial Business",
+	 "Neighborhood Business",
+	 "City Connector",
+	 "Downtown Main",
+	 "Neighborhood Network",
+	 "Local Neighborhood"]
+	#generate types table
+	for i in types:
+    		cursor.execute('INSERT INTO types(type)' +  
+    	           ' VALUES("' + i + '")')
+	mydb.commit()
 except:
 	print("types table already exists")
 
@@ -87,22 +102,6 @@ try:
 	       "FOREIGN KEY(way_id) REFERENCES ways(id))")
 except:
 	print("links table already exists")
-
-#road types from the map that the client gave us
-types = ["Event Festival", 
-	 "Urban Center",
-	 "Enhanced Neighborhood",
-	 "Commercial Business",
-	 "Neighborhood Business",
-	 "City Connector",
-	 "Downtown Main",
-	 "Neighborhood Network",
-	 "Local Neighborhood"]
-
-#generate types table
-for i in types:
-    cursor.execute('INSERT INTO types(type)' +  
-    	           ' VALUES("' + i + '")')
 
 #query and get nodes then plug all those nodes into the DB
 query = overpassQueryBuilder(bbox=[42.216,-85.663,42.333,-85.531], elementType="node")
