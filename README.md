@@ -65,7 +65,8 @@ pip install mysql-connector-python
 ***
 ## Database Schema
 
-![RP_DB_schema.png](DB_schema%2FRP_DB_schema.png)
+
+![RP_DB_schema.png](paperwork%2FDB_schema%2FRP_DB_schema.png)
 
 
 ***
