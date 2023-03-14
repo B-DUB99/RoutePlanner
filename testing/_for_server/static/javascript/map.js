@@ -2,13 +2,18 @@
 // center is starting location currenly WMU
 var map = L.map('map', {
     center: [42.282854713740115, -85.60950279235838],
-    zoom: 15, 
+    zoom: 13, 
     zoomControl: false
 });
 
 // scale 
 L.control.scale({
     maxWidth: 150,
+    position: 'bottomright'
+}).addTo(map);
+
+// add zoom button to bottom right
+L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
         

@@ -9,66 +9,90 @@
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
-
     <!-- inside the sidebar -->
     <!-- just temporary I want to have sliders or checkboxes -->
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div style="color:rgb(196, 196, 196);">
-	    <button class="dropdown-btn">Transport
-		<i class="fa fa-caret-down"></i>
-	    </button>
-	    <div class="dropdown-container">
-		<input type="radio" id="walk" name="transport" value="walk">
-		<label for="walk">Walking</label><br>
-		<input type="radio" id="bike" name="transport" value="bike">
-		<label for="bike">Biking</label><br>
-		<input type="radio" id="bus" name="transport" value="bus">
-		<label for="bus">Bus</label><br><br>
-		<p>Bike Lane Stress</p>
+            <form class="searchform group">
+                <input type="search" id="search-box" placeholder="Search">
+                <label for="search-box">
+                    <span class="fa fa-2x fa-search"></span>
+                </label>
+                <span id="closeNav" class="closebtn">&times;</span>
+            </form>
+	        <button class="dropdown-btn">Transport
+		        <i class="fa fa-caret-down"></i>
+	        </button>
+	        <div class="dropdown-container transport-container">
+                <div class="choice-container">
+                    <div class="transport-choice">
+                        <input type="radio" id="walk" name="transport" value="walk">
+		                <label for="walk">Walking</label><br>
+                    </div>
+		            <div class="transport-choice">
+                        <input type="radio" id="bike" name="transport" value="bike">
+		                <label for="bike">Biking</label><br>
+                    </div>
+                    <div class="transport-choice">
+                        <input type="radio" id="bus" name="transport" value="bus">
+		                <label for="bus">Bus</label><br><br>
+                    </div>
+                </div>
+		        <p>Bike Lane Stress</p>
                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                 <p>Value: <span id="demo"></span></p>
-	    </div>
-	    <button class="dropdown-btn">Road Types
-		<i class="fa fa-caret-down"></i> 
-	    </button>
-	    <div class="dropdown-container">
-	    	<ul>
-		    <li><input type="checkbox" id="Event" name="Event" value="C1">
-		    <label for="Event">Event/Festival Streets</label></li>
-
-		    <li><input type="checkbox" id="UrbanCenter" name="UrbanCenter" value="C2">
-		    <label for="UrbanCenter">Urban Center Streets</label></li>
-
-		    <li><input type="checkbox" id="EnhancedNeighborhood" name="EnhancedNeighborhood" value="C3">
-		    <label for="EnhancedNeighborhood">Enhanced Neighborhood Streets</label></li>
-
-		    <li><input type="checkbox" id="CommercialBusiness" name="CommercialBusiness" value="C4">
-		    <label for="CommercialBusiness">Commercial Business Streets</label></li>
-
-		    <li><input type="checkbox" id="NeighborhoodBusiness" name="NeighborhoodBusiness" value="C5">
-		    <label for="NeighborhoodBusiness">Neighborhood Business Streets</label></li>
-		    <li><input type="checkbox" id="CityConnector" name="CityConnector" value="C6">
-		    <label for="CityConnector">City Connector Streets</label></li>
-		    <li><input type="checkbox" id="DowntownMain" name="DowntownMain" value="C7">
-		    <label for="DowntownMain">Downtown Main Streets</label></li>
-		    <li><input type="checkbox" id="NeighborhoodNetwork" name="NeighborhoodNetwork" value="C8">
-		    <label for="NeighborhoodNetwork">Neighborhood Networks</label></li>
-		    <li><input type="checkbox" id="Local" name="Local" value="C9">
-		    <label for="Local">Local Neighborhoods</label></li>
-		</ul>
-	    </div>
-            <a href="#">Reset</a>
-            <a href="#">Help</a>
-            <a href="#">About</a>
+	        </div>
+	        <button class="dropdown-btn">Road Types
+		        <i class="fa fa-caret-down"></i> 
+	        </button>
+	        <div class="dropdown-container">
+	    	    <ul>
+		            <li class="road-choice"><input type="checkbox" id="Event" name="Event" value="C1">
+		                <label for="Event">Event/Festival Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="UrbanCenter" name="UrbanCenter" value="C2">
+		                <label for="UrbanCenter">Urban Center Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="EnhancedNeighborhood" name="EnhancedNeighborhood" value="C3">
+		                <label for="EnhancedNeighborhood">Enhanced Neighborhood Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="CommercialBusiness" name="CommercialBusiness" value="C4">
+		                <label for="CommercialBusiness">Commercial Business Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="NeighborhoodBusiness" name="NeighborhoodBusiness" value="C5">
+		                <label for="NeighborhoodBusiness">Neighborhood Business Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="CityConnector" name="CityConnector" value="C6">
+		                <label for="CityConnector">City Connector Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="DowntownMain" name="DowntownMain" value="C7">
+		                <label for="DowntownMain">Downtown Main Streets</label></li>
+		            <li class="road-choice"><input type="checkbox" id="NeighborhoodNetwork" name="NeighborhoodNetwork" value="C8">
+		                <label for="NeighborhoodNetwork">Neighborhood Networks</label></li>
+		            <li class="road-choice"><input type="checkbox" id="Local" name="Local" value="C9">
+		                <label for="Local">Local Neighborhoods</label></li>
+		        </ul>
+	        </div>
+            <h1 id="reset">Reset</h1>
+            <h1 id="help">Help</h1>
+            <h1 id="about">About</h1>
+            <a href="/update/">Update</a>
         </div>
-    </div>
-
+        
+        </div>
     <!-- sidebar button -->
     <div id="main">
         <span id='openNav' style="font-size:30px;cursor:pointer">&#9776;</span>
     </div>
-
+    <div id="help_content" class="white_content">
+        <span id="closeHelp" class="closebtn closePopUp">&times;</span>
+        <h2>Help</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita ipsa totam. Saepe sit consequatur mollitia qui at commodi rerum velit dicta alias? Voluptates eius quasi ipsa adipisci dolore nam quas temporibus exercitationem voluptate vero, animi doloremque, a, voluptas inventore.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum cupiditate fuga fugit doloribus soluta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eum, amet reiciendis ipsum saepe tempore veniam error nesciunt rerum porro natus ut nostrum quos inventore in blanditiis facilis nisi doloribus.</p>
+    </div>
+    <div id="about_content" class="white_content">
+        <span id="closeAbout" class="closebtn closePopUp">&times;</span>
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita ipsa totam. Saepe sit consequatur mollitia qui at commodi rerum velit dicta alias? Voluptates eius quasi ipsa adipisci dolore nam quas temporibus exercitationem voluptate vero, animi doloremque, a, voluptas inventore.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum cupiditate fuga fugit doloribus soluta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eum, amet reiciendis ipsum saepe tempore veniam error nesciunt rerum porro natus ut nostrum quos inventore in blanditiis facilis nisi doloribus.</p>
+    </div>
+    <div id="fade" class="black_overlay"></div>
     <!-- for the actual map -->
     <div id = "map" style = "margin:auto;"></div>
     <button id="chngLayer">Layer</button>
@@ -78,47 +102,7 @@
 
     <script src="{{ url_for('static', filename='javascript/map.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/marker.js') }}"></script>
-    <script>
-        // js for sidebar
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "275px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-            document.getElementById("main").style.opacity = 0;
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-            document.body.style.backgroundColor = "white";
-            document.getElementById("main").style.opacity = 1;
-        }
-        
-        // js for slider
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value; // Display the default slider value
-
-        // Update the current slider value (each time you drag the slider handle)
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-
-        document.getElementById("openNav").addEventListener("click", openNav);
-	
-	var dropdown = document.getElementsByClassName("dropdown-btn");
-	var i;
-
-	for (i = 0; i < dropdown.length; i++) {
-  		dropdown[i].addEventListener("click", function() {
-    		this.classList.toggle("active");
-    		var dropdownContent = this.nextElementSibling;
-    		if (dropdownContent.style.display === "block") {
-      			dropdownContent.style.display = "none";
-    		} else {
-      			dropdownContent.style.display = "block";
-    		}
-  		});
-	}
-    </script>
+    <script src="{{ url_for('static', filename='javascript/navbar.js') }}"></script>
    
 </body>
 </html> 

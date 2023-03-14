@@ -11,16 +11,6 @@ function createMarker(event) {
         marker.on("dragend", newCoords);
         marker.addTo(map);
     }
-    if (markers.size == 2){
-        // markers.get(1).lat
-        var firstpolyline = new L.Polyline([markers.get(1), markers.get(2)], {
-            color: 'red',
-            weight: 3,
-            opacity: 0.5,
-            smoothFactor: 1
-        });
-        firstpolyline.addTo(map);
-    }
 }
 
 function deleteMarker() {
