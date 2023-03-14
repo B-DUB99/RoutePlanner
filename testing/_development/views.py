@@ -14,3 +14,8 @@ def test():
         locs.append(coords)
         print(locs)
     return render_template("testingwithmenu.html")
+
+@views.route("/update/", methods=["GET", "POST"])
+def update():
+    print("updating server...")
+    return redirect(url_for("views.test"))
