@@ -1,4 +1,5 @@
 var markers = new Map();
+var lines = []
 
 function createMarker(event) {
     if (markers.size < 2) {
@@ -14,17 +15,16 @@ function createMarker(event) {
         marker.on("click", deleteMarker);
         marker.on("dragend", newCoords);
         marker.addTo(map);
-
-        if (markers.size == 2){
-            // markers.get(1).lat
-            var firstpolyline = new L.Polyline([markers.get(1), markers.get(2)], {
-                color: 'red',
-                weight: 3,
-                opacity: 0.5,
-                smoothFactor: 1
-            });
-            firstpolyline.addTo(map);
-        }
+    }
+    if (markers.size == 2 && lines.length == 0){
+        var line = new L.Polyline([markers.get(1), markers.get(2)], {
+            color: 'red',
+            weight: 3,
+            opacity: 0.5,
+            smoothFactor: 1
+        });
+        lines[0] = line
+        line.addTo(map);
     }
 }
 
@@ -39,6 +39,10 @@ function deleteAllMarkers() {
 }
 
 function deleteMarker() {
+    if(markers.size == 2 || (markers.size < 2 && lines.length > 0)){
+        map.removeLayer(lines[0])
+        lines.pop()
+    }
     map.removeLayer(this);
     markers.delete(this.id);
 }
