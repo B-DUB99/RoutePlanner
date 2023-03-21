@@ -1,29 +1,5 @@
-#This is a script that will create the routeplanning database 
-#Right now it just generates the database as long as you have the admin user already in your MySQL.
-#I Plan on having the user provide the login data so others can 
-#play around with the data or we can switch over to an environment file
+#Script to generate the Database to be used for CS senior design - Kzoo/Portage route planner
 
-#The script first generates all the tables for the DB, then takes all the node
-#data from overpass of a box around the kzoo area and plugs those nodes' ids
-#, lats, and lons into nodes table. We do the same with ways but we then get
-#which nodes are apart of each way and link them together. The final step
-#is going through and deleting any node not a part of a way because the ways
-#in this DB make up the roadways and footpaths.
-
-#Plan on making this a seemless file that first checks for the DB, then checks
-#for the tables, and then plugs in all the data or goes to a menu screen where
-#nodes/ways can be searched or altered
-
-#running this script will take 30-60 minutes because of the 2800 nodes it
-#has to download because they weren't included in the original node query.
-#side note: this is better than the projected 2+ days of the original script
-
-#DO NOT RUN!!!(it should just throw an error) unless you have time to spare and 
-#have added admin as a user, of course you could just change user and password 
-#in connect down below to 'cs4430'.
-# I plan on getting this script fully fleshed out by next Monday 3/5 (Spring Break BABY!),
-# so you won't have to do this set up. Plan on cleaning up code as well, as I 
-#learn more python, right now it kind of messy
 
 from OSMPythonTools.overpass import overpassQueryBuilder
 from OSMPythonTools.overpass import Overpass
