@@ -44,7 +44,7 @@ Next week's goals:
 Name / location of the artifacts:
 * Website - http://dyndns.famwilke.de:8125/
 * PowerPoint - [LINK HERE]
-* Class diagram - [LINK HERE]
+* Class diagram - ![RouteplannerDiagram.drawio.png](paperwork%2FRouteplannerDiagram.drawio.png)
 
 
 <h2>Week 10</h2>
