@@ -12,7 +12,41 @@
 
 ***
 
+
 <h1>Weekly Meetings</h1>
+<h2>Week 10</h2>
+
+Date: 23.03.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+
+Who missed the meeting:
+* Mike Henke - without notice
+
+General meeting Information:
+* 8:00 AM - 10:00 AM (120 minutes)
+* Floyd Hall Study Area F
+
+What has been done:
+* planning for the presentation
+* bug fixes
+* Starting the Class diagram
+
+Next week's goals:
+* Finish the Class diagram
+* bug fixes
+* PowerPoint - in class
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* PowerPoint - [LINK HERE]
+* Class diagram - [LINK HERE]
+
+
 <h2>Week 10</h2>
 
 Date: 21.03.2023
