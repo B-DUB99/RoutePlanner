@@ -20,6 +20,6 @@ def test():
 def update():
     print("updating...")
     # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
-    # subprocess.run(["./update.sh"])
+    subprocess.run(["./update.sh"])
 
     return redirect(url_for("views.test"))
