@@ -30,7 +30,7 @@ def update():
     print("updating...")
     # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
     def run_cmd():
-        subprocess.call(["screen", "-dm", "bash", "-c", update_script])
+        subprocess.call(["screen", "-dmS", "bash", "-c", update_script])
 
     thread = threading.Thread(target=run_cmd)
     thread.start()
