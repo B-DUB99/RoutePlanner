@@ -19,9 +19,18 @@ def test():
 
 @views.route("/update/")
 def update():
-    print("updating...")
+
+    def run_bash():
+        subprocess.call(['bash', './update_start.sh'])
+
+        thread = threading.Thread(target=run_bash)
+        thread.start()
+
+
+
+    #print("updating...")
     # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
-    subprocess.run(["./update.sh"])
+    #subprocess.run(["./update_start.sh"])
 
 
-    return redirect(url_for("views.test"))
+    #return redirect(url_for("views.test"))
