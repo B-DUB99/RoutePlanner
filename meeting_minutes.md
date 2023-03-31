@@ -11,9 +11,111 @@
 * [Mike Henke](mailto:mgs8776@wmich.edu)
 
 ***
-
-
 <h1>Weekly Meetings</h1>
+
+
+
+
+
+
+
+
+
+
+<h2>Week 11</h2>
+
+Date: 31.03.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 9:30 AM - 10:15 AM (45 minutes)
+* Online via Discord
+
+What has been done:
+* General discussion for the next steps and work load for the next week
+* bug fixes
+
+Next week's goals:
+* bug fixes
+* get into smaller teams to work on the project more efficiently
+* Get a full route printed on the map
+
+
+<h2>Week 11</h2>
+
+Date: 20.03.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+
+Who missed the meeting:
+* Matthew Phillips - with notice
+* Mike Henke - without notice
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Presentation
+
+Next week's goals:
+* bug fixes
+* get into smaller teams to work on the project more efficiently
+* Get a full route printed on the map
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* PowerPoint - https://1drv.ms/p/s!AhKEzf-ETZjigbDHMkXP9V40IViCSpU?e=d5ifCc
+
+
+<h2>Week 11</h2>
+
+Date: 28.03.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:00 AM - 10:00 AM (120 minutes)
+* Floyd Hall Study Area F
+
+What has been done:
+* Presentation for Thursday in class
+* Class UML diagram
+* DataBase Schema 
+* general Discussion for the next steps
+* bug fixes
+
+Next week's goals:
+* bug fixes
+* get into smaller teams to work on the project more efficiently
+* Get a full route printed on the map
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* PowerPoint - https://1drv.ms/p/s!AhKEzf-ETZjigbDHMkXP9V40IViCSpU?e=d5ifCc
+
+
+
 <h2>Week 10</h2>
 
 Date: 23.03.2023
