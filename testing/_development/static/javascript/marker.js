@@ -31,6 +31,7 @@ function createMarker(event) {
 function deleteAllMarkers() {
     let icons = document.getElementsByClassName("leaflet-marker-icon");
     let shadows = document.getElementsByClassName("leaflet-marker-shadow");
+    // delete markings from map
     while (icons.length > 0) {
         icons[0].remove();
         shadows[0].remove();

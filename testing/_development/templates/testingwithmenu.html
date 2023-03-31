@@ -14,7 +14,7 @@
     <div id="mySidenav" class="sidenav">
         <div style="color:rgb(196, 196, 196);">
             <form class="searchform group">
-                <input type="search" id="search-box" placeholder="Search">
+                <input type="search" id="search-box" >
                 <label for="search-box">
                     <span class="fa fa-2x fa-search"></span>
                 </label>
@@ -27,50 +27,120 @@
                 <div class="choice-container">
                     <div class="transport-choice">
                         <input type="radio" id="walk" name="transport" value="walk">
-		                <label for="walk">Walking</label><br>
+		                <label for="walk">Walking</label>
                     </div>
 		            <div class="transport-choice">
                         <input type="radio" id="bike" name="transport" value="bike">
-		                <label for="bike">Biking</label><br>
+		                <label for="bike">Biking</label>
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bus" name="transport" value="bus">
-		                <label for="bus">Bus</label><br><br>
+		                <label for="bus">Bus</label>
+                    </div>
+                    <div class="transport-choice">
+                        <input type="radio" id="bike-bus" name="transport" value="bike-bus">
+		                <label for="bus">Bike and Bus</label>
                     </div>
                 </div>
-				<label for="myRange">Bike Stress</label>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                <p>Value: <span id="demo"></span></p>
 	        </div>
 	        <button class="dropdown-btn">Road Types
 		        <i class="fa fa-caret-down"></i> 
 	        </button>
 	        <div class="dropdown-container">
 	    	    <ul>
-		            <li class="road-choice"><input type="checkbox" id="Event" name="Event" value="C1">
-		                <label for="Event">Event/Festival Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="UrbanCenter" name="UrbanCenter" value="C2">
-		                <label for="UrbanCenter">Urban Center Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="EnhancedNeighborhood" name="EnhancedNeighborhood" value="C3">
-		                <label for="EnhancedNeighborhood">Enhanced Neighborhood Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="CommercialBusiness" name="CommercialBusiness" value="C4">
-		                <label for="CommercialBusiness">Commercial Business Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="NeighborhoodBusiness" name="NeighborhoodBusiness" value="C5">
-		                <label for="NeighborhoodBusiness">Neighborhood Business Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="CityConnector" name="CityConnector" value="C6">
-		                <label for="CityConnector">City Connector Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="DowntownMain" name="DowntownMain" value="C7">
-		                <label for="DowntownMain">Downtown Main Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="NeighborhoodNetwork" name="NeighborhoodNetwork" value="C8">
-		                <label for="NeighborhoodNetwork">Neighborhood Networks</label></li>
-		            <li class="road-choice"><input type="checkbox" id="Local" name="Local" value="C9">
-		                <label for="Local">Local Neighborhoods</label></li>
+                    <li>
+                        <label>Road Speed Limit</label>
+                        <input id="myRange" type="range" id="myRange" name="Speed Limit" min="25" max="60" step="5">
+                        <br>
+                        <output id="demo"></output>
+                        <br>
+                    </li>
+                    <li>
+                        <label>Card Avoidance</label>
+                        <input id="myRange" type="range" id="myRange" name="car avoidance" min="1" max="3">
+                        <br>
+                        <output id="demo">Low - High</output>
+                        <br>
+                    </li>
+                    <li>
+                        <label>Bike Lane Preference</label>
+                        <input type="range" id="myRange" name="Bike Lane Preference" min="1" max="3">
+                        <br>
+                        <output id="demo">Low - High</output>
+                        <br>
+                    </li>
+                    <li>
+                        <label>Sidewalk Preference</label>
+                        <input type="range" id="myRange" name="Sidewalk Preference" min="1" max="3">
+                        <br>
+                        <output id="demo">Low - High</output>
+                        <br>
+                    </li>
 		        </ul>
 	        </div>
+            <button class="dropdown-btn">Amenities
+		        <i class="fa fa-caret-down"></i> 
+	        </button>
+            <div class="dropdown-container">
+                <div class="amen-choice">
+                    <input type="radio" id="grocery" name="grocery" >
+                    <label for="grocery">Grocery Stores</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="bus-stops" name="bus-stops" >
+                    <label for="grocery">Grocery Stores</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="restrooms" name="restrooms" >
+		            <label for="restrooms">Restrooms</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="bike-racks" name="bike-racks" >
+                    <label for="bike-racks">Bike Racks</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="drink-fountain" name="drink-fountain" >
+                    <label for="drink-fountain">Drinking Fountains</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="repair-stations" name="repair-stations" >
+                    <label for="repair-stations">Repair Stations</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="bike-shop" name="bike-shop" >
+                    <label for="bike-shop">Bike Shops</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="pharma" name="pharmacies" >
+                    <label for="pharmacies">Pharmacies</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="pharma" name="pharmacies" >
+                    <label for="pharmacies">Pharmacies</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="cafe" name="cafe" >
+                    <label for="cafe">Cafe</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="restaurants-bar" name="restaurants-bar" >
+                    <label for="restaurant-bar">Restaurants/Bars</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="treat-shop" name="treat-shop" >
+                    <label for="treat-shop">Treat/Ice Cream Shops</label>
+                </div>
+                <div class="amen-choice">
+                    <input type="radio" id="books" name="books" >
+                    <label for="books">Libraries/Book Stores</label>
+                </div>
+
+
+            </div>
             <h1 id="reset">Reset</h1>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
-            <a href="/update/">Update</a>
+            <a id ="update" href="/update/">Update</a>
         </div>
         
     </div>
