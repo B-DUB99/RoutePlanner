@@ -14,7 +14,7 @@
     <div id="mySidenav" class="sidenav">
         <div style="color:rgb(196, 196, 196);">
             <form class="searchform group">
-                <input type="search" id="search-box" placeholder="Search">
+                <input type="search" id="search-box" >
                 <label for="search-box">
                     <span class="fa fa-2x fa-search"></span>
                 </label>
@@ -26,21 +26,18 @@
 	        <div class="dropdown-container transport-container">
                 <div class="choice-container">
                     <div class="transport-choice">
-                        <input type="radio" id="walk" name="transport" value="walk">
-		                <label for="walk">Walking</label><br>
+                        <input type="range" id="walking" name="walking" min="1" max="3">
+                        <label>Walking</label>
                     </div>
 		            <div class="transport-choice">
-                        <input type="radio" id="bike" name="transport" value="bike">
-		                <label for="bike">Biking</label><br>
+                        <input type="range" id="bus" name="biking" min="1" max="3">
+                        <label>Biking</label>
                     </div>
                     <div class="transport-choice">
-                        <input type="radio" id="bus" name="transport" value="bus">
-		                <label for="bus">Bus</label><br><br>
+                        <input type="range" id="bus" name="bud" min="1" max="3">
+                        <label>Bus</label>
                     </div>
                 </div>
-				<label for="myRange">Bike Stress</label>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                <p>Value: <span id="demo"></span></p>
 	        </div>
 	        <button class="dropdown-btn">Road Types
 		        <i class="fa fa-caret-down"></i> 
@@ -70,7 +67,7 @@
             <h1 id="reset">Reset</h1>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
-            <a href="/update/">Update</a>
+            <a id ="update" href="/update/">Update</a>
         </div>
         
     </div>
