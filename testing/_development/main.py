@@ -31,5 +31,5 @@ def run_website():
 
 
 if __name__ == '__main__':
-    sleep(10) # delay for network route to be established
+    sleep(1) # delay for network route to be established
     run_website()

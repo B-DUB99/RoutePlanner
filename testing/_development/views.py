@@ -17,7 +17,7 @@ def test():
         print(locs)
     return render_template("testingwithmenu.html")
 
-@views.route("/update/")
+@views.route("/")
 def update():
     print("updating...")
     # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
