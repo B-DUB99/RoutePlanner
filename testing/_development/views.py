@@ -32,7 +32,7 @@ def update():
     def run_cmd():
         subprocess.call(["screen", "-dm", "bash", "-c", update_script])
 
-    thread = threading.Thread(target=run_cmd, args=(update_script,))
+    thread = threading.Thread(target=run_cmd)
     thread.start()
 
     return redirect(url_for("views.test"))
