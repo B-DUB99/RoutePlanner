@@ -27,7 +27,7 @@ def test():
 @views.route("/update/")
 def update():
     update_script = get_env()
-    print("updating...")
+    print({"update_script": update_script}, "update_script from views.py")
     # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
     def run_cmd():
         subprocess.call(["screen", "-dmS", "bash", "-c", update_script])
