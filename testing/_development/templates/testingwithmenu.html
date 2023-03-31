@@ -26,16 +26,20 @@
 	        <div class="dropdown-container transport-container">
                 <div class="choice-container">
                     <div class="transport-choice">
-                        <input type="range" id="walking" name="walking" min="1" max="3">
-                        <label>Walking</label>
+                        <input type="radio" id="walk" name="transport" value="walk">
+		                <label for="walk">Walking</label>
                     </div>
 		            <div class="transport-choice">
-                        <input type="range" id="bus" name="biking" min="1" max="3">
-                        <label>Biking</label>
+                        <input type="radio" id="bike" name="transport" value="bike">
+		                <label for="bike">Biking</label>
                     </div>
                     <div class="transport-choice">
-                        <input type="range" id="bus" name="bud" min="1" max="3">
-                        <label>Bus</label>
+                        <input type="radio" id="bus" name="transport" value="bus">
+		                <label for="bus">Bus</label>
+                    </div>
+                    <div class="transport-choice">
+                        <input type="radio" id="bike-bus" name="transport" value="bike-bus">
+		                <label for="bus">Bike and Bus</label>
                     </div>
                 </div>
 	        </div>
@@ -44,24 +48,22 @@
 	        </button>
 	        <div class="dropdown-container">
 	    	    <ul>
-		            <li class="road-choice"><input type="checkbox" id="Event" name="Event" value="C1">
-		                <label for="Event">Event/Festival Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="UrbanCenter" name="UrbanCenter" value="C2">
-		                <label for="UrbanCenter">Urban Center Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="EnhancedNeighborhood" name="EnhancedNeighborhood" value="C3">
-		                <label for="EnhancedNeighborhood">Enhanced Neighborhood Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="CommercialBusiness" name="CommercialBusiness" value="C4">
-		                <label for="CommercialBusiness">Commercial Business Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="NeighborhoodBusiness" name="NeighborhoodBusiness" value="C5">
-		                <label for="NeighborhoodBusiness">Neighborhood Business Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="CityConnector" name="CityConnector" value="C6">
-		                <label for="CityConnector">City Connector Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="DowntownMain" name="DowntownMain" value="C7">
-		                <label for="DowntownMain">Downtown Main Streets</label></li>
-		            <li class="road-choice"><input type="checkbox" id="NeighborhoodNetwork" name="NeighborhoodNetwork" value="C8">
-		                <label for="NeighborhoodNetwork">Neighborhood Networks</label></li>
-		            <li class="road-choice"><input type="checkbox" id="Local" name="Local" value="C9">
-		                <label for="Local">Local Neighborhoods</label></li>
+                    <li>
+                        <label>Walking</label>
+                        <input type="range" id="walking" name="walking" min="25" max="60" step="5">
+                    </li>
+                    <li>
+                        <label>Card Avoidance</label>
+                        <input type="range" id="car_avoid" name="car avoidance" min="1" max="3">
+                    </li>
+                    <li>
+                        <label>Bike Lane Preference</label>
+                        <input type="range" id="bike_lane" name="Bike Lane Preference" min="1" max="3">
+                    </li>
+                    <li>
+                        <label>Sidewalk Preference</label>
+                        <input type="range" id="sidewalk" name="Sidewalk Preference" min="1" max="3">
+                    </li>
 		        </ul>
 	        </div>
             <h1 id="reset">Reset</h1>
