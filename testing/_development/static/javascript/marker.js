@@ -31,12 +31,10 @@ function createMarker(event) {
 function deleteAllMarkers() {
     let icons = document.getElementsByClassName("leaflet-marker-icon");
     let shadows = document.getElementsByClassName("leaflet-marker-shadow");
-    let line = document.getElementsByClassName("leaflet-overlay-pane");
     // delete markings from map
     while (icons.length > 0) {
         icons[0].remove();
         shadows[0].remove();
-        line[0].remove();
     }
     markers.clear();
 }
