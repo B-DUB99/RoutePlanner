@@ -3,6 +3,7 @@ from flask import Flask
 from views import views
 import os
 from dotenv import load_dotenv
+from time import sleep
 
 
 # Loading the environment variables
@@ -30,4 +31,5 @@ def run_website():
 
 
 if __name__ == '__main__':
+    sleep(10) # delay for network route to be established
     run_website()
