@@ -5,7 +5,7 @@ body {
 }
 
 html, body, #map {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: grid;
 }
@@ -27,7 +27,7 @@ html, body, #map {
     opacity: .8;
 }
 
-.closebtn, .sidenav h1, .dropdown-btn {
+.closebtn, .sidenav h1, .dropdown-btn, #update {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     text-align: left;
@@ -40,11 +40,11 @@ html, body, #map {
     transition: 0.3s;
 }
 
-.closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover{
+.closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
     cursor: pointer;
 }
 
-.sidenav h1:hover, .dropdown-btn:hover{
+.sidenav h1:hover, .dropdown-btn:hover, #update:hover {
     color: #f1f1f1;
 }
 
@@ -113,7 +113,29 @@ input[type="search"] {
     padding: 0.125em 0.225em;
     width: 85%;
     float: left;
-    
+}
+
+input[type="range"] {
+    appearance: none;
+    height: 1rem;
+    margin: 5px
+}
+
+/* chrome slider */
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    background-color: green;
+    height: 1rem;
+    width: 2rem; 
+}
+
+/* firefox slider */
+input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    background-color: green;
+    height: 1rem;
+    width: 2rem;
+    border-radius: 0;
 }
 
 input[type="search"]:focus {
@@ -140,6 +162,7 @@ input[type="search"]:focus {
 }
 
 .sidenav .closebtn {
+    display: flex;
     position: absolute;
     top: 0;
     right: 25px;
@@ -147,11 +170,11 @@ input[type="search"]:focus {
     margin-left: 50px;
 }
 
-.sidenav h1 {
+.sidenav h1, #update {
     padding: 10px 16px
 }
 
-.active{
+.active {
     background-color: green;
     color: white;
 }
