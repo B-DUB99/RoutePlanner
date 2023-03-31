@@ -27,7 +27,7 @@ def run_website():
     app = Flask(__name__)
     app.secret_key = "testing"
     app.register_blueprint(views, url_prefix="/")
-    app.run(debug=True, host=host_ip, port=host_port)
+    app.run(host=host_ip, port=host_port)
 
 
 if __name__ == '__main__':
