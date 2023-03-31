@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, session, redirect, url_for
 import json
 import subprocess
+import threading
 
 
 views = Blueprint(__name__, "")
@@ -21,10 +22,10 @@ def test():
 def update():
 
     def run_bash():
-    subprocess.call(['bash', './update_start.sh'])
+        subprocess.call(['bash', './update_start.sh'])
 
-    thread = threading.Thread(target=run_bash)
-    thread.start()
+        thread = threading.Thread(target=run_bash)
+        thread.start()
 
 
 
