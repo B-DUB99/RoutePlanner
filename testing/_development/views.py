@@ -21,11 +21,11 @@ def test():
 @views.route("/update/")
 def update():
 
-    def run_bash():
-        subprocess.call(['bash', './update_start.sh'])
-
-        thread = threading.Thread(target=run_bash)
-        thread.start()
+    # def run_bash():
+    #     subprocess.call(['bash', './update_start.sh'])
+    #
+    #     thread = threading.Thread(target=run_bash)
+    #     thread.start()
 
 
 
