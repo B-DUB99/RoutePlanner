@@ -1,14 +1,7 @@
-import os
-
 from flask import Blueprint, render_template, request, session, redirect, url_for
 import json
 import subprocess
-import threading
 
-def get_env():
-    # get the update.sh script path
-    update_script = os.getenv("UPDATE_SCRIPT")
-    return update_script
 
 views = Blueprint(__name__, "")
 locs = []
@@ -26,13 +19,9 @@ def test():
 
 @views.route("/update/")
 def update():
-    update_script = get_env()
-    print({"update_script": update_script}, "update_script from views.py")
+    print("updating...")
     # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
-    def run_cmd():
-        subprocess.call(["screen", "-dmS", "bash", "-c", update_script])
+    subprocess.run(["./update.sh"])
 
-    thread = threading.Thread(target=run_cmd)
-    thread.start()
 
     return redirect(url_for("views.test"))
