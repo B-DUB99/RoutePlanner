@@ -33,7 +33,17 @@ General meeting Information:
 * Floyd Hall Study Area F
 
 What has been done:
+* work on Algorythm and backend update for the website
+* New Meeting with Client
+* bug fixes
 
+Next week's goals:
+* bug fixes
+* working on algorythm on the backend
+* working on frontend for GUI 
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
 
 
 
