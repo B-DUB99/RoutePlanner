@@ -14,6 +14,30 @@
 <h1>Weekly Meetings</h1>
 
 
+<h2>Week 12</h2>
+
+Date: 04.04.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:00 AM - 10:00 AM (120 minutes)
+* Floyd Hall Study Area F
+
+What has been done:
+
+
+
+
+
 
 
 
