@@ -74,6 +74,41 @@ function close() {
     sidebar.style.transition = "0.5s";
 }
 
+// used to get all input options for the route
+function get_input() {
+    // get transport type
+    var transport = document.getElementsByName("transport");
+    var transport_type = "";
+    for(i = 0; i < transport.length; i++){
+        if(transport[i]["checked"]){
+            transport_type = transport[i]["value"];
+            break;
+        }
+    }
+    // get road type info
+    var road = document.querySelectorAll("#road_type_list li");
+    var road_info = [];
+    for(i = 0; i < road.length; i++){
+        road_info[i] = road[i]["childNodes"][3]["value"];
+    }
+    // get amenities
+    var amen = document.getElementsByClassName("amen-choice");
+    var amenities = [];
+    for(i = 0; i < amen.length; i++){
+        if(amen[i]["childNodes"][1]["checked"]){
+            amenities.push(amen[i]["childNodes"][1]["name"]);
+        }
+    }
+    // send to python
+    // transport type will be a string ("" if none were selected)
+    // road types will be a list [speed, car avoidance, bike lane preference, sidewalk preference]
+    // amenities will be a list of names ([] if none were selected)
+    var post_info = [transport_type, road_info, amenities];
+    const request = new XMLHttpRequest();
+    request.open("POST", `/calculate/${JSON.stringify(post_info)}`);
+    request.send();
+}
+
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
@@ -85,6 +120,7 @@ document.getElementById("openNav").addEventListener("click", openNav);
 document.getElementById("closeNav").addEventListener("click", closeNav);
 document.getElementById("help").addEventListener("click", open);
 document.getElementById("about").addEventListener("click", open);
+document.getElementById("calculate").addEventListener("click", get_input);
 for (i = 0; i < openBtn.length; i++) {
     openBtn[i].addEventListener("click", close);
 }

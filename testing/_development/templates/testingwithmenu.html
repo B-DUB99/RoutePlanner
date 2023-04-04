@@ -47,7 +47,7 @@
 		        <i class="fa fa-caret-down"></i> 
 	        </button>
 	        <div class="dropdown-container">
-	    	    <ul>
+	    	    <ul id="road_type_list">
                     <li>
                         <label>Road Speed Limit</label>
                         <input id="myRange" type="range" id="myRange" name="Speed Limit" min="25" max="60" step="5">
@@ -137,6 +137,7 @@
 
 
             </div>
+            <h1 id="calculate">Calculate Route</h1>
             <h1 id="reset">Reset</h1>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
@@ -169,7 +170,8 @@
 
     <!-- js for the map -->
     <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
     <script src="{{ url_for('static', filename='javascript/map.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/marker.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/navbar.js') }}"></script>

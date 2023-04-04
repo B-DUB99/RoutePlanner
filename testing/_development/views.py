@@ -18,6 +18,12 @@ def test():
         print(locs)
     return render_template("testingwithmenu.html")
 
+@views.route("/calculate/<string:userinfo>", methods=["POST"])
+def calculate(userinfo):
+    data = json.loads(userinfo)
+    print(data)
+    return redirect(url_for("views.test"))
+
 @views.route("/update/")
 def update():
     print("update")
