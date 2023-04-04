@@ -16,6 +16,13 @@ function createMarker(event) {
         marker.on("dragend", newCoords);
         marker.addTo(map);
     }
+    if (markers.size == 2) {
+        // take markers map and create a list of the two lat/long to be sent to python
+        let marks = [markers.get(1), markers.get(2)];
+        const req = new XMLHttpRequest();
+        req.open("POST", `/${JSON.stringify(marks)}`);
+        req.send();
+    }
     if (markers.size == 2 && lines.length == 0){
         var line = new L.Polyline([markers.get(1), markers.get(2)], {
             color: 'red',

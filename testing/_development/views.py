@@ -18,6 +18,12 @@ def test():
         print(locs)
     return render_template("testingwithmenu.html")
 
+@views.route('/<string:markerInfo>', methods=['POST'])
+def getMarkers(markerInfo):
+    info = json.loads(markerInfo)
+    print(info)
+    return info
+
 @views.route("/calculate/<string:userinfo>", methods=["POST"])
 def calculate(userinfo):
     data = json.loads(userinfo)
