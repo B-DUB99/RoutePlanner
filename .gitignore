@@ -1,2 +1,5 @@
 /testing/bdub/
 /testing/_development/.env
+/.idea/
+/testing.DS_Store
+/testing/_development/__pycache__/
