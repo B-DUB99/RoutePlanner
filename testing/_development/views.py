@@ -49,4 +49,4 @@ def update():
     #subprocess.run(["./update_start.sh"])
 
 
-    #return redirect(url_for("views.test"))
+    return redirect(url_for("views.test"))
