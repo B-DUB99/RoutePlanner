@@ -5,12 +5,12 @@ body {
 }
 
 html, body, #map {
-    height: 100vw;
+    height: 100vh;
     width: 100vw;
     display: grid;
 }
 
-.fa-caret-down{
+.fa-caret-down {
     float: right;
     padding-right: 8px;
 }
@@ -27,7 +27,7 @@ html, body, #map {
     opacity: .8;
 }
 
-.closebtn, .sidenav h1, .dropdown-btn, #update {
+.closebtn, .sidenav h1, .dropdown-btn-1, .dropdown-btn-2, .dropdown-btn-3 #update {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     text-align: left;
@@ -40,11 +40,12 @@ html, body, #map {
     transition: 0.3s;
 }
 
-.closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
+
+.closebtn:hover, .sidenav h1:hover, .dropdown-btn-1:hover, .dropdown-btn-2:hover, .dropdown-btn-3:hover, #update:hover {
     cursor: pointer;
 }
 
-.sidenav h1:hover, .dropdown-btn:hover, #update:hover {
+.sidenav h1:hover, .dropdown-btn-1:hover, .dropdown-btn-2:hover, .dropdown-btn-3:hover, #update:hover {
     color: #f1f1f1;
 }
 
@@ -62,12 +63,11 @@ html, body, #map {
     overflow: hidden;
     width: 80%;
     margin: 2% 10%;
-
 }
 
-.searchform > * {
-    margin: 7px;
-}
+    .searchform > * {
+        margin: 7px;
+    }
 
 label {
     float: right;
@@ -88,7 +88,7 @@ label {
     display: none;
     position: fixed;
     justify-self: center;
-    align-self:center;
+    align-self: center;
     grid-template-rows: 40px 50px 1fr;
     width: 50%;
     height: 50%;
@@ -104,7 +104,7 @@ label {
     justify-self: center;
     font-weight: normal;
 }
-  
+
 input[type="search"] {
     border: 2px solid #737373;
     border-width: 0 0 3px;
@@ -121,22 +121,22 @@ input[type="range"] {
     margin: 5px
 }
 
-/* chrome slider */
-input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    background-color: green;
-    height: 1rem;
-    width: 2rem; 
-}
+    /* chrome slider */
+    input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        background-color: green;
+        height: 1rem;
+        width: 2rem;
+    }
 
-/* firefox slider */
-input[type="range"]::-moz-range-thumb {
-    appearance: none;
-    background-color: green;
-    height: 1rem;
-    width: 2rem;
-    border-radius: 0;
-}
+    /* firefox slider */
+    input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        background-color: green;
+        height: 1rem;
+        width: 2rem;
+        border-radius: 0;
+    }
 
 input[type="search"]:focus {
     color: #E18728;
@@ -149,16 +149,27 @@ input[type="search"]:focus {
     color: #818181;
 }
 
-.fa-search:hover {
-    cursor: pointer;
-    color: rgb(45, 45, 237);
-}
+    .fa-search:hover {
+        cursor: pointer;
+        color: rgb(45, 45, 237);
+    }
 
-.dropdown-btn {
+.dropdown-btn-1, .dropdown-btn-2, .dropdown-btn-3 {
     border: none;
-    background-color: #111;
     width: 100%;
     padding: 10px 16px
+}
+
+.dropdown-btn-1 {
+    background-color: #096fb8;
+}
+
+.dropdown-btn-2 {
+    background-color: #fa3cD2;
+}
+
+.dropdown-btn-3 {
+    background-color: #0a911c;
 }
 
 .sidenav .closebtn {
@@ -175,7 +186,7 @@ input[type="search"]:focus {
 }
 
 .active {
-    background-color: green;
+    background-color: yellow;
     color: white;
 }
 
@@ -196,9 +207,9 @@ input[type="search"]:focus {
     height: 25px
 }
 
-.transport-choice > label {
-    align-self: center;
-}
+    .transport-choice > label {
+        align-self: center;
+    }
 
 ul {
     list-style-type: none;
@@ -214,7 +225,7 @@ li {
 }
 
 /* road choices */
-.road-choice{
+.road-choice {
     display: flex;
     justify-content: left;
 }
@@ -238,7 +249,7 @@ li {
 
 /* The slider itself */
 .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none; /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
     height: 25px; /* Specified height */
@@ -247,26 +258,26 @@ li {
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
+}
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }

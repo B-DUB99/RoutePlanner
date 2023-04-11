@@ -1,53 +1,59 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map Testing</title>
-    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/menucss.css') }}"/>
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menucss.css') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
     <!-- inside the sidebar -->
     <!-- just temporary I want to have sliders or checkboxes -->
     <div id="mySidenav" class="sidenav">
         <div style="color:rgb(196, 196, 196);">
+            <img src="images/sidenav/sidenav_MSK_lines_logo.png" alt="Logo is here" class="center" />
             <form class="searchform group">
-                <input type="search" id="search-box" >
+                <input type="search" id="search-box">
                 <label for="search-box">
                     <span class="fa fa-2x fa-search"></span>
                 </label>
                 <span id="closeNav" class="closebtn">&times;</span>
             </form>
-	        <button class="dropdown-btn">Transport
-		        <i class="fa fa-caret-down"></i>
-	        </button>
-	        <div class="dropdown-container transport-container">
+            <button class="dropdown-btn-1">
+                Transport
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container transport-container">
                 <div class="choice-container">
                     <div class="transport-choice">
                         <input type="radio" id="walk" name="transport" value="walk">
-		                <label for="walk">Walking</label>
+                        <label for="walk">Walking</label>
+                        <img src="images/sidenav/Walking clear icon.png" alt="walking icon is here" class="center" />
                     </div>
-		            <div class="transport-choice">
+                    <div class="transport-choice">
                         <input type="radio" id="bike" name="transport" value="bike">
-		                <label for="bike">Biking</label>
+                        <label for="bike">Biking</label>
+                        <img src="images/sidenav/bicycle clean icon.png" alt="bike icon is here" class="center" />
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bus" name="transport" value="bus">
-		                <label for="bus">Bus</label>
+                        <label for="bus">Bus</label>
+                        <img src="images/sidenav/bus clear icon.png" alt="bus icon is here" class="center" />
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bike-bus" name="transport" value="bike-bus">
-		                <label for="bus">Bike and Bus</label>
+                        <label for="bus">Bike and Bus</label>
                     </div>
                 </div>
-	        </div>
-	        <button class="dropdown-btn">Road Types
-		        <i class="fa fa-caret-down"></i> 
-	        </button>
-	        <div class="dropdown-container">
-	    	    <ul id="road_type_list">
+            </div>
+            <button class="dropdown-btn-2">
+                Road Types
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <ul id="road_type_list">
                     <li>
                         <label>Road Speed Limit</label>
                         <input id="myRange" type="range" id="myRange" name="Speed Limit" min="25" max="60" step="5">
@@ -76,62 +82,63 @@
                         <output id="demo">Low - High</output>
                         <br>
                     </li>
-		        </ul>
-	        </div>
-            <button class="dropdown-btn">Amenities
-		        <i class="fa fa-caret-down"></i> 
-	        </button>
+                </ul>
+            </div>
+            <button class="dropdown-btn-3">
+                Amenities
+                <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-container">
                 <div class="amen-choice">
-                    <input type="radio" id="grocery" name="grocery" >
+                    <input type="radio" id="grocery" name="grocery">
                     <label for="grocery">Grocery Stores</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="bus-stops" name="bus-stops" >
+                    <input type="radio" id="bus-stops" name="bus-stops">
                     <label for="grocery">Grocery Stores</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="restrooms" name="restrooms" >
-		            <label for="restrooms">Restrooms</label>
+                    <input type="radio" id="restrooms" name="restrooms">
+                    <label for="restrooms">Restrooms</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="bike-racks" name="bike-racks" >
+                    <input type="radio" id="bike-racks" name="bike-racks">
                     <label for="bike-racks">Bike Racks</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="drink-fountain" name="drink-fountain" >
+                    <input type="radio" id="drink-fountain" name="drink-fountain">
                     <label for="drink-fountain">Drinking Fountains</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="repair-stations" name="repair-stations" >
+                    <input type="radio" id="repair-stations" name="repair-stations">
                     <label for="repair-stations">Repair Stations</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="bike-shop" name="bike-shop" >
+                    <input type="radio" id="bike-shop" name="bike-shop">
                     <label for="bike-shop">Bike Shops</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="pharma" name="pharmacies" >
+                    <input type="radio" id="pharma" name="pharmacies">
                     <label for="pharmacies">Pharmacies</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="pharma" name="pharmacies" >
+                    <input type="radio" id="pharma" name="pharmacies">
                     <label for="pharmacies">Pharmacies</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="cafe" name="cafe" >
+                    <input type="radio" id="cafe" name="cafe">
                     <label for="cafe">Cafe</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="restaurants-bar" name="restaurants-bar" >
+                    <input type="radio" id="restaurants-bar" name="restaurants-bar">
                     <label for="restaurant-bar">Restaurants/Bars</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="treat-shop" name="treat-shop" >
+                    <input type="radio" id="treat-shop" name="treat-shop">
                     <label for="treat-shop">Treat/Ice Cream Shops</label>
                 </div>
                 <div class="amen-choice">
-                    <input type="radio" id="books" name="books" >
+                    <input type="radio" id="books" name="books">
                     <label for="books">Libraries/Book Stores</label>
                 </div>
 
@@ -141,9 +148,9 @@
             <h1 id="reset">Reset</h1>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
-            <a id ="update" href="/update/">Update</a>
+            <a id="update" href="/update/">Update</a>
         </div>
-        
+
     </div>
     <!-- sidebar button -->
     <div id="main">
@@ -152,29 +159,33 @@
     <div id="help_content" class="white_content">
         <span id="closeHelp" class="closebtn closePopUp">&times;</span>
         <h2>Help</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita ipsa totam. Saepe sit consequatur mollitia qui at commodi rerum velit dicta alias? Voluptates eius quasi ipsa adipisci dolore nam quas temporibus exercitationem voluptate vero, animi doloremque, a, voluptas inventore.
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita ipsa totam. Saepe sit consequatur mollitia qui at commodi rerum velit dicta alias? Voluptates eius quasi ipsa adipisci dolore nam quas temporibus exercitationem voluptate vero, animi doloremque, a, voluptas inventore.
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum cupiditate fuga fugit doloribus soluta.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eum, amet reiciendis ipsum saepe tempore veniam error nesciunt rerum porro natus ut nostrum quos inventore in blanditiis facilis nisi doloribus.</p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eum, amet reiciendis ipsum saepe tempore veniam error nesciunt rerum porro natus ut nostrum quos inventore in blanditiis facilis nisi doloribus.
+        </p>
     </div>
     <div id="about_content" class="white_content">
         <span id="closeAbout" class="closebtn closePopUp">&times;</span>
         <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita ipsa totam. Saepe sit consequatur mollitia qui at commodi rerum velit dicta alias? Voluptates eius quasi ipsa adipisci dolore nam quas temporibus exercitationem voluptate vero, animi doloremque, a, voluptas inventore.
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita ipsa totam. Saepe sit consequatur mollitia qui at commodi rerum velit dicta alias? Voluptates eius quasi ipsa adipisci dolore nam quas temporibus exercitationem voluptate vero, animi doloremque, a, voluptas inventore.
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum cupiditate fuga fugit doloribus soluta.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eum, amet reiciendis ipsum saepe tempore veniam error nesciunt rerum porro natus ut nostrum quos inventore in blanditiis facilis nisi doloribus.</p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eum, amet reiciendis ipsum saepe tempore veniam error nesciunt rerum porro natus ut nostrum quos inventore in blanditiis facilis nisi doloribus.
+        </p>
     </div>
     <div id="fade" class="black_overlay"></div>
     <!-- for the actual map -->
-    <div id = "map" style = "margin:auto;"></div>
+    <div id="map" style="margin:auto;"></div>
     <button id="chngLayer">Layer</button>
 
     <!-- js for the map -->
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    
+
     <script src="{{ url_for('static', filename='javascript/map.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/marker.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/navbar.js') }}"></script>
-   
+
 </body>
-</html> 
+</html>
