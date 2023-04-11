@@ -15,6 +15,7 @@ function createMarker(event) {
         marker.on("click", deleteMarker);
         marker.on("dragend", newCoords);
         marker.addTo(map);
+
     }
     if (markers.size == 2) {
         // take markers map and create a list of the two lat/long to be sent to python
@@ -57,6 +58,17 @@ function deleteMarker() {
 
 function newCoords() {
     markers.set(this.id, this._latlng);
+    map.removeLayer(lines[0]);
+    if (markers.size == 2){
+        var line = new L.Polyline([markers.get(1), markers.get(2)], {
+            color: 'red',
+            weight: 3,
+            opacity: 0.5,
+            smoothFactor: 1
+        });
+        lines[0] = line
+        line.addTo(map);
+    }
 }
 
 
