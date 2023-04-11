@@ -1,0 +1,283 @@
+body {
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html, body, #map {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+}
+
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2000;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    opacity: .8;
+}
+
+.closebtn, .sidenav h1, .dropdown-btn-1, .dropdown-btn-2, .dropdown-btn-3 #update {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    text-align: left;
+    background: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    margin: 0;
+    font-weight: normal;
+    transition: 0.3s;
+}
+
+
+.closebtn:hover, .sidenav h1:hover, .dropdown-btn-1:hover, .dropdown-btn-2:hover, .dropdown-btn-3:hover, #update:hover {
+    cursor: pointer;
+}
+
+.sidenav h1:hover, .dropdown-btn-1:hover, .dropdown-btn-2:hover, .dropdown-btn-3:hover, #update:hover {
+    color: #f1f1f1;
+}
+
+.transport-container p {
+    align-self: center;
+}
+
+#closeAbout, #closeHelp {
+    justify-self: end;
+    padding: 8px;
+}
+
+.searchform {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    margin: 2% 10%;
+}
+
+    .searchform > * {
+        margin: 7px;
+    }
+
+label {
+    float: right;
+}
+
+.black_overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+}
+
+.white_content {
+    display: none;
+    position: fixed;
+    justify-self: center;
+    align-self: center;
+    grid-template-rows: 40px 50px 1fr;
+    width: 50%;
+    height: 50%;
+    padding: 16px;
+    border: 8px solid orange;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 2004;
+    overflow: auto;
+}
+
+.white_content h2 {
+    justify-self: center;
+    font-weight: normal;
+}
+
+input[type="search"] {
+    border: 2px solid #737373;
+    border-width: 0 0 3px;
+    background-color: transparent;
+    font: 22px "Open Sans", sans-serif;
+    padding: 0.125em 0.225em;
+    width: 85%;
+    float: left;
+}
+
+input[type="range"] {
+    appearance: none;
+    height: 1rem;
+    margin: 5px
+}
+
+    /* chrome slider */
+    input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        background-color: green;
+        height: 1rem;
+        width: 2rem;
+    }
+
+    /* firefox slider */
+    input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        background-color: green;
+        height: 1rem;
+        width: 2rem;
+        border-radius: 0;
+    }
+
+input[type="search"]:focus {
+    color: #E18728;
+    border-color: #E18728;
+    outline: none;
+}
+
+/* searchbar */
+.fa-search {
+    color: #818181;
+}
+
+    .fa-search:hover {
+        cursor: pointer;
+        color: rgb(45, 45, 237);
+    }
+
+.dropdown-btn-1, .dropdown-btn-2, .dropdown-btn-3 {
+    border: none;
+    width: 100%;
+    padding: 10px 16px
+}
+
+.dropdown-btn-1 {
+    background-color: #096fb8;
+}
+
+.dropdown-btn-2 {
+    background-color: #fa3cD2;
+}
+
+.dropdown-btn-3 {
+    background-color: #0a911c;
+}
+
+.sidenav .closebtn {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav h1, #update {
+    padding: 10px 16px
+}
+
+.active {
+    background-color: yellow;
+    color: white;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding: 10px 0;
+}
+
+.choice-container {
+    padding-inline-start: 20px
+}
+
+/* transport choices */
+.transport-choice {
+    display: flex;
+    justify-content: left;
+    height: 25px
+}
+
+    .transport-choice > label {
+        align-self: center;
+    }
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 20px;
+    margin: 0 5px;
+    padding: 0 10px
+}
+
+li {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* road choices */
+.road-choice {
+    display: flex;
+    justify-content: left;
+}
+
+#main {
+    transition: .5s;
+    padding: 16px;
+    position: absolute;
+    z-index: 2000;
+}
+
+#chngLayer {
+    box-shadow: 0 1px 10px rgb(0 0 0 / 65%);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+    z-index: 400;
+    border-radius: 10px;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
