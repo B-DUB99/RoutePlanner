@@ -1,11 +1,10 @@
 #Script to generate the Database to be used for CS senior design - Kzoo/Portage route planner
 #WARNING!!!!!!! THIS SCRIPT WILL DELETE THE DB AND GENERATE A NEW ONE.
-#don't run this script if thats not what you want
+#don't run this script if that's not what you want
 
-from OSMPythonTools.overpass import overpassQueryBuilder
-from OSMPythonTools.overpass import Overpass
-from OSMPythonTools.api import Api
 import mysql.connector
+from OSMPythonTools.overpass import Overpass
+from OSMPythonTools.overpass import overpassQueryBuilder
 
 #basic for now want to change to custom login or .env and checking if DB exists later
 try:
