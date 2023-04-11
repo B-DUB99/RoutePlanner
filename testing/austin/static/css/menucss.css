@@ -176,19 +176,8 @@ input[type="search"]:focus {
 }
 
 .active {
+    background-color: #db121c;
     color: white;
-}
-
-.dropdown-btn-1:active {
-    background-color: #096fb8;
-}
-
-.dropdown-btn-2:active {
-    background-color: #fa3cD2;
-}
-
-.dropdown-btn-3:active {
-    background-color: #0a911c;
 }
 
 
@@ -262,24 +251,24 @@ li {
     transition: opacity .2s;
 }
 
-    /* Mouse-over effects */
-    .slider:hover {
-        opacity: 1; /* Fully shown on mouse-over */
-    }
+/* Mouse-over effects */
+.slider:hover {
+   opacity: 1; /* Fully shown on mouse-over */
+}
 
-    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-    .slider::-webkit-slider-thumb {
-        -webkit-appearance: none; /* Override default look */
-        appearance: none;
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #04AA6D; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-    }
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
 
-    .slider::-moz-range-thumb {
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #04AA6D; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-    }
+.slider::-moz-range-thumb {
+   width: 25px; /* Set a specific slider handle width */
+   height: 25px; /* Slider handle height */
+   background: #04AA6D; /* Green background */
+   cursor: pointer; /* Cursor on hover */
+}
