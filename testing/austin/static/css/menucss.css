@@ -157,20 +157,10 @@ input[type="search"]:focus {
 .dropdown-btn-1, .dropdown-btn-2, .dropdown-btn-3 {
     border: none;
     width: 100%;
+    background-color: #111;
     padding: 10px 16px
 }
 
-.dropdown-btn-1 {
-    background-color: #096fb8;
-}
-
-.dropdown-btn-2 {
-    background-color: #fa3cD2;
-}
-
-.dropdown-btn-3 {
-    background-color: #0a911c;
-}
 
 .sidenav .closebtn {
     display: flex;
@@ -186,9 +176,21 @@ input[type="search"]:focus {
 }
 
 .active {
-    background-color: yellow;
     color: white;
 }
+
+.dropdown-btn-1:active {
+    background-color: #096fb8;
+}
+
+.dropdown-btn-2:active {
+    background-color: #fa3cD2;
+}
+
+.dropdown-btn-3:active {
+    background-color: #0a911c;
+}
+
 
 .dropdown-container {
     display: none;
