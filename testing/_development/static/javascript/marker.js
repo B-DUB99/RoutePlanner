@@ -2,9 +2,23 @@ var markers = new Map();
 var lines = []
 
 function createMarker(event) {
+    const markerHtmlStyles = `
+        background-color: #583470;
+        width: 3rem;
+        height: 3rem;
+        display: block;
+        left: -1.5rem;
+        top: -1.5rem;
+        position: relative;
+        border-radius: 3rem 3rem 0; transform: rotate (45deg);
+        border: 1px solid #FFFFFF`;
+
     if (markers.size < 2) {
         let marker = L.marker(event.latlng, {
-            draggable: true
+            draggable: true, 
+            icon: L.divIcon({
+                html: "<span style='background-color:none;width: 3rem;height: 3rem;display: block;left: -1.25rem;top: -3.25rem;position: relative;border-radius: 3rem 3rem 0; transform: rotate(45deg); border:1px solid;' />"
+            })
         });
         // if statement to define the id 
         var id = (markers.get(1) == undefined) ? 1 : 2;

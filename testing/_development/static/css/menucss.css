@@ -144,6 +144,11 @@ input[type="search"]:focus {
     outline: none;
 }
 
+.leaflet-div-icon {
+    background: none;
+    border: none;
+}
+
 /* searchbar */
 .fa-search {
     color: #818181;
