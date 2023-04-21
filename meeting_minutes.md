@@ -13,8 +13,68 @@
 ***
 <h1>Weekly Meetings</h1>
 
+<h2>Week 14</h2>
+Date: 18.04.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:00 AM - 10:00 AM (120 minutes)
+* Floyd Hall Study Area F
+
+What has been done:
+* Paperwork
+* general discussion for the next steps
+
+Next week's goals:
+* finals week, probably less work on the project for this week
+* algorythm for the backend
+* Database Interface + Injector
+* Frontend for GUI
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
 
 
+
+
+<h2>Week 13</h2>
+Date: 13.04.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Presentation
+* check up with professor
+
+Next week's goals:
+* bug fixes
+* working on algorythm on the backend
+* working on frontend for GUI
+* working on paperwork 
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
 
 
 <h2>Week 13</h2>
