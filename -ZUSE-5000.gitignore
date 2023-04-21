@@ -1,0 +1,6 @@
+/testing/bdub/
+/testing/_development/.env
+/.idea/
+/testing.DS_Store
+/testing/_development/__pycache__/
+/testing/_development/DB_Management/cache/*
