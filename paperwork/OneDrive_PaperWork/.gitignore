@@ -1,4 +1,7 @@
 # Ignore everything in this directory
-*
+*.docx
+*.xlsx
+*.pptx
+
 # Except this file and combined data
 !.gitignore

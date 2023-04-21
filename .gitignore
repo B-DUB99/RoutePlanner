@@ -4,3 +4,9 @@
 /testing.DS_Store
 /testing/_development/__pycache__/
 /testing/_development/DB_Management/cache/*
+
+# Ignore everything in this directory
+*.DS_Store
+*.git
+*.idea
+*__pycache__
