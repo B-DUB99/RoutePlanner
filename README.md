@@ -65,8 +65,7 @@ pip install mysql-connector-python
 ***
 ## Kalamazoo/Portage Routeplanning DB Schema
 
-
-![RP_DB_schema.png](paperwork%2FDB_schema%2FRP_DB_Schema.png)
+![DB_Schema_2.0.jpeg](paperwork%2FOneDrive_PaperWork%2FDB_schema%2FDB_Schema_2.0.jpeg)
 
 
 ***
