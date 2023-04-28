@@ -13,6 +13,37 @@
 ***
 <h1>Weekly Meetings</h1>
 
+
+<h2>Week 14</h2>
+Date: 20.04.2023
+
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Talk with professor about the project
+* general discussion for the next steps and work load for the next week
+* Paperwork for the final submission for this semester
+
+Next week's goals:
+* finals week, probably less work on the project for this week
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* Paperwork - Will be changed due to some access Problems + Deletions of some files
+
+
 <h2>Week 14</h2>
 Date: 18.04.2023
 
