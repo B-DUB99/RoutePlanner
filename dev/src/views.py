@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, session, redirect, url_for
 import json
-import subprocess
+
 
 views = Blueprint(__name__, "")
 locs = []
@@ -16,10 +16,20 @@ def test():
         print(locs)
     return render_template("testingwithmenu.html")
 
+@views.route('/<string:markerInfo>', methods=['POST'])
+def getMarkers(markerInfo):
+    info = json.loads(markerInfo)
+    print(info)
+    return info
+
+@views.route("/calculate/<string:userinfo>", methods=["POST"])
+def calculate(userinfo):
+    data = json.loads(userinfo)
+    print(data)
+    return redirect(url_for("views.test"))
+
 @views.route("/update/")
 def update():
-    print("updating...")
-    # run bash script to pull the latest changes from the repo and restart the server (will be done automatically)
-    # subprocess.run(["./update.sh"])
-
+    print("update")
+    # does not Work yet , may has to be manually only .. ~BDUB
     return redirect(url_for("views.test"))

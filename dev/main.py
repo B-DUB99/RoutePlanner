@@ -1,8 +1,9 @@
 # Importing the modules
 from flask import Flask
-from views import views
+from src.views import views
 import os
 from dotenv import load_dotenv
+from time import sleep
 
 
 # Loading the environment variables
@@ -26,8 +27,9 @@ def run_website():
     app = Flask(__name__)
     app.secret_key = "testing"
     app.register_blueprint(views, url_prefix="/")
-    app.run(debug=True, host=host_ip, port=host_port)
+    app.run(host=host_ip, port=host_port)
 
 
 if __name__ == '__main__':
+    sleep(1) # delay for network route to be established
     run_website()
