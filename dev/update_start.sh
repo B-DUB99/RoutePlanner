@@ -4,7 +4,6 @@ DAT=$(date '+%Y-%m-%d - %H:%M')
 echo "start:$DAT - $0 " >> /media/bdub/sdb1/Senior_Design/update.log
 
 SCREEN_NAME="Senior_Design"
-SCREENNAME="SeniorDesign"
 SCREEN_PID=$(screen -ls | grep "$SCREEN_NAME" | awk '{print $1}' | cut -d '.' -f1)
 
 echo "git pull - start"
