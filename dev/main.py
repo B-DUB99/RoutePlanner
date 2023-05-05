@@ -24,7 +24,7 @@ def get_env():
 # Running the website
 def run_website():
     host_ip, host_port = get_env()
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder="src/static/", template_folder="src/templates/")
     app.secret_key = "testing"
     app.register_blueprint(views, url_prefix="/")
     app.run(host=host_ip, port=host_port)

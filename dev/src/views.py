@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 import json
 
 
-views = Blueprint(__name__, "")
+views = Blueprint("views", __name__, "")
 locs = []
 
 
