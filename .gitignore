@@ -141,8 +141,8 @@ dmypy.json
 # Windows lnk files
 *.lnk
 
-# Special Folder / Files
+
+# database
+/dev/db/routeplanning.db
+/dev/db/routeplanning.db-journal
 /dev/DB_Management/cache/*
-
-
-
