@@ -2,6 +2,7 @@
 #WARNING!!!!!!! THIS SCRIPT WILL DELETE THE DB AND GENERATE A NEW ONE.
 #don't run this script if thats not what you want
 
+
 import mysql.connector
 from pykml import parser
 from OSMPythonTools.overpass import Overpass
