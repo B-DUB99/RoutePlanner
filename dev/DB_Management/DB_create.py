@@ -3,7 +3,10 @@
 #don't run this script if thats not what you want
 
 
+import itertools
 import sqlite3
+from collections import deque
+from geopy import distance
 from pykml import parser
 from OSMPythonTools.overpass import Overpass
 from OSMPythonTools.overpass import overpassQueryBuilder
@@ -101,9 +104,12 @@ def main():
 
     try:
         cursor.execute("CREATE TABLE links(" +
-                       "node_id BIGINT UNSIGNED," +
                        "way_id BIGINT UNSIGNED," +
-                       "FOREIGN KEY(node_id) REFERENCES nodes(node_id)," +
+                       "node_id_from BIGINT UNSIGNED," +
+                       "node_id_to BIGINT UNSIGNED," +
+                       "kilo_between FLOAT," +
+                       "FOREIGN KEY(node_id_from) REFERENCES nodes(node_id)," +
+                       "FOREIGN KEY(node_id_to) REFERENCES nodes(node_id)," +
                        "FOREIGN KEY(way_id) REFERENCES ways(way_id))")
     except Exception as e:
         print(f"something went wrong with table links{e}")
@@ -184,29 +190,59 @@ def main():
                            '" WHERE way_id = ' + str(w.id()))
 
         # get the nodes associated with the current way and loop
-        wayNodes = w.nodes()
-        for n in wayNodes:
+        firstNodes = deque(w.nodes())
+        firstNodes.pop()
+        lastNodes = deque(w.nodes())
+        lastNodes.popleft()
+        for node_one, node_two in zip(firstNodes, lastNodes):
             # check if node is in nodes table and if not add it
-            cursor.execute("SELECT node_id" +
+            cursor.execute("SELECT *" +
                            " FROM nodes" +
-                           " WHERE node_id = " + str(n.id()))
-            result = cursor.fetchone()
-            if (result == None):
+                           " WHERE node_id = " + str(node_one.id()))
+            result_one = cursor.fetchone()
+            if (result_one == None):
                 cursor.execute("INSERT INTO nodes(node_id, lat, lon)" +
-                               " VALUES(" + str(n.id()) + ", " + str(n.lat()) + ", " + str(n.lon()) + ")")
+                               " VALUES(" + str(node_one.id()) + ", " +
+                               str(node_one.lat()) + ", " + str(node_one.lon()) + ")")
                 nodeCount = nodeCount + 1
                 print("total nodes inserted into DB =", nodeCount)
-                print(f"{n.id()}, {w.id()}")
+                print(f"{node_one.id()}, {w.id()}")
+                cursor.execute("SELECT *" +
+                               " FROM nodes" +
+                               " WHERE node_id = " + str(node_one.id()))
+                result_one = cursor.fetchone()
+
+            cursor.execute("SELECT *" +
+                           " FROM nodes" +
+                           f" WHERE node_id = {node_two.id()}")
+            result_two = cursor.fetchone()
+            if (result_two == None):
+                cursor.execute("INSERT INTO nodes(node_id, lat, lon)" +
+                               " VALUES(" + str(node_two.id()) + ", " +
+                               str(node_two.lat()) + ", " + str(node_two.lon()) + ")")
+                nodeCount = nodeCount + 1
+                print("total nodes inserted into DB =", nodeCount)
+                print(f"{node_two.id()}, {w.id()}")
+                cursor.execute("SELECT *" +
+                               " FROM nodes" +
+                               f" WHERE node_id = {node_two.id()}")
+                result_two = cursor.fetchone()
+
+            kilos = distance.distance((result_one[1], result_one[2]),
+                                      (result_two[1], result_two[2])).km
             # link current node with current way
-            cursor.execute('INSERT INTO links(node_id, way_id)' +
-                           ' VALUES(' + str(n.id()) + ', ' + str(w.id()) + ')')
+            cursor.execute('INSERT INTO links(way_id, node_id_from, node_id_to,' +
+                           ' kilo_between)' +
+                           ' VALUES(' + str(w.id()) + ', ' + str(result_one[0]) +
+                           ', ' + str(result_two[0]) + ', ' + str(kilos) + ')')
             linkCount = linkCount + 1
             print("links inserted =", linkCount)
 
     # remove ways that are a part of I 94  and US 131
     cursor.execute("SELECT w.way_id, n.node_id" +
                    " FROM nodes n, links l, ways w" +
-                   " WHERE n.node_id = l.node_id AND w.way_id = l.way_id AND w.highway = 'motorway'")
+                   " WHERE (n.node_id = l.node_id_from OR l.node_id_to = " +
+                   " n.node_id) AND w.way_id = l.way_id AND w.highway = 'motorway'")
     motorInfo = cursor.fetchall()
     wayDel = 0
 
@@ -224,9 +260,10 @@ def main():
     nodes_removed = 0
     for n in nodes:
         # search for the current node in links table
-        cursor.execute("SELECT node_id" +
+        cursor.execute("SELECT node_id_from " +
                        " FROM links" +
-                       " WHERE node_id = " + str(n.id()))
+                       " WHERE node_id_from = " + str(n.id()) + " OR node_id_to = " +
+                       str(n.id()))
         results = cursor.fetchall()
         # if it's not there remove it from the nodes table
         if (len(results) == 0):
@@ -235,7 +272,9 @@ def main():
             nodes_removed = nodes_removed + 1
             print("nodes not linked and have been deleted =", nodes_removed)
 
-    cursor.execute("SELECT node_id FROM links GROUP BY node_id HAVING COUNT(node_id) > 1;")
+#need to revamp this because nodes are represented differently
+    cursor.execute("SELECT node_id_from FROM links GROUP BY node_id_from HAVING " +
+                   "COUNT(node_id_from) > 2;")
     connectors = cursor.fetchall()
     updated = 0
 
