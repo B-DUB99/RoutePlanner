@@ -258,30 +258,47 @@ def main():
 
     # remove any nodes that are not linked to any way
     nodes_removed = 0
+
+    cursor.execute("SELECT node_id FROM nodes")
+    nodes = cursor.fetchall()
+
     for n in nodes:
         # search for the current node in links table
-        cursor.execute("SELECT node_id_from " +
+        cursor.execute("SELECT way_id " +
                        " FROM links" +
-                       " WHERE node_id_from = " + str(n.id()) + " OR node_id_to = " +
-                       str(n.id()))
+                       f" WHERE node_id_from = {n[0]} OR node_id_to = {n[0]}")
         results = cursor.fetchall()
         # if it's not there remove it from the nodes table
         if (len(results) == 0):
             cursor.execute("DELETE FROM nodes" +
-                           " WHERE node_id = " + str(n.id()))
+                           f" WHERE node_id = {n[0]}")
             nodes_removed = nodes_removed + 1
             print("nodes not linked and have been deleted =", nodes_removed)
 
-#need to revamp this because nodes are represented differently
-    cursor.execute("SELECT node_id_from FROM links GROUP BY node_id_from HAVING " +
-                   "COUNT(node_id_from) > 2;")
-    connectors = cursor.fetchall()
-    updated = 0
+    cursor.execute("SELECT node_id " +
+                   "FROM nodes")
 
-    for i in connectors:
-        cursor.execute("UPDATE nodes SET connector = TRUE WHERE node_id = " + str(i[0]))
-        updated = updated + 1
-        print("nodes updated as a connector =", updated)
+    node_ids = cursor.fetchall()
+
+    for n in node_ids:
+        cursor.execute("SELECT COUNT(*) FROM (" +
+                       "SELECT DISTINCT way_id " +
+                       "FROM links " +
+                       f"WHERE node_id_from = {n[0]} " +
+                       f"OR node_id_to = {n[0]})")
+
+        count = cursor.fetchone()
+
+        if count[0] > 1:
+            cursor.execute("UPDATE nodes " +
+                           "SET connector = TRUE " +
+                           f"WHERE node_id = {n[0]}")
+        else:
+            cursor.execute("UPDATE nodes " +
+                           "SET connector = FALSE "
+                           f"WHERE node_id = {n[0]}")
+
+        print(f"{n[0]} connector status updated")
 
     # parse and plug kml into the database
     kml_file = 'ModeShift Kalamazoo.kml'

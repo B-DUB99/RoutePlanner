@@ -143,6 +143,6 @@ dmypy.json
 
 
 # database
-/dev/db/routeplanning.db
-/dev/db/routeplanning.db-journal
+*.db
+*.db-journal
 /dev/DB_Management/cache/*
