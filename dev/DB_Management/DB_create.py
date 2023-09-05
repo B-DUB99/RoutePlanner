@@ -350,9 +350,10 @@ def main():
                     cursor.execute('SELECT rowid, * FROM amenity_types WHERE name = "' + amen_type + '"')
                     a_type = cursor.fetchone()
                     if (a_type != None):
-                        cursor.execute(
-                                'UPDATE amenities SET type = ' + str(a_type[0]) + ' WHERE name = "' + amen_type + '"')
-                        print(f"{name} added successfully to amenities as {amen_type}")
+                        cursor.execute('UPDATE amenities ' +
+                                       f'SET type = {a_type[0]} ' +
+                                       'WHERE name = "' + name + '"')
+                    print(f"{name} updated as a {a_type[0]}: {amen_type}")
             except Exception as err:
                 print("Something went wrong: {}".format(err))
 
