@@ -53,13 +53,14 @@ pip install folium
 <br>
 
 Change this !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-### 6. `mysql-connector-python` [![PyPI version](https://badge.fury.io/py/mysql-connector-python.svg)](https://badge.fury.io/py/mysql-connector-python)
+### 6. `sqlite3` [![PyPI version](https://badge.fury.io/py/sqlite3.svg)](https://badge.fury.io/py/sqlite3)
 
-<br>`mysql-connector-python` is a MySQL driver written in Python. It is a pure Python implementation without any dependencies on external libraries. It is a fork of the original MySQL Connector/Python.
-<br>To install `mysql-connector-python`:
+<br> `sqlite3` is a Python library for accessing SQLite databases. It is a self-contained, serverless, zero-configuration, transactional SQL database engine. It is the most widely deployed SQL database engine and the source code for SQLite is in the public domain.
+<br>To install `sqlite3`:
 ```bash
-pip install mysql-connector-python
+pip install sqlite3
 ```
+
 <br>
 
 ***
