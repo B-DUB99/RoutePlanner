@@ -56,7 +56,7 @@ def main():
                        "comm_activity TINYINT," +
                        "max_speed_limit TINYINT," +
                        "PRIMARY KEY(id))")
-        print(f"Table types created successfully")
+        print(f"Table way_types created successfully")
         # road types from the map that the client gave us
         types = ["Event Festival",
                  "Urban Center",
@@ -77,17 +77,16 @@ def main():
 
         # generate types table
         for i in range(9):
-            cursor.execute(
-                    'INSERT INTO way_types(type, ped_priority, bike_priority, vehicle_priority, comm_activity, max_speed_limit)' +
-                    f' VALUES( "{types[i]}",' + ped_p[i] + ', ' + bike_p[i] + ', ' + vehicle_a[i] + ', ' + comm_a[i] + ', ' +
-                    speed_limit[i] + ')')
+            cursor.execute('INSERT INTO way_types(type, ped_priority, bike_priority, vehicle_priority, comm_activity, max_speed_limit)' +
+                           f' VALUES("' + types[i] + '", ' + ped_p[i] + ', ' + bike_p[i] + ', ' + vehicle_a[i] + ', ' + comm_a[i] + ', ' +
+                           speed_limit[i] + ')')
         print(f"Table types populated successfully")
 
         # commit changes to database
         connection.commit()
 
     except Exception as e:
-        print(f"something went wrong with table types{e}")
+        print(f"something went wrong with table way_types: {e}")
 
     try:
         cursor.execute("CREATE TABLE ways(" +
