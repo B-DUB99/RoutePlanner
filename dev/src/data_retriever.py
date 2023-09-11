@@ -20,6 +20,13 @@ class data_retriever:
 			print(f'Error: {e}')
 			return -1
 
+    def close(self):
+        try:
+            connection.close()
+        except:
+            print("Close Failed")
+            return -1
+
 	def get_closest_node(self, user_marker):
 		return
 
