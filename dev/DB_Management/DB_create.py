@@ -26,7 +26,7 @@ def main():
     # drop the whole database and start over
     try:
         cursor.execute("DROP TABLE nodes")
-        cursor.execute("DROP TABLE types")
+        cursor.execute("DROP TABLE way_types")
         cursor.execute("DROP TABLE ways")
         cursor.execute("DROP TABLE links")
         cursor.execute("DROP TABLE amenity_types")
@@ -47,7 +47,7 @@ def main():
         print(f"Table nodes already exists")
 
     try:
-        cursor.execute("CREATE TABLE types(" +
+        cursor.execute("CREATE TABLE way_types(" +
                        "id INT," +
                        "type VARCHAR(25)," +
                        "ped_priority TINYINT," +
@@ -78,8 +78,8 @@ def main():
         # generate types table
         for i in range(9):
             cursor.execute(
-                    f'INSERT INTO types(type, ped_priority, bike_priority, vehicle_priority, comm_activity, max_speed_limit)' +
-                    ' VALUES( "{types[i]}",' + ped_p[i] + ', ' + bike_p[i] + ', ' + vehicle_a[i] + ', ' + comm_a[i] + ', ' +
+                    'INSERT INTO way_types(type, ped_priority, bike_priority, vehicle_priority, comm_activity, max_speed_limit)' +
+                    f' VALUES( "{types[i]}",' + ped_p[i] + ', ' + bike_p[i] + ', ' + vehicle_a[i] + ', ' + comm_a[i] + ', ' +
                     speed_limit[i] + ')')
         print(f"Table types populated successfully")
 
