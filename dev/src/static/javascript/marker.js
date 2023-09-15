@@ -40,6 +40,16 @@ function createMarker(event) {
     }
 }
 
+function draw_line(pos1, pos2) {
+    var line = new L.Polyline([pos1, pos2], {
+        color: 'blue',
+        weight: 3,
+        opacity: 1,
+        smoothFactor: 1
+    });
+    line.addTo(map);
+}
+
 function deleteAllMarkers() {
     let icons = document.getElementsByClassName("leaflet-marker-icon");
     let shadows = document.getElementsByClassName("leaflet-marker-shadow");

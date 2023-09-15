@@ -183,5 +183,16 @@
     <script src="{{ url_for('static', filename='javascript/marker.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/navbar.js') }}"></script>
 
+    <!-- displaying points from python -->
+    {% if length != 0 %}
+        {% for ind in range(length - 1) %}
+            <script>
+                var from = [parseFloat("{{ temp_points[ind][0] }}"), parseFloat("{{ temp_points[ind][1] }}")];
+                var to = [parseFloat("{{ temp_points[ind + 1][0] }}"), parseFloat("{{ temp_points[ind + 1][1] }}")];
+                draw_line(from, to);
+            </script>
+        {% endfor %}
+    {% endif %}
+
 </body>
 </html>
