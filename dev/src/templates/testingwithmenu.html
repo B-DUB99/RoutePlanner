@@ -189,10 +189,19 @@
             <script>
                 var from = [parseFloat("{{ temp_points[ind][0] }}"), parseFloat("{{ temp_points[ind][1] }}")];
                 var to = [parseFloat("{{ temp_points[ind + 1][0] }}"), parseFloat("{{ temp_points[ind + 1][1] }}")];
-                draw_line(from, to);
+                draw_line(from, to, 'blue', 3);
             </script>
         {% endfor %}
     {% endif %}
 
+    <!-- draw kalmazoo boundary -->
+    <script>
+        let lats = [42.157, 42.333];  // S, N
+        let lngs = [-85.663, -85.531]  // W, E
+        draw_line([lats[0], lngs[0]], [lats[0], lngs[1]], 'green', 1);
+        draw_line([lats[0], lngs[1]], [lats[1], lngs[1]], 'green', 1);
+        draw_line([lats[1], lngs[1]], [lats[1], lngs[0]], 'green', 1);
+        draw_line([lats[1], lngs[0]], [lats[0], lngs[0]], 'green', 1);
+    </script>
 </body>
 </html>
