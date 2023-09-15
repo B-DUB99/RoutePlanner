@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, session, redirect, url_for
 import json
 
+from .data_retriever import data_retriever
 
 views = Blueprint("views", __name__, "")
 locs = []
@@ -26,7 +27,12 @@ def getMarkers(markerInfo):
 def calculate(userinfo):
     data = json.loads(userinfo)
     print(data)
-    return redirect(url_for("views.test"))
+    d_ret = data_retriever()
+    d_ret.connect()
+    amens = d_ret.get_amenities(data[2][0])
+    d_ret.close()
+    print(amens)
+    return amens
 
 @views.route("/update/")
 def update():
