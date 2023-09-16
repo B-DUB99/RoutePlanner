@@ -79,5 +79,25 @@ class data_retriever:
 
         return
 
-    def get_node_info(self, node_id):
-        return
+    #returns the neighboring node ids of the provided id
+    def get_node_neighbors(self, n_id):
+        
+        self.cursor.execute("SELECT node_id FROM nodes n, (SELECT node_id_from, "
+                            + f"node_id_to FROM links WHERE node_id_from = {n_id} OR "
+                            + f"node_id_to = {n_id}) a WHERE (n.node_id = "
+                            + "a.node_id_from OR n.node_id = a.node_id_to) AND " 
+                            + f"n.node_id != {n_id}")
+
+        temp = cursor.fetchall()
+        neighbors = []
+
+        for t in temp:
+            neighbors.append(t[0])
+        
+        return neighbors
+
+    def get_node_coords(self, n_id):
+
+        self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
+
+        return cursor.fetchone()
