@@ -37,7 +37,17 @@ function createMarker(event) {
         });
         lines[0] = line
         line.addTo(map);
-    }
+    }``
+}
+
+function draw_line(from, to, color, thickness) {
+    var line = new L.Polyline([from, to], {
+        color: color,
+        weight: thickness,
+        opacity: 1,
+        smoothFactor: 1
+    });
+    line.addTo(map);
 }
 
 function deleteAllMarkers() {
