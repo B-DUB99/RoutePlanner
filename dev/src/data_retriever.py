@@ -11,7 +11,7 @@ class data_retriever:
     # use to connect to the database and create a cursor object
     def connect(self):
         try:
-            self.connection = sqlite3.connect('../db/routeplanning.db')
+            self.connection = sqlite3.connect('db/routeplanning.db')
             self.cursor = self.connection.cursor()
             print('Successful connection, cursor created\n')
         except Exception as e:

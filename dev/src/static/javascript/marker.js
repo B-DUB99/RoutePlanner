@@ -40,6 +40,17 @@ function createMarker(event) {
     }``
 }
 
+function createAmenMarkers(amens) {
+	for(let i = 0; i < amens.length; i++){
+		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
+		let marker = L.marker(latlng, {
+			title: amens[i][0]["name"]
+		});
+		marker.addTo(map).bindPopup(amens[i][0]["name"] + "<br>" + 
+		amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
+	}
+}
+
 function draw_line(from, to, color, thickness) {
     var line = new L.Polyline([from, to], {
         color: color,

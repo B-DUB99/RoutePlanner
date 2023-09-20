@@ -35,7 +35,11 @@ def calculate(userinfo):
     print(data)
     d_ret = data_retriever()
     d_ret.connect()
-    amens = d_ret.get_amenities(data[2][0])
+    amens = []
+    try:
+        amens = d_ret.get_amenities(data[2][0])
+    except:
+        print("User selected nothing to find!")
     d_ret.close()
     print(amens)
     return amens

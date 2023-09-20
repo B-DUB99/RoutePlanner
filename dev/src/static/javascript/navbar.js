@@ -105,8 +105,21 @@ function get_input() {
     // amenities will be a list of names ([] if none were selected)
     var post_info = [transport_type, road_info, amenities];
     const request = new XMLHttpRequest();
+
+	request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+			var amens = JSON.parse(this.responseText);
+			console.log(amens);
+			if(amens.length > 0){
+				createAmenMarkers(amens);
+			}else{
+				deleteAllMarkers();
+			}
+		}
+    };
     request.open("POST", `/calculate/${JSON.stringify(post_info)}`);
     request.send();
+
 }
 
 
