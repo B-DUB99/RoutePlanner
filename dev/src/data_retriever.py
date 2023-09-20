@@ -88,7 +88,7 @@ class data_retriever:
                             + "a.node_id_from OR n.node_id = a.node_id_to) AND " 
                             + f"n.node_id != {n_id}")
 
-        temp = cursor.fetchall()
+        temp = self.cursor.fetchall()
         neighbors = []
 
         for t in temp:
@@ -100,4 +100,4 @@ class data_retriever:
 
         self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
 
-        return cursor.fetchone()
+        return self.cursor.fetchone()
