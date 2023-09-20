@@ -41,8 +41,11 @@ class data_retriever:
         return amens_dict
 
     def get_closest_node(self, user_marker, transport):
+        # get lat and lon from user_marker
 
+        # return list of closes nodes
         return
+
 
     def get_exit_nodes(self, way_id):
         return

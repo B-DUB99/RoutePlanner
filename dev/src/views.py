@@ -2,9 +2,12 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 import json
 
 from .data_retriever import data_retriever
+from .pathfinder import Pathfinder
 
 views = Blueprint("views", __name__, "")
 locs = []
+
+
 
 
 @views.route("/", methods=["GET", "POST"])
@@ -26,13 +29,43 @@ def test():
 @views.route('/<string:markerInfo>', methods=['POST'])
 def getMarkers(markerInfo):
     info = json.loads(markerInfo)
-    print(info)
-    return info
+    # print(info)
+    # retrieve start and end nodes from info
+    start = info[0]
+    end = info[1]
+    # create a pathfinder object and pass in the start and end nodes
+    pathfinder = Pathfinder(start, end)
+    # call find_path() to find the path
+    pathfinder.find_path()
+    # call draw_path() to draw the path on the map
+    draw_path(pathfinder.return_path())
 
+
+    return 0
+
+
+# draw the path on the map
+@views.route("/", methods=["GET", "POST"])
+def draw_path(path):
+    print("draw_path", path)
+    if request.method == "POST":
+        output = request.get_json()
+        coords = json.loads(output)
+        locs.append(coords)
+        print(locs)
+    return render_template("testingwithmenu.html", temp_points=path, length=len(path))
+
+
+
+# SEND ME THE MARKERS FROM THE MAP ~BDUB
 @views.route("/calculate/<string:userinfo>", methods=["POST"])
-def calculate(userinfo):
+def calculate(userinfo,  markerInfo):
     data = json.loads(userinfo)
     print(data)
+    # call getMarkers() to get the markers from the map
+    info = getMarkers(markerInfo)
+    print(info) # this is the list of markers
+
     d_ret = data_retriever()
     d_ret.connect()
     amens = []
@@ -43,6 +76,21 @@ def calculate(userinfo):
     d_ret.close()
     print(amens)
     return amens
+
+
+# make this interavtive with the map instead of a button
+def get_amenities(amen_type):
+    data = json.loads(amen_type)
+    d_ret = data_retriever()
+    d_ret.connect()
+    amens = []
+    try:
+        amens = d_ret.get_amenities(data[2][0])
+    except:
+        print("User selected nothing to find!")
+    d_ret.close()
+    return amens
+
 
 @views.route("/update/")
 def update():

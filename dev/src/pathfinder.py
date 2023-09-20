@@ -2,30 +2,39 @@ class Pathfinder:
     def __init__(self, start, end):
         self.start = start
         self.end = end
-        self.path = []
-        self.open = []
-        self.closed = []
-        self.current = None
-        self.path_found = False
-        self.path_not_found = False
+
+        # ------------------ #
+        # list of lat and lng #
+        self.lat_lng = [[]]
 
     def find_path(self):            # returns a list of coordinates in the order of the path
         # finds the path from start to end calls the other functions
+        print(f'Start:  {self.start}')
+        print(f'End:    {self.end}')
+        # extract the lat and lng from the start and end dictionaries
+        self.lat_lng[0] = [self.start['lat'], self.start['lng']]
+        self.lat_lng.append([self.end['lat'], self.end['lng']])
+        
+
+        print(f'Path:   {self.lat_lng}')
+
         pass
 
-    def next_nodes(self):           #
-        # finds the next nodes to be checked
-        pass
 
-    def check_node(self):           # returns a boolean True or False
-        # checks the node to see if it is the end node or the best node
-        pass
 
-    def find_way(self):             # returns a way_id (from database thru a node_id)
-        # finds the road that the node is on
-        pass
+    def return_path(self):          # returns a list of coordinates in the order of the path
+        # returns the path
+        return self.lat_lng
 
-    def find_connector(self):       # takes in a way_id and returns a list of connector nodes
-        # finds the connector that the node is on (returns a list of connectors associated with that one road)
-        pass
+
+    # retrieve the lat and lng from website ( user ) ( start and end )
+    # start node lat lng goes to dataretriever, get_closest_node
+    # retrieve is a list of nodes ( node_id, lat, lng )
+    # decide what node to go to next (closest node to end node)
+        # send new node to the dataretriever, get_node_neighbors to get the next node (node_id)
+        # retrieve the neighbors of the node ( node_id, lat, lng )
+        # compare the neighbors to the end node (lat, lng)
+        # if the neighbor is the end node or within 100 m, then we are done
+        # if the neighbor is not the end node, then we need to find the next node to go to
+
 

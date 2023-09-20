@@ -13,21 +13,23 @@ def get_env():
         load_dotenv()
         host_ip = os.getenv("HOST_IP")
         host_port = os.getenv("HOST_PORT")
+        debug = False
     else:
         print("No .env file found. Using default values.")
         host_ip = 'localhost'
         host_port = 8080
+        debug = True
     print(f"Host IP: {host_ip}\nHost Port: {host_port}\n")
-    return host_ip, host_port
+    return host_ip, host_port, debug
 
 
 # Running the website
 def run_website():
-    host_ip, host_port = get_env()
+    host_ip, host_port, debug_TF = get_env()
     app = Flask(__name__, static_folder="src/static/", template_folder="src/templates/")
     app.secret_key = "testing"
     app.register_blueprint(views, url_prefix="/")
-    app.run(host=host_ip, port=host_port)
+    app.run(host=host_ip, port=host_port, debug=debug_TF)
 
 
 if __name__ == '__main__':
