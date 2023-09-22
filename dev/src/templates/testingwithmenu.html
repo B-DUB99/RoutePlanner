@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/menucss.css') }}" />
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="logo icon" href="{{ url_for('static', filename='images/sidenav/sidenav_MSK_lines_logo.png') }}">
+    <link rel="walking icon" href="{{ url_for('static', filename='images/sidenav/Walking_clear_icon.png') }}">
+    <link rel="bicycle icon" href="{{ url_for('static', filename='images/sidenav/bicycle_clean_icon.png') }}">
+    <link rel="bus icon" href="{{ url_for('static', filename= 'images/sidenav/bus_clear_icon.png') }}">
 </head>
 <body>
     <!-- inside the sidebar -->
     <!-- just temporary I want to have sliders or checkboxes -->
     <div id="mySidenav" class="sidenav">
         <div style="color:rgb(196, 196, 196);">
-            <img src="src/templates/images/sidenav/sidenav_MSK_lines_logo.png" alt="Logo is here" class="center" />
+            <img src="{{ url_for('static', filename='images/sidenav/sidenav_MSK_lines_logo.png') }}" alt="Logo is here" class="center" />
             <form class="searchform group">
                 <input type="search" id="search-box">
                 <label for="search-box">
@@ -30,17 +34,17 @@
                     <div class="transport-choice">
                         <input type="radio" id="walk" name="transport" value="walk">
                         <label for="walk">Walking</label>
-                        <img src="src/templates/images/sidenav/Walking_clear_icon.png" alt="walking icon is here" class="center" />
+                        <img src="{{ url_for('static', filename='images/sidenav/Walking_clear_icon.png') }}" class="center" />
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bike" name="transport" value="bike">
                         <label for="bike">Biking</label>
-                        <img src="src/templates/images/sidenav/bicycle_clean_icon.png" alt="bike icon is here" class="center" />
+                        <img src="{{ url_for('static', filename='images/sidenav/bicycle_clean_icon.png') }}" alt="bike icon is here" class="center" />
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bus" name="transport" value="bus">
                         <label for="bus">Bus</label>
-                        <img src="src/templates/images/sidenav/bus_clear_icon.png" alt="bus icon is here" class="center" />
+                        <img src="{{ url_for('static', filename= 'images/sidenav/bus_clear_icon.png') }}" alt="bus icon is here" class="center" />
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bike-bus" name="transport" value="bike-bus">
