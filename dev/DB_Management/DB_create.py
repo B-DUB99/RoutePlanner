@@ -320,6 +320,8 @@ def main():
                 name = j.name.text
             except:
                 name = j.name.text
+            
+            name.replace(" ", "-")
 
             try:
                 coords = j.Point.coordinates.text.split(',')
