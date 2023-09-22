@@ -59,12 +59,12 @@ def draw_path(path):
 
 # SEND ME THE MARKERS FROM THE MAP ~BDUB
 @views.route("/calculate/<string:userinfo>", methods=["POST"])
-def calculate(userinfo,  markerInfo):
+def calculate(userinfo):
     data = json.loads(userinfo)
     print(data)
     # call getMarkers() to get the markers from the map
-    info = getMarkers(markerInfo)
-    print(info) # this is the list of markers
+    # info = getMarkers(markerInfo)
+    # print(info) # this is the list of markers
 
     d_ret = data_retriever()
     d_ret.connect()
