@@ -10,7 +10,7 @@ html, body, #map {
     display: grid;
 }
 
-.fa-caret-down{
+.fa-caret-down {
     float: right;
     padding-right: 8px;
 }
@@ -27,26 +27,26 @@ html, body, #map {
     opacity: .8;
 }
 
-.closebtn, .sidenav h1, .dropdown-btn, #update {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    text-align: left;
-    background: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    margin: 0;
-    font-weight: normal;
-    transition: 0.3s;
-}
+    .closebtn, .sidenav h1, .dropdown-btn, #update {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        text-align: left;
+        background: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        margin: 0;
+        font-weight: normal;
+        transition: 0.3s;
+    }
 
-.closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
-    cursor: pointer;
-}
+        .closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
+            cursor: pointer;
+        }
 
-.sidenav h1:hover, .dropdown-btn:hover, #update:hover {
-    color: #f1f1f1;
-}
+        .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
+            color: #f1f1f1;
+        }
 
 .transport-container p {
     align-self: center;
@@ -62,12 +62,11 @@ html, body, #map {
     overflow: hidden;
     width: 80%;
     margin: 2% 10%;
-
 }
 
-.searchform > * {
-    margin: 7px;
-}
+    .searchform > * {
+        margin: 7px;
+    }
 
 label {
     float: right;
@@ -88,7 +87,7 @@ label {
     display: none;
     position: fixed;
     justify-self: center;
-    align-self:center;
+    align-self: center;
     grid-template-rows: 40px 50px 1fr;
     width: 50%;
     height: 50%;
@@ -100,11 +99,11 @@ label {
     overflow: auto;
 }
 
-.white_content h2 {
-    justify-self: center;
-    font-weight: normal;
-}
-  
+    .white_content h2 {
+        justify-self: center;
+        font-weight: normal;
+    }
+
 input[type="search"] {
     border: 2px solid #737373;
     border-width: 0 0 3px;
@@ -121,22 +120,22 @@ input[type="range"] {
     margin: 5px
 }
 
-/* chrome slider */
-input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    background-color: green;
-    height: 1rem;
-    width: 2rem; 
-}
+    /* chrome slider */
+    input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        background-color: green;
+        height: 1rem;
+        width: 2rem;
+    }
 
-/* firefox slider */
-input[type="range"]::-moz-range-thumb {
-    appearance: none;
-    background-color: green;
-    height: 1rem;
-    width: 2rem;
-    border-radius: 0;
-}
+    /* firefox slider */
+    input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        background-color: green;
+        height: 1rem;
+        width: 2rem;
+        border-radius: 0;
+    }
 
 input[type="search"]:focus {
     color: #E18728;
@@ -154,10 +153,10 @@ input[type="search"]:focus {
     color: #818181;
 }
 
-.fa-search:hover {
-    cursor: pointer;
-    color: rgb(45, 45, 237);
-}
+    .fa-search:hover {
+        cursor: pointer;
+        color: rgb(45, 45, 237);
+    }
 
 .dropdown-btn {
     border: none;
@@ -184,9 +183,21 @@ input[type="search"]:focus {
     color: white;
 }
 
-.dropdown-container {
+.dropdown-container-1 {
     display: none;
-    background-color: #262626;
+    background-color: #f51702;
+    padding: 10px 0;
+}
+
+.dropdown-container-2 {
+    display: none;
+    background-color: #0a911c;
+    padding: 10px 0;
+}
+
+.dropdown-container-3 {
+    display: none;
+    background-color: #0d3591;
     padding: 10px 0;
 }
 
@@ -201,9 +212,9 @@ input[type="search"]:focus {
     height: 25px
 }
 
-.transport-choice > label {
-    align-self: center;
-}
+    .transport-choice > label {
+        align-self: center;
+    }
 
 ul {
     list-style-type: none;
@@ -219,7 +230,7 @@ li {
 }
 
 /* road choices */
-.road-choice{
+.road-choice {
     display: flex;
     justify-content: left;
 }
@@ -243,7 +254,7 @@ li {
 
 /* The slider itself */
 .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none; /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
     height: 25px; /* Specified height */
@@ -252,26 +263,26 @@ li {
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
+}
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
