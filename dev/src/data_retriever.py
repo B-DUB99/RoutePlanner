@@ -99,6 +99,13 @@ class data_retriever:
         
         return neighbors
 
+    # TODO: implement
+    def get_distance(self, lat1, lon1, lat2, lon2):
+        # returns the distance between two coordinates in meters
+        # lat1, lon1, lat2, lon2 are floats
+        # returns a float
+        return
+
     def get_node_coords(self, n_id):
 
         self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
