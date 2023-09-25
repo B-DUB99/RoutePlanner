@@ -1,5 +1,5 @@
 # import dataretriever
-from data_retriever import data_retriever
+from .data_retriever import data_retriever
 
 
 
