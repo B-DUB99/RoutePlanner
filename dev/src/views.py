@@ -70,7 +70,7 @@ def calculate(userinfo):
     d_ret.connect()
     amens = []
     try:
-        amens = d_ret.get_amenities(data[2][0])
+        amens = d_ret.get_amenities(data[0])
     except:
         print("User selected nothing to find!")
     d_ret.close()

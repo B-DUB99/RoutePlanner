@@ -40,15 +40,32 @@ function createMarker(event) {
     }``
 }
 
-function createAmenMarkers(amens) {
-	for(let i = 0; i < amens.length; i++){
-		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
-		let marker = L.marker(latlng, {
-			title: amens[i][0]["name"]
-		});
-		marker.addTo(map).bindPopup(amens[i][0]["name"] + "<br>" + 
-		amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
-	}
+function changeAmenMarkers(event) {
+
+	var post_info = [event.target.id];
+    const request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var amens = JSON.parse(this.responseText);
+            console.log(amens);
+            if(event.target.checked){
+                for(let i = 0; i < amens.length; i++){
+ 		      		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
+        			let marker = L.marker(latlng, {
+            						title: amens[i][0]["name"]
+        			});
+					marker.id = event.target.id;
+        			marker.addTo(map).bindPopup(amens[i][0]["name"] + "<br>" +
+         			amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
+				}
+            }else{
+                deleteAllMarkers();
+            }
+        }
+    };                                                                                 
+	request.open("POST", `/calculate/${JSON.stringify(post_info)}`);
+    request.send();
 }
 
 function draw_line(from, to, color, thickness) {
@@ -98,4 +115,8 @@ function newCoords() {
 
 
 map.addEventListener("click", createMarker);
+var elements = document.getElementsByClassName("amen-choice")
+for (let i = 0; i < elements.length; i++){
+	elements[i].addEventListener("change", changeAmenMarkers);
+}
 document.getElementById("reset").addEventListener("click", deleteAllMarkers);

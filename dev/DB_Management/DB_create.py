@@ -119,13 +119,13 @@ def main():
                        "name VARCHAR(100)," +
                        "PRIMARY KEY(id))")
 
-        types = ["Grocery Stores",
+        types = ["Grocery_Stores",
                  "Businesses",
-                 "Community Hubs",
-                 "Health and Wellness",
-                 "Bike Shops, Repair Stations",
-                 "Bike Parking, Bathrooms, Drinking Fountains",
-                 "Worlds of Wonder"]
+                 "Community_Hubs",
+                 "Health_and_Wellness",
+                 "Bike_Shops,_Repair_Stations",
+                 "Bike_Parking,_Bathrooms,_Drinking_Fountains",
+                 "Worlds_of_Wonder"]
 
         for i in types:
             cursor.execute('INSERT INTO amenity_types(name)' +
@@ -315,13 +315,12 @@ def main():
 
     for i in doc.Folder:
         amen_type = i.name.text
+        amen_type = amen_type.replace(' ', '_')
         for j in i.Placemark:
             try:
                 name = j.name.text
             except:
                 name = j.name.text
-            
-            name.replace(" ", "-")
 
             try:
                 coords = j.Point.coordinates.text.split(',')
