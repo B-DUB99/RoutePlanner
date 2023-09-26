@@ -8,6 +8,12 @@ views = Blueprint("views", __name__, "")
 locs = []
 
 
+temp_points = [
+        [42.29127852746485, -85.5919075012207],
+        [42.30918068099292, -85.6549072265625],
+        [42.26790919743789, -85.65319061279297],
+        [42.291532494305976, -85.58795928955078]
+    ]
 
 
 @views.route("/", methods=["GET", "POST"])
@@ -29,19 +35,19 @@ def test():
 @views.route('/<string:markerInfo>', methods=['POST'])
 def getMarkers(markerInfo):
     info = json.loads(markerInfo)
-    # print(info)
+    # print(markerInfo)
     # retrieve start and end nodes from info
     start = info[0]
     end = info[1]
     # create a pathfinder object and pass in the start and end nodes
     pathfinder = Pathfinder(start, end)
     # call find_path() to find the path
-    pathfinder.find_path()
+    # pathfinder.find_path()
     # call draw_path() to draw the path on the map
-    draw_path(pathfinder.return_path())
+    # draw_path(pathfinder.return_path())
+    fin_path = [[start['lat'], start['lng']]] + temp_points + [[end['lat'], end['lng']]]
 
-
-    return 0
+    return fin_path
 
 
 # draw the path on the map
@@ -70,7 +76,7 @@ def calculate(userinfo):
     d_ret.connect()
     amens = []
     try:
-        amens = d_ret.get_amenities(data[0])
+        amens = d_ret.get_amenities(data[2][0])
     except:
         print("User selected nothing to find!")
     d_ret.close()

@@ -18,13 +18,7 @@
     <div id="mySidenav" class="sidenav">
         <div style="color:rgb(196, 196, 196);">
             <img src="{{ url_for('static', filename='images/sidenav/sidenav_MSK_lines_logo.png') }}" alt="Logo is here" class="center" />
-            <form class="searchform group">
-                <input type="search" id="search-box">
-                <label for="search-box">
-                    <span class="fa fa-2x fa-search"></span>
-                </label>
-                <span id="closeNav" class="closebtn">&times;</span>
-            </form>
+            <span id="closeNav" class="closebtn">&times;</span>
             <button class="dropdown-btn">
                 Transport
                 <i class="fa fa-caret-down"></i>
@@ -187,26 +181,5 @@
     <script src="{{ url_for('static', filename='javascript/map.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/marker.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/navbar.js') }}"></script>
-
-    <!-- displaying points from python -->
-    {% if length != 0 %}
-        {% for ind in range(length - 1) %}
-            <script>
-                var from = [parseFloat("{{ temp_points[ind][0] }}"), parseFloat("{{ temp_points[ind][1] }}")];
-                var to = [parseFloat("{{ temp_points[ind + 1][0] }}"), parseFloat("{{ temp_points[ind + 1][1] }}")];
-                draw_line(from, to, 'blue', 3);
-            </script>
-        {% endfor %}
-    {% endif %}
-
-    <!-- draw kalmazoo boundary -->
-    <script>
-        let lats = [42.157, 42.333];  // S, N
-        let lngs = [-85.663, -85.531]  // W, E
-        draw_line([lats[0], lngs[0]], [lats[0], lngs[1]], 'green', 1);
-        draw_line([lats[0], lngs[1]], [lats[1], lngs[1]], 'green', 1);
-        draw_line([lats[1], lngs[1]], [lats[1], lngs[0]], 'green', 1);
-        draw_line([lats[1], lngs[0]], [lats[0], lngs[0]], 'green', 1);
-    </script>
 </body>
 </html>

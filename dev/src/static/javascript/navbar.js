@@ -110,10 +110,10 @@ function get_input() {
         if (this.readyState == 4 && this.status == 200) {
 			var amens = JSON.parse(this.responseText);
 			console.log(amens);
-			if(amens.length > 0){
+			if (amens.length > 0) {
 				createAmenMarkers(amens);
-			}else{
-				deleteAllMarkers();
+			} else {
+				deleteAmenMarkers();
 			}
 		}
     };
@@ -127,13 +127,17 @@ function get_input() {
 slider.oninput = function() {
     output.innerHTML = this.value;
 }
+const inputs = document.querySelectorAll("input");
+for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("input", get_input);
+}
 
 // dom for eventlisteners
 document.getElementById("openNav").addEventListener("click", openNav);
 document.getElementById("closeNav").addEventListener("click", closeNav);
 document.getElementById("help").addEventListener("click", open);
 document.getElementById("about").addEventListener("click", open);
-document.getElementById("calculate").addEventListener("click", get_input);
+
 for (i = 0; i < openBtn.length; i++) {
     openBtn[i].addEventListener("click", close);
 }
