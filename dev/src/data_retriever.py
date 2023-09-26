@@ -7,6 +7,8 @@ class data_retriever:
     def __init__(self):
         self.connection = None
         self.cursor = None
+        self.mag = 1
+        self.offset = 0.00001
 
     # use to connect to the database and create a cursor object
     def connect(self):
@@ -16,6 +18,8 @@ class data_retriever:
             print('Successful connection, cursor created\n')
         except Exception as e:
             print(f'Error: {e}')
+            self.connection = sqlite3.connect('../db/routeplanning.db')
+            self.cursor = self.connection.cursor()
     
     def close(self):
         try:
@@ -40,11 +44,26 @@ class data_retriever:
 
         return amens_dict
 
-    def get_closest_node(self, user_marker, transport):
-        # get lat and lon from user_marker
+    # gets the closest nodes to the users start node
+    # it's up to pathfinder to determine if the node is a corrct start
+    def get_closest_nodes(self, user_marker):
+        
+        while True:
+            
+            east_lon = user_marker[1] + (self.offset * self.mag)
+            west_lon = user_marker[1] - (self.offset * self.mag)
+            north_lat = user_marker[0] + (self.offset * self.mag)
+            south_lat = user_marker[0] - (self.offset * self.mag)
 
-        # return list of closes nodes
-        return
+            self.cursor.execute("SELECT node_id, lat, lon FROM nodes WHERE lon < "
+                                + f"{east_lon} AND lon > {west_lon} AND lat < "
+                                + f"{north_lat} AND lat > {south_lat}")
+            nodes = self.cursor.fetchall()
+            if len(nodes) != 0:
+                return nodes
+            else:
+                self.mag += 1
+                print(f"{self.mag}")
 
 
     def get_exit_nodes(self, way_id):
@@ -100,6 +119,7 @@ class data_retriever:
         return neighbors
 
     # TODO: implement
+    # distance is already stored in the DB between connected nodes - Matt
     def get_distance(self, lat1, lon1, lat2, lon2):
         # returns the distance between two coordinates in meters
         # lat1, lon1, lat2, lon2 are floats

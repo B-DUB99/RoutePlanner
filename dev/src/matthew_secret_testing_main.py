@@ -4,9 +4,9 @@ d_ret = data_retriever()
 
 d_ret.connect()
 
-amens = d_ret.get_amenities('Worlds of Wonder')
+amens = d_ret.get_closest_nodes([42, -85])
 
 for a in amens:
-    print(f"{a[0]['lat']}")
+    print(f"{a}")
 
 d_ret.close()
