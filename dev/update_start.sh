@@ -16,9 +16,9 @@ if screen -list | grep -q "\.$SCREEN_NAME";
 then
   echo "PID of $SCREEN_NAME is: $SCREEN_PID"
 
-  screen -S "Senior_Design" -dm python3 dev/main.py &
+  screen -S "Senior_Design" -dm python3 main.py &
   screen -S $SCREEN_PID -X quit
 else
   echo "Server offline, starting"
-  screen -S "Senior_Design" -dm python3 dev/main.py &
+  screen -S "Senior_Design" -dm python3 main.py &
 fi
