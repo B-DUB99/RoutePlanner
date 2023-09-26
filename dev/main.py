@@ -25,12 +25,11 @@ def get_env():
 
 # Running the website
 def run_website():
-    host_ip, host_port, debug_TF = get_env()
     # print all files in the current directory
     print("Files in current directory:")
     for file in os.listdir():
         print(file)
-
+    host_ip, host_port, debug_TF = get_env()
     app = Flask(__name__, static_folder="src/static/", template_folder="src/templates/")
     app.secret_key = "testing"
     app.register_blueprint(views, url_prefix="/")
