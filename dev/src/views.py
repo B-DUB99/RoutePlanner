@@ -30,7 +30,7 @@ def test():
         [42.26790919743789, -85.65319061279297],
         [42.291532494305976, -85.58795928955078]
     ]
-    return render_template("testingwithmenu.html", temp_points=temp_points, length=len(temp_points))
+    return render_template("routeplanner.html", temp_points=temp_points, length=len(temp_points))
 
 @views.route('/<string:markerInfo>', methods=['POST'])
 def getMarkers(markerInfo):
@@ -59,7 +59,7 @@ def draw_path(path):
         coords = json.loads(output)
         locs.append(coords)
         print(locs)
-    return render_template("testingwithmenu.html", temp_points=path, length=len(path))
+    return render_template("routeplanner.html", temp_points=path, length=len(path))
 
 
 
