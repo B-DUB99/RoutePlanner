@@ -13,9 +13,82 @@
 ***
 <h1>Weekly Meetings</h1>
 
+<h2>Week 39</h2>
+Date: 27.09.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* Christian Fuentes - without notice
+
+General meeting Information:
+* 13:00 PM - 14:00 PM (60 minutes)
+* Online via Discord
+
+What has been done:
+* Algorithm for the backend discussion (implementation problems)
+* Smaller Fixes on how we want to implement the algorithm for the backend
+* Website shows Amenities now
+* First Path ( hardcoded ) is shown on the map
+* Smaller changes to the Layout (Frontend)
+* Trying to meet With The Client (Dustin) to discuss the next steps and show progress
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+* Meeting with the client
+* Update script for the website
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+
+
+
+
+<h2>Week 38</h2>
+Date: 22.08.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+
+Who missed the meeting:
+* Mike Henke - without notice
+
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* General discussion for the next steps and work load for the next week
+
 
 <h2>Week 37</h2>
 Date: 15.08.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Mike Henke
+
+Who missed the meeting:
+* Matthew Phillips - with notice
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* General discussion for the next steps and work load for the next week
 
 
 
