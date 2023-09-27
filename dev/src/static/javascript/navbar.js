@@ -117,6 +117,7 @@ function get_input() {
 			}
 		}
     };
+	//Can we break this up to be only amenities? instead of everything
     request.open("POST", `/calculate/${JSON.stringify(post_info)}`);
     request.send();
 

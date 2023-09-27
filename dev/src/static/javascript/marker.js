@@ -1,7 +1,6 @@
 var markers = new Map();
 var lines = []
 var markerLayer = L.layerGroup();
-
 var amenMarkerLayer = L.layerGroup();
 
 
@@ -54,7 +53,7 @@ function drawPathLine(pathArray) {
     }
 }
 
-// adjust this to make so that it is
+// adjust this so that on mouse hover popup procs or opacity changes
 function createAmenMarkers(amens) {
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);

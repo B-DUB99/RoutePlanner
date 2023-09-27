@@ -1,14 +1,13 @@
 # Python modules
 import sqlite3
 
-
 class data_retriever:
     
     def __init__(self):
         self.connection = None
         self.cursor = None
         self.mag = 1
-        self.offset = 0.00001
+        self.offset = 0.0000001
 
     # use to connect to the database and create a cursor object
     def connect(self):
@@ -18,6 +17,7 @@ class data_retriever:
             print('Successful connection, cursor created\n')
         except Exception as e:
             print(f'Error: {e}')
+            # other path to try for connection
             self.connection = sqlite3.connect('../db/routeplanning.db')
             self.cursor = self.connection.cursor()
     
@@ -62,12 +62,21 @@ class data_retriever:
             if len(nodes) != 0:
                 return nodes
             else:
-                self.mag += 1
+                self.mag += 2
                 print(f"{self.mag}")
 
 
-    def get_exit_nodes(self, way_id):
+    def get_connector_nodes(self, way_id):
         return
+
+    # returns all info attached to node:
+    # (lat, lon, connector)
+    # lat and lon are latitude and longitude
+    # connector signifies if the node is a part of 2 or more ways
+    def get_node_info(self, node_id):
+        self.cursor.execute("SELECT lat, lon, connector FROM nodes WHERE node_id "
+                            + f"= {node_id}")
+        return self.cursor.fetchone()
 
     # Returns all nodes attached to provided way_id
     def get_nodes(self, way_id):
@@ -97,9 +106,18 @@ class data_retriever:
 
         return ways
 
-    def get_way_info(self, way_id):
+    # returns all data in the way data will look like this:
+    # [name, highway, type, cycleway, oneway]
+    # name - name of road
+    # highway - way type ex. residential = residential road
+    # type - road type according to Kalamazoo data, stress level
+    # cycleway - type of bike lane is attached to way
+    # oneway - is the road a oneway
 
-        return
+    def get_way_info(self, way_id):
+        self.cursor.execute("SELECT name, highway, type, cycleway, oneway "
+                            + f"FROM ways WHERE way_id = {way_id}")
+        return self.cursor.fetchone()
 
     #returns the neighboring node ids of the provided id
     def get_node_neighbors(self, n_id):
@@ -126,6 +144,7 @@ class data_retriever:
         # returns a float
         return
 
+    # returns the provided node_id's lat and lon
     def get_node_coords(self, n_id):
 
         self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
