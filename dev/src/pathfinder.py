@@ -1,14 +1,13 @@
 # import dataretriever
 from .data_retriever import data_retriever
 
-
-
 class Pathfinder:
     def __init__(self, start, end):
         self.start_node = start
         self.end_node = end
         self.current_node = start
         self.data_retriever = data_retriever()
+        self.data_retriever.connect()
 
         # list of lists of lat and lng
         self.lat_lng = [[]]
@@ -34,7 +33,8 @@ class Pathfinder:
 
         # Path is a list of lists of lat and lng coordinates saved in self.lat_lng
         print(f'Path:   {self.lat_lng}')
-
+    
+    # function already exists in the data_retriever
     def find_closest_neighbor(self, neighbors):    # returns the closest neighbor to the end node
         # finds the closest neighbor to the end node
         # neighbors is a list of dictionaries
@@ -51,6 +51,7 @@ class Pathfinder:
 
     def return_path(self):          # returns a list of coordinates in the order of the path
         # returns the path
+        self.data_retriever.close()
         return self.lat_lng
 
 
