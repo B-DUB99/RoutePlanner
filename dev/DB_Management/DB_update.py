@@ -19,7 +19,7 @@ def main():
 	# create a cursor object to execute SQL commands
 	cursor = connection.cursor()
 
-	
+
 
 	# commit and close
 	connection.commit()
