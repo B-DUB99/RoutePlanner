@@ -1,7 +1,7 @@
 var markers = new Map();
-var lines = []
+var lines = [];
 var markerLayer = L.layerGroup();
-var amenMarkerLayer = L.layerGroup();
+var layers = [];
 
 
 function createMarker(event) {
@@ -25,7 +25,10 @@ function createMarker(event) {
 
         if (markers.size == 2) passToFlask();
         else removePathLine();
-    }
+    }else{
+		//placeholder until we get something better in place
+		alert("You get no marker! \nEither\n Both are placed or\nYou clicked out of bounds");
+	}
 }
 
 async function passToFlask() {
@@ -54,7 +57,8 @@ function drawPathLine(pathArray) {
 }
 
 // adjust this so that on mouse hover popup procs or opacity changes
-function createAmenMarkers(amens) {
+function createAmenMarkers(amens, id) {
+	var amenMarkerLayer = L.layerGroup();
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
 		let marker = L.marker(latlng, {
@@ -62,12 +66,25 @@ function createAmenMarkers(amens) {
 		});
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
 	}
+	amenMarkerLayer.id = id
+	layers.push(amenMarkerLayer)
     amenMarkerLayer.addTo(map);
+	console.log(layers[0].id);
 }
 
-function deleteAmenMarkers() {
-    amenMarkerLayer.clearLayers();
-    map.removeLayer(amenMarkerLayer);
+function deleteAmenMarkers(id) {
+	console.log(id)
+	for (let i = 0; i < layers.length; i++){
+		console.log(layers[i])
+		if (id === layers[i].id){
+			layers[i].clearLayers();
+			map.removeLayer(layers[i]);
+			layers.splice(i, 1);
+			break;
+		}
+	}
+    //amenMarkerLayer.clearLayers();
+    //map.removeLayer(amenMarkerLayer);
 }
 
 function deleteAllMarkers() {
