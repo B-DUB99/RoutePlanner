@@ -2,10 +2,10 @@
 // center is starting location currenly WMU
 var map = L.map('map', {
     center: [42.282854713740115, -85.60950279235838],
-    zoom: 14, 
-    minZoom: 14,
+    zoom: 13, 
+    minZoom: 13,
     zoomControl: false,
-    maxBounds: [[42.157, -85.531], [42.333, -85.663]],
+    maxBounds: [[42.153, -85.531], [42.337, -85.6995747]],
 });
 
 // scale 
