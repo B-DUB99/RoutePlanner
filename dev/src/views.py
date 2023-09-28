@@ -85,13 +85,14 @@ def calculate(userinfo):
 
 
 # make this interavtive with the map instead of a button
+@views.route("/get_amenities/<string:amen_type>", methods=["POST"])
 def get_amenities(amen_type):
     data = json.loads(amen_type)
     d_ret = data_retriever()
     d_ret.connect()
     amens = []
     try:
-        amens = d_ret.get_amenities(data[2][0])
+        amens = d_ret.get_amenities(data)
     except:
         print("User selected nothing to find!")
     d_ret.close()

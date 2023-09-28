@@ -1,4 +1,3 @@
-
 // js for slider
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
@@ -91,47 +90,68 @@ function get_input() {
     for(i = 0; i < road.length; i++){
         road_info[i] = road[i]["childNodes"][3]["value"];
     }
-    // get amenities
-    var amen = document.getElementsByClassName("amen-choice");
-    var amenities = [];
-    for(i = 0; i < amen.length; i++){
-        if(amen[i]["childNodes"][1]["checked"]){
-            amenities.push(amen[i]["childNodes"][1]["name"]);
-        }
-    }
     // send to python
     // transport type will be a string ("" if none were selected)
     // road types will be a list [speed, car avoidance, bike lane preference, sidewalk preference]
     // amenities will be a list of names ([] if none were selected)
-    var post_info = [transport_type, road_info, amenities];
+    var post_info = [transport_type, road_info];
     const request = new XMLHttpRequest();
 
 	request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-			var amens = JSON.parse(this.responseText);
-			console.log(amens);
-			if (amens.length > 0) {
-				createAmenMarkers(amens);
+			var route = JSON.parse(this.responseText);
+			console.log(route);
+			if (route.length > 0) {
+				//draw_line(route);
 			} else {
-				deleteAmenMarkers();
+				//deleteAmenMarkers();
 			}
 		}
     };
-	//Can we break this up to be only amenities? instead of everything
     request.open("POST", `/calculate/${JSON.stringify(post_info)}`);
     request.send();
 
 }
 
+function changeAmenMarkers(event){
+	var post_info = event.target.id
+	const request = new XMLHttpRequest();
+
+	request.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200){
+			var amens = JSON.parse(this.responseText);
+			console.log(amens);
+			if (event.target.checked){
+				createAmenMarkers(amens, event.target.id);
+			}else{
+				deleteAmenMarkers(event.target.id);
+			}
+		}
+	}
+	request.open("POST", `/get_amenities/${JSON.stringify(post_info)}`);
+	request.send();
+}
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     output.innerHTML = this.value;
 }
-const inputs = document.querySelectorAll("input");
-for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener("input", get_input);
+
+//set up listeners for inputs
+const tran = document.querySelectorAll('input[type="radio"]');
+const slide = document.querySelectorAll('input[type="range"]');
+for (let i = 0; i < tran.length; i++) {
+	tran[i].addEventListener("input", get_input);
 }
+for (let i = 0; i < slide.length; i++){
+	slide[i].addEventListener("input", get_input);
+}
+
+const amens = document.querySelectorAll('input[type="checkbox"]');
+for (let i = 0; i < amens.length; i++){
+	amens[i].addEventListener("change", changeAmenMarkers);
+}
+
 
 // dom for eventlisteners
 document.getElementById("openNav").addEventListener("click", openNav);
