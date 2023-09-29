@@ -5,7 +5,7 @@ var layers = [];
 
 
 function createMarker(event) {
-    if (event.latlng.lat >= 42.157 && event.latlng.lat <= 42.333 && event.latlng.lng >= -85.6995747 && event.latlng.lng <= -85.531 && markers.size != 2) {
+	if (event.latlng.lat >= 42.157 && event.latlng.lat <= 42.333 && event.latlng.lng >= -85.6995747 && event.latlng.lng <= -85.531 && markers.size != 2) {
         // used to place marker on top of map
         if (markers.size < 2) {
             let marker = L.marker(event.latlng, {
@@ -22,9 +22,10 @@ function createMarker(event) {
             marker.addTo(markerLayer);
             markerLayer.addTo(map);
         }
+ 		if (markers.size == 2){
+			passToFlask(); 
+		}else removePathLine();
 
-        if (markers.size == 2) passToFlask();
-        else removePathLine();
     }else{
 		//placeholder until we get something better in place
 		alert("You get no marker! \nEither\n Both are placed or\nYou clicked out of bounds");
@@ -83,8 +84,6 @@ function deleteAmenMarkers(id) {
 			break;
 		}
 	}
-    //amenMarkerLayer.clearLayers();
-    //map.removeLayer(amenMarkerLayer);
 }
 
 function deleteAllMarkers() {
