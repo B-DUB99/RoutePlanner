@@ -5,13 +5,14 @@ echo "start:$DAT - $0 " >> /media/bdub/sdb1/Senior_Design/update.log
 
 SCREEN_NAME="Senior_Design"
 SCREEN_PID=$(screen -ls | grep "$SCREEN_NAME" | awk '{print $1}' | cut -d '.' -f1)
+PYTHON_PATH="DB_Management/DB_update.py"
 
 echo "git pull - start"
 git pull
 echo "git pull - done"
 
 echo "Upgrading the DB - start: $PYTHON_PATH"
-python3 /DB_Management/DB_update.py
+python3 "$PYTHON_PATH"
 echo "Upgrading the DB - done"
 
 echo "checking for server now"
