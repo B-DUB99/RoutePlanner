@@ -142,6 +142,7 @@ class data_retriever:
         # returns the distance between two coordinates in meters
         # lat1, lon1, lat2, lon2 are floats
         # returns a float
+        # acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
         return
 
     # returns the provided node_id's lat and lon
