@@ -99,8 +99,8 @@ def get_amenities(amen_type):
     return amens
 
 
-@views.route("/update/")
-def update():
-    print("update")
-    # does not Work yet , may has to be manually only .. ~BDUB
-    return redirect(url_for("views.test"))
+#@views.route("/update/")
+#def update():
+#    print("update")
+#    # does not Work yet , may has to be manually only .. ~BDUB
+#    return redirect(url_for("views.test"))
