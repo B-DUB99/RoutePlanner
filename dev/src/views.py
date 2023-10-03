@@ -97,10 +97,4 @@ def get_amenities(amen_type):
         print("User selected nothing to find!")
     d_ret.close()
     return amens
-
-
-#@views.route("/update/")
-#def update():
-#    print("update")
-#    # does not Work yet , may has to be manually only .. ~BDUB
-#    return redirect(url_for("views.test"))
+        
