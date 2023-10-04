@@ -151,3 +151,7 @@ class data_retriever:
         self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
 
         return self.cursor.fetchone()
+
+    def reset_mag(self):
+        self.mag = 1
+
