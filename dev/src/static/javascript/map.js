@@ -19,8 +19,12 @@ L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
         
-// Creating a Layer object
+// main layer
 var osmLayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+// bike layer
+var cyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+	maxZoom: 20
+});
 // satellite
 var satelliteLayer = new L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     subdomains:['mt0','mt1','mt2','mt3']
@@ -30,6 +34,9 @@ var satelliteLayer = new L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y
 function changeLayer() {
     if (map.hasLayer(osmLayer)) {
         map.removeLayer(osmLayer);
+        map.addLayer(cyclOSM);
+    } else if (map.hasLayer(cyclOSM)) {
+        map.removeLayer(cyclOSM);
         map.addLayer(satelliteLayer);
     } else {
         map.removeLayer(satelliteLayer);
