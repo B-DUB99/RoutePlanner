@@ -66,7 +66,7 @@ function drawPathLine(pathArray) {
 // adjust this so that on mouse hover popup procs or opacity changes
 function createAmenMarkers(amens, id) {
 	var amenMarkerLayer = L.layerGroup();
-    console.log("the id is: ", id)
+    console.log(id)
     var chosenIcon;
     if (id == "Grocery_Stores") chosenIcon = grocIcon;
     else if (id == "Businesses") chosenIcon = bIcon;
@@ -74,12 +74,13 @@ function createAmenMarkers(amens, id) {
     else if (id == "Bike_Shops,_Repair_Stations") chosenIcon = bikeRepairIcon;
     else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosenIcon = bathroomIcon;
     else if (id == "Worlds_of_Wonder") chosenIcon = wellnessIcon;
+    else if (id == "Health_and_Wellness") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Health_and_Wellness_icon.png"})
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
-        
 		let marker = L.marker(latlng, {
             icon: chosenIcon,
-			title: amens[i][0]["name"]
+			title: amens[i][0]["name"],
+            
 		});
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
 	}
