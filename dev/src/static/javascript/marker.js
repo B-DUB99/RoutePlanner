@@ -2,6 +2,12 @@ var markers = new Map();
 var lines = [];
 var markerLayer = L.layerGroup();
 var layers = [];
+var grocIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_icon.png",})
+var bIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_icon.png"});
+var commIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_icon.png"})
+var bikeRepairIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_icon.png"})
+var bathroomIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_icon.png"})
+var wellnessIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_icon.png"});
 
 
 function createMarker(event) {
@@ -22,11 +28,11 @@ function createMarker(event) {
             marker.addTo(markerLayer);
             markerLayer.addTo(map);
         }
- 		if (markers.size == 2){
+ 		if (markers.size == 2) {
 			passToFlask(); 
-		}else removePathLine();
+		} else removePathLine();
 
-    }else{
+    } else {
 		//placeholder until we get something better in place
 		alert("You get no marker! \nEither\n Both are placed or\nYou clicked out of bounds");
 	}
@@ -60,17 +66,28 @@ function drawPathLine(pathArray) {
 // adjust this so that on mouse hover popup procs or opacity changes
 function createAmenMarkers(amens, id) {
 	var amenMarkerLayer = L.layerGroup();
+    console.log("the id is: ", id)
+    var chosenIcon;
+    if (id == "Grocery_Stores") chosenIcon = grocIcon;
+    else if (id == "Businesses") chosenIcon = bIcon;
+    else if (id == "Community_Hubs") chosenIcon = commIcon;
+    else if (id == "Bike_Shops,_Repair_Stations") chosenIcon = bikeRepairIcon;
+    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosen = bathroomIcon;
+    else if (id == "Worlds_of_Wonder") chosen = wellnessIcon;
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
+        
 		let marker = L.marker(latlng, {
+            icon: chosenIcon,
 			title: amens[i][0]["name"]
 		});
+        marker
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
 	}
 	amenMarkerLayer.id = id
 	layers.push(amenMarkerLayer)
     amenMarkerLayer.addTo(map);
-	console.log(layers[0].id);
+	// console.log(layers[0].id);
 }
 
 function deleteAmenMarkers(id) {
@@ -113,4 +130,3 @@ function newCoords() {
 }
 
 map.addEventListener("click", createMarker);
-document.getElementById("reset").addEventListener("click", deleteAllMarkers);
