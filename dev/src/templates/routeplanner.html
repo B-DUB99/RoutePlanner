@@ -23,23 +23,23 @@
                 <div class="choice-container">
                     <div class="transport-choice">
                         <input type="radio" id="walk" name="transport" value="walk">
-                        <label for="walk">Walking</label>
                         <img src="{{ url_for('static', filename='images/sidenav/Walking_clear_icon.png') }}" class="center" />
+                        <label for="walk">Walking</label>
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bike" name="transport" value="bike">
-                        <label for="bike">Biking</label>
                         <img src="{{ url_for('static', filename='images/sidenav/bicycle_clean_icon.png') }}" alt="bike icon is here" class="center" />
+                        <label for="bike">Biking</label>
                     </div>
                     <div class="transport-choice">
                         <input type="radio" id="bus" name="transport" value="bus">
-                        <label for="bus">Bus</label>
                         <img src="{{ url_for('static', filename= 'images/sidenav/bus_clear_icon.png') }}" alt="bus icon is here" class="center" />
+                        <label for="bus">Bus</label>
                     </div>
-                    <div class="transport-choice">
+                    <!-- <div class="transport-choice">
                         <input type="radio" id="bike-bus" name="transport" value="bike-bus">
                         <label for="bus">Bike and Bus</label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <button class="dropdown-btn">
@@ -86,30 +86,37 @@
                 <div class="amen-choice">
                     <input type="checkbox" id="Grocery_Stores" name="Grocery_Stores">
                     <label for="Grocery Stores">Grocery Stores</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Grocery_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Businesses" name="Businesses">
                     <label for="Businesses">Businesses</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Business_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Community_Hubs" name="Community_Hubs">
                     <label for="Community Hubs">Community Hubs</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Community_Hub_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Health_and_Wellness" name="Health_and_Wellness">
                     <label for="Health and Wellness">Health and Wellness</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Health_and_Wellness_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Bike_Shops,_Repair_Stations" name="Bike_Shops,_Repair_Stations">
                     <label for="Bike Shops/Repair Stations">Bike Shops/Repair Stations</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Bike_Shop_and_Reapair_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Bike_Parking,_Bathrooms,_Drinking_Fountains" name="Bike_Parking,_Bathrooms,_Drinking_Fountains">
                     <label for="Bike Parking/Restrooms">Bike Parking/Restrooms</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Restroom_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Worlds_of_Wonder" name="Worlds_of_Wonder">
                     <label for="World of Wonders">Worlds of Wonder</label>
+                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_WoW_icon.png') }}" alt="bus icon is here" class="center" />
                 </div>
 				<!--
                 <div class="amen-choice">
@@ -135,7 +142,6 @@
 				-->
 
             </div>
-            <h1 id="reset">Reset</h1>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
         </div>

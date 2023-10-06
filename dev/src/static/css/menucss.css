@@ -68,10 +68,6 @@ html, body, #map {
         margin: 7px;
     }
 
-label {
-    float: right;
-}
-
 .black_overlay {
     display: none;
     position: fixed;
