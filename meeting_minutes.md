@@ -16,23 +16,25 @@
 <h2>Week 40</h2>
 Date: 04.10.2023
 Attendees:
-
-
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
 
 Who missed the meeting:
-
-
+* None
 
 General meeting Information:
 * 10:00 AM - 12:00 AM (120 minutes)
 * Online via Teams
-* Client Meeting (Dustin + ) 
-
+* Client Meeting (Dustin) 
 
 
 What has been done:
 * Talk about the next steps
 * making sure were on the right track
+* update on the project and the next steps to take
 
 Next week's goals:
 * Algorithm for the backend
@@ -42,6 +44,7 @@ Next week's goals:
 Name / location of the artifacts:
 * Website - http://dyndns.famwilke.de:8125/
 * GIT - https://github.com/B-DUB99/RoutePlanner
+
 
 
 
