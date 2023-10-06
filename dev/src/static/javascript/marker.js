@@ -72,8 +72,8 @@ function createAmenMarkers(amens, id) {
     else if (id == "Businesses") chosenIcon = bIcon;
     else if (id == "Community_Hubs") chosenIcon = commIcon;
     else if (id == "Bike_Shops,_Repair_Stations") chosenIcon = bikeRepairIcon;
-    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosen = bathroomIcon;
-    else if (id == "Worlds_of_Wonder") chosen = wellnessIcon;
+    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosenIcon = bathroomIcon;
+    else if (id == "Worlds_of_Wonder") chosenIcon = wellnessIcon;
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
         
@@ -81,7 +81,6 @@ function createAmenMarkers(amens, id) {
             icon: chosenIcon,
 			title: amens[i][0]["name"]
 		});
-        marker
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
 	}
 	amenMarkerLayer.id = id
