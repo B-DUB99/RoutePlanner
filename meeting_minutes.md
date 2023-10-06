@@ -13,6 +13,95 @@
 ***
 <h1>Weekly Meetings</h1>
 
+<h2>Week 40</h2>
+Date: 04.10.2023
+Attendees:
+
+
+
+Who missed the meeting:
+
+
+
+General meeting Information:
+* 10:00 AM - 12:00 AM (120 minutes)
+* Online via Teams
+* Client Meeting (Dustin + ) 
+
+
+
+What has been done:
+* Talk about the next steps
+* making sure were on the right track
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+
+
+<h2>Week 40</h2>
+Date: 04.10.2023
+Attendees:
+* Austin Miller 
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+* Talk about the next steps
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+<h2>Week 40</h2>
+Date: 04.10.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* Christian Fuentes - with notice
+
+General meeting Information:
+* 15:00 PM - 17:00 PM (120 minutes)
+* Online via Discord
+
+What has been done:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+* Paperwork
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+
 <h2>Week 39</h2>
 Date: 29.09.2023
 Attendees:
