@@ -175,26 +175,32 @@ input[type="search"]:focus {
 }
 
 .active {
-    background-color: green;
+    /* background-color: green; */
     color: white;
 }
 
 .dropdown-container-1 {
     display: none;
-    background-color: #f51702;
     padding: 10px 0;
+}
+.transport-btn.active {
+    background-color: #f51702;
 }
 
 .dropdown-container-2 {
     display: none;
-    background-color: #0a911c;
     padding: 10px 0;
+}
+.road-btn.active {
+    background-color: #0a911c;
 }
 
 .dropdown-container-3 {
     display: none;
-    background-color: #0d3591;
     padding: 10px 0;
+}
+.amen-btn.active {
+    background-color: #0d3591;
 }
 
 .choice-container {
