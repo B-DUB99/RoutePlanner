@@ -61,6 +61,14 @@ pip install folium
 pip install sqlite3
 ```
 
+# 7. 'gpxpy' [![PyPI version](https://badge.fury.io/py/gpxpy.svg)](https://badge.fury.io/py/gpxpy)
+<br> `gpxpy` is a Python library for parsing GPX files. It is a simple Python GPX parser.
+<br>To install `gpxpy`:
+```bash
+pip install gpxpy
+```
+
+
 <br>
 
 ***

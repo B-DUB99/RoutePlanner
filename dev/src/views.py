@@ -3,6 +3,7 @@ import json
 
 from .data_retriever import data_retriever
 from .pathfinder import Pathfinder
+from .gpx_export import GPX_export
 
 views = Blueprint("views", __name__, "")
 locs = []
@@ -92,4 +93,19 @@ def get_amenities(amen_type):
         print("User selected nothing to find!")
     d_ret.close()
     return amens
-        
+
+
+# get the gpx file from the route and return it
+def get_gpx():
+    # get the path from the pathfinder
+    # path = Pathfinder.return_path()
+
+    # tmp
+    path = temp_points
+
+    # send path to gpx_export
+    file = GPX_export(path)
+
+    pass
+    # not sure on how we would return the file to the user
+
