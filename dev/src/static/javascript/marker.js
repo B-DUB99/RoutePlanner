@@ -74,7 +74,7 @@ function createAmenMarkers(amens, id) {
             
 		});
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>", {
-            // offset: [13, 5]
+            offset: [13, 5]
         });
     }
 	amenMarkerLayer.id = id
