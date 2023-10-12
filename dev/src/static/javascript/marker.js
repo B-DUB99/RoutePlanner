@@ -2,13 +2,6 @@ var markers = new Map();
 var lines = [];
 var markerLayer = L.layerGroup();
 var layers = [];
-var grocIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_icon.png",})
-var bIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_icon.png"});
-var commIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_icon.png"})
-var bikeRepairIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_icon.png"})
-var bathroomIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_icon.png"})
-var wellnessIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_icon.png"});
-
 
 function createMarker(event) {
 	if (event.latlng.lat >= 42.157 && event.latlng.lat <= 42.333 && event.latlng.lng >= -85.6995747 && event.latlng.lng <= -85.531 && markers.size != 2) {
@@ -45,7 +38,6 @@ async function passToFlask() {
     });
 
     const pathArray = await response.json();
-    console.log(pathArray)
     drawPathLine(pathArray)
 }
 
@@ -66,14 +58,13 @@ function drawPathLine(pathArray) {
 // adjust this so that on mouse hover popup procs or opacity changes
 function createAmenMarkers(amens, id) {
 	var amenMarkerLayer = L.layerGroup();
-    console.log(id)
     var chosenIcon;
-    if (id == "Grocery_Stores") chosenIcon = grocIcon;
-    else if (id == "Businesses") chosenIcon = bIcon;
-    else if (id == "Community_Hubs") chosenIcon = commIcon;
-    else if (id == "Bike_Shops,_Repair_Stations") chosenIcon = bikeRepairIcon;
-    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosenIcon = bathroomIcon;
-    else if (id == "Worlds_of_Wonder") chosenIcon = wellnessIcon;
+    if (id == "Grocery_Stores") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_icon.png",})
+    else if (id == "Businesses") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_icon.png"});
+    else if (id == "Community_Hubs") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_icon.png"})
+    else if (id == "Bike_Shops,_Repair_Stations") chosenIcon =  L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_icon.png"})
+    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_icon.png"})
+    else if (id == "Worlds_of_Wonder") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_icon.png"});
     else if (id == "Health_and_Wellness") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Health_and_Wellness_icon.png"})
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
@@ -82,18 +73,17 @@ function createAmenMarkers(amens, id) {
 			title: amens[i][0]["name"],
             
 		});
-		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>");
-	}
+		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>", {
+            // offset: [13, 5]
+        });
+    }
 	amenMarkerLayer.id = id
 	layers.push(amenMarkerLayer)
     amenMarkerLayer.addTo(map);
-	// console.log(layers[0].id);
 }
 
 function deleteAmenMarkers(id) {
-	console.log(id)
 	for (let i = 0; i < layers.length; i++){
-		console.log(layers[i])
 		if (id === layers[i].id){
 			layers[i].clearLayers();
 			map.removeLayer(layers[i]);
