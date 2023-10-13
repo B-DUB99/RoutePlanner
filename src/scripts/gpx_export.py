@@ -3,9 +3,15 @@ import os
 
 
 class GPX_export:
+	# constructor
 	def __init__(self, path):
 		self.path = path
 
+	def set_path(self, path):
+		self.path = path
+
+	def get_path(self):
+		return self.path
 
 	def export(self):
 		# Create a new file:
@@ -44,11 +50,11 @@ class GPX_export:
 
 # test function
 def main():
-	tmp_path =  [
-        [42.29127852746485, -85.5919075012207],
-        [42.30918068099292, -85.6549072265625],
-        [42.26790919743789, -85.65319061279297],
-        [42.291532494305976, -85.58795928955078]
+	tmp_path = [
+		[42.29127852746485, -85.5919075012207],
+		[42.30918068099292, -85.6549072265625],
+		[42.26790919743789, -85.65319061279297],
+		[42.291532494305976, -85.58795928955078]
 	]
 
 	# pass the path to the GPX_export class
