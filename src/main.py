@@ -1,6 +1,6 @@
 # Importing the modules
 from flask import Flask
-from src.views import views
+from scripts.views import views
 import os
 from dotenv import load_dotenv
 from time import sleep
