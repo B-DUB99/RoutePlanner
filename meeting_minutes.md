@@ -13,6 +13,38 @@
 ***
 <h1>Weekly Meetings</h1>
 
+<h2>Week 41</h2>
+Date: 13.10.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+* Rebasing the project 
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+* Paperwork
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+
 <h2>Week 40</h2>
 Date: 04.10.2023
 Attendees:
