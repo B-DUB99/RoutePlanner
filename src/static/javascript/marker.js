@@ -59,13 +59,13 @@ function drawPathLine(pathArray) {
 function createAmenMarkers(amens, id) {
 	var amenMarkerLayer = L.layerGroup();
     var chosenIcon;
-    if (id == "Grocery_Stores") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_icon.png",})
-    else if (id == "Businesses") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_icon.png"});
-    else if (id == "Community_Hubs") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_icon.png"})
-    else if (id == "Bike_Shops,_Repair_Stations") chosenIcon =  L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_icon.png"})
-    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_icon.png"})
-    else if (id == "Worlds_of_Wonder") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_icon.png"});
-    else if (id == "Health_and_Wellness") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Health_and_Wellness_icon.png"})
+    if (id == "Grocery_Stores") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_round_icon.png",})
+    else if (id == "Businesses") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_round_icon.png"});
+    else if (id == "Community_Hubs") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_round_icon.png"})
+    else if (id == "Bike_Shops,_Repair_Stations") chosenIcon =  L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_round_icon.png"})
+    else if (id == "Bike_Parking,_Bathrooms,_Drinking_Fountains") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_round_icon.png"})
+    else if (id == "Worlds_of_Wonder") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png"});
+    else if (id == "Health_and_Wellness") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Health_and_Wellness_round_icon.png"})
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
 		let marker = L.marker(latlng, {
