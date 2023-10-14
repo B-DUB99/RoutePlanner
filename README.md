@@ -69,6 +69,15 @@ pip install sqlite3
 pip install gpxpy
 ```
 
+<br>
+
+# 8. 'alive-progress' [![PyPI version](https://badge.fury.io/py/alive-progress.svg)](https://badge.fury.io/py/alive-progress)
+<br> `alive-progress` is a Python library for displaying progress bars. It is a progress bar for Python and CLI.
+<br>To install `alive-progress`:
+```bash
+pip install alive-progress
+```
+
 
 <br>
 
