@@ -16,7 +16,7 @@
             <img src="{{ url_for('static', filename='images/sidenav/sidenav_MSK_lines_logo.png') }}" alt="Logo is here" class="center" />
             <span id="closeNav" class="closebtn">&times;</span>
             <button class="dropdown-btn transport-btn">
-                Transport
+                Transportation Types
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container-1 transport-container">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <button class="dropdown-btn road-btn">
-                Road Types
+                Customize Route
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container-2">
@@ -53,27 +53,6 @@
                         <input type="range" id="myRange" name="Speed Limit" min="25" max="60" step="5">
                         <br>
                         <output id="demo"></output>
-                        <br>
-                    </li>
-                    <li>
-                        <label>Car Avoidance</label>
-                        <input type="range" id="myRange" name="car avoidance" min="1" max="3">
-                        <br>
-                        <output id="demo">Low - High</output>
-                        <br>
-                    </li>
-                    <li>
-                        <label>Bike Lane Preference</label>
-                        <input type="range" id="myRange" name="Bike Lane Preference" min="1" max="3">
-                        <br>
-                        <output id="demo">Low - High</output>
-                        <br>
-                    </li>
-                    <li>
-                        <label>Sidewalk Preference</label>
-                        <input type="range" id="myRange" name="Sidewalk Preference" min="1" max="3">
-                        <br>
-                        <output id="demo">Low - High</output>
                         <br>
                     </li>
                 </ul>
@@ -142,6 +121,7 @@
 				-->
 
             </div>
+            <a href="get_gpx" download id="export-gpx">Export GPX File</a>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
         </div>

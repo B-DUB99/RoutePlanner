@@ -19,8 +19,9 @@ output.innerHTML = slider.value; // Display the default slider value
 var dropdown = document.getElementsByClassName("dropdown-btn");
 
 // js for sidebar
+
 function openNav() {
-    sidebar.style.width = "275px";
+    sidebar.style.width = "300px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     main.style.opacity = 0;
     openNavBtn.style.cursor = "default";
@@ -32,6 +33,12 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
     main.style.opacity = 1;
     openNavBtn.style.cursor = "pointer";
+}
+
+async function exportGPXFile() {
+    const response = await fetch(`/get_gpx/`, {
+        method: "GET",
+    })
 }
 
 for (var i = 0; i < dropdown.length; i++) {
@@ -156,6 +163,7 @@ for (let i = 0; i < amens.length; i++){
 // dom for eventlisteners
 document.getElementById("openNav").addEventListener("click", openNav);
 document.getElementById("closeNav").addEventListener("click", closeNav);
+document.getElementById("export-gpx").addEventListener("click", exportGPXFile);
 document.getElementById("help").addEventListener("click", open);
 document.getElementById("about").addEventListener("click", open);
 
@@ -165,3 +173,4 @@ for (i = 0; i < openBtn.length; i++) {
 for (i = 0; i < closeBtn.length; i++) {
     closeBtn[i].addEventListener("click", close);
 }
+openNav()

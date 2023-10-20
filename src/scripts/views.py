@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, session, redirect, url_for
+from flask import Blueprint, render_template, request, session, redirect, url_for, send_file
 import json
 
 from .data_retriever import data_retriever
@@ -96,16 +96,13 @@ def get_amenities(amen_type):
 
 
 # get the gpx file from the route and return it
+@views.route("/get_gpx/", methods=["GET"])
 def get_gpx():
-    # get the path from the pathfinder
     # path = Pathfinder.return_path()
-
-    # tmp
     path = temp_points
 
-    # send path to gpx_export
     file = GPX_export(path)
-
-    pass
-    # not sure on how we would return the file to the user
+    file_name = file.export()
+    return send_file(file_name)
+    # return path
 

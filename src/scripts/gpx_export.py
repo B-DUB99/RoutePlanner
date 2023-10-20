@@ -40,8 +40,8 @@ class GPX_export:
 		f.write(gpx.to_xml())
 
 		f.close()
-
-		return "mygpx.gpx"
+		
+		return 'mygpx.gpx'
 
 	def clean_up(self):
 		# delete the file

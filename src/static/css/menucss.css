@@ -9,6 +9,9 @@ html, body, #map {
     width: 100vw;
     display: grid;
 }
+img {
+    margin: 0 10px
+}
 
 .fa-caret-down {
     float: right;
@@ -27,7 +30,7 @@ html, body, #map {
     opacity: .8;
 }
 
-    .closebtn, .sidenav h1, .dropdown-btn, #update {
+    .closebtn, .sidenav h1, .dropdown-btn, #update, #export-gpx {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         text-align: left;
@@ -40,11 +43,11 @@ html, body, #map {
         transition: 0.3s;
     }
 
-        .closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
+        .closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover, #export-gpx:hover {
             cursor: pointer;
         }
 
-        .sidenav h1:hover, .dropdown-btn:hover, #update:hover {
+        .sidenav h1:hover, .dropdown-btn:hover, #update:hover, #export-gpx:hover {
             color: #f1f1f1;
         }
 
@@ -170,7 +173,7 @@ input[type="search"]:focus {
     margin-left: 50px;
 }
 
-.sidenav h1, #update {
+.sidenav h1, #update, #export-gpx {
     padding: 10px 16px
 }
 

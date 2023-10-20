@@ -5,7 +5,7 @@ var map = L.map('map', {
     zoom: 13, 
     minZoom: 13,
     zoomControl: false,
-    maxBounds: [[42.153, -85.531], [42.337, -85.6995747]],
+    maxBounds: [[42.153, -85.531], [42.3690618, -85.6995747]],
 });
 
 // scale 
