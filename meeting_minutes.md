@@ -13,6 +13,107 @@
 ***
 <h1>Weekly Meetings</h1>
 
+
+
+
+
+
+
+<h2>Week 44</h2>
+Date: 03.11.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+
+Who missed the meeting:
+* Mike Henke - with notice
+
+General meeting Information:
+* 8:30 AM - 11:00 AM (150 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+* Austin started to work on the Paperwork
+* Bjarne and Christian worked on the Path export ( to get a found path to send to the user's device, so they can use it in their navigation app of choice )
+* Matthew and Mike worked on the algorithm for the backend
+
+Next week's goals:
+* since the Algorithm is NOT working the way we want it to. and have only a limited choice of figuring out how to solve it. so that the Algorithm is not taking 10 Minutes to calculate a route, we somewhat have to find a new approach now, which will probably involve some kind of a rewrite of out DataBase (backend).
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+
+
+<h2>Week 43</h2>
+Date: 27.10.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Mike Henke
+
+Who missed the meeting:
+* Matthew Phillips (with notice)
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+* Rebasing the project 
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+* Paperwork
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+
+<h2> Week 42</h2>
+Date: 20.10.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+* Rebasing the project 
+
+Next week's goals:
+* Algorithm for the backend
+* DB Fixes
+* Frontend Fixes
+* Paperwork
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+
+
+
+
 <h2>Week 41</h2>
 Date: 13.10.2023
 Attendees:
