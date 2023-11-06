@@ -101,7 +101,7 @@ def get_amenities(amen_type):
 @views.route("/get_gpx/", methods=["GET"])
 def get_gpx():
     # generate gpx file
-    file = GPX_export(path)
+    file = GPX_export(temp_points)
     file_name = file.export()
 
     # create binary stream in memory
