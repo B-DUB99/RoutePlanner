@@ -98,11 +98,20 @@ def get_amenities(amen_type):
 # get the gpx file from the route and return it
 @views.route("/get_gpx/", methods=["GET"])
 def get_gpx():
-    # path = Pathfinder.return_path()
-    path = temp_points
-
+    # generate gpx file
     file = GPX_export(path)
     file_name = file.export()
-    return send_file(file_name)
-    # return path
+
+    # create binary stream in memory
+    return_data = BytesIO()
+    # write the file into memory
+    with open(file_name, 'rb') as bin_file:
+        return_data.write(bin_file.read())
+    # return to beginning of file
+    return_data.seek(0)
+    # delete file
+    os.remove(file_name)
+
+    # send binary stream to the user
+    return send_file(return_data, mimetype='application/gpx+xml', download_name='mygpx.gpx')
 
