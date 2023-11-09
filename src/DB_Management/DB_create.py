@@ -22,11 +22,10 @@ def main():
 
     # create a cursor object to execute SQL commands
     cursor = connection.cursor()
-
+    
     # drop the whole database and start over
     try:
         cursor.execute("DROP TABLE nodes")
-        cursor.execute("DROP TABLE way_types")
         cursor.execute("DROP TABLE ways")
         cursor.execute("DROP TABLE links")
         cursor.execute("DROP TABLE amenity_types")
@@ -45,59 +44,16 @@ def main():
         print(f"Table nodes created successfully")
     except:
         print(f"Table nodes already exists")
-
-    try:
-        cursor.execute("CREATE TABLE way_types(" +
-                       "id INT," +
-                       "type VARCHAR(25)," +
-                       "ped_priority TINYINT," +
-                       "bike_priority TINYINT," +
-                       "vehicle_priority TINYINT," +
-                       "comm_activity TINYINT," +
-                       "max_speed_limit TINYINT," +
-                       "PRIMARY KEY(id))")
-        print(f"Table way_types created successfully")
-        # road types from the map that the client gave us
-        types = ["Event Festival",
-                 "Urban Center",
-                 "Enhanced Neighborhood",
-                 "Commercial Business",
-                 "Neighborhood Business",
-                 "City Connector",
-                 "Downtown Main",
-                 "Neighborhood Network",
-                 "Local Neighborhood"]
-
-        # associated values for the road types
-        ped_p = ['3', '3', '3', '3', '3', '3', '3', '3', '3']
-        bike_p = ['1', '2', '3', '2', '2', '2', '2', '2', '3']
-        vehicle_a = ['1', '1', '1', '2', '2', '2', '1', '2', '1']
-        comm_a = ['3', '3', '1', '1', '2', '1', '3', '1', '1']
-        speed_limit = ['25', '35', '25', '40', '40', '45', '25', '40', '25']
-
-        # generate types table
-        for i in range(9):
-            cursor.execute('INSERT INTO way_types(type, ped_priority, bike_priority, vehicle_priority, comm_activity, max_speed_limit)' +
-                           f' VALUES("' + types[i] + '", ' + ped_p[i] + ', ' + bike_p[i] + ', ' + vehicle_a[i] + ', ' + comm_a[i] + ', ' +
-                           speed_limit[i] + ')')
-        print(f"Table types populated successfully")
-
-        # commit changes to database
-        connection.commit()
-
-    except Exception as e:
-        print(f"something went wrong with table way_types: {e}")
-
+    
     try:
         cursor.execute("CREATE TABLE ways(" +
                        "way_id BIGINT UNSIGNED," +
                        "name VARCHAR(40)," +
                        "highway VARCHAR(20)," +
-                       "type TINYINT," +
+                       "risk TINYINT," +
                        "cycleway VARCHAR(20)," +
                        "oneway VARCHAR(20)," +
-                       "PRIMARY KEY(way_id)," +
-                       "FOREIGN KEY(type) REFERENCES types(id))")
+                       "PRIMARY KEY(way_id))")
     except Exception as e:
         print(f"something went wrong with table ways{e}")
 
@@ -119,13 +75,22 @@ def main():
                        "name VARCHAR(100)," +
                        "PRIMARY KEY(id))")
 
-        types = ["Grocery_Stores",
+        types = ["Grocery",
+                 "Books",
+                 "Cafe",
+                 "Drink",
+                 "Food",
+                 "Treats",
                  "Businesses",
                  "Community_Hubs",
-                 "Health_and_Wellness",
-                 "Bike_Shops,_Repair_Stations",
-                 "Bike_Parking,_Bathrooms,_Drinking_Fountains",
-                 "Worlds_of_Wonder"]
+                 "Pharmacy",
+                 "Bike_Repair",
+                 "Bike_Shops",
+                 "Bathrooms,_Drinking_Fountains",
+                 "Bike_Parking",
+                 "Worlds_of_Wonder",
+                 "Art",
+                 "Sculptures"]
 
         for i in types:
             cursor.execute('INSERT INTO amenity_types(name)' +
@@ -150,7 +115,7 @@ def main():
         print(f"something went wrong with table amenities{e}")
 
     # query and get nodes then plug all those nodes into the DB
-    query = overpassQueryBuilder(bbox=[42.157, -85.663, 42.333, -85.531], elementType="node")
+    query = overpassQueryBuilder(bbox=[42.157, -85.6995747, 42.369062, -85.531], elementType="node")
     kalamazoo = Overpass().query(query, timeout=600)
     nodes = kalamazoo.nodes()
     nodeCount = 0
@@ -162,7 +127,7 @@ def main():
         print("total nodes inserted into DB =", nodeCount)
 
     # query and get ways coordinates are a box around kzoo
-    query = overpassQueryBuilder(bbox=[42.157, -85.663, 42.333, -85.531], elementType="way[highway]")
+    query = overpassQueryBuilder(bbox=[42.157, -85.6995747, 42.369062, -85.531], elementType="way[highway]")
     kalamazoo = Overpass().query(query, timeout=600)
     ways = kalamazoo.ways()
     linkCount = 0
@@ -172,11 +137,12 @@ def main():
     for w in ways:
         mylist = w.tags()
         if 'name' in mylist:
-            cursor.execute('INSERT INTO ways(way_id, name, highway, type)' +
-                           ' VALUES(' + str(w.id()) + ', "' + mylist['name'] + '", "' + mylist['highway'] + '", 9)')
+            cursor.execute('INSERT INTO ways(way_id, name, highway, risk)' +
+                           ' VALUES(' + str(w.id()) + ', "' + mylist['name'] +
+                           '", "' + mylist['highway'] + '", 1)')
         else:
-            cursor.execute('INSERT INTO ways(way_id, highway, type)' +
-                           ' VALUES(' + str(w.id()) + ', "' + mylist['highway'] + '", 9)')
+            cursor.execute('INSERT INTO ways(way_id, highway, risk)' +
+                           ' VALUES(' + str(w.id()) + ', "' + mylist['highway'] + '", 1)')
 
         if 'oneway' in mylist:
             cursor.execute('UPDATE ways' +
@@ -298,7 +264,7 @@ def main():
                            f"WHERE node_id = {n[0]}")
 
         print(f"{n[0]} connector status updated")
-
+    
     # parse and plug kml into the database
     kml_file = 'ModeShift Kalamazoo.kml'
 
@@ -315,10 +281,16 @@ def main():
 
     for i in doc.Folder:
         amen_type = i.name.text
-        amen_type = amen_type.replace(' ', '_')
         for j in i.Placemark:
             try:
                 name = j.name.text
+                split_name = name.split("-")
+                if len(split_name) == 2:
+                    amen_type = split_name[0].strip()
+                    name = split_name[1].strip()
+                else:
+                    amen_type = i.name.text
+                    name = j.name.text
             except:
                 name = j.name.text
 
@@ -342,18 +314,45 @@ def main():
                 pic = j.ExtendedData.Data.value.text
             except:
                 pic = ""
+            
+            if amen_type == "Worlds of Wonder":
+                if j.styleUrl.text == "#icon-1509-9C27B0":
+                    amen_type = "Art"
+                elif j.styleUrl.text == "#icon-1509-9C27B0-nodesc":
+                    amen_type = "Art"
+                elif j.styleUrl.text == "#icon-1599-880E4F":
+                    amen_type = "Sculptures"
+                else:
+                    amen_type = "Worlds_of_Wonder"
+            if amen_type == "Bike Shops, Repair Stations":
+                if j.styleUrl.text == "#icon-1590-9C27B0":
+                    amen_type = "Bike_Repair"
+                elif j.styleUrl.text == "#icon-1522-E65100":
+                    amen_type = "Bike_Shops"
 
+            if amen_type == "Bike Parking, Bathrooms, Drinking Fountains":
+                amen_type = "Bathrooms,_Drinking_Fountains"
+            if name == "Bike Parking":
+                amen_type = "Bike Parking"
+            amen_type = amen_type.replace(' ', '_')
             try:
                 if (lat != 0):
                     cursor.execute('INSERT INTO amenities(name, description, lat, lon, pic_loc) VALUES("' + name + '", "' + desc + '", ' + str(lat) + 
                                    ', ' + str(long) + ', "' + pic + '")')
                     cursor.execute('SELECT rowid, * FROM amenity_types WHERE name = "' + amen_type + '"')
                     a_type = cursor.fetchone()
-                    if (a_type != None):
+                    print(f"{a_type}")
+                    if a_type is None:
                         cursor.execute('UPDATE amenities ' +
+                                       'SET type = 7 ' +
+                                       'WHERE name = "' + name + '"')
+                        print(f"{name} updated as a 7: Businesses")
+                    else:
+                        cursor.execute('Update amenities ' +
                                        f'SET type = {a_type[0]} ' +
                                        'WHERE name = "' + name + '"')
-                    print(f"{name} updated as a {a_type[0]}: {amen_type}")
+                        print(f"{name} updated as a {a_type[0]}: {amen_type}")
+                    
             except Exception as err:
                 print("Something went wrong: {}".format(err))
 

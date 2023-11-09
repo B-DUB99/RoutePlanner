@@ -73,6 +73,80 @@
         <styleUrl>#icon-1405-nodesc-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="icon-1509-9C27B0-normal">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1509-9C27B0-highlight">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1509-9C27B0">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1509-9C27B0-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1509-9C27B0-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1509-9C27B0-nodesc-normal">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1509-9C27B0-nodesc-highlight">
+      <IconStyle>
+        <color>ffb0279c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1509-9C27B0-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1509-9C27B0-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1509-9C27B0-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="icon-1512-097138-normal">
       <IconStyle>
         <color>ff387109</color>
@@ -743,6 +817,80 @@
         <styleUrl>#icon-1590-9C27B0-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="icon-1599-880E4F-normal">
+      <IconStyle>
+        <color>ff4f0e88</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1599-880E4F-highlight">
+      <IconStyle>
+        <color>ff4f0e88</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1599-880E4F">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1599-880E4F-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1599-880E4F-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1599-880E4F-nodesc-normal">
+      <IconStyle>
+        <color>ff4f0e88</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1599-880E4F-nodesc-highlight">
+      <IconStyle>
+        <color>ff4f0e88</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1599-880E4F-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1599-880E4F-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1599-880E4F-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="icon-1607-FF5252-nodesc-normal">
       <IconStyle>
         <color>ff5252ff</color>
@@ -781,6 +929,40 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#icon-1607-FF5252-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1611-E65100-normal">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1611-E65100-highlight">
+      <IconStyle>
+        <color>ff0051e6</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1611-E65100">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1611-E65100-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1611-E65100-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="icon-1644-FFD600-normal">
@@ -5363,11 +5545,11 @@
       <name>Grocery Stores</name>
       <Placemark>
         <name>Grocery - ALDI</name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/urfcj902dsgmpdvj10g8haue8s/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GD86hsXqaZ_-MCqay10vtPDbkHAzpQFNSpNR23Oln8IHqNMJfOQ0JRw8glgvbB56PBqrgu3ET0tE4QTWIFxXLyrtvRaKqeQCgbNvoyR5kb5aI7ERGK6qY7FH4_Tf6WGr5zWfF3TvxINK5LiYEjrwL0g4PkD3hzRRcp73j0mF8dt1AC2zFhImW6CU0R4TU35w?fife" height="200" width="auto" /><br><br>ALDI - secure hoop racks, right by front door]]></description>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/dcmpf1llqhfrbls2rn47vhtv5g/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoy_sHBCsN1gJtJQ7IHNzZW7IDsqUwidMqI8xLJ2vwI2iF0RBRK-Qg-4EOB7RLIJQQqV6PMxiEdTX_T1JM3LrDEzuLehkRkEDeE8xBWZdq3p3_906z3mo7i8qLV5QtpkIikvy2AzXPG2iaqXVgdiUGvydp48alBGhEKTlOwEz8y7xkpkCY-MS71_F0Q_U-NFw?fife" height="200" width="auto" /><br><br>ALDI - secure hoop racks, right by front door]]></description>
         <styleUrl>#icon-1578-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/urfcj902dsgmpdvj10g8haue8s/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GD86hsXqaZ_-MCqay10vtPDbkHAzpQFNSpNR23Oln8IHqNMJfOQ0JRw8glgvbB56PBqrgu3ET0tE4QTWIFxXLyrtvRaKqeQCgbNvoyR5kb5aI7ERGK6qY7FH4_Tf6WGr5zWfF3TvxINK5LiYEjrwL0g4PkD3hzRRcp73j0mF8dt1AC2zFhImW6CU0R4TU35w?fife</value>
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/dcmpf1llqhfrbls2rn47vhtv5g/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoy_sHBCsN1gJtJQ7IHNzZW7IDsqUwidMqI8xLJ2vwI2iF0RBRK-Qg-4EOB7RLIJQQqV6PMxiEdTX_T1JM3LrDEzuLehkRkEDeE8xBWZdq3p3_906z3mo7i8qLV5QtpkIikvy2AzXPG2iaqXVgdiUGvydp48alBGhEKTlOwEz8y7xkpkCY-MS71_F0Q_U-NFw?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5425,11 +5607,11 @@
       </Placemark>
       <Placemark>
         <name>Grocery - Earth Fare</name>
-        <description><![CDATA[<img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7ol40godagc3s0r98nd91jqf3o/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-F3FU9FbOCf_nZQcsBW430W9IQ74B3i2a2yzYYP5P2gbmK7UI5ik0BsZ9hmJlIxcDopXbQefrH98G8HEDNOOALBj1rKMD4gPV2ppBD6UrXdjfuEiRaGduGfCndfmD8_kRnxwr2H6aHxFu4E8chWKbl4XdaUrIjvv4uL2Kq-VopdvPMbsyJa66hcwahSXNV7rA?fife" height="200" width="auto" /><br><br>]]></description>
+        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/7u8bvajmcrdl0kui7asrqqsokc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGordt4h4g-d24qqNcFDEy7xyv5GjRPz3QBMhNWuSIS87LZSRlNnEy3gh0rjcKgZ3FU7zdun9zQ0jB1IgKjPjAGsofvw4C2sWlbaq-Kg0C1vR9I4KcxjnqTEoS4ehWzYBAm91Z1T9NOMffAEuETjqhgfgcg951bzFrd6VI82wozP217Ngn2MlZl_9X9jc14t-w?fife" height="200" width="auto" /><br><br>]]></description>
         <styleUrl>#icon-1578-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7ol40godagc3s0r98nd91jqf3o/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-F3FU9FbOCf_nZQcsBW430W9IQ74B3i2a2yzYYP5P2gbmK7UI5ik0BsZ9hmJlIxcDopXbQefrH98G8HEDNOOALBj1rKMD4gPV2ppBD6UrXdjfuEiRaGduGfCndfmD8_kRnxwr2H6aHxFu4E8chWKbl4XdaUrIjvv4uL2Kq-VopdvPMbsyJa66hcwahSXNV7rA?fife</value>
+            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/7u8bvajmcrdl0kui7asrqqsokc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGordt4h4g-d24qqNcFDEy7xyv5GjRPz3QBMhNWuSIS87LZSRlNnEy3gh0rjcKgZ3FU7zdun9zQ0jB1IgKjPjAGsofvw4C2sWlbaq-Kg0C1vR9I4KcxjnqTEoS4ehWzYBAm91Z1T9NOMffAEuETjqhgfgcg951bzFrd6VI82wozP217Ngn2MlZl_9X9jc14t-w?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5459,11 +5641,11 @@
       </Placemark>
       <Placemark>
         <name>Grocery - Fresh Thyme Market</name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/8coi0m2jo4bn8b92tons91k7fc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ExTWPgdSHdj6ZFno_U9s4j61Np5VPr1-apy1bvZERk1Df_fmPh1Sf80u0HqIWanyqiERzgdadOonRgNnw5Npy-x05cBUrW79h3QZZBmghXf5Bp3BykDWaOP2r5Cq6UZZmBm8ry4K0XuOKRA9CgUyYZ2dkCj1kgZIcreAGJtQy2mKVGbneTYeWyS-MVcPq0CME?fife" height="200" width="auto" /><br><br>Covered, lit bike parking]]></description>
+        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/777j6u7vtamo8ai39t07bb1vs8/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqxTtYYWSMxZsf14_JbzEjuiknIxMJAU1IefrYHUBelZZO4F3gGKt94V94M2GvXoMAdq9cQjwbCMVYo0xzYRUzQQ2xmyGZjSv2oOxZcFsvm4Tim-b74FLmZTFANV6GHzpbFgTbNUIApeUNh1ANU5OLDfhzogU2n3s0XKpPEcW1Ii_CqJ1SMc9lHiG2la6-SnDo?fife" height="200" width="auto" /><br><br>Covered, lit bike parking]]></description>
         <styleUrl>#icon-1664-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/8coi0m2jo4bn8b92tons91k7fc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ExTWPgdSHdj6ZFno_U9s4j61Np5VPr1-apy1bvZERk1Df_fmPh1Sf80u0HqIWanyqiERzgdadOonRgNnw5Npy-x05cBUrW79h3QZZBmghXf5Bp3BykDWaOP2r5Cq6UZZmBm8ry4K0XuOKRA9CgUyYZ2dkCj1kgZIcreAGJtQy2mKVGbneTYeWyS-MVcPq0CME?fife</value>
+            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/777j6u7vtamo8ai39t07bb1vs8/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqxTtYYWSMxZsf14_JbzEjuiknIxMJAU1IefrYHUBelZZO4F3gGKt94V94M2GvXoMAdq9cQjwbCMVYo0xzYRUzQQ2xmyGZjSv2oOxZcFsvm4Tim-b74FLmZTFANV6GHzpbFgTbNUIApeUNh1ANU5OLDfhzogU2n3s0XKpPEcW1Ii_CqJ1SMc9lHiG2la6-SnDo?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5602,11 +5784,11 @@
       </Placemark>
       <Placemark>
         <name>Grocery - Midtown Fresh Market</name>
-        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/s5khrrbccqgd2463pphb6ncc7s/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GW4a-40-Waj9shq3edh7elZBZDZjCEt73r-emGc1vjegqULuQ0QJoAmthmK2wP8zuywfxlpcd01SHMtG-9FbVmJeqVapb_H8EULbObBDP5J-mhOEgVaq8wfk0I67jeMa9HGWC94fFqlWq8wnLP_NFcWyYzaB-K1DyH-n3grloSApyj6NZGP80Izi-pF72PPAc?fife" height="200" width="auto" /><br><br>]]></description>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/f93j6uksl7h9djnoj30shbk5gk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqJAiwUg7VZI5MZ00qnyd7mEZ_4d6joxOSQG8AJlWI9jfiY_zGxTxreI9iUeOYgFiconog5CeMHXWuPi9Ab7ESbZanzVpkEV0DkQQ5fgVqCciic9OTppH6a8IXNUM-uqoasQ8dqJAwxNUwl1cP0soiLVRJ5eTK3W5GwA60oYBtpO78TLGEdeVGuQZl-bIoapN8?fife" height="200" width="auto" /><br><br>]]></description>
         <styleUrl>#icon-1578-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/s5khrrbccqgd2463pphb6ncc7s/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GW4a-40-Waj9shq3edh7elZBZDZjCEt73r-emGc1vjegqULuQ0QJoAmthmK2wP8zuywfxlpcd01SHMtG-9FbVmJeqVapb_H8EULbObBDP5J-mhOEgVaq8wfk0I67jeMa9HGWC94fFqlWq8wnLP_NFcWyYzaB-K1DyH-n3grloSApyj6NZGP80Izi-pF72PPAc?fife</value>
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/f93j6uksl7h9djnoj30shbk5gk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqJAiwUg7VZI5MZ00qnyd7mEZ_4d6joxOSQG8AJlWI9jfiY_zGxTxreI9iUeOYgFiconog5CeMHXWuPi9Ab7ESbZanzVpkEV0DkQQ5fgVqCciic9OTppH6a8IXNUM-uqoasQ8dqJAwxNUwl1cP0soiLVRJ5eTK3W5GwA60oYBtpO78TLGEdeVGuQZl-bIoapN8?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5664,11 +5846,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[Grocery - Portage Farmer's Market]]></name>
-        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/rq7gsa696e6io6cnga3r5ib3oc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FEnzbjQnJD6_WatTu1aK5G37-LtXRmOupfVXWUI9LNGmjAX1M4TLd0E1t6j7t6cM-q6_eodhtfkmu-qU6wXpWGHncQ2MMCPfsjHgdzTs7f4M0qhC18QaVGITt5XQQLMWAS51YQjbVa1sArDuXH7Hc_WOKYUmGA59RGbhm4b6qFwWtBVwZKDNez-KhVsLOvPKg?fife" height="200" width="auto" /><br><br>Portage Farmers Market - Free Bike Valet Service (during regular market hours only)<br><br><img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/dj6m0a37tet2764fq08fr8f6eo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GDHBjCe72Rh9FvvtQbWVmXi3mOGvnYIWPjVr7YSt6uJdgZcUA6Q6XLUnHEXQldpBqRtinV32oY18zmkscOGPUDug9XhWNS4h33XAhgFTdHCRMf6JBJAudjd4zH6TJa6EDqjgz4J0VS_P8eEM_fIf2jDFgU1TNWG8dPXqm_Mr5iQk8MZdfVoJL8mF2Qi_kxjGw?fife" height="200" width="auto" />]]></description>
+        <description><![CDATA[<img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/s6mj11jq00gtb6u06velbd1p74/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoHrTHwr-4lCnFvLu3UO9rYxs99ZCtNn9e8SJGSiTtJEvqG0Q7MQJQ8RJMAzMBSCnBSKg7iqEMz4zsu2d7i2GDHDGEBFNfPPbar5TcI6cCeFe5q3_r52Sl4IpbWQZChCadyzF8e49opix60L8GYHDx7JpIjmCIYTqhAb8GNVutKN0YtpotcbufQ47gqjZL1qzQ?fife" height="200" width="auto" /><br><br>Portage Farmers Market - Free Bike Valet Service (during regular market hours only)<br><br><img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/c4tbgfe5g5u8k80d95h4unqb44/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGr0Eo5HhWZXXUfmywSEt375rniCetPeRMXy7U_8nTpVYd3Aa1WFmi4tL63-NsGNVbVm0xB241exb5qsZeC8GczpiwfHiHjrpBGbxQdObSI5haHOLzKafcTwE0zhY0M4eWJK69_-C_D0F7hhhtPk89eKPPZyXOtEj_KcJUfXv5CLtU88OyyQCnwaux7wdvoG02s?fife" height="200" width="auto" />]]></description>
         <styleUrl>#icon-1578-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/rq7gsa696e6io6cnga3r5ib3oc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FEnzbjQnJD6_WatTu1aK5G37-LtXRmOupfVXWUI9LNGmjAX1M4TLd0E1t6j7t6cM-q6_eodhtfkmu-qU6wXpWGHncQ2MMCPfsjHgdzTs7f4M0qhC18QaVGITt5XQQLMWAS51YQjbVa1sArDuXH7Hc_WOKYUmGA59RGbhm4b6qFwWtBVwZKDNez-KhVsLOvPKg?fife https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/dj6m0a37tet2764fq08fr8f6eo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GDHBjCe72Rh9FvvtQbWVmXi3mOGvnYIWPjVr7YSt6uJdgZcUA6Q6XLUnHEXQldpBqRtinV32oY18zmkscOGPUDug9XhWNS4h33XAhgFTdHCRMf6JBJAudjd4zH6TJa6EDqjgz4J0VS_P8eEM_fIf2jDFgU1TNWG8dPXqm_Mr5iQk8MZdfVoJL8mF2Qi_kxjGw?fife</value>
+            <value>https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/s6mj11jq00gtb6u06velbd1p74/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoHrTHwr-4lCnFvLu3UO9rYxs99ZCtNn9e8SJGSiTtJEvqG0Q7MQJQ8RJMAzMBSCnBSKg7iqEMz4zsu2d7i2GDHDGEBFNfPPbar5TcI6cCeFe5q3_r52Sl4IpbWQZChCadyzF8e49opix60L8GYHDx7JpIjmCIYTqhAb8GNVutKN0YtpotcbufQ47gqjZL1qzQ?fife https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/c4tbgfe5g5u8k80d95h4unqb44/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGr0Eo5HhWZXXUfmywSEt375rniCetPeRMXy7U_8nTpVYd3Aa1WFmi4tL63-NsGNVbVm0xB241exb5qsZeC8GczpiwfHiHjrpBGbxQdObSI5haHOLzKafcTwE0zhY0M4eWJK69_-C_D0F7hhhtPk89eKPPZyXOtEj_KcJUfXv5CLtU88OyyQCnwaux7wdvoG02s?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5743,11 +5925,11 @@
       </Placemark>
       <Placemark>
         <name>Grocery - Target (Westnedge)</name>
-        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/3p8opfdvkga6trp8qe064lctn0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E4csBpTgkbJZ1p0q41jGsbD-zPUqNpCfvvV1uWbd_6Zkv8JLIMrBE6sBX_Rw3bmhamtVvH57fVK5Rndtua9ywlt4iP6iea5-X8P_xpSDq0eg4UqygshYUSieOmhpG52tYwjuwLCZrxhev6GraQVPx-dGcBUEl0p91Ce4VmYN4GNsR23ebrdpf7BaF9Tgk8kvU?fife" height="200" width="auto" /><br><br>Wave rack by front door]]></description>
+        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/hl8sp4fbngdrp1lh1d2t16krbc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrCtvfei9mtf7GNs5FWG-zzaURN9H-GnpfrQfDKBESkCAIKMmj57EnxTm-m318I6AOHXoBleimwbpQn1r9gVha8KAw10rO6axBH7wIYlV_yAAtlT4-_MQi1ydo0OAMPxcwKI7sQr1hXoiu1rJAKIh-4cF0zTx2LQ7bmKoBQFMcPD0dCaIPPEZlpVIbKyWaMB9w?fife" height="200" width="auto" /><br><br>Wave rack by front door]]></description>
         <styleUrl>#icon-1578-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/3p8opfdvkga6trp8qe064lctn0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E4csBpTgkbJZ1p0q41jGsbD-zPUqNpCfvvV1uWbd_6Zkv8JLIMrBE6sBX_Rw3bmhamtVvH57fVK5Rndtua9ywlt4iP6iea5-X8P_xpSDq0eg4UqygshYUSieOmhpG52tYwjuwLCZrxhev6GraQVPx-dGcBUEl0p91Ce4VmYN4GNsR23ebrdpf7BaF9Tgk8kvU?fife</value>
+            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/hl8sp4fbngdrp1lh1d2t16krbc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrCtvfei9mtf7GNs5FWG-zzaURN9H-GnpfrQfDKBESkCAIKMmj57EnxTm-m318I6AOHXoBleimwbpQn1r9gVha8KAw10rO6axBH7wIYlV_yAAtlT4-_MQi1ydo0OAMPxcwKI7sQr1hXoiu1rJAKIh-4cF0zTx2LQ7bmKoBQFMcPD0dCaIPPEZlpVIbKyWaMB9w?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5827,11 +6009,11 @@
       <name>Businesses</name>
       <Placemark>
         <name>Bank - Kellogg Community Credit Union</name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/pcdpa2f1k50hvk5077qk6rh858/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-EKGoPM1vuAjvnFXHwfMdFJ2f95_zzLn8hzk3ctwhJTogxtFGbYtdjLBHfHn_fRvoZF417LAaVSVi6R6bIz_QFs9-KLjIm3lZ2hbnsrOAaL2kR_tKY1Jda6mR5u_djxbIJ_lLkTr3D4LX8-6yAICjGxPLkoHvsKmdHbZ4-7mmvdtBDmTbNXc_FHfN2fNnlFEvM?fife" height="200" width="auto" /><br><br>Big secure wave rack, covered, lighted, right by front window]]></description>
+        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/260kvemikhlmg6n8c4nn5qb4t0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqreY56WN_zBMmN_246FFlc7kwjKGir8RjWI4vaQPsbqnGwKdCUcn4_r0LRJTzOmk9VzeqcuZ8r-OJ89UR6XYlx8bcI0qpyUS2_fZsjuhnMyPMv8oDh2MtIzyzNtxc3O6NVoWXhIALvbLviEk4cDnuVUOSdtTlRf2S9KqAXro_SSORUbZrfuLXlONmx18NxZPs?fife" height="200" width="auto" /><br><br>Big secure wave rack, covered, lighted, right by front window]]></description>
         <styleUrl>#icon-1512-097138</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/pcdpa2f1k50hvk5077qk6rh858/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-EKGoPM1vuAjvnFXHwfMdFJ2f95_zzLn8hzk3ctwhJTogxtFGbYtdjLBHfHn_fRvoZF417LAaVSVi6R6bIz_QFs9-KLjIm3lZ2hbnsrOAaL2kR_tKY1Jda6mR5u_djxbIJ_lLkTr3D4LX8-6yAICjGxPLkoHvsKmdHbZ4-7mmvdtBDmTbNXc_FHfN2fNnlFEvM?fife</value>
+            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/260kvemikhlmg6n8c4nn5qb4t0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqreY56WN_zBMmN_246FFlc7kwjKGir8RjWI4vaQPsbqnGwKdCUcn4_r0LRJTzOmk9VzeqcuZ8r-OJ89UR6XYlx8bcI0qpyUS2_fZsjuhnMyPMv8oDh2MtIzyzNtxc3O6NVoWXhIALvbLviEk4cDnuVUOSdtTlRf2S9KqAXro_SSORUbZrfuLXlONmx18NxZPs?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5870,7 +6052,7 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Book - Bookbug</name>
+        <name>Books - Bookbug</name>
         <description><![CDATA[Children's book store]]></description>
         <styleUrl>#icon-1526-AFB42B</styleUrl>
         <Point>
@@ -5890,7 +6072,7 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Books - Friends-The Library Bookstore</name>
+        <name>Books - Friends, The Library Bookstore</name>
         <description>Used book store within the Kalamazoo Public Library</description>
         <styleUrl>#icon-1526-AFB42B</styleUrl>
         <Point>
@@ -5910,11 +6092,11 @@
       </Placemark>
       <Placemark>
         <name>Books - Michigan News Agency</name>
-        <description><![CDATA[<img src="https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/q3b32tiluc01lntagvp90263e8/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ETXmyuhwnR_hoZGyBo6G682dL7zBYtWn3RF3p942CdlS5Y-6Jnz6I975GcwyRaO87AvkrWXt_kaAnsVUbKzxf2ZCZFG7XdMwClQ4e5tK6v0x5OpGCdhgf6BYreANvr5naKD92u8zvwdVR6OTqMGvyynODubP5a54ko2pmieDjzWaCc66ljR9xhjMLSHa-zUw?fife" height="200" width="auto" /><br><br>]]></description>
+        <description><![CDATA[<img src="https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/hcrknevjetff3s0kba3bba4da0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpdcGgWBdz2NCDLdWgMd_MPBdhqnOKTNAjOtH358CJCbvMAs5f0GuTHxqhr667gZNTM2rWMzcjs1JlO_lzG4lSY9e9QZd-hI5iRK9qvSTjft-8p7R8jDv-QCwtaQham1NI1NTb8Dv95hQAeij49sTYEwJljhu-4TlpH9pLf32_Rk_iCeu7Qxs7jcwW5o9S9Rg?fife" height="200" width="auto" /><br><br>]]></description>
         <styleUrl>#icon-1526-AFB42B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/q3b32tiluc01lntagvp90263e8/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ETXmyuhwnR_hoZGyBo6G682dL7zBYtWn3RF3p942CdlS5Y-6Jnz6I975GcwyRaO87AvkrWXt_kaAnsVUbKzxf2ZCZFG7XdMwClQ4e5tK6v0x5OpGCdhgf6BYreANvr5naKD92u8zvwdVR6OTqMGvyynODubP5a54ko2pmieDjzWaCc66ljR9xhjMLSHa-zUw?fife</value>
+            <value>https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/hcrknevjetff3s0kba3bba4da0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpdcGgWBdz2NCDLdWgMd_MPBdhqnOKTNAjOtH358CJCbvMAs5f0GuTHxqhr667gZNTM2rWMzcjs1JlO_lzG4lSY9e9QZd-hI5iRK9qvSTjft-8p7R8jDv-QCwtaQham1NI1NTb8Dv95hQAeij49sTYEwJljhu-4TlpH9pLf32_Rk_iCeu7Qxs7jcwW5o9S9Rg?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -5982,11 +6164,11 @@
       </Placemark>
       <Placemark>
         <name>Cafe - Factory Coffee (Rose/Lovell)</name>
-        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/rmdo7vl2cqjg6v6f318o9jb7os/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-H6w6g33j4n-YVJ5a0g8DQkg1ybuEEbzdtL7u3edZ17QbDWAQKlLvA7Dtv-_l1B77YmE0FAu8uAhhh0TiuLNLl0gsxQaimw41djkfHAiFQ-TS4F8PE2pKcuyiQjbP7F3HTd73NexmKjmnlUQk6mxUu_DJMDNs5StbymB-7Qa8-Sr4FI97hUKFeBs27EceByQw?fife" height="200" width="auto" /><br><br>]]></description>
+        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/mt0bd5r91qu8n27765knkcbbog/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGq4MJCrEEmXbXJLDQsD5mrYjzzLclLC--8i_NYVPSDpG1qQMVOk_DO94rpuXfgIOWVxBf1GYhIQUbZzMUskwRVunwGqetbkohOQ5dWnjbgGHrDid9TFrlL61zQ2rzb6M06fft50-40xsm9BJw-fCb2bTYz99xdGEy-H16vGGsnYveMyQS2lJaGL2dz12fRkOA?fife" height="200" width="auto" /><br><br>]]></description>
         <styleUrl>#icon-1534-795548</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/rmdo7vl2cqjg6v6f318o9jb7os/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-H6w6g33j4n-YVJ5a0g8DQkg1ybuEEbzdtL7u3edZ17QbDWAQKlLvA7Dtv-_l1B77YmE0FAu8uAhhh0TiuLNLl0gsxQaimw41djkfHAiFQ-TS4F8PE2pKcuyiQjbP7F3HTd73NexmKjmnlUQk6mxUu_DJMDNs5StbymB-7Qa8-Sr4FI97hUKFeBs27EceByQw?fife</value>
+            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/mt0bd5r91qu8n27765knkcbbog/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGq4MJCrEEmXbXJLDQsD5mrYjzzLclLC--8i_NYVPSDpG1qQMVOk_DO94rpuXfgIOWVxBf1GYhIQUbZzMUskwRVunwGqetbkohOQ5dWnjbgGHrDid9TFrlL61zQ2rzb6M06fft50-40xsm9BJw-fCb2bTYz99xdGEy-H16vGGsnYveMyQS2lJaGL2dz12fRkOA?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6042,11 +6224,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[Cafe - Walnut & Park (OG)]]></name>
-        <description><![CDATA[<img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/t58pfplqtkp497kq93o3bnc49g/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HCtQWKlnTmhP2CmdXamydB1o2RH1C6ybhtCm2eJni_W4sB91kqXWAmrd683eIMDwzsVAX7p1TF9kV4-aIN4wgCEyMTZ7uxaBHx3cBuXvGYm3mE0RJ0RCTCy1-HM-CVIpPHoW7AXgQldwOsSEoLr1fCvCgfsuKH38W88lvmb6sQREX5z-O8JPOhtxTr59ZHFjY?fife" height="200" width="auto" /><br><br>4 secure u-racks]]></description>
+        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/a4cqqr0352p4g4n9gerl85b150/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrEA21shfTvg1vG8Fpuo77ZdEH3xxlCUBOGAVVVGqxQPsh0tm5bjx6_bhZkAtu0vdVZlGFinfE9Xj01tjSF36YJ3Vodq4AtzuJm-1dFrFr3xtUnqUdKnmv-l3sAFHPWa32x7i8Flfg8V33I3STFuC-9ayp7dCc3XsnHz3ctalTUVrhiUCmK8HBHyV3gWsSdA88?fife" height="200" width="auto" /><br><br>4 secure u-racks]]></description>
         <styleUrl>#icon-1534-795548</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/t58pfplqtkp497kq93o3bnc49g/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HCtQWKlnTmhP2CmdXamydB1o2RH1C6ybhtCm2eJni_W4sB91kqXWAmrd683eIMDwzsVAX7p1TF9kV4-aIN4wgCEyMTZ7uxaBHx3cBuXvGYm3mE0RJ0RCTCy1-HM-CVIpPHoW7AXgQldwOsSEoLr1fCvCgfsuKH38W88lvmb6sQREX5z-O8JPOhtxTr59ZHFjY?fife</value>
+            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/a4cqqr0352p4g4n9gerl85b150/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrEA21shfTvg1vG8Fpuo77ZdEH3xxlCUBOGAVVVGqxQPsh0tm5bjx6_bhZkAtu0vdVZlGFinfE9Xj01tjSF36YJ3Vodq4AtzuJm-1dFrFr3xtUnqUdKnmv-l3sAFHPWa32x7i8Flfg8V33I3STFuC-9ayp7dCc3XsnHz3ctalTUVrhiUCmK8HBHyV3gWsSdA88?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6057,11 +6239,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[Cafe - Walnut & Park (Harrison Circle)]]></name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/hc43qg5q8jrndle0kocnrrs64c/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HEYdiDWm2AXJ2xILWeZ-zHsvol8AqdnSSgULHOGvyA-aF_s_BPC817e81qpUZnNhplTNiP49dkGhSmMjE4pE8RfG1FwD5tzZc7gsW1RwE73HJPJhtDF1pLSGjnNerLHkK2Yn19I2sXtpBaZYanKdyny8u4HV2MrzN_oVJ-_x4DifK1gIkX3wpZCnLxQ1ZC7g?fife" height="200" width="auto" /><br><br>Walnut & Park - 2 u-racks]]></description>
+        <description><![CDATA[<img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/su199jggj5doak7ntv9hmlqg5s/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpUx2p-t4_8FG7imE5S5BuKQ55yz_AWzkSBptX2VSNS1JQCdpe3qNbvus2-_50r1joZ-AhD3e3m_jr6OiaiaAolChvLgpUGYneKUXbE8VpimDllEd_DPWBpiaMnMutoEFhOWf3CB4nlSbnvi-657VAYTN3KUc8ZoGnNSNljDdmYr-XcDFa78R6nn8VaLf4psQ?fife" height="200" width="auto" /><br><br>Walnut & Park - 2 u-racks]]></description>
         <styleUrl>#icon-1534-795548</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/hc43qg5q8jrndle0kocnrrs64c/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HEYdiDWm2AXJ2xILWeZ-zHsvol8AqdnSSgULHOGvyA-aF_s_BPC817e81qpUZnNhplTNiP49dkGhSmMjE4pE8RfG1FwD5tzZc7gsW1RwE73HJPJhtDF1pLSGjnNerLHkK2Yn19I2sXtpBaZYanKdyny8u4HV2MrzN_oVJ-_x4DifK1gIkX3wpZCnLxQ1ZC7g?fife</value>
+            <value>https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/su199jggj5doak7ntv9hmlqg5s/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpUx2p-t4_8FG7imE5S5BuKQ55yz_AWzkSBptX2VSNS1JQCdpe3qNbvus2-_50r1joZ-AhD3e3m_jr6OiaiaAolChvLgpUGYneKUXbE8VpimDllEd_DPWBpiaMnMutoEFhOWf3CB4nlSbnvi-657VAYTN3KUc8ZoGnNSNljDdmYr-XcDFa78R6nn8VaLf4psQ?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6109,11 +6291,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[Drink - Bell's Brewery]]></name>
-        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7rqr9h84bm6p1fgsr832quinc0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-G_igjoWBGtiOjnie-RraAeaXVwXSIwVlq4ZTvFx5i4u51mKdmFj6Ye2c9JOzOSfUAn5j_GSoZ1TBc8xbf14J_-p06yCOcEJiF6cZ4-TTL76lQBx_AxgDkwawL6sBJFExJGsclPB2k8rZNcxbsc6LczPA_jEFOkOa7huofKL0WhEpBEe8Ty2jcL6u085L-FCMg?fife" height="200" width="auto" /><br><br>25 secure hoop racks right at the front door]]></description>
+        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/o65r4jcpamb0g244hjf87kafqk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGri6-MxTBP-4FxG3rwB3jiGi59dU2snUhotFc7awIb5ggv-UTHwR1eqDAJJmiUuqsHy0OfFPpq2oRqXagWc9p7hxJ0r9TwcSVuSAm8C8YLnPEXc4aVuX3lxIpCTbAiz_Zc3piXYXdzTipvInSvcOmTqLfJHiBRCz5PR1TgoFUUkL3dkKpS4UpxrpqD-YyU1qIs?fife" height="200" width="auto" /><br><br>25 secure hoop racks right at the front door]]></description>
         <styleUrl>#icon-1879-0288D1</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7rqr9h84bm6p1fgsr832quinc0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-G_igjoWBGtiOjnie-RraAeaXVwXSIwVlq4ZTvFx5i4u51mKdmFj6Ye2c9JOzOSfUAn5j_GSoZ1TBc8xbf14J_-p06yCOcEJiF6cZ4-TTL76lQBx_AxgDkwawL6sBJFExJGsclPB2k8rZNcxbsc6LczPA_jEFOkOa7huofKL0WhEpBEe8Ty2jcL6u085L-FCMg?fife</value>
+            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/o65r4jcpamb0g244hjf87kafqk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGri6-MxTBP-4FxG3rwB3jiGi59dU2snUhotFc7awIb5ggv-UTHwR1eqDAJJmiUuqsHy0OfFPpq2oRqXagWc9p7hxJ0r9TwcSVuSAm8C8YLnPEXc4aVuX3lxIpCTbAiz_Zc3piXYXdzTipvInSvcOmTqLfJHiBRCz5PR1TgoFUUkL3dkKpS4UpxrpqD-YyU1qIs?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6328,11 +6510,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[Food - Dickey's Barbecue Pit]]></name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7o65rjkhn35d03g6i1ug2dqmsk/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HSceWrIdCe8T8nSw9qKDw_w7ZjHdPzylhdYT2Ok_pRZGFOXdxy866z4Lp1NgubCo6OKb6POf6NL7EwQV-TPPRx2BKZEI162GnjeGpYZAMdR9EMPQyVJVRqNrsfjhdiCRK3gieR36KkAvbUi9AkMtQBW-SqMYW8gVDOLIZqbxR4C5TWWJZNOOKZc_ws3g7nMo4?fife" height="200" width="auto" /><br><br>6 hitch racks near the rear of the building.]]></description>
+        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/7s3ko7srd458h4b8q5b14jib3k/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGp7QoKxrBSG-I-40ICcAv0kmgHo19jd56Jy_IPJEYXkCDw1p7B1Lhn42D0IX-tXd_n7BRdPZNUSeMn-m2hWsr-9fcA0iUZugMYdxehTpd5YxMXzoHXjJkSQPXu-UYHwEvvHDjGWuXVhvQ-Eb-zERa0fc6dwaludSp9JdZfR61xJs5-8k2ig-KfF7BUFJY4y_cQ?fife" height="200" width="auto" /><br><br>6 hitch racks near the rear of the building.]]></description>
         <styleUrl>#icon-1577-9C27B0</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7o65rjkhn35d03g6i1ug2dqmsk/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HSceWrIdCe8T8nSw9qKDw_w7ZjHdPzylhdYT2Ok_pRZGFOXdxy866z4Lp1NgubCo6OKb6POf6NL7EwQV-TPPRx2BKZEI162GnjeGpYZAMdR9EMPQyVJVRqNrsfjhdiCRK3gieR36KkAvbUi9AkMtQBW-SqMYW8gVDOLIZqbxR4C5TWWJZNOOKZc_ws3g7nMo4?fife</value>
+            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/7s3ko7srd458h4b8q5b14jib3k/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGp7QoKxrBSG-I-40ICcAv0kmgHo19jd56Jy_IPJEYXkCDw1p7B1Lhn42D0IX-tXd_n7BRdPZNUSeMn-m2hWsr-9fcA0iUZugMYdxehTpd5YxMXzoHXjJkSQPXu-UYHwEvvHDjGWuXVhvQ-Eb-zERa0fc6dwaludSp9JdZfR61xJs5-8k2ig-KfF7BUFJY4y_cQ?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6444,11 +6626,11 @@
       </Placemark>
       <Placemark>
         <name>Food - Los Amigos (south Portage)</name>
-        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/uo6t4h3is4q0mvp7c3689vlp5c/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-G5fTDKWQt2eXGsHxhImVso5W5va846VUQMNM-uVm9HM2X-2HbPqFPPhqr8pGBMKoFjo47c5NPDCEv6dS0WJ6cQgdJEZCMfTAkVM5_jx1tKjFdW-jCPj4uIvbml6tcJubNHMzXdux0Ijpg7nonjpvNtqYmg4mfvr38OSataWpBa4mUviyu9mAuinhOH5bp4p64?fife" height="200" width="auto" /><br><br>Right off the bike path. Lock up to the benches out front. ]]></description>
+        <description><![CDATA[<img src="https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/bttvurplq5evc6botur63ab5vs/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrt8hVsA0oDrhnsG3FE36g8CfhHDP5VISJW_BX0f0z2KVxdGyGgC6vJvh-sd9xIkBqHsP5V5qxdP0Nr86dG8bjL0xFIKtPUYNS-r_oHykO-RZM-2HdN0mbl5LTd0osXjRp5kU6L_juUzDdQLhAUyKMma9S9pZCd7zbtmXB1cVq_ja_rW28YXvKqANripURGwoQ?fife" height="200" width="auto" /><br><br>Right off the bike path. Lock up to the benches out front. ]]></description>
         <styleUrl>#icon-1577-9C27B0</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/uo6t4h3is4q0mvp7c3689vlp5c/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-G5fTDKWQt2eXGsHxhImVso5W5va846VUQMNM-uVm9HM2X-2HbPqFPPhqr8pGBMKoFjo47c5NPDCEv6dS0WJ6cQgdJEZCMfTAkVM5_jx1tKjFdW-jCPj4uIvbml6tcJubNHMzXdux0Ijpg7nonjpvNtqYmg4mfvr38OSataWpBa4mUviyu9mAuinhOH5bp4p64?fife</value>
+            <value>https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/bttvurplq5evc6botur63ab5vs/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrt8hVsA0oDrhnsG3FE36g8CfhHDP5VISJW_BX0f0z2KVxdGyGgC6vJvh-sd9xIkBqHsP5V5qxdP0Nr86dG8bjL0xFIKtPUYNS-r_oHykO-RZM-2HdN0mbl5LTd0osXjRp5kU6L_juUzDdQLhAUyKMma9S9pZCd7zbtmXB1cVq_ja_rW28YXvKqANripURGwoQ?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6591,11 +6773,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[General - Blain's Farm & Fleet]]></name>
-        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7bsd3jprnkro38bop0lu1et7ec/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E4Crl-bI9AYtFFB2mn7oQcOQ8bSuJK5eQqK8g7xvAFmuELug-pbAZ8TCmrWMOJd3E27tWNtw5dvk6LOUIR9hCkgXJtM98U5plJVFycRF2QaVuyEWHzrqLIAt4C10BGfH8im7bliE7HueRn9r71NcWPkVSxO-S1t0OV52lRTKkwznuO9kkHOpvKojjlWTvaMw4?fife" height="200" width="auto" /><br><br>Blain's Farm & Fleet - secure wave rack, right under lighting and security camera. Official Portage 'Bike Friendly Business'<br><br><img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/p24hr81eacq82j0k1f2c64o4mo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HKDl6uoNm_xonwPtzbLfp-9ZIGj6Yj1XyxkdVV4mgYgDUg6On4iKbfULhxGE5aJ6c2JQBLo2v2ljpA4aDjoQ0fUvS6sh62_R7G3WdLyqHjaKIdr-xf5hNMbTSvWVVulLW0PL_PfC7iDqueZQZaQVsRdiJWl2pKw0YjCEoY9UvB0USnaxZvU0LgtHMCcDmRC7Q?fife" height="200" width="auto" />]]></description>
+        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/36vn88ksv1e4b3n4kpqpbf0h8g/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGp-88C4PsCp8naDHMFAdmH1AT23X_1PzLWe50_0AVV_hC0FTIwwAtv3bFOnseJG0Iez1K5anpeuMM04iRA5QJ0hjDnci0YeliWdqp9Uz95ms1zwywQG87pKcaUg3D2WV_EVfBIKHedwS-VaarzbxQgVqLzwyCv9sFJdfPymRn-Deq4wla2OpW8fR0D-5RAQ8pA?fife" height="200" width="auto" /><br><br>Blain's Farm & Fleet - secure wave rack, right under lighting and security camera. Official Portage 'Bike Friendly Business'<br><br><img src="https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/77tc0pnpbpmte55s1ia69jcgko/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoNAtayAZMwfV_IdZgBGRZGEihE_SEM49CGnUm8al0HAztZ6jEkrb_EhAKDr7yktbdpYm5qEO4bJ8_4dkqimyWWQ4_3lTD2kMEITVYtnAj9eEXv4VeuFTCG46ZjyX5vvAvi71g_SfpzezAQhnu6oKgVVhlmAtMv6PXFC8UlDMY8CATFnnJVU8C2-wT18N_UOpY?fife" height="200" width="auto" />]]></description>
         <styleUrl>#icon-1566-817717</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/7bsd3jprnkro38bop0lu1et7ec/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E4Crl-bI9AYtFFB2mn7oQcOQ8bSuJK5eQqK8g7xvAFmuELug-pbAZ8TCmrWMOJd3E27tWNtw5dvk6LOUIR9hCkgXJtM98U5plJVFycRF2QaVuyEWHzrqLIAt4C10BGfH8im7bliE7HueRn9r71NcWPkVSxO-S1t0OV52lRTKkwznuO9kkHOpvKojjlWTvaMw4?fife https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/p24hr81eacq82j0k1f2c64o4mo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HKDl6uoNm_xonwPtzbLfp-9ZIGj6Yj1XyxkdVV4mgYgDUg6On4iKbfULhxGE5aJ6c2JQBLo2v2ljpA4aDjoQ0fUvS6sh62_R7G3WdLyqHjaKIdr-xf5hNMbTSvWVVulLW0PL_PfC7iDqueZQZaQVsRdiJWl2pKw0YjCEoY9UvB0USnaxZvU0LgtHMCcDmRC7Q?fife</value>
+            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/36vn88ksv1e4b3n4kpqpbf0h8g/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGp-88C4PsCp8naDHMFAdmH1AT23X_1PzLWe50_0AVV_hC0FTIwwAtv3bFOnseJG0Iez1K5anpeuMM04iRA5QJ0hjDnci0YeliWdqp9Uz95ms1zwywQG87pKcaUg3D2WV_EVfBIKHedwS-VaarzbxQgVqLzwyCv9sFJdfPymRn-Deq4wla2OpW8fR0D-5RAQ8pA?fife https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/77tc0pnpbpmte55s1ia69jcgko/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoNAtayAZMwfV_IdZgBGRZGEihE_SEM49CGnUm8al0HAztZ6jEkrb_EhAKDr7yktbdpYm5qEO4bJ8_4dkqimyWWQ4_3lTD2kMEITVYtnAj9eEXv4VeuFTCG46ZjyX5vvAvi71g_SfpzezAQhnu6oKgVVhlmAtMv6PXFC8UlDMY8CATFnnJVU8C2-wT18N_UOpY?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6606,11 +6788,11 @@
       </Placemark>
       <Placemark>
         <name>General - Home Depot</name>
-        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/b5ob2lvid68t5q6j9dsclehne8/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HjCRYltcwf5niPQhqvAab_QxMpmKSZU1TfUFEBvfKzMAnGsObDEDO9WmKxEApADPAGvDBrD9P6Co3TCCZWB85OY73epgZEPkHl2ePZxh6ILlxb3PHE-xm5SMuV0c00AJr-y97dRvs8B2U0r75hdMngE-9m7Pqv9Zc-mn6RUQNB5IFuF9vgm9r4wS8ZhZSbL0M?fife" height="200" width="auto" /><br><br>Schoolyard rack]]></description>
+        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/lm61jd6a7c94l5oifqql0i5gok/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrctjCbsfG005rO57IctCO3sUtOsew-so2YmBiQRohtYwRmv4HdyaOXjehwqu3L3abGGcvaU-L4-gKrHuHDQ_4IJpXWBmFovTNQuu0n9o0ST1G4TnV2te1NHJqoKgboaCT8RfEPapcbD1vECqzrnu-dKhv8YVwbI8x4G9Vnc-g8gvVPTozAKFyn8BfTYcdjApQ?fife" height="200" width="auto" /><br><br>Schoolyard rack]]></description>
         <styleUrl>#icon-1551-817717</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/b5ob2lvid68t5q6j9dsclehne8/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HjCRYltcwf5niPQhqvAab_QxMpmKSZU1TfUFEBvfKzMAnGsObDEDO9WmKxEApADPAGvDBrD9P6Co3TCCZWB85OY73epgZEPkHl2ePZxh6ILlxb3PHE-xm5SMuV0c00AJr-y97dRvs8B2U0r75hdMngE-9m7Pqv9Zc-mn6RUQNB5IFuF9vgm9r4wS8ZhZSbL0M?fife</value>
+            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/lm61jd6a7c94l5oifqql0i5gok/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrctjCbsfG005rO57IctCO3sUtOsew-so2YmBiQRohtYwRmv4HdyaOXjehwqu3L3abGGcvaU-L4-gKrHuHDQ_4IJpXWBmFovTNQuu0n9o0ST1G4TnV2te1NHJqoKgboaCT8RfEPapcbD1vECqzrnu-dKhv8YVwbI8x4G9Vnc-g8gvVPTozAKFyn8BfTYcdjApQ?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6621,11 +6803,11 @@
       </Placemark>
       <Placemark>
         <name><![CDATA[General - Kohl's]]></name>
-        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e81f5v34ru9vs0ovcspt9vghvc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FWxvTW_CFoMOXRpULXCt4_5S46zAl4pdikd4bJvAMRo3GMWKZjV34-K2Ze8N2g0Q73hoCrQoLla8pwYFpn2FBOCRnGrimIDWvdWbHEuOvi8tamutgTRPs5d1zWLBLEqOHun82GlkDDVPElK-662KmKtzOh0fd_P5sgevfWebZhPmxqmWHvL75YM2JINCN-sV8?fife" height="200" width="auto" /><br><br>5-hump wave rack]]></description>
+        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/mr62cbq7jbb839abaopde2mm00/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrc2CBIuP5COdmT7UWcvDQRFuISWPyi5k-BofaHxlMLHwC_4BhgX1nB14r8FufbEl4wYsA7nM19n_AoXpW302uHddiVoEmAc833DBEEpcGgkZFiIoFi_0c4ZOh5ZEOLxGwD6H8r3_W6_fWGDPHBTIQ0ipQSez-5ptHIuDOELUeRFrCmq1xpdgF8grRV_L2Zd6g?fife" height="200" width="auto" /><br><br>5-hump wave rack]]></description>
         <styleUrl>#icon-1549-817717</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e81f5v34ru9vs0ovcspt9vghvc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FWxvTW_CFoMOXRpULXCt4_5S46zAl4pdikd4bJvAMRo3GMWKZjV34-K2Ze8N2g0Q73hoCrQoLla8pwYFpn2FBOCRnGrimIDWvdWbHEuOvi8tamutgTRPs5d1zWLBLEqOHun82GlkDDVPElK-662KmKtzOh0fd_P5sgevfWebZhPmxqmWHvL75YM2JINCN-sV8?fife</value>
+            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/mr62cbq7jbb839abaopde2mm00/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrc2CBIuP5COdmT7UWcvDQRFuISWPyi5k-BofaHxlMLHwC_4BhgX1nB14r8FufbEl4wYsA7nM19n_AoXpW302uHddiVoEmAc833DBEEpcGgkZFiIoFi_0c4ZOh5ZEOLxGwD6H8r3_W6_fWGDPHBTIQ0ipQSez-5ptHIuDOELUeRFrCmq1xpdgF8grRV_L2Zd6g?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6646,11 +6828,11 @@
       </Placemark>
       <Placemark>
         <name>Plants - Portage Garden Club</name>
-        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/llmscjl571moc2d4iei0lfsi80/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-G08XpLx0VcyEq41mUpq5yyXVNlTYWOgOt3RyID7_AtWblysf6BDpAlNZYoIm7uM-zxygIt3e_ba5QFm15lpW6mFxRWQUePPXSlibpmRQIswhQetKwRplT61pPDiR7YZQ9FcywpAwgrgNckyWcTV8sQ0o4VZEI7HV3Ud--VMrtTp1XL5TJ6hPPI5b6bawbCnEw?fife" height="200" width="auto" /><br><br>Trailside storefront. Sales every Tuesday.]]></description>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/o25phc3hi59lmrmrsmentt2fr0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqpqJrUF2zs1Xii-KQDkNjU-6lIUdXqi42PdNEPQzkAPB2wz_WpiVcZ77KYTBw3GFibEjMg6HgHI6JBYOl9thIC9nPWnPllANIVd4hQIjDy1M-bt6QDHZMHFmeNG8aLf1RdLnRXGT8ChvPuUDg-ail-jbnxdBMKO5NXFOmV69sMXdyU2fszw7v0d5OBdUZdcIk?fife" height="200" width="auto" /><br><br>Trailside storefront. Sales every Tuesday.]]></description>
         <styleUrl>#icon-1582-0F9D58</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/llmscjl571moc2d4iei0lfsi80/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-G08XpLx0VcyEq41mUpq5yyXVNlTYWOgOt3RyID7_AtWblysf6BDpAlNZYoIm7uM-zxygIt3e_ba5QFm15lpW6mFxRWQUePPXSlibpmRQIswhQetKwRplT61pPDiR7YZQ9FcywpAwgrgNckyWcTV8sQ0o4VZEI7HV3Ud--VMrtTp1XL5TJ6hPPI5b6bawbCnEw?fife</value>
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/o25phc3hi59lmrmrsmentt2fr0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqpqJrUF2zs1Xii-KQDkNjU-6lIUdXqi42PdNEPQzkAPB2wz_WpiVcZ77KYTBw3GFibEjMg6HgHI6JBYOl9thIC9nPWnPllANIVd4hQIjDy1M-bt6QDHZMHFmeNG8aLf1RdLnRXGT8ChvPuUDg-ail-jbnxdBMKO5NXFOmV69sMXdyU2fszw7v0d5OBdUZdcIk?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6809,11 +6991,11 @@
       </Placemark>
       <Placemark>
         <name>Kalamazoo County Circuit Court</name>
-        <description><![CDATA[<img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/o8pmqu04l6lur9pn98iloaudoc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GMLMrcDcYagBfy86voFTC9WvwmwYGeNfvRxgjSM_Hr-UV0eQX_Bb3HRyIAMnOZ8zigtR_pa_91wKEneAO7zVIy0OTCQDWIFbhooFU0xCkY0Kae8vufQNejWZF9e7uhpqjydIN2gR52oMrIGJDWf5nMT3uIxzl1MEObL-YCOi4QtWjxs3lO44U3Uyu04z1kKZc?fife" height="200" width="auto" /><br><br>While there technically ~is~ a schoolyard bike rack here, you might as well go f*ck yourself if you're actually trying to use it]]></description>
+        <description><![CDATA[<img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/ar7nn9gqsgr18gf15baj1fei3s/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGo0xRpF4vZSJjq8AcY_ec3C-PSf1Iqe2El2RbFfAhdNGVXlEWc7ZrbuFbK_sp1K_c3HR9BgR4P56yIHtfYIOX_7v4ihYq29WQaqx3UR0ctToUNzhjd4WHDVvaNhncvTvZRAdfEW5i4KbWZLzglS9qyJByd-HEu5ZcIEwBnxo12H3ZMRceQrQNEGr7hVEwwKQxY?fife" height="200" width="auto" /><br><br>While there technically ~is~ a schoolyard bike rack here, you might as well go f*ck yourself if you're actually trying to use it]]></description>
         <styleUrl>#icon-1826-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/o8pmqu04l6lur9pn98iloaudoc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GMLMrcDcYagBfy86voFTC9WvwmwYGeNfvRxgjSM_Hr-UV0eQX_Bb3HRyIAMnOZ8zigtR_pa_91wKEneAO7zVIy0OTCQDWIFbhooFU0xCkY0Kae8vufQNejWZF9e7uhpqjydIN2gR52oMrIGJDWf5nMT3uIxzl1MEObL-YCOi4QtWjxs3lO44U3Uyu04z1kKZc?fife</value>
+            <value>https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/ar7nn9gqsgr18gf15baj1fei3s/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGo0xRpF4vZSJjq8AcY_ec3C-PSf1Iqe2El2RbFfAhdNGVXlEWc7ZrbuFbK_sp1K_c3HR9BgR4P56yIHtfYIOX_7v4ihYq29WQaqx3UR0ctToUNzhjd4WHDVvaNhncvTvZRAdfEW5i4KbWZLzglS9qyJByd-HEu5ZcIEwBnxo12H3ZMRceQrQNEGr7hVEwwKQxY?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6824,11 +7006,11 @@
       </Placemark>
       <Placemark>
         <name>Kalamazoo Public Library</name>
-        <description><![CDATA[<img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/b84b4im316najrbss6eg2e78vo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-Eb0U2A9ng9myLWnnJydamUpcvuRHtfcxS3s7VjYn37aeySx_WHGmpkhqRB81pzwERC2Jubliqft_trZzUwrlqf1icTnlF0Wb4tX3CIEGnbwarxOLmA1GoiN1JZQSdZi2cAqJ7ygacneqt-0s5To7l5WLwuD9mymMOWfbAvcmClabEqyNMrzEV7cPv0TVaomQw?fife" height="200" width="auto" /><br><br>10 secure u-racks]]></description>
+        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/umnhe6bu6t44kvb3qpuddfofjo/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoS-OZDHXfQUK0bEDQ6b9n3jXxCUTpeqK-IdPV8UP8LYx9SBl5qLVqK1TYNid1bhNtsTB99IoAgT3Hfhh06UEzbSYoLgPibpnNv8Zt46FaCE0ySMJfiFuaalBlkkn6sbXPtSKVYZgkhsD_414Lzg6w1cyGvnYLsLrhesBPU3IS5DjyfQdYUjCc4YV1VJzysV8w?fife" height="200" width="auto" /><br><br>10 secure u-racks]]></description>
         <styleUrl>#icon-1526-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/b84b4im316najrbss6eg2e78vo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-Eb0U2A9ng9myLWnnJydamUpcvuRHtfcxS3s7VjYn37aeySx_WHGmpkhqRB81pzwERC2Jubliqft_trZzUwrlqf1icTnlF0Wb4tX3CIEGnbwarxOLmA1GoiN1JZQSdZi2cAqJ7ygacneqt-0s5To7l5WLwuD9mymMOWfbAvcmClabEqyNMrzEV7cPv0TVaomQw?fife</value>
+            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/umnhe6bu6t44kvb3qpuddfofjo/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoS-OZDHXfQUK0bEDQ6b9n3jXxCUTpeqK-IdPV8UP8LYx9SBl5qLVqK1TYNid1bhNtsTB99IoAgT3Hfhh06UEzbSYoLgPibpnNv8Zt46FaCE0ySMJfiFuaalBlkkn6sbXPtSKVYZgkhsD_414Lzg6w1cyGvnYLsLrhesBPU3IS5DjyfQdYUjCc4YV1VJzysV8w?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6839,11 +7021,11 @@
       </Placemark>
       <Placemark>
         <name>KVCC Anna Whitten Hall</name>
-        <description><![CDATA[<img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/asj8empqg38eo0e7cjs1uetgj0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HxGaZWRxXkiARZROJEIF6jhjg6UeK99-w4-eQdR0hOp7ZENLW6uDAsjqtJZG3aNTcczHnALaa1Ej-GVwaiUgaXR28B_QPrkwD8I8r7BN0bjFQttOHcuw7DzSomlxU3tfCkI5i3PxjSclXQdOsVaCWhASrBukMpOe23m1rF_IjGkQb_oCGSgXtCgYlfCifsig?fife" height="200" width="auto" /><br><br>2 covered u-racks in courtyard]]></description>
+        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/04otqcppv6no71fmgfjhsd04gk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoyu-XRD5vNJ5d-5BFbztYjz1vwlFFMwndjKSVIqvt957A-nb1TMODQWJf7y5GMKOZP_7-9We5vdq3KPvR311NpmEQJC9sdWjUQ1BcuBR7f8vMKIoFy1ICxFjqmvy6YF1zcvAeYMgkJTUolRp4WoyjTsDwXkHOceKNF5km0yYl5rzg4gr6Y-IajP4S2yik3MQ?fife" height="200" width="auto" /><br><br>2 covered u-racks in courtyard]]></description>
         <styleUrl>#icon-1826-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/asj8empqg38eo0e7cjs1uetgj0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HxGaZWRxXkiARZROJEIF6jhjg6UeK99-w4-eQdR0hOp7ZENLW6uDAsjqtJZG3aNTcczHnALaa1Ej-GVwaiUgaXR28B_QPrkwD8I8r7BN0bjFQttOHcuw7DzSomlxU3tfCkI5i3PxjSclXQdOsVaCWhASrBukMpOe23m1rF_IjGkQb_oCGSgXtCgYlfCifsig?fife</value>
+            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/04otqcppv6no71fmgfjhsd04gk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoyu-XRD5vNJ5d-5BFbztYjz1vwlFFMwndjKSVIqvt957A-nb1TMODQWJf7y5GMKOZP_7-9We5vdq3KPvR311NpmEQJC9sdWjUQ1BcuBR7f8vMKIoFy1ICxFjqmvy6YF1zcvAeYMgkJTUolRp4WoyjTsDwXkHOceKNF5km0yYl5rzg4gr6Y-IajP4S2yik3MQ?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6894,11 +7076,11 @@
       </Placemark>
       <Placemark>
         <name>Portage City Hall</name>
-        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/d0ojdfm894onaaogq9998226hc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GFEYsleOV5w24Ba9vokUM89CxnrEweU6SZkxvtRlLElt0wlw8VQDdjDfqeOeyfQCEPBwUGS8hzeQ_3qUgvwYKX118kspLixPn_Lq5aZ_bHHpHzliAx2bgnc9FPH7UKPzltNPTaZi8rLwdR1Z2S2EEu_pQ1NceUpZF4w9CuM4SB8c2ycvXx5SltXBy-709C7yY?fife" height="200" width="auto" /><br><br>Secure rack, covered, right by front door]]></description>
+        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/k6fvemj2l4083c3aduiqc9avmk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpB_HutYcX4Silw7jGR98yQgMWGi_NGPJif5-a-5NdM-LTBm5YPAf8mACXRmmmAnAs-4Z4MM8Or88YGwPZYZBJuWhfYhPCOAskUs4P2YCqtsxrO-WUzxwhGbZ2T3JXwFvz2oVnrkXRWEzKZjVdcws0kwj2CoV_MNKPIbCE-IKn0n7wZxII5FfdnX6rk9Fa-Ey8?fife" height="200" width="auto" /><br><br>Secure rack, covered, right by front door]]></description>
         <styleUrl>#icon-1826-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/d0ojdfm894onaaogq9998226hc/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GFEYsleOV5w24Ba9vokUM89CxnrEweU6SZkxvtRlLElt0wlw8VQDdjDfqeOeyfQCEPBwUGS8hzeQ_3qUgvwYKX118kspLixPn_Lq5aZ_bHHpHzliAx2bgnc9FPH7UKPzltNPTaZi8rLwdR1Z2S2EEu_pQ1NceUpZF4w9CuM4SB8c2ycvXx5SltXBy-709C7yY?fife</value>
+            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/k6fvemj2l4083c3aduiqc9avmk/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpB_HutYcX4Silw7jGR98yQgMWGi_NGPJif5-a-5NdM-LTBm5YPAf8mACXRmmmAnAs-4Z4MM8Or88YGwPZYZBJuWhfYhPCOAskUs4P2YCqtsxrO-WUzxwhGbZ2T3JXwFvz2oVnrkXRWEzKZjVdcws0kwj2CoV_MNKPIbCE-IKn0n7wZxII5FfdnX6rk9Fa-Ey8?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6909,11 +7091,11 @@
       </Placemark>
       <Placemark>
         <name>Portage Community Outreach Center</name>
-        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/k496bgt1jb7bk3hkdtamfvgsc8/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HS8f9qaMmH-Ln7pyYYGHYJXl-BP79PY-rG2dizN1r5ljhU7apnRLdGR4K6VfhrKq11abwz1xiCfJjSD3O1QFS5ISYLwpOTSzvw1hzEAojjK2Wf6yHfHz7ybji2G7eUdAuQRB-YWK25-3cXYdrssokPP6zwXHIM5-WFRz3kN56BHLB7qQZLQMgqmhcuY4YGeA?fife" height="200" width="auto" /><br><br>]]></description>
+        <description><![CDATA[<img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/u63pnanis9h015pseh1o9s8g60/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGruHpWAUoPhZA9kUUSaq_1MQP0_NH4VnGCTD4g-k5kQVp7OJZASGMgCL_9d86mFlMTFYeyZWRgslSISPjV-7fsQN6wWu-0w232z0_pRmdkIM-5eP5zWJ34X5IjhVWclBoM0jKmeGmYoMelg-L7i3g6J5poBWMv9t7kfo8fG_5vI_NkC53rhP_RJu1dLD8XWsA?fife" height="200" width="auto" /><br><br>]]></description>
         <styleUrl>#icon-1826-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/k496bgt1jb7bk3hkdtamfvgsc8/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HS8f9qaMmH-Ln7pyYYGHYJXl-BP79PY-rG2dizN1r5ljhU7apnRLdGR4K6VfhrKq11abwz1xiCfJjSD3O1QFS5ISYLwpOTSzvw1hzEAojjK2Wf6yHfHz7ybji2G7eUdAuQRB-YWK25-3cXYdrssokPP6zwXHIM5-WFRz3kN56BHLB7qQZLQMgqmhcuY4YGeA?fife</value>
+            <value>https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/u63pnanis9h015pseh1o9s8g60/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGruHpWAUoPhZA9kUUSaq_1MQP0_NH4VnGCTD4g-k5kQVp7OJZASGMgCL_9d86mFlMTFYeyZWRgslSISPjV-7fsQN6wWu-0w232z0_pRmdkIM-5eP5zWJ34X5IjhVWclBoM0jKmeGmYoMelg-L7i3g6J5poBWMv9t7kfo8fG_5vI_NkC53rhP_RJu1dLD8XWsA?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -6924,11 +7106,11 @@
       </Placemark>
       <Placemark>
         <name>Portage District Library</name>
-        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e8ff8dk6galeqcco69q14btc74/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HKspZ1EWoiq0DOvUq8yFyOwsc20ScpeIGiYpB200xR4LM5m9Mgpsnd43HMSUnLlceS7DTN21ByHc6ca4PHh0odPYSvlht1dZ2uWogcQiJdmOyq_TkGLKwoa6NudQDtYo1WbDEEdm5NvORI3tyDLJYLIgA4KoTesghtHOxeQEm6OYRxRpBAtAfcT0A0aUPs5Oo?fife" height="200" width="auto" /><br><br>Secure wave rack, near front door]]></description>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/t49a05a0506goqo26rlt1s69qo/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGooQv5WCls06dw8ti5qbHsR8nuvmUvKZFzbP3izfQJ8BxmXmOlIRspHKIYF9Im1_2SzZR3tdJ5UqXtryaZ8cPnxp-190T5ZIFHgoUz7MzSOpFVD11SDPNC6hvgqC2FBHGAEG2uiuD-Le11o5Nb-hkiFpiV-hinbj4XoZfV9RvhYYsLpLS7anMPZ1GvbdJE_YYA?fife" height="200" width="auto" /><br><br>Secure wave rack, near front door]]></description>
         <styleUrl>#icon-1526-C2185B</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e8ff8dk6galeqcco69q14btc74/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HKspZ1EWoiq0DOvUq8yFyOwsc20ScpeIGiYpB200xR4LM5m9Mgpsnd43HMSUnLlceS7DTN21ByHc6ca4PHh0odPYSvlht1dZ2uWogcQiJdmOyq_TkGLKwoa6NudQDtYo1WbDEEdm5NvORI3tyDLJYLIgA4KoTesghtHOxeQEm6OYRxRpBAtAfcT0A0aUPs5Oo?fife</value>
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/t49a05a0506goqo26rlt1s69qo/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGooQv5WCls06dw8ti5qbHsR8nuvmUvKZFzbP3izfQJ8BxmXmOlIRspHKIYF9Im1_2SzZR3tdJ5UqXtryaZ8cPnxp-190T5ZIFHgoUz7MzSOpFVD11SDPNC6hvgqC2FBHGAEG2uiuD-Le11o5Nb-hkiFpiV-hinbj4XoZfV9RvhYYsLpLS7anMPZ1GvbdJE_YYA?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -7026,7 +7208,7 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Pharmacy - K-Med Pharmacy</name>
+        <name>Pharmacy - K Med Pharmacy</name>
         <styleUrl>#icon-1646-0288D1-nodesc</styleUrl>
         <Point>
           <coordinates>
@@ -7168,11 +7350,11 @@
       </Placemark>
       <Placemark>
         <name>Repair Station and Air Pump</name>
-        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/rm9pub3v6lfo6bh48bhp7rlbus/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ErJXROaPe-_GcX-1fhgc82PYJBo5Nom62QDUIZnmwZjBcxkLLSOFuMD0glriVu-nkE4Bbmmfv0ZNfF_0QlerfO5PA-HsCe9TlXplmCfn5uNaniw4LoSRFbbkmcxbsq8aNyeCiVe8uj0lzFp-XoHwlt7-NhrdUSRnmtja-W5CQTEAJDFrczpwMxb2431xzTqAg?fife" height="200" width="auto" /><br><br>Celery Flats pavilion]]></description>
+        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/eu0gjqjsb5mlrtdnh27n2oc21k/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGq1ptSExpp2ljZhEprNHTlT4kcyai_BFUbalIUrXgFPdqTt9ueVKsJgMG62EzL7Nkw322PAGackeAKqvDwpyYMWoHmsYDMr-WaQmHG8N2-JVs8OaC2jcYP_QO3RNQJR-wlhrHSaeufFBJBtstMraKsQeDavXn4RCYQspdijMddoByIF6rYZQCrXPtFJAHcD4Ls?fife" height="200" width="auto" /><br><br>Celery Flats pavilion]]></description>
         <styleUrl>#icon-1590-9C27B0</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/rm9pub3v6lfo6bh48bhp7rlbus/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ErJXROaPe-_GcX-1fhgc82PYJBo5Nom62QDUIZnmwZjBcxkLLSOFuMD0glriVu-nkE4Bbmmfv0ZNfF_0QlerfO5PA-HsCe9TlXplmCfn5uNaniw4LoSRFbbkmcxbsq8aNyeCiVe8uj0lzFp-XoHwlt7-NhrdUSRnmtja-W5CQTEAJDFrczpwMxb2431xzTqAg?fife</value>
+            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/eu0gjqjsb5mlrtdnh27n2oc21k/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGq1ptSExpp2ljZhEprNHTlT4kcyai_BFUbalIUrXgFPdqTt9ueVKsJgMG62EzL7Nkw322PAGackeAKqvDwpyYMWoHmsYDMr-WaQmHG8N2-JVs8OaC2jcYP_QO3RNQJR-wlhrHSaeufFBJBtstMraKsQeDavXn4RCYQspdijMddoByIF6rYZQCrXPtFJAHcD4Ls?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -7193,11 +7375,11 @@
       </Placemark>
       <Placemark>
         <name>Repair Station</name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/cjgt1u6o4k8v1o7jf7sh14nps0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-EpkqD3_pB5KLF5bxyC0-LXpQxnyqR0jqhTbMS3I37Gp2lbq3BdmKBH68982TO97jQqf-YytpMjcDZS1eRsF69q1tUwJQheep9aaSFybAj8PqZ9UsEbZwFCEdIQ-9ogYZSkMmf_cLS3J5bZFfg4QlnlCSJ5NooTQFToGowA5o7ZhuKTP_nuEeajD0V4a0QIK0g?fife" height="200" width="auto" /><br><br>Parktool Public Workstation and hand pump (*must ask for tools inside PFC)<br><br><img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/9v00883f9tglj35j1g156mai28/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FenkAVFzowWm6KKrl-udRT6He6wAywrcZ2c-TdoBIgC_qIarnVNvsXRNKL4-PFqSw13Z6dDV2HEySe22aOEb-65ksUo4zPq4poks5F9n7pGWwX701BCZJpOtPn6EjiV5v2iV-MMG3ruEmQ4sdoeubHxLuaZuDczn7lHZ2ZsZNhtjtVVYe1IKKRUouTWYiCw1I?fife" height="200" width="auto" />]]></description>
+        <description><![CDATA[<img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/7m90f2cf6e55bb9nm7nbnsv0j8/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGq9yOq0Wao3KTn_iEity7WaVtoTas44iyw85ekjLmlHAftKNg5kZuvm8Ah8BioO7nXGEf7Z36AtaDu3-lN9nRFMT5aKzrBDu_Q75jmMCJD6-6yFrezfqUsOK70btH-ZEVLZWOuyRuNyXfTY4XxvdiK4AQbMDHKtmWDT1dA5Je1zmls5gOxpYgI1O5vKeG05jaQ?fife" height="200" width="auto" /><br><br>Parktool Public Workstation and hand pump (*must ask for tools inside PFC)<br><br><img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/sjgbrjnc3q41hfktop071uqarc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrst_RyX03__OwACUr2HMcOXLhaZq3VckU13KJzLrC6jR-KZVr0BuadszwFY8qlOQsEej1sPF_Q_sf_DS6U-LUMOXGUBjv0Ank7cMzo5wlkjq5aJCl9_biYwLdvkhbSSx64t38kaPHgAFlDEUM8WhtcszKebHaRJO8axcJrb-rkWARF0MxpbUjQ0g7oXs1nIp4?fife" height="200" width="auto" />]]></description>
         <styleUrl>#icon-1590-9C27B0</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/cjgt1u6o4k8v1o7jf7sh14nps0/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-EpkqD3_pB5KLF5bxyC0-LXpQxnyqR0jqhTbMS3I37Gp2lbq3BdmKBH68982TO97jQqf-YytpMjcDZS1eRsF69q1tUwJQheep9aaSFybAj8PqZ9UsEbZwFCEdIQ-9ogYZSkMmf_cLS3J5bZFfg4QlnlCSJ5NooTQFToGowA5o7ZhuKTP_nuEeajD0V4a0QIK0g?fife https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/9v00883f9tglj35j1g156mai28/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FenkAVFzowWm6KKrl-udRT6He6wAywrcZ2c-TdoBIgC_qIarnVNvsXRNKL4-PFqSw13Z6dDV2HEySe22aOEb-65ksUo4zPq4poks5F9n7pGWwX701BCZJpOtPn6EjiV5v2iV-MMG3ruEmQ4sdoeubHxLuaZuDczn7lHZ2ZsZNhtjtVVYe1IKKRUouTWYiCw1I?fife</value>
+            <value>https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/7m90f2cf6e55bb9nm7nbnsv0j8/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGq9yOq0Wao3KTn_iEity7WaVtoTas44iyw85ekjLmlHAftKNg5kZuvm8Ah8BioO7nXGEf7Z36AtaDu3-lN9nRFMT5aKzrBDu_Q75jmMCJD6-6yFrezfqUsOK70btH-ZEVLZWOuyRuNyXfTY4XxvdiK4AQbMDHKtmWDT1dA5Je1zmls5gOxpYgI1O5vKeG05jaQ?fife https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/sjgbrjnc3q41hfktop071uqarc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrst_RyX03__OwACUr2HMcOXLhaZq3VckU13KJzLrC6jR-KZVr0BuadszwFY8qlOQsEej1sPF_Q_sf_DS6U-LUMOXGUBjv0Ank7cMzo5wlkjq5aJCl9_biYwLdvkhbSSx64t38kaPHgAFlDEUM8WhtcszKebHaRJO8axcJrb-rkWARF0MxpbUjQ0g7oXs1nIp4?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -7228,11 +7410,11 @@
       </Placemark>
       <Placemark>
         <name>Repair Station and Air Pump</name>
-        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/2mpc5lrj7sokun4s5n3mjordt4/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-F3IjRZIEmgVmqkvYDBgofCo_Da87MkgiEKDp_snUnyPucQQl3e3oca3JmlZoM4J9xPWQPbjWOsg97IaqCCP9xmwLXuksQTlNc9oL-JxQMZR26szmgCFV0hks5lkvEufpGKihAIOowdkqD50y4mtISfLggqHTItXqPFvuATyVxdFJlr5bTGM7RpA6gfmlGOhjw?fife" height="200" width="auto" /><br><br>Madrax Repairstand and Fill up on north side of Zhang Portage Community Senior Center.]]></description>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/ggtd9sjf6924c6m52i7e1i7058/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrG6tWVjMiBYlrZzYVBJkey2NQNT9wz5YmPYZN25hdVzTTJF4yUEoHp3NbDds6x1AWko1j8jw1EnFYdcPKoBVd63oYFO0ZcXFcSd5RIP5nFnPM9o4fOfcpaXjXVtfFatSQQ_8SjCHFkVmF3vgJYP88TPYtLvCBqPCnPofknsbXcDneOH7ry9E-pGVCbmNA56Ak?fife" height="200" width="auto" /><br><br>Madrax "Repairstan" and "Philup" on north side of Zhang Portage Community Senior Center.]]></description>
         <styleUrl>#icon-1590-9C27B0</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/2mpc5lrj7sokun4s5n3mjordt4/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-F3IjRZIEmgVmqkvYDBgofCo_Da87MkgiEKDp_snUnyPucQQl3e3oca3JmlZoM4J9xPWQPbjWOsg97IaqCCP9xmwLXuksQTlNc9oL-JxQMZR26szmgCFV0hks5lkvEufpGKihAIOowdkqD50y4mtISfLggqHTItXqPFvuATyVxdFJlr5bTGM7RpA6gfmlGOhjw?fife</value>
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/ggtd9sjf6924c6m52i7e1i7058/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrG6tWVjMiBYlrZzYVBJkey2NQNT9wz5YmPYZN25hdVzTTJF4yUEoHp3NbDds6x1AWko1j8jw1EnFYdcPKoBVd63oYFO0ZcXFcSd5RIP5nFnPM9o4fOfcpaXjXVtfFatSQQ_8SjCHFkVmF3vgJYP88TPYtLvCBqPCnPofknsbXcDneOH7ry9E-pGVCbmNA56Ak?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -7555,7 +7737,7 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Bathroom, Wi-Fi, Cooling Center</name>
+        <name>Bathroom, WiFi, Cooling Center</name>
         <description>Portage District Library</description>
         <styleUrl>#icon-1733-0288D1</styleUrl>
         <Point>
@@ -7636,11 +7818,11 @@
       </Placemark>
       <Placemark>
         <name>Bathroom, Drinking Fountain</name>
-        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/6hegd7lrlt1hbt5co0fk732nro/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HGzmZSoa9jQCIx0i2SuN8xGhESDIe2NG4yUAVoeVUZ5TlATAUF6aeH6-Ba6hmjyBmm4BhDkTyzRNEDK5PLNNXxjiHlsl8YheqXwp9GsA-9KzH5pKV03r2uMMTYZTcxlcEAZvx62sEGW_bnNVRHhyP-05srsEPouAND_TYaz8s9ddQcXWbvgwJ1pH0p9e8p8xI?fife" height="200" width="auto" /><br><br>Celery Flats Amphitheatre]]></description>
+        <description><![CDATA[<img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/qddimioimg9dr3tb86g6u56h1k/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoPH8kBVUTSg9JjL4_bzN4z3yBTzz3lbLZ9mWjskU7rHTi5Dvd_3corNvdfkk45xmH1vKaVhQ2bbzJrXAbCMbEFnWialTe3SX1wRwsw0QoQv3_bLcRVVm-XGif_1p3IQi-gAlezQKVtnq1sOYAb72jlSaGcGpBCzwH1p3NVp77Bs9ZEZiIEf_nWD1dSigUKZL4?fife" height="200" width="auto" /><br><br>Celery Flats Amphitheatre]]></description>
         <styleUrl>#icon-1733-0288D1</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/6hegd7lrlt1hbt5co0fk732nro/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-HGzmZSoa9jQCIx0i2SuN8xGhESDIe2NG4yUAVoeVUZ5TlATAUF6aeH6-Ba6hmjyBmm4BhDkTyzRNEDK5PLNNXxjiHlsl8YheqXwp9GsA-9KzH5pKV03r2uMMTYZTcxlcEAZvx62sEGW_bnNVRHhyP-05srsEPouAND_TYaz8s9ddQcXWbvgwJ1pH0p9e8p8xI?fife</value>
+            <value>https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/qddimioimg9dr3tb86g6u56h1k/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoPH8kBVUTSg9JjL4_bzN4z3yBTzz3lbLZ9mWjskU7rHTi5Dvd_3corNvdfkk45xmH1vKaVhQ2bbzJrXAbCMbEFnWialTe3SX1wRwsw0QoQv3_bLcRVVm-XGif_1p3IQi-gAlezQKVtnq1sOYAb72jlSaGcGpBCzwH1p3NVp77Bs9ZEZiIEf_nWD1dSigUKZL4?fife</value>
           </Data>
         </ExtendedData>
         <Point>
@@ -7650,7 +7832,7 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Bathrooms, Wi-Fi, Cooling Center</name>
+        <name>Bathrooms, WiFi, Cooling Center</name>
         <description>Kalamazoo Public Library - Central Library</description>
         <styleUrl>#icon-1733-0288D1</styleUrl>
         <Point>
@@ -7671,249 +7853,16 @@
       </Placemark>
       <Placemark>
         <name>Drinking fountain</name>
-        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/i7afpksjv4kl9ho4dtdpnr3tdo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FYJWhmrhIClMlprFqm-b6UWIskr22ATr4oW1LKrh3lxIKfhwiYN9Ne4ucMJVXf7yb4paNemDGU3pdjRw6-Pd7KcedpUGo0YsegXJpZavx7zGoVybpbqmERUcXVMozNzv9HbIq9waGpQksVeo0GCdXWyXtb7nJy6EuKJpKdbZ_QYNPDZuOgyVpdXsvPuucOn9I?fife" height="200" width="auto" /><br><br>North side of Portage District Library near the trail intersection.]]></description>
+        <description><![CDATA[<img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/0slepl4sqhvnilsnhmhrqinv9s/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoA44q_LKctwhx3xgf3rApXjYXKMs8eo7fx3BlEhZuD4cN4XIvu5NiZ1q6ZHabcdgsPT5vW0eKE3A_0Cnl7D4iWRGVsO6v2mFZJDPzBaosImIGHqDNPnq2KYKZskz6OYXNJX37CZCUrGLfAsDFxL2sSm_yvvoNbqHm1nNQtCRRgp73QGBLEaAXQzDMS0tcXRGc?fife" height="200" width="auto" /><br><br>North side of Portage District Library near the trail intersection.]]></description>
         <styleUrl>#icon-1580-0288D1</styleUrl>
         <ExtendedData>
           <Data name="gx_media_links">
-            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/i7afpksjv4kl9ho4dtdpnr3tdo/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FYJWhmrhIClMlprFqm-b6UWIskr22ATr4oW1LKrh3lxIKfhwiYN9Ne4ucMJVXf7yb4paNemDGU3pdjRw6-Pd7KcedpUGo0YsegXJpZavx7zGoVybpbqmERUcXVMozNzv9HbIq9waGpQksVeo0GCdXWyXtb7nJy6EuKJpKdbZ_QYNPDZuOgyVpdXsvPuucOn9I?fife</value>
+            <value>https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/0slepl4sqhvnilsnhmhrqinv9s/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoA44q_LKctwhx3xgf3rApXjYXKMs8eo7fx3BlEhZuD4cN4XIvu5NiZ1q6ZHabcdgsPT5vW0eKE3A_0Cnl7D4iWRGVsO6v2mFZJDPzBaosImIGHqDNPnq2KYKZskz6OYXNJX37CZCUrGLfAsDFxL2sSm_yvvoNbqHm1nNQtCRRgp73QGBLEaAXQzDMS0tcXRGc?fife</value>
           </Data>
         </ExtendedData>
         <Point>
           <coordinates>
             -85.5865761,42.2039218,0
-          </coordinates>
-        </Point>
-      </Placemark>
-    </Folder>
-    <Folder>
-      <name>Worlds of Wonder</name>
-      <Placemark>
-        <name>Asylum Lake (Drake Rd)</name>
-        <description>3 hitch racks</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.6477043,42.2640403,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Portage District Library Native Garden, Monarch Waystation</name>
-        <description><![CDATA[<img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/jmt7uvfqc3slpvd8j8i623c5pg/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ExaMR7UqZnRqZQLVRbkIxQER05EwK-d6tLkHNTcD_h4-DD9M-q9v4fM9dkfylxIP6U8aVHNkzpgWWnuq0NtpOcP53oPXJB7cGxhK-6K0uhTmSReALmKPnjJJ0J2dKtmMho2f-Bqy4t2r__AWVbmK1ZGsPK00oQ0eaiiKPNpv9pKeSJScJAplrUXbdW5KaTwkg?fife" height="200" width="auto" /><br><br>North side of Portage District Library<br><br><img src="https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e3cmrfsrb9jn7d9c3ljmvh8oos/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GDjhmGoOWJlI98Koh5wrFZErxuUowUfkjHj5oOn0P72j2kjlY0dR3OZFbiN4vxtcYAX1L3aN9tNrCwfecGo5gLAbSmbAJM6UX9hHnFIiyzg2ihcTjYrSmnRNbxALLWmYZ6AYyfa2UaP6-bi7Dirkbg5zcXU1rFm30a4OmrwVrZnHqOxqFwBrpRWJqw3aJXOtw?fife" height="200" width="auto" />]]></description>
-        <styleUrl>#icon-1405</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value>https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/jmt7uvfqc3slpvd8j8i623c5pg/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-ExaMR7UqZnRqZQLVRbkIxQER05EwK-d6tLkHNTcD_h4-DD9M-q9v4fM9dkfylxIP6U8aVHNkzpgWWnuq0NtpOcP53oPXJB7cGxhK-6K0uhTmSReALmKPnjJJ0J2dKtmMho2f-Bqy4t2r__AWVbmK1ZGsPK00oQ0eaiiKPNpv9pKeSJScJAplrUXbdW5KaTwkg?fife https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e3cmrfsrb9jn7d9c3ljmvh8oos/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GDjhmGoOWJlI98Koh5wrFZErxuUowUfkjHj5oOn0P72j2kjlY0dR3OZFbiN4vxtcYAX1L3aN9tNrCwfecGo5gLAbSmbAJM6UX9hHnFIiyzg2ihcTjYrSmnRNbxALLWmYZ6AYyfa2UaP6-bi7Dirkbg5zcXU1rFm30a4OmrwVrZnHqOxqFwBrpRWJqw3aJXOtw?fife</value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            -85.5870434,42.2039099,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>West Main Hill Play Street</name>
-        <description><![CDATA[<img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/bs76h90b7fqclmfqcgb081gf3o/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-F8ZeigzmSj3KEiumN8EDhYa7_uCK8RMgWWI9gtiITVKGxy6zTxrLmfzMEkOwJdeJ4nb5NOQuhgSQmgiJVz6v9xEF0Kcm8rz7ugIK45xW5_eDMpkesO_PovaK2KgPsUpvJz-apIgsojLlm9VTVdbiKYJkJTkB-qfWYhujUj1I53xZv0uhJZ0VYp263torzlqw?fife" height="200" width="auto" /><br><br>Near Jones Park - http://www.imaginekalamazoo.com/projects/wmhplaystreet/]]></description>
-        <styleUrl>#icon-1405</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value>https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/bs76h90b7fqclmfqcgb081gf3o/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-F8ZeigzmSj3KEiumN8EDhYa7_uCK8RMgWWI9gtiITVKGxy6zTxrLmfzMEkOwJdeJ4nb5NOQuhgSQmgiJVz6v9xEF0Kcm8rz7ugIK45xW5_eDMpkesO_PovaK2KgPsUpvJz-apIgsojLlm9VTVdbiKYJkJTkB-qfWYhujUj1I53xZv0uhJZ0VYp263torzlqw?fife</value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            -85.6083529,42.2896456,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>WMU Dinosaur Park</name>
-        <description>Brachiosaurus, Spinosaurus, Triceratops, Stegosaurus, Utahraptor and Parasaurolophus.</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.6167297,42.2838283,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>WMU Native Gardens</name>
-        <description><![CDATA[<img src="https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/8v7q0m9e99b00i93oocnup1c60/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FG1UvHLWw6XRxgoWgBFPJr3WFjS_dulKcY9MPQCPN1hpW2g6Vj5Lv_SzC2uSL8_QjGrb_rNXES5ZH40szzzQyw9aBxfizaiz1HC6P4fdKqitO38QQawdw8mZ9HUg-HgtRRKH0_-LXqNpswzVueJVpUshv3WWbAQwlXf0kX40W913BL2QKP_AR72PSBf4WOdxw?fife" height="200" width="auto" /><br><br>Native gardens and walking paths throughout WMU Parkview Campus full of: bee balm, milkweed, yellow/orange/purple coneflowers, ironweed, blue vervane, chicory, thistle, goldenrod, juniper, butterfly weed, etc.<br><br><img src="https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/8f8l5s7pohlk8atffa6dac0uss/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FdfsFes0XCA8lytygsakjuYAWWMSoJX1bb94X9VwPie2HSo6l81H0Ig4trbZ2QOsl_oTmB7o--A-hlq_Q8c88rI7oWS5AWlBA3obFvHQ2aLs7h25LIBzTF4JwNrINfB6oz_YLXg5-G2tU7XJlJZVXyg9miw_UCiIBPHWl7OS5qN3hhUryyPeUYWFuSOMKUB8k?fife" height="200" width="auto" />]]></description>
-        <styleUrl>#icon-1405</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value>https://doc-0g-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/8v7q0m9e99b00i93oocnup1c60/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FG1UvHLWw6XRxgoWgBFPJr3WFjS_dulKcY9MPQCPN1hpW2g6Vj5Lv_SzC2uSL8_QjGrb_rNXES5ZH40szzzQyw9aBxfizaiz1HC6P4fdKqitO38QQawdw8mZ9HUg-HgtRRKH0_-LXqNpswzVueJVpUshv3WWbAQwlXf0kX40W913BL2QKP_AR72PSBf4WOdxw?fife https://doc-0c-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/8f8l5s7pohlk8atffa6dac0uss/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-FdfsFes0XCA8lytygsakjuYAWWMSoJX1bb94X9VwPie2HSo6l81H0Ig4trbZ2QOsl_oTmB7o--A-hlq_Q8c88rI7oWS5AWlBA3obFvHQ2aLs7h25LIBzTF4JwNrINfB6oz_YLXg5-G2tU7XJlJZVXyg9miw_UCiIBPHWl7OS5qN3hhUryyPeUYWFuSOMKUB8k?fife</value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            -85.6467907,42.2579975,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Asylum Lake (Winchell Ave)</name>
-        <description>1 hitch rack</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.6337656,42.2671984,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Asylum Lake (Parkview Ave)</name>
-        <description>2 hitch racks</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.6368038,42.2603235,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Al Sabo Nature Preserve</name>
-        <styleUrl>#icon-1405-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            -85.6738891,42.2121087,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name><![CDATA[Children's Nature Playscape]]></name>
-        <description>Natural playground, water features, and Portland Loo bathroom</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.586322,42.2908794,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Arcadia Playground</name>
-        <styleUrl>#icon-1405-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5823171,42.293505,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Upjohn Park Playground</name>
-        <description>Playground, skateboard park, near Kik Pool</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5774762,42.2816136,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Reed Park</name>
-        <description>Playground, race track</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5714395,42.2745504,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Oak Street Community Garden</name>
-        <styleUrl>#icon-1405-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5920144,42.2878778,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Davis Park</name>
-        <description>Playground and skateboard park</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5948551,42.2819844,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Kleinstuck Nature Preserve</name>
-        <styleUrl>#icon-1405-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5993574,42.2704144,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>West Lake Nature Preserve</name>
-        <description>Playground and floating bog trail</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5877193,42.1849323,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Hampton Creek Wetlands Boardwalk</name>
-        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/6o4dga4v56c873ur340op32ui4/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-Eqmt_mM0P-Wz2T38D3_jqoXhhoVwho12Fis5r2B3sp1tjYaB_z4DYZ8zbSd-ryRpB1KkA0ZXtdxr7whqcs_5K2uK_9clf40BjKtxq2S9oi7dfLMOHKlTMXL8MXhlLyu33hQiSVA27y0hzYjvQkOEyLGoph6rZn7qHu-Jw5H1gt0bxW8BGt4OAdxpqCsbB8-8o?fife" height="200" width="auto" /><br><br>A wetland complex in the floodplain of Hampton Creek, which flows southwesterly into Hampton Lake. The presence of several major natural communities, including southern sedge meadow, fen, mesic-wet prairie and wet northern forest, and the presence of several sub-types within each of these communities, as well as nine plant species that are threatened in the state, label the wetland as very unusual. Its size and natural diversity recommended it as a natural area. The surrounding uplands, though disturbed, support vegetation of sand prairies and open oak woods, which are communities once found throughout southern Michigan.<br><br><img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/b6q3ohmr8qp9veffqj7dttkg8o/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GCLvV-oUq88a8ejcd4fuNpdBIYw9CS-HwC5j48qJmw1Hhp6IoCVpZUlYKZqBKfqcYe3meZ80m8gcwHGYoyeAm6wTcMlSH-bQPxbq8n6doxywgHKCE-4PJFBq7M1z8bqRA_rq2LwOLPShvR5rR5qJxlekXiBKY-FCxeYwoWSQawRzxyeBML5WE6dp_FcZrD55w?fife" height="200" width="auto" /><br><br><img src="https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/57d8gk25rbdkhb4d26rq92t608/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GNso7aI4-7rZDCmDSEWZRCu29_Z92TU2XvQ4nW0ljdU7AS98kClNFI1Rfm19oTrIulTqQOBrVdChjoopiX8jcxzahHxxc5xnFDPljdL4gOsKOHVLk16TnXn0AHO2UMU8hrtfiuP1aI6NdPnOyFy5Mv9y1hR_ZoS92AO5Fk7q-mtaae_HYberCWcUd6JjJAxFw?fife" height="200" width="auto" />]]></description>
-        <styleUrl>#icon-1405</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/6o4dga4v56c873ur340op32ui4/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-Eqmt_mM0P-Wz2T38D3_jqoXhhoVwho12Fis5r2B3sp1tjYaB_z4DYZ8zbSd-ryRpB1KkA0ZXtdxr7whqcs_5K2uK_9clf40BjKtxq2S9oi7dfLMOHKlTMXL8MXhlLyu33hQiSVA27y0hzYjvQkOEyLGoph6rZn7qHu-Jw5H1gt0bxW8BGt4OAdxpqCsbB8-8o?fife https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/b6q3ohmr8qp9veffqj7dttkg8o/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GCLvV-oUq88a8ejcd4fuNpdBIYw9CS-HwC5j48qJmw1Hhp6IoCVpZUlYKZqBKfqcYe3meZ80m8gcwHGYoyeAm6wTcMlSH-bQPxbq8n6doxywgHKCE-4PJFBq7M1z8bqRA_rq2LwOLPShvR5rR5qJxlekXiBKY-FCxeYwoWSQawRzxyeBML5WE6dp_FcZrD55w?fife https://doc-04-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/57d8gk25rbdkhb4d26rq92t608/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-GNso7aI4-7rZDCmDSEWZRCu29_Z92TU2XvQ4nW0ljdU7AS98kClNFI1Rfm19oTrIulTqQOBrVdChjoopiX8jcxzahHxxc5xnFDPljdL4gOsKOHVLk16TnXn0AHO2UMU8hrtfiuP1aI6NdPnOyFy5Mv9y1hR_ZoS92AO5Fk7q-mtaae_HYberCWcUd6JjJAxFw?fife</value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            -85.6432589,42.1995738,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Portage Garden Club Native Gardens</name>
-        <description><![CDATA[Trailside "storefront" and native pollinator garden]]></description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.6220827,42.2267279,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>La Crone Park</name>
-        <description>Splashpad</description>
-        <styleUrl>#icon-1405</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5935977,42.3029201,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Florence Street Splash Pad</name>
-        <styleUrl>#icon-1405-nodesc</styleUrl>
-        <Point>
-          <coordinates>
-            -85.5913784,42.300107,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>WMU Storm Water Management</name>
-        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/t3dk9sli873qdejgcataciu7es/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E1Ui4tHemQxEJUVGXQqA_J37jEJdGB7wDDw_v3USiG9wB2PS5h3KpI01g_bph--VwMaTZXFrFqmKWzFeo7-0nHLsJTr3lCJQu_YFEG5tAiQa0vqJdCcG9Sh-sKDxdQNF_EjOkuTsSowO6pBuo5XqD4P9ZM0AU8r9bG09rG0cC2g9DjMSEEbMP24DPjwNnu4LE?fife" height="200" width="auto" /><br><br>Explore the fountain and learn about storm water management on WMU's main campus.<br><br><img src="https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e3r9m00667r36v7h9dqberra14/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E_tJctsWGABjHExer19Gab-S47ceXqVLkeUUNvCbum4bjAKnIfVrCkMBhp8MRuRrhC1n4Sst0M0J_QgBDHyQPt0EXx4rjJuNasFvwkHZ5XRrSvY-b37vqo3OWyAttvXgtiBF9xBy5VXKJgKf8sx-wU09irK7Bc_42QN7CIwLqCDMXYFpPRvjbeaP7PA1sGyKk?fife" height="200" width="auto" />]]></description>
-        <styleUrl>#icon-1405</styleUrl>
-        <ExtendedData>
-          <Data name="gx_media_links">
-            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/t3dk9sli873qdejgcataciu7es/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E1Ui4tHemQxEJUVGXQqA_J37jEJdGB7wDDw_v3USiG9wB2PS5h3KpI01g_bph--VwMaTZXFrFqmKWzFeo7-0nHLsJTr3lCJQu_YFEG5tAiQa0vqJdCcG9Sh-sKDxdQNF_EjOkuTsSowO6pBuo5XqD4P9ZM0AU8r9bG09rG0cC2g9DjMSEEbMP24DPjwNnu4LE?fife https://doc-00-8o-mymaps.googleusercontent.com/untrusted/hostedimage/o2fbn585vcrt3ao71o6a0j9c34/e3r9m00667r36v7h9dqberra14/1681242300000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6ACtvi-E_tJctsWGABjHExer19Gab-S47ceXqVLkeUUNvCbum4bjAKnIfVrCkMBhp8MRuRrhC1n4Sst0M0J_QgBDHyQPt0EXx4rjJuNasFvwkHZ5XRrSvY-b37vqo3OWyAttvXgtiBF9xBy5VXKJgKf8sx-wU09irK7Bc_42QN7CIwLqCDMXYFpPRvjbeaP7PA1sGyKk?fife</value>
-          </Data>
-        </ExtendedData>
-        <Point>
-          <coordinates>
-            -85.6165372,42.279681,0
           </coordinates>
         </Point>
       </Placemark>
@@ -8105,6 +8054,794 @@
             -85.5762809,42.289685,0
           </coordinates>
         </LineString>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Worlds of Wonder</name>
+      <Placemark>
+        <name>Asylum Lake (Drake Rd)</name>
+        <description>3 hitch racks</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6477043,42.2640403,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Portage District Library Native Garden, Monarch Waystation</name>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/q8jvicp1gq6mhvkmd0mm4n2dl4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGo6F8MqIBsSpBc-n_Cb_8kHWIhhfNb-bpKYTNFtt-WLZ-S4g839P-J413-FaNdrd2wX3_poV_QazOAB6Yrqr-Mcy7ej43t9_wcNG0q_ESy7Wyvy3Kpw3owF3CR6dlmIaf-c2fEhDtsjsXgzr7HcfU6qqEdigbXAWHeYfDFPoKgPiOg0idCv_uVKOmYLGBStE5k?fife" height="200" width="auto" /><br><br>North side of Portage District Library<br><br><img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/4p66qo7jqbircg29asnt9dqib0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGok2lE0u6FTjTn9Sjvt9ls3908a-nCTdohmUIBl6HuYdxoSEaFxBofws8U4msNzZCez7fwRx8M2o4IPXs_zP9Esnk2wT4D8HFoUEZnCRyy1bZVoF4-8Eb7rjZ636HhIMHQoFfAxwultk8m9CdFe4Jv4fjU8dpOZ9ol0o8FBGu7CS-HXuObkUNaxUaH2Ma5SL5I?fife" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/q8jvicp1gq6mhvkmd0mm4n2dl4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGo6F8MqIBsSpBc-n_Cb_8kHWIhhfNb-bpKYTNFtt-WLZ-S4g839P-J413-FaNdrd2wX3_poV_QazOAB6Yrqr-Mcy7ej43t9_wcNG0q_ESy7Wyvy3Kpw3owF3CR6dlmIaf-c2fEhDtsjsXgzr7HcfU6qqEdigbXAWHeYfDFPoKgPiOg0idCv_uVKOmYLGBStE5k?fife https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/4p66qo7jqbircg29asnt9dqib0/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGok2lE0u6FTjTn9Sjvt9ls3908a-nCTdohmUIBl6HuYdxoSEaFxBofws8U4msNzZCez7fwRx8M2o4IPXs_zP9Esnk2wT4D8HFoUEZnCRyy1bZVoF4-8Eb7rjZ636HhIMHQoFfAxwultk8m9CdFe4Jv4fjU8dpOZ9ol0o8FBGu7CS-HXuObkUNaxUaH2Ma5SL5I?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.5870434,42.2039099,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>West Main Hill Play Street</name>
+        <description><![CDATA[<img src="https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/q6b6nbkv21l86eqqc91dfalnv4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqXHCs2lf9DlnGk2-YrgC518aBuvZzUzfi8b-le8M0Y5akGPeN1oadBH2FHU7VxDoPOMVk2JICuE28g5DSkykprMErr0CtW15IQprzcjjchkSDEezN5plx5Xb_woiuAmB3_x2NgKVgO20F0Q7Oza_HjzXPo0PxXWPtB-NoCfZbCUKHvqWvqDcWG52PwbuMaNQ?fife" height="200" width="auto" /><br><br>Near Jones Park - http://www.imaginekalamazoo.com/projects/wmhplaystreet/]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-08-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/q6b6nbkv21l86eqqc91dfalnv4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGqXHCs2lf9DlnGk2-YrgC518aBuvZzUzfi8b-le8M0Y5akGPeN1oadBH2FHU7VxDoPOMVk2JICuE28g5DSkykprMErr0CtW15IQprzcjjchkSDEezN5plx5Xb_woiuAmB3_x2NgKVgO20F0Q7Oza_HjzXPo0PxXWPtB-NoCfZbCUKHvqWvqDcWG52PwbuMaNQ?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.6083529,42.2896456,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>WMU Dinosaur Park</name>
+        <description>Brachiosaurus, Spinosaurus, Triceratops, Stegosaurus, Utahraptor and Parasaurolophus.</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6167297,42.2838283,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>WMU Native Gardens</name>
+        <description><![CDATA[<img src="https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/oj7f8n45aoa13d2igf784vk044/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpzN2niGGalaA1gaNczxl2i03i1BkByW2lheems525As-AyCvpzzcyazoY0_Fw8g5GW3pL66xHKuWrBiVyfQYamvWv7DREAWI2o7CW9WPaY1b1f4JhmwtmfYWrN_2uIsyIHiPQhjG4yTz37pvLLxsGKEZAg9fW1wQkY_H6-LPQvQwbKUSLvk8005gBU6vfHS0U?fife" height="200" width="auto" /><br><br>Native gardens and walking paths throughout WMU Parkview Campus full of: bee balm, milkweed, yellow/orange/purple coneflowers, ironweed, blue vervane, chicory, thistle, goldenrod, juniper, butterfly weed, etc.<br><br><img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/cdujn6ffnp4j26ikk86dhkauno/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGo2Opzg6kt-WSlE63MaVtC4wKoU0vJ8AxxJpz3w905Mr1Xb5TneLtivb65_dU5U2cre7mK2vCeSLUQXblbjrclVhkIIRbE2ffoOaZQoTjS8P_yhoV6LuZC7vL_-Tblb_jzyDJscXdzlHlCIrk4bI1OgAGnqpRk1wTsjsZYRTfMXZ1EZDf1wwCoYnlPRPN8kiNk?fife" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-14-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/oj7f8n45aoa13d2igf784vk044/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpzN2niGGalaA1gaNczxl2i03i1BkByW2lheems525As-AyCvpzzcyazoY0_Fw8g5GW3pL66xHKuWrBiVyfQYamvWv7DREAWI2o7CW9WPaY1b1f4JhmwtmfYWrN_2uIsyIHiPQhjG4yTz37pvLLxsGKEZAg9fW1wQkY_H6-LPQvQwbKUSLvk8005gBU6vfHS0U?fife https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/cdujn6ffnp4j26ikk86dhkauno/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGo2Opzg6kt-WSlE63MaVtC4wKoU0vJ8AxxJpz3w905Mr1Xb5TneLtivb65_dU5U2cre7mK2vCeSLUQXblbjrclVhkIIRbE2ffoOaZQoTjS8P_yhoV6LuZC7vL_-Tblb_jzyDJscXdzlHlCIrk4bI1OgAGnqpRk1wTsjsZYRTfMXZ1EZDf1wwCoYnlPRPN8kiNk?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.6467907,42.2579975,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Asylum Lake (Winchell Ave)</name>
+        <description>1 hitch rack</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6337656,42.2671984,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Asylum Lake (Parkview Ave)</name>
+        <description>2 hitch racks</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6368038,42.2603235,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Al Sabo Nature Preserve</name>
+        <styleUrl>#icon-1405-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6738891,42.2121087,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Children's Nature Playscape]]></name>
+        <description>Natural playground, water features, and Portland Loo bathroom</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.586322,42.2908794,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arcadia Playground</name>
+        <styleUrl>#icon-1405-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5823171,42.293505,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Upjohn Park Playground</name>
+        <description>Playground, skateboard park, near Kik Pool</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5774762,42.2816136,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Reed Park</name>
+        <description>Playground, race track</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5714395,42.2745504,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oak Street Community Garden</name>
+        <styleUrl>#icon-1405-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5920144,42.2878778,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Davis Park</name>
+        <description>Playground and skateboard park</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5948551,42.2819844,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kleinstuck Nature Preserve</name>
+        <styleUrl>#icon-1405-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5993574,42.2704144,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>West Lake Nature Preserve</name>
+        <description>Playground and floating bog trail</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5877193,42.1849323,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hampton Creek Wetlands Boardwalk</name>
+        <description><![CDATA[<img src="https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/nqog81g7s81p0gkeh5qufkms6o/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpG6-bTZN7eN-dLVpBQ5It3B8wT9l-bHoem6Y6IGn52QzC0Sb6TzIeYAaJd2c9R0LxZCHrCVukZfSdQ2GACIy_N9oVPSNuNi24DJMxoGDvXjL6BqfV3hFOoYTFkgzmyKSj4OTvtd6ml0xd17ykzwmpo81FXobbO021A8Xqlwy8HhgZ1PpDj0FA88mDV5h0vLHc?fife" height="200" width="auto" /><br><br>A wetland complex in the floodplain of Hampton Creek, which flows southwesterly into Hampton Lake. The presence of several major natural communities, including southern sedge meadow, fen, mesic-wet prairie and wet northern forest, and the presence of several sub-types within each of these communities, as well as nine plant species that are threatened in the state, label the wetland as very unusual. Its size and natural diversity recommended it as a natural area. The surrounding uplands, though disturbed, support vegetation of sand prairies and open oak woods, which are communities once found throughout southern Michigan.<br><br><img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/st419945lb9c0epua8j6ciooc4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpQNG6j1wCzFa0vfUook-EO7VLmQWlmS7KmZN-Bg8mMMUfGSmgSZ7nxG9Mzb-5PrHvAkGoay9AJcKGVkTEs_ehvW587f1q9x8utnaJplgESLqNidOSZQaBPOGF7ABHUkb2LH2iti8XdBV6QW-i2MiKw_vANPBwIWXHLg3rYFqpIuaTMhxEihSLL0Oemy-ndujU?fife" height="200" width="auto" /><br><br><img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/agrbet0jnsdiv2g662enqmpnk4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrKzDBZyMm3t0cpExa1r-kitCtAO2c_9d8o-ziNACsMpt74SYFhsA5Wpg71n51cRZQ0x5x8jfMcmYc5BqQBWtBh1cwZfjCgIOcVhN3iG7G56CZbR_0TucuKqqYIuKOFVs5Eb9bzgGdxBaCMPZRRLppaKYUyFikhmSS2G3IkWz5YBAouQ2exS3XWir7d9o1gpSM?fife" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-0o-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/nqog81g7s81p0gkeh5qufkms6o/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpG6-bTZN7eN-dLVpBQ5It3B8wT9l-bHoem6Y6IGn52QzC0Sb6TzIeYAaJd2c9R0LxZCHrCVukZfSdQ2GACIy_N9oVPSNuNi24DJMxoGDvXjL6BqfV3hFOoYTFkgzmyKSj4OTvtd6ml0xd17ykzwmpo81FXobbO021A8Xqlwy8HhgZ1PpDj0FA88mDV5h0vLHc?fife https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/st419945lb9c0epua8j6ciooc4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpQNG6j1wCzFa0vfUook-EO7VLmQWlmS7KmZN-Bg8mMMUfGSmgSZ7nxG9Mzb-5PrHvAkGoay9AJcKGVkTEs_ehvW587f1q9x8utnaJplgESLqNidOSZQaBPOGF7ABHUkb2LH2iti8XdBV6QW-i2MiKw_vANPBwIWXHLg3rYFqpIuaTMhxEihSLL0Oemy-ndujU?fife https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/agrbet0jnsdiv2g662enqmpnk4/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGrKzDBZyMm3t0cpExa1r-kitCtAO2c_9d8o-ziNACsMpt74SYFhsA5Wpg71n51cRZQ0x5x8jfMcmYc5BqQBWtBh1cwZfjCgIOcVhN3iG7G56CZbR_0TucuKqqYIuKOFVs5Eb9bzgGdxBaCMPZRRLppaKYUyFikhmSS2G3IkWz5YBAouQ2exS3XWir7d9o1gpSM?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.6432589,42.1995738,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Portage Garden Club Native Gardens</name>
+        <description><![CDATA[Trailside "storefront" and native pollinator garden]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6220827,42.2267279,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Crone Park</name>
+        <description>Splashpad</description>
+        <styleUrl>#icon-1405</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5935977,42.3029201,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kaleidoscope </name>
+        <description><![CDATA[<img src="https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/8racod5eourk2gnohdjs66u34o/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpSqdDRH7ex8UVVsT7dKtIsq3vO4Sxmrrmm-PusM7Lh9jjXO45VsxtC7-K5q4jijYoXMe6N9mWZw9-ZLCnSbFln4BfAQG6t4iAwRpBjyJQdawfFueDGwbh7scXB-1Hm1RTtGgGU0b58FN3G3BhenxJZCL6JCVyqg0E52bfw9rRm0ko9F0FVoin6qhrsEC9U6oX0CAzCvVSgPZB4P4E_c966orVqs8S9SErKLKCrEWH5AN0?fife" height="200" width="auto" /><br><br>The contents of the kaleidoscope vary with the seasons. There is always something new to check out.]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-0k-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/8racod5eourk2gnohdjs66u34o/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpSqdDRH7ex8UVVsT7dKtIsq3vO4Sxmrrmm-PusM7Lh9jjXO45VsxtC7-K5q4jijYoXMe6N9mWZw9-ZLCnSbFln4BfAQG6t4iAwRpBjyJQdawfFueDGwbh7scXB-1Hm1RTtGgGU0b58FN3G3BhenxJZCL6JCVyqg0E52bfw9rRm0ko9F0FVoin6qhrsEC9U6oX0CAzCvVSgPZB4P4E_c966orVqs8S9SErKLKCrEWH5AN0?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.5873042,42.2032421,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Florence Street Splash Pad</name>
+        <styleUrl>#icon-1405-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5913784,42.300107,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>WMU Storm Water Management</name>
+        <description><![CDATA[<img src="https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/jsok2pifn0g1tvps1u0ed0gm00/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoFa8FCkQ_to3XSqkAKP9yVCxLoVIZtapuMUqDHtC7g1udKPJFYqW4ugQRBIgXJ08q5UpQXjyR_P39xzQ-gl45tm8Zk4YazML9xjjQF6ZH1Bju9oOM__RdjgznkSJSgoSB_sVF9U8fVFdYQTEcOiANciXr23z4lBIO8Fuqk-dw3EICbkPuB5p-gsVv6OuHD1ig?fife" height="200" width="auto" /><br><br>Explore the fountain and learn about storm water management on WMU's main campus.<br><br><img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/4v81441k28t8o5t8bf12407prc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpHfbA-jfuZhyKuzIJk_c3gDejtor70gUcQeMky0tCosYcgMhe0-AUgDLx4lLL0Y0-H-7sCZVNPV_jh3PGfDXZbVXpd_VIN0pWM37jcNCxhKjLx_LGluHFgt9biQ_OMpfDPVb72vW5Q1-utxfJZ7cw_7z4n7NBNlxyjoQ9cPKS0Z0QFVHUvkqesnKEKtm_LUV8?fife" height="200" width="auto" />]]></description>
+        <styleUrl>#icon-1405</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-0s-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/jsok2pifn0g1tvps1u0ed0gm00/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoFa8FCkQ_to3XSqkAKP9yVCxLoVIZtapuMUqDHtC7g1udKPJFYqW4ugQRBIgXJ08q5UpQXjyR_P39xzQ-gl45tm8Zk4YazML9xjjQF6ZH1Bju9oOM__RdjgznkSJSgoSB_sVF9U8fVFdYQTEcOiANciXr23z4lBIO8Fuqk-dw3EICbkPuB5p-gsVv6OuHD1ig?fife https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/4v81441k28t8o5t8bf12407prc/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGpHfbA-jfuZhyKuzIJk_c3gDejtor70gUcQeMky0tCosYcgMhe0-AUgDLx4lLL0Y0-H-7sCZVNPV_jh3PGfDXZbVXpd_VIN0pWM37jcNCxhKjLx_LGluHFgt9biQ_OMpfDPVb72vW5Q1-utxfJZ7cw_7z4n7NBNlxyjoQ9cPKS0Z0QFVHUvkqesnKEKtm_LUV8?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.6165372,42.279681,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Barrister Building</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.587751,42.292507,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Glass Jars</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.58633,42.294877,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Untitled</name>
+        <description>Artist: Colleen Rockey, 1974 and 2018</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.583948,42.291135,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bates Alley</name>
+        <description>Artist: Patrick Hershberger</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.580789,42.291762,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Haymarket Plaza</name>
+        <styleUrl>#icon-1509-9C27B0-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.581373,42.292516,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coffee</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.582713,42.292799,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ballerina/Dancer</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.583199,42.293182,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bells Eccentric Cafe</name>
+        <styleUrl>#icon-1509-9C27B0-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.57855,42.294801,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Midwest Custom Embroidery Mural</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.573537,42.298136,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Smart Shop Mural</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.575667,42.298017,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Welcome to Washington Square</name>
+        <description>Artist: Patrick Hershberger</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.570096,42.277712,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bank Street Bingo Hall</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.574481,42.279643,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nicholas Kik Pool</name>
+        <description>Artist: Dream Scene Placemaking</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.576281,42.281226,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Collaborate</name>
+        <description>Artist: Patrick Hershberger</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.590218,42.283695,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vine Solstice mural</name>
+        <description>Artist: Trevor Grabill</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.590033,42.283697,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dall Sheep & Chairs mural]]></name>
+        <description>Artist: Beverly Fitzpatrick</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.590233,42.283777,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kalamazoo Vine Neighborhood mural</name>
+        <styleUrl>#icon-1509-9C27B0-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.590165,42.284007,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blue Heron mural</name>
+        <description>Artist: Patrick Hershberger</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.589822,42.283509,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ambati Flowers mural</name>
+        <description>Artist: Ellen Nelson</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.589912,42.273263,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kalamazoo Indoor Gardening Center mural</name>
+        <description>Artist: unknown</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.589046,42.272808,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fireflies on a Midsummers Night mural</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.583464,42.291232,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>If Not Us, Then Who? mural</name>
+        <description>Artist: unknown</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.586063,42.294796,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kalamazoo Stillhouse mural</name>
+        <styleUrl>#icon-1509-9C27B0-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.573855,42.294592,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Measure the Moon mural</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.580298,42.293218,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>AAMCO Garage mural</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.575874,42.286895,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Swimmer mural</name>
+        <description>Artist: Conrad Kaufman</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.575353,42.284194,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>When the Streetlights Come On mural</name>
+        <description>Artist: Ellen Vandermyde (2022)</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.574099,42.203577,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Powell Turk Remembrance mural</name>
+        <description>Artist: Patrick Hershberger (2023)</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.564752,42.29493,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>East Side mural</name>
+        <description>Artist: Patrick Hershberger (2022)</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.565,42.294912,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Amy Zane mural</name>
+        <description>Artists: Chefe Hensley and Heidi Weiss (2023)</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.583359,42.291067,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dream Center mural</name>
+        <description>Artists: Chefe Hensley and Heidi Weiss (2023)</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.571579,42.280662,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>A Day at the Park mural</name>
+        <description>Artist: Ellen VanderMyde (2023)</description>
+        <styleUrl>#icon-1509-9C27B0</styleUrl>
+        <Point>
+          <coordinates>
+            -85.678855,42.20675,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oranges sculpture</name>
+        <description><![CDATA[<img src="https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/gteviv8dk1r1r8v9bbpt282h0o/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoJxKeQ_qRDcscls3YsqyaQKnD-OrglMq7bv4sRTgSRTmYwVh_knwPh6eHb4qmECQdepK8LlyJxtH5VCUHBchLLcwFaXNJKLWEVJ8u77-e5jpb5_kG2pQ_iHpPucKoj2dnIvY-Q3EUirdc6FjutVfBm8PSEj8XuhCKhZQ7n2OI2Ypejr15UFS5fJcDKRn3pcd0xbz3Ggd7l-67i9AoifXacfEszEB87xS9iLIqWBEjqGOM?fife" height="200" width="auto" /><br><br>]]></description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <ExtendedData>
+          <Data name="gx_media_links">
+            <value>https://doc-10-8o-mymaps.googleusercontent.com/untrusted/hostedimage/tjp71pbl755n1d9knaupn39qao/gteviv8dk1r1r8v9bbpt282h0o/1699459200000/Br1KDMWtWSC70OxdHOwSLSs2L9gflqim/*/6AJ9UNGoJxKeQ_qRDcscls3YsqyaQKnD-OrglMq7bv4sRTgSRTmYwVh_knwPh6eHb4qmECQdepK8LlyJxtH5VCUHBchLLcwFaXNJKLWEVJ8u77-e5jpb5_kG2pQ_iHpPucKoj2dnIvY-Q3EUirdc6FjutVfBm8PSEj8XuhCKhZQ7n2OI2Ypejr15UFS5fJcDKRn3pcd0xbz3Ggd7l-67i9AoifXacfEszEB87xS9iLIqWBEjqGOM?fife</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -85.5824284,42.2929076,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Giraffe sculpture</name>
+        <styleUrl>#icon-1599-880E4F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5891288,42.2701102,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>People sculpture</name>
+        <description>Artist: Kirk Newman, bronze (1973-74)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5877576,42.2895572,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Industrial Forms II sculpture</name>
+        <description>Artist: Douglas Mahlon Gruizenga, cor-ten steel, (1974-75)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5829444,42.2937174,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Martin Luther King, Jr. statue</name>
+        <description>Artist: Lisa Reinertson, concrete and bronze (1989)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5855743,42.2959886,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Hiker statue</name>
+        <description><![CDATA[Artist: Theo Alice Ruggles Kitson, bronze (1932).<br><br>Placed to commemorate the American soldiers who fought in the Spanish–American War, the Boxer Rebellion and the Philippine–American War.]]></description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.585066,42.2905034,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bronco sculpture</name>
+        <description>Artist: Veryl Goodnight, bronze (1997)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6077935,42.283892,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Campus Talk sculpture</name>
+        <description>Artist: Dennis Smith, bronze (1997)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6146466,42.2820629,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Professor sculpture</name>
+        <description>Artist: Dennis Smith, bronze, 1997</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6153287,42.2818252,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Committee sculpture</name>
+        <description>Artist: Albert LaVergne (1999)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6172698,42.282702,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sun Disc sculpture</name>
+        <description>Artist: Jerry Dumlao, bronze (1971)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6147812,42.2795198,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Helmet #7 sculpture</name>
+        <description>Artist: John Payne (1989)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6180423,42.2833471,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Three Figures sculpture</name>
+        <description>Artist: Carole Harrison, brass (1971-72)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6163278,42.2802593,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Nature's Palette sculpture]]></name>
+        <description>Artist: Richard Hunt, bronze (1993)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.600199,42.2915591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Prospect sculpture</name>
+        <description>Artist: Marcia Wood, steel (1982)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.6008128,42.2905876,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Image of the Invisible God sculpture</name>
+        <description>Artist: Kirk Newman, bronze (1981)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5867323,42.2896148,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Passing of Colored Volume sculpture</name>
+        <description>Artist: Jerald Wayne Jacquard, aluminum (1968)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5873453,42.2894545,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Procession sculpture</name>
+        <description>Artist: Marcia Wood, polychromed steel (1985)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5874768,42.2895543,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Seth Thomas clock</name>
+        <description>Seth Thomas Clock Company, cast iron (c. 1868)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5812875,42.2920765,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Festival Place Turtle sculpture</name>
+        <description><![CDATA[Artist: John Richard "Rick" Light, bronze (2011)]]></description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5819168,42.2942791,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Disabled Veterans Memorial sculpture</name>
+        <description>Artist: Kirk Newman, bronze (1985)</description>
+        <styleUrl>#icon-1599-880E4F</styleUrl>
+        <Point>
+          <coordinates>
+            -85.585696,42.2908499,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Old Gibson Guitar Factory</name>
+        <description><![CDATA[Can still see the guitar cutout in the original door. <br><br>https://www.atlasobscura.com/places/the-old-gibson-guitar-factory-kalamazoo-michigan]]></description>
+        <styleUrl>#icon-1611-E65100</styleUrl>
+        <Point>
+          <coordinates>
+            -85.5804012,42.3010406,0
+          </coordinates>
+        </Point>
       </Placemark>
     </Folder>
   </Document>
