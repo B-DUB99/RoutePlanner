@@ -6,7 +6,7 @@ class data_retriever:
     def __init__(self):
         self.connection = None
         self.cursor = None
-        self.mag = 1
+        self.mag = 1 # magnitude
         self.offset = 0.0000001
 
     # use to connect to the database and create a cursor object
@@ -30,10 +30,8 @@ class data_retriever:
     def get_amenities(self, amen_type):
         self.cursor.execute("SELECT * FROM amenities a1, amenity_types a2 WHERE"
                             + f" a1.type = a2.rowid AND a2.name = '{amen_type}'")
-        
         amens = self.cursor.fetchall()
         amens_dict = []
-        
         for a in amens:
             temp_dict = [{'name': a[1],
                           'desc': a[2],
@@ -41,7 +39,6 @@ class data_retriever:
                           'lon': a[5],
                           'pic_loc': a[6]}]
             amens_dict.append(temp_dict)
-
         return amens_dict
 
     # gets the closest nodes to the users start node
@@ -49,11 +46,10 @@ class data_retriever:
     def get_closest_nodes(self, user_marker):
         
         while True:
-            
-            east_lon = user_marker[1] + (self.offset * self.mag)
-            west_lon = user_marker[1] - (self.offset * self.mag)
-            north_lat = user_marker[0] + (self.offset * self.mag)
-            south_lat = user_marker[0] - (self.offset * self.mag)
+            east_lon = user_marker[2] + (self.offset * self.mag)
+            west_lon = user_marker[2] - (self.offset * self.mag)
+            north_lat = user_marker[1] + (self.offset * self.mag)
+            south_lat = user_marker[1] - (self.offset * self.mag)
 
             self.cursor.execute("SELECT node_id, lat, lon FROM nodes WHERE lon < "
                                 + f"{east_lon} AND lon > {west_lon} AND lat < "
@@ -62,19 +58,24 @@ class data_retriever:
             if len(nodes) != 0:
                 return nodes
             else:
-                self.mag += 2
+                self.mag += 20
                 print(f"{self.mag}")
 
-
     def get_connector_nodes(self, way_id):
-        return
+        nodes = self.get_nodes(way_id)
+        connectors = []
+        for n in nodes:
+            temp_data = self.get_node_info(n[0])
+            if temp_data[3] == 1:
+                connectors.append(temp_data)
+        return connectors
 
     # returns all info attached to node:
-    # (lat, lon, connector)
+    # (node_id, lat, lon, connector)
     # lat and lon are latitude and longitude
     # connector signifies if the node is a part of 2 or more ways
     def get_node_info(self, node_id):
-        self.cursor.execute("SELECT lat, lon, connector FROM nodes WHERE node_id "
+        self.cursor.execute("SELECT node_id, lat, lon, connector FROM nodes WHERE node_id "
                             + f"= {node_id}")
         return self.cursor.fetchone()
 
@@ -85,25 +86,21 @@ class data_retriever:
                             + f" WHERE w.way_id = l.way_id AND l.way_id = {way_id}"
                             + ") a WHERE n.node_id = a.node_id_from OR n.node_id "
                             + "= a.node_id_to")
-
         temp = self.cursor.fetchall()
         nodes = []
         for t in temp:
-            nodes.append(t[0])
-
+            nodes.append(self.get_node_info(t[0]))
         return nodes
 
     # Returns all ways attached to provided node_id
-    def get_way(self, node_id):
+    def get_way(self, n_id: int):
         self.cursor.execute("SELECT DISTINCT way_id FROM links WHERE "
-                            + f"node_id_from = {node_id} OR node_id_to "
-                            + f"= {node_id}")
-
+                            + f"node_id_from = {n_id} OR node_id_to "
+                            + f"= {n_id}")
         temp = self.cursor.fetchall()
         ways = []
         for t in temp:
             ways.append(t[0])
-
         return ways
 
     # returns all data in the way data will look like this:
@@ -115,41 +112,26 @@ class data_retriever:
     # oneway - is the road a oneway
 
     def get_way_info(self, way_id):
-        self.cursor.execute("SELECT name, highway, type, cycleway, oneway "
+        self.cursor.execute("SELECT way_id, name, highway, type, cycleway, oneway "
                             + f"FROM ways WHERE way_id = {way_id}")
         return self.cursor.fetchone()
 
     #returns the neighboring node ids of the provided id
     def get_node_neighbors(self, n_id):
-        
         self.cursor.execute("SELECT node_id FROM nodes n, (SELECT node_id_from, "
                             + f"node_id_to FROM links WHERE node_id_from = {n_id} OR "
                             + f"node_id_to = {n_id}) a WHERE (n.node_id = "
                             + "a.node_id_from OR n.node_id = a.node_id_to) AND " 
                             + f"n.node_id != {n_id}")
-
         temp = self.cursor.fetchall()
         neighbors = []
-
         for t in temp:
-            neighbors.append(t[0])
-        
+            neighbors.append(self.get_node_info(t[0]))
         return neighbors
-
-    # TODO: implement
-    # distance is already stored in the DB between connected nodes - Matt
-    def get_distance(self, lat1, lon1, lat2, lon2):
-        # returns the distance between two coordinates in meters
-        # lat1, lon1, lat2, lon2 are floats
-        # returns a float
-        # acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-        return
 
     # returns the provided node_id's lat and lon
     def get_node_coords(self, n_id):
-
         self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
-
         return self.cursor.fetchone()
 
     def reset_mag(self):
