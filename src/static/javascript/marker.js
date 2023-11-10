@@ -59,22 +59,22 @@ function drawPathLine(pathArray) {
 function createAmenMarkers(amens, id) {
 	var amenMarkerLayer = L.layerGroup();
     var chosenIcon;
-    if (id == "Grocery") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Businesses") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Community_Hubs") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Bike_Shops") chosenIcon =  L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Bike_Parking") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_bike_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Worlds_of_Wonder") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Pharmacy") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Health_and_Wellness_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Books") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Book_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Cafe") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Cafe_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Drink") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Resturants_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Food") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Resturants_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Treats") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Ice_Cream_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Bathrooms,_Drinking_Fountains") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Bike_Repair") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Art") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png", iconAnchor: [0, 0]});
-    else if (id == "Sculptures") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png", iconAnchor: [0, 0]});
+    if (id == "Grocery") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Grocery_round_icon.png"});
+    else if (id == "Businesses") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Business_round_icon.png"});
+    else if (id == "Community_Hubs") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Community_Hub_round_icon.png"});
+    else if (id == "Bike_Shops") chosenIcon =  L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_round_icon.png"});
+    else if (id == "Bike_Parking") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_bike_round_icon.png"});
+    else if (id == "Worlds_of_Wonder") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png"});
+    else if (id == "Pharmacy") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Health_and_Wellness_round_icon.png"});
+    else if (id == "Books") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Book_round_icon.png"});
+    else if (id == "Cafe") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Cafe_round_icon.png"});
+    else if (id == "Drink") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Resturants_round_icon.png"});
+    else if (id == "Food") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Resturants_round_icon.png"});
+    else if (id == "Treats") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Ice_Cream_round_icon.png"});
+    else if (id == "Bathrooms,_Drinking_Fountains") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Restroom_round_icon.png"});
+    else if (id == "Bike_Repair") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_Bike_Shop_and_Reapair_round_icon.png"});
+    else if (id == "Art") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png"});
+    else if (id == "Sculptures") chosenIcon = L.icon({iconUrl: "static/images/GPS_Icons/GPS_WoW_round_icon.png"});
 	for(let i = 0; i < amens.length; i++){
 		var latlng = L.latLng(amens[i][0]["lat"], amens[i][0]["lon"]);
 		let marker = L.marker(latlng, {
@@ -83,7 +83,7 @@ function createAmenMarkers(amens, id) {
             
 		});
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>", {
-            offset: [13, 5]
+            offset: [22, 5]
         });
     }
 	amenMarkerLayer.id = id
