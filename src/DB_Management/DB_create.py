@@ -341,7 +341,6 @@ def main():
                                    ', ' + str(long) + ', "' + pic + '")')
                     cursor.execute('SELECT rowid, * FROM amenity_types WHERE name = "' + amen_type + '"')
                     a_type = cursor.fetchone()
-                    print(f"{a_type}")
                     if a_type is None:
                         cursor.execute('UPDATE amenities ' +
                                        'SET type = 7 ' +

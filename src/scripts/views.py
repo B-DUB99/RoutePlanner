@@ -78,7 +78,6 @@ def calculate(userinfo):
     except:
         print("User selected nothing to find!")
     d_ret.close()
-    print(amens)
     return amens
 
 
@@ -94,6 +93,7 @@ def get_amenities(amen_type):
     except:
         print("User selected nothing to find!")
     d_ret.close()
+    print(f"{amens}")
     return amens
 
 
