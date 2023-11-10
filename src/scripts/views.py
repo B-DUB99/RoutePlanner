@@ -41,11 +41,8 @@ def getMarkers(markerInfo):
     pathfinder = Pathfinder(start, end, transportation_type="walking")
     # call find_path() to find the path
     pathfinder.find_path()
-    # call draw_path() to draw the path on the map
-    # draw_path(pathfinder.return_path())
-    fin_path = [[start['lat'], start['lng']]] + temp_points + [[end['lat'], end['lng']]]
 
-    return fin_path
+    return pathfinder.return_path()
 
 
 # draw the path on the map

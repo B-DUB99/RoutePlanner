@@ -112,7 +112,7 @@ class data_retriever:
     # oneway - is the road a oneway
 
     def get_way_info(self, way_id):
-        self.cursor.execute("SELECT way_id, name, highway, type, cycleway, oneway "
+        self.cursor.execute("SELECT way_id, name, highway, risk, cycleway, oneway "
                             + f"FROM ways WHERE way_id = {way_id}")
         return self.cursor.fetchone()
 
