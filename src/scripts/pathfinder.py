@@ -2,6 +2,31 @@
 from .data_retriever import data_retriever
 from geopy import distance
 
+class Node:
+    # g: movement cost from starting point to this node following current path
+    # h: estimated cost to get from this node to target node 
+    # data: node from the database class 
+    def __init__(self, data):
+        self.parent = None
+        self.data = data
+        self.g = 0
+        self.h = 0
+    
+    def set_g(self, g):
+        self.g = g
+        
+    def set_h(self, h):
+        self.h = h
+        
+    def set_parent(self, parent):
+        self.parent = parent
+    
+    def get_f(self):
+        return self.g + self.h
+    
+    def get_g(self):
+        return self.g
+    
 class Pathfinder:
     # indeces are in this order [0: id, 1: lat, 2: lon, 3: connector]
     # id - id of the node
@@ -26,6 +51,84 @@ class Pathfinder:
         self.path = []
 
         self.found = False
+    
+    # returns the node with the smallest f
+    def get_q(self, node_list):
+        small_ind = 0
+        small_val = 999999999
+        for i, node in enumerate(node_list):
+            if node.get_f() < small_val:
+                small_val = node.get_f()
+                small_ind = i
+        return node_list.pop(small_ind)
+    
+    # turns list of database nodes into nodes for astar
+    def nodify(self, node_list, parent):
+        ret = []
+        for node in node_list:
+            temp = Node(node)
+            temp.set_parent(parent)
+            ret.append(temp)
+        return ret
+    
+    def is_in(self, node, node_list):
+        for n in node_list:
+            if node.data == n.data and node.get_f() > n.get_f():
+                return True
+        return False
+    
+    # takes the last node gets path from its parent and adds the data to self.path
+    def denodify(self, node):
+        while True:
+            self.path.append(node.data)
+            node = node.parent
+            if node == None:
+                break
+        self.path.reverse()
+        
+    def astar(self):
+        # find closest node to where user dropped pin
+        self.start_node = self.find_next_best_user_node(self.user_start)
+        self.end_node = self.find_next_best_user_node(self.user_end)
+        # initialize open/closed lists
+        open_list, closed_list = [], []
+        open_list.append(Node(self.start_node))
+        # the algorithm
+        found = False
+        last_node = None
+        while len(open_list) != 0:
+            # pop q from the open list
+            q = self.get_q(open_list)
+            # get q's neighbors
+            neighbors = self.data_retriever.get_node_neighbors(q.data[0])
+            neighbors = self.nodify(neighbors, q)
+            # for each neighbor
+            for neighbor in neighbors:
+                # is this the target
+                if neighbor.data == self.end_node:
+                    found = True
+                    last_node = neighbor
+                    break
+                # calculate g and h for neighbor
+                neighbor.set_g(q.get_g() + self.calculate_distance_between_nodes(q.data, neighbor.data))
+                # h is what will be updated once we figure out how to better tell which one is good
+                # currently its just the distance from neighbor to end node
+                neighbor.set_h(self.calculate_distance_between_nodes(neighbor.data, self.end_node))
+                # if node with same pos is in open list and has lower f skip
+                if self.is_in(neighbor, open_list):
+                    continue
+                # f node with same pos is in closed list and has lower f skip
+                if self.is_in(neighbor, closed_list):
+                    continue
+                open_list.append(neighbor)
+            closed_list.append(q)
+            if found:
+                break
+        self.denodify(last_node)
+        self.assemble_lat_lng()
+            
+            
+            
 
     def swap(self, arr, i, j):
         temp = arr[i]

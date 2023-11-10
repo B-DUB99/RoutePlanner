@@ -40,7 +40,8 @@ def getMarkers(markerInfo):
     # create a pathfinder object and pass in the start and end nodes
     pathfinder = Pathfinder(start, end, transportation_type="walking")
     # call find_path() to find the path
-    pathfinder.find_path()
+    # pathfinder.find_path()
+    pathfinder.astar()
 
     return pathfinder.return_path()
 

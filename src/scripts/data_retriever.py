@@ -59,7 +59,7 @@ class data_retriever:
                 return nodes
             else:
                 self.mag += 20
-                print(f"{self.mag}")
+                # print(f"{self.mag}")
 
     def get_connector_nodes(self, way_id):
         nodes = self.get_nodes(way_id)
