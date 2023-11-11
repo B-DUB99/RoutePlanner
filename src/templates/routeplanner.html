@@ -9,8 +9,6 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
-    <!-- inside the sidebar -->
-    <!-- just temporary I want to have sliders or checkboxes -->
     <div id="mySidenav" class="sidenav">
         <div style="color:rgb(196, 196, 196);">
             <img src="{{ url_for('static', filename='images/sidenav/sidenav_MSK_lines_logo.png') }}" alt="Logo is here" class="center" />
@@ -31,15 +29,6 @@
                         <img src="{{ url_for('static', filename='images/sidenav/bicycle_clean_icon.png') }}" alt="bike icon is here" class="center" />
                         <label for="bike">Biking</label>
                     </div>
-                    <!--<div class="transport-choice">
-                        <input type="radio" id="bus" name="transport" value="bus">
-                        <img src="{{ url_for('static', filename= 'images/sidenav/bus_clear_icon.png') }}" alt="bus icon is here" class="center" />
-                        <label for="bus">Bus</label>
-                    </div> -->
-                    <!-- <div class="transport-choice">
-                        <input type="radio" id="bike-bus" name="transport" value="bike-bus">
-                        <label for="bus">Bike and Bus</label>
-                    </div> -->
                 </div>
             </div>
             <button class="dropdown-btn road-btn">
@@ -143,6 +132,7 @@
 
             </div>
             <a href="get_gpx" download id="export-gpx">Export GPX File</a>
+            <h1 id="clear">Clear</h1>
             <h1 id="help">Help</h1>
             <h1 id="about">About</h1>
         </div>

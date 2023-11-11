@@ -13,6 +13,7 @@ var aboutPopUp = document.getElementById("about_content");
 var fadeBackground = document.getElementById("fade");
 var closeBtn = document.getElementsByClassName("closePopUp");
 var openBtn = document.getElementsByClassName("white_content");
+let clearBtn = document.getElementById('clear');
 
 output.innerHTML = slider.value; // Display the default slider value
 
@@ -139,6 +140,14 @@ function changeAmenMarkers(event){
 	request.send();
 }
 
+function clearBoard() {
+    deleteAllMarkers();
+    for (let i = 0; i < layers.length; i++) map.removeLayer(layers[i]);
+    am = document.getElementsByClassName('amen-choice');
+    for (let i = 0; i < am.length; i++) 
+        if (am[i].getElementsByTagName('input')[0].checked == true) am[i].getElementsByTagName('input')[0].checked = false
+}
+
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     output.innerHTML = this.value;
@@ -166,6 +175,7 @@ document.getElementById("closeNav").addEventListener("click", closeNav);
 document.getElementById("export-gpx").addEventListener("click", exportGPXFile);
 document.getElementById("help").addEventListener("click", open);
 document.getElementById("about").addEventListener("click", open);
+clearBtn.addEventListener('click', clearBoard);
 
 for (i = 0; i < openBtn.length; i++) {
     openBtn[i].addEventListener("click", close);
