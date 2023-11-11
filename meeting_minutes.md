@@ -19,6 +19,74 @@
 
 
 
+<h2>Week 45</h2>
+Date: 10.11.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+* Dustin (Client)
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 11:00 AM - 12:00 AM (60 minutes)
+* Online via Teams (Client Meeting)
+
+What has been done:
+* Talk with Dustin on the project, what did we accomplish over the last weeks, what are the next steps
+* are his expectations met so far, what do we need to change, what do we need to improve
+* what are the next steps for the project
+
+Next week's goals:
+* Tweak the Pathfinding Algorithm, so it is not taking 10 Minutes to calculate a route
+* Rewrite of the DataBase (backend) to make it more efficient and faster
+* implementation of heuristics into our Existing A* algo to only use valid streets (bike can't go up/down stairs)
+* Paperwork
+
+Name / location of the artifacts:
+* No new artifacts in the last hour
+
+
+<h2>Week 45</h2>
+Date: 10.11.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 11:00 AM (150 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+* Austin started to work on the Paperwork
+* Bjarne and Christian worked on the Path export ( to get a found path to send to the user's device, so they can use it in their navigation app of choice )
+* Matthew and Mike worked on the algorithm for the backend
+* Paperwork
+* Implementation of some small features (return of the Reset Button, in form of "CLEAR", to clear the route and the map)
+
+Next week's goals:
+* Tweak the Pathfinding Algorithm, so it is not taking 10 Minutes to calculate a route 
+* Rewrite of the DataBase (backend) to make it more efficient and faster
+* implementation of heuristics into our Existing A* algo to only use valid streets (bike can't go up/down stairs)
+* Paperwork
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+* [UML_Chart.pdf](artifacts%2FUML_Chart.pdf)
+
+
 <h2>Week 44</h2>
 Date: 03.11.2023
 Attendees:
