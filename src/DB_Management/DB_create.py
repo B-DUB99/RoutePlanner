@@ -207,7 +207,8 @@ def main():
     cursor.execute("SELECT w.way_id, n.node_id" +
                    " FROM nodes n, links l, ways w" +
                    " WHERE (n.node_id = l.node_id_from OR l.node_id_to = " +
-                   " n.node_id) AND w.way_id = l.way_id AND w.highway = 'motorway'")
+                   " n.node_id) AND w.way_id = l.way_id AND (w.highway = " +
+                   "'motorway' OR w.highway = 'motorway_link')")
     motorInfo = cursor.fetchall()
     wayDel = 0
 
@@ -221,50 +222,29 @@ def main():
 
     connection.commit()
 
-    # remove any nodes that are not linked to any way
-    nodes_removed = 0
+    #remove nodes from nodes table that are not in 
+    cursor.execute("DELETE FROM nodes WHERE node_id NOT IN " +
+                   "(SELECT DISTINCT n.node_id from nodes n, links WHERE " +
+                   "n.node_id = node_id_from OR n.node_id = node_id_to)");
 
-    cursor.execute("SELECT node_id FROM nodes")
-    nodes = cursor.fetchall()
+    print(f"{cursor.rowcount} nodes not linked and deleted from DB")
+    connection.commit()
 
-    for n in nodes:
-        # search for the current node in links table
-        cursor.execute("SELECT way_id " +
-                       " FROM links" +
-                       f" WHERE node_id_from = {n[0]} OR node_id_to = {n[0]}")
-        results = cursor.fetchall()
-        # if it's not there remove it from the nodes table
-        if (len(results) == 0):
-            cursor.execute("DELETE FROM nodes" +
-                           f" WHERE node_id = {n[0]}")
-            nodes_removed = nodes_removed + 1
-            print("nodes not linked and have been deleted =", nodes_removed)
+    cursor.execute("UPDATE nodes " +
+                   "SET connector = TRUE " +
+                   "FROM (SELECT f.n_id AS id, (c1 + c2) AS c3 " +
+                         "FROM (SELECT node_id_from as n_id, COUNT(node_id_from) as c1 " +
+                               "FROM links " +
+                               "GROUP BY node_id_from) AS f, " +
+                               "(SELECT node_id_to AS n_id, COUNT(node_id_to) AS c2 " +
+                               "FROM links " +
+                               "GROUP BY node_id_to) AS t " +
+                         "WHERE t.n_id = f.n_id) AS a " +
+                   "WHERE node_id = a.id AND a.c3 > 2;")
 
-    cursor.execute("SELECT node_id " +
-                   "FROM nodes")
+    print(f"{cursor.rowcount} nodes set as intersections")
+    connection.commit()
 
-    node_ids = cursor.fetchall()
-
-    for n in node_ids:
-        cursor.execute("SELECT COUNT(*) FROM (" +
-                       "SELECT DISTINCT way_id " +
-                       "FROM links " +
-                       f"WHERE node_id_from = {n[0]} " +
-                       f"OR node_id_to = {n[0]})")
-
-        count = cursor.fetchone()
-
-        if count[0] > 1:
-            cursor.execute("UPDATE nodes " +
-                           "SET connector = TRUE " +
-                           f"WHERE node_id = {n[0]}")
-        else:
-            cursor.execute("UPDATE nodes " +
-                           "SET connector = FALSE "
-                           f"WHERE node_id = {n[0]}")
-
-        print(f"{n[0]} connector status updated")
-    
     # parse and plug kml into the database
     kml_file = 'ModeShift Kalamazoo.kml'
 
