@@ -240,7 +240,7 @@ def main():
                                "FROM links " +
                                "GROUP BY node_id_to) AS t " +
                          "WHERE t.n_id = f.n_id) AS a " +
-                   "WHERE node_id = a.id AND a.c3 > 2;")
+                   "WHERE node_id = a.id AND a.c3 > 2")
 
     print(f"{cursor.rowcount} nodes set as intersections")
     connection.commit()
