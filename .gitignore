@@ -3914,7 +3914,7 @@ test.php
 *.mp3
 *.exe
 *.db
-*.csv
+#*.csv
 *.xml
 *.psd
 *.[oa]
@@ -4501,7 +4501,7 @@ fp-info-cache
 
 # Exported BOM files
 *.xml
-*.csv
+#*.csv
 
 ### Swift template
 # Xcode
@@ -9621,7 +9621,7 @@ $RECYCLE.BIN/
 ############################
 
 *.7z
-*.csv
+#*.csv
 *.dat
 *.dmg
 *.gz
@@ -14858,7 +14858,7 @@ crashlytics-build.properties
 *_map.ngm
 *_map.xrpt
 *_ngdbuild.xrpt
-*_pad.csv
+#*_pad.csv
 *_pad.txt
 *_par.xrpt
 *_summary.html
@@ -16116,7 +16116,7 @@ tags
 ers.txt
 
 ### Data template
-*.csv
+#*.csv
 *.dat
 *.efx
 *.gbr
