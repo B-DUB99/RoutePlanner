@@ -13,12 +13,24 @@ Way ID,Road Name,Risk Tolerance
 172437495,Portage Road,3
 365616662,Portage Road,3
 174180192,Portage Road,3
+418657271,Portage Road,2
+172437498,Portage Road,2
+515100160,Portage Road,2
+515098396,Portage Road,2
+888186453,Portage Road,2
+515098395,Portage Road,2
+143659517,Portage Road,2
+143659514,Portage Road,2
+17845967,Portage Road,2
 -1,East Kilgore Road,2
 17827470,Kilgore Service Road,3
 41887850,Kilgore Service Road,3
 1011173944,East Kilgore Road,3
 628639389,East Kilgore Road,3
 887848535,East Kilgore Road,3
+-1,South Pitcher Street,4
+-1,North Pitcher Street,4
+-1,Southtown Street,4
 -1,West Kilgore Road,2
 -1,Greenleaf Boulevard,2
 -1,Greenleaf Circle,2
@@ -41,6 +53,177 @@ Way ID,Road Name,Risk Tolerance
 -1,Old Nichols Road,2
 -1,Duke Street,2
 -1,Bronson Boulevard,2
+-1,Moreland Street,2
+-1,East Cork Street,2
+-1,West Cork Street,2
+-1,Inkster Avenue,2
+-1,Olmstead Road,3
+-1,Lake Street,3
+-1,Fulford Street,2
+-1,East Alcott Street,2
+-1,Reed Avenue,2
+-1,Stockbridge Avenue,2
+-1,East Stockbridge Avenue,2
+-1,West Stockbridge Avenue,2
+-1,West Maple Street,2
+-1,East Crosstown Parkway,2
+-1,West Crosstown Parkway,2
+-1,South Park Street,2
+-1,North Park Street,2
+-1,North Westnedge Avenue,2
+-1,Merrill Street,2
+-1,Wheaton Avenue,2
+-1,Oak Street,2
+-1,East Vine Street,2
+-1,West Vine Street,2
+-1,Davis Street,2
+-1,King Highway,3
+-1,Branch Street,3
+-1,East Michigan Avenue,2
+-1,Mills Street,2
+-1,East Walnut Street,2
+-1,West Walnut Street,2
+-1,East Main Street,2
+-1,Charlotte Avenue,2
+-1,Humphrey Street,2
+-1,Nazareth Road,2
+-1,Gull Road,3
+-1,Gull Street,3
+-1,Mount Olivet Road,2
+-1,Riverview Drive,3
+-1,Douglas Avenue,3
+-1,East Kalamazoo Avenue,4
+-1,West Kalamazoo Avenue,4
+-1,Michikal Street,4
+-1,Elm Place,4
+-1,Elm Crossover,4
+-1,East Paterson Street,3
+-1,West Paterson Street,2
+-1,West Lovell Street,2
+-1,East Lovell Street,4
+-1,West South Street,4
+-1,East South Street,4
+-1,South Edwards Street,4
+-1,East Ransom Street,4
+-1,West Ransom Street,4
+-1,Academy Street,2
+-1,South Church Street,4
+-1,West North Street,2
+-1,East North Street,2
+-1,Harrison Street,4
+-1,Walbridge Street,4
+-1,East Frank Street,2
+-1,Porter Street,4
+887848541,West Michigan Avenue,4
+41168779,West Michigan Avenue,4
+17840747,West Michigan Avenue,4
+41066285,West Michigan Avenue,4
+122700160,West Michigan Avenue,4
+480853093,West Michigan Avenue,4
+480853097,West Michigan Avenue,4
+480853092,West Michigan Avenue,4
+480853095,West Michigan Avenue,4
+41066032,West Michigan Avenue,4
+1168161389,West Michigan Avenue,4
+17840553,North Church Street,4
+888239379,North Church Street,4
+98341000,North Church Street,4
+17825241,Academy Street,4
+17836708,North Edwards Street,4
+269666603,North Edwards Street,4
+17831233,West South Street,2
+887807670,West Lovell Street,4
+887807669,West Lovell Street,4
+887807673,West Lovell Street,4
+17832563,Wall Street,2
+17841287,South Rose Street,2
+888226413,South Rose Street,4
+887807672,South Rose Street,4
+17831569,North Rose Street,4
+1112392948,North Rose Street,4
+1112392950,North Rose Street,4
+1112392949,North Rose Street,4
+1112330555,North Rose Street,4
+887807677,North Rose Street,4
+887848540,North Rose Street,4
+888179219,North Rose Street,4
+887807679,North Rose Street,4
+888179221,North Rose Street,4
+842949427,North Rose Street,4
+17841289,South Rose Street,2
+122700168,,2
+41887877,West Kalamazoo Avenue,2
+1223994706,Douglas Avenue,2
+888179230,Douglas Avenue,2
+888179229,Douglas Avenue,2
+17844462,Douglas Avenue,2
+41066287,Douglas Avenue,2
+41320043,Douglas Avenue,2
+1187921322,Douglas Avenue,2
+41066284,Douglas Avenue,2
+188213490,Douglas Avenue,2
+1187921323,Douglas Avenue,2
+510357387,Riverview Drive,2
+673798589,Riverview Drive,2
+41066289,East Michigan Avenue,4
+1112552687,East Michigan Avenue,4
+480853096,East Michigan Avenue,4
+17832014,East Michigan Avenue,4
+546670200,North Park Street,4
+888179228,North Park Street,4
+766639729,South Westnedge Avenue,2
+888226427,South Westnedge Avenue,2
+766639728,South Westnedge Avenue,2
+766639730,South Westnedge Avenue,2
+766639731,South Westnedge Avenue,2
+863479236,South Westnedge Avenue,2
+727758582,South Westnedge Avenue,2
+727758583,South Westnedge Avenue,2
+42239530,South Westnedge Avenue,2
+293189350,South Westnedge Avenue,2
+317838964,,2
+98340998,South Westnedge Avenue,2
+887807671,South Westnedge Avenue,2
+17839894,South Westnedge Avenue,2
+143497380,North Westnedge Avenue,2
+561919934,North Westnedge Avenue,2
+546670199,North Westnedge Avenue,2
+888179223,North Westnedge Avenue,2
+888179225,North Westnedge Avenue,2
+888179226,North Westnedge Avenue,2
+815139881,North Westnedge Avenue,2
+888235802,North Westnedge Avenue,2
+888235801,North Westnedge Avenue,2
+888235796,North Westnedge Avenue,2
+143497379,North Westnedge Avenue,2
+143659512,Lake Street,2
+143659510,Lake Street,2
+17841618,Lake Street,2
+739182660,South Burdick Street,2
+942664460,South Burdick Street,2
+17843456,South Burdick Street,2
+98340991,South Burdick Street,2
+888226415,South Burdick Street,4
+887807680,North Burdick Street,4
+888174523,North Burdick Street,2
+888235792,North Burdick Street,4
+888171708,North Burdick Street,4
+888174524,North Burdick Street,4
+453306503,North Pitcher Street,1
+17833770,Miller Road,2
+17833766,Miller Road,3
+266139765,Lovers Lane,2
+266139764,Lovers Lane,2
+266139763,Lovers Lane,2
+266139762,Lovers Lane,2
+423208795,Lovers Lane,2
+404136405,Lovers Lane,2
+17847439,Lovers Lane,2
+17847425,Lovers Lane,2
+418657248,East Cork Street,3
+384628996,East Cork Street,3
+384628997,East Cork Street,3
+727407081,East Cork Street,3
 17840361,Rambling Road,2
 17839977,Winchell Avenue,2
 17841766,Broadway Avenue,2
@@ -50,6 +233,7 @@ Way ID,Road Name,Risk Tolerance
 264453859,Oakland Drive,2
 113763448,Oakland Drive,2
 122700157,Oakland Drive,2
+17843494,Oakland Drive,4
 727400674,Howard Street,2
 17838394,Howard Street,2
 264453851,West Main Street,2
