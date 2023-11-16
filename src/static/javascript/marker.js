@@ -2,6 +2,7 @@ var markers = new Map();
 var lines = [];
 var markerLayer = L.layerGroup();
 var layers = [];
+let dest;
 
 function createMarker(event) {
 	if (event.latlng.lat >= 42.157 && event.latlng.lat <= 42.369062 && event.latlng.lng >= -85.6995747 && event.latlng.lng <= -85.531 && markers.size != 2) {
@@ -80,14 +81,30 @@ function createAmenMarkers(amens, id) {
 		let marker = L.marker(latlng, {
             icon: chosenIcon,
 			title: amens[i][0]["name"],
-		});
-		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300>", {
+		}).on('click', (e) => {
+            dest = e.latlng;
+        });
+		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><button onclick='setDest();'>Here</button>", {
             offset: [22, 5]
         });
     }
 	amenMarkerLayer.id = id
 	layers.push(amenMarkerLayer)
     amenMarkerLayer.addTo(map);
+}
+
+function setDest() {
+    let marker = L.marker(dest, {
+        draggable: true, 
+    });
+    marker.id = 2;
+    markers.set(2, marker._latlng);
+    marker.on("click", deleteMarker);
+    marker.on("dragend", newCoords);
+    marker.addTo(markerLayer);
+    markerLayer.addTo(map);
+
+    if (markers.size == 2) passToFlask();
 }
 
 function deleteAmenMarkers(id) {

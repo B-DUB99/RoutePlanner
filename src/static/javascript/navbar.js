@@ -108,7 +108,6 @@ function get_input() {
 	request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 			var route = JSON.parse(this.responseText);
-			console.log(route);
 			if (route.length > 0) {
 				//draw_line(route);
 			} else {
@@ -128,7 +127,6 @@ function changeAmenMarkers(event){
 	request.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200){
 			var amens = JSON.parse(this.responseText);
-			console.log(amens);
 			if (event.target.checked){
 				createAmenMarkers(amens, event.target.id);
 			}else{
