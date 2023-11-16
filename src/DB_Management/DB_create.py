@@ -5,6 +5,7 @@
 
 import itertools
 import sqlite3
+import csv
 from collections import deque
 from geopy import distance
 from pykml import parser
@@ -208,7 +209,9 @@ def main():
                    " FROM nodes n, links l, ways w" +
                    " WHERE (n.node_id = l.node_id_from OR l.node_id_to = " +
                    " n.node_id) AND w.way_id = l.way_id AND (w.highway = " +
-                   "'motorway' OR w.highway = 'motorway_link')")
+                   "'motorway' OR w.highway = 'motorway_link' OR w.highway " +
+                   "= 'raceway' OR w.highway = 'rest_area' OR w.highway " +
+                   "= 'proposed' OR w.highway = 'construction')")
     motorInfo = cursor.fetchall()
     wayDel = 0
 
@@ -267,6 +270,36 @@ def main():
                 cursor.execute("UPDATE nodes " +
                                "SET connector = FALSE "
                                f"WHERE node_id = {n[0]}")
+
+            print(f"{n} set as a connector node")
+
+    # update risk levels for certain roads and ways
+    portage_csv = 'Road_Risk_Levels_Portage.csv'
+    kzoo_csv = 'Road_Risk_Levels_Kzoo.csv'
+
+    with open(portage_csv, mode ='r') as p_file:
+        portage = csv.reader(p_file)
+        next(portage) #skip header
+        for line in portage:
+            cursor.execute("UPDATE ways " +
+                           f"SET risk = {line[1]} " +
+                           f"WHERE name = '{line[0]}'")
+            print(f"{line[0]} updated risk level to {line[1]}")
+
+    with open(kzoo_csv, mode = 'r') as k_file:
+        kzoo = csv.reader(k_file)
+        next(kzoo) #skip header
+        for line in kzoo:
+            if line[0] == "-1":
+                cursor.execute("UPDATE ways " +
+                               f"SET risk = {line[2]} " +
+                               f"WHERE name = '{line[1]}'")
+            else:
+                cursor.execute("UPDATE ways " +
+                               f"SET risk = {line[2]} " +
+                               f"WHERE way_id = {line[0]}")
+            print(f"{line[0]}, {line[1]} updated to risk level {line[2]}")
+                    
 
     # parse and plug kml into the database
     kml_file = 'ModeShift Kalamazoo.kml'
