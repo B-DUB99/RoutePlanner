@@ -3,6 +3,7 @@ var lines = [];
 var markerLayer = L.layerGroup();
 var layers = [];
 let dest;
+let pathArray;
 
 function createMarker(event) {
 	if (event.latlng.lat >= 42.157 && event.latlng.lat <= 42.369062 && event.latlng.lng >= -85.6995747 && event.latlng.lng <= -85.531 && markers.size != 2) {
@@ -38,7 +39,7 @@ async function passToFlask() {
         body: JSON.stringify([markers.get(1), markers.get(2)])
     });
 
-    const pathArray = await response.json();
+    pathArray = await response.json();
     drawPathLine(pathArray)
 }
 
@@ -85,7 +86,7 @@ function createAmenMarkers(amens, id) {
             dest = e.latlng;
         });
 		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><button onclick='setDest();'>Here</button>", {
-            offset: [22, 5]
+            offset: [11, 5]
         });
     }
 	amenMarkerLayer.id = id
