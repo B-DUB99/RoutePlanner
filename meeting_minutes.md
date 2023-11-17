@@ -19,6 +19,42 @@
 
 
 
+
+
+
+
+
+
+
+<h2>Week 46</h2>
+Date: 17.11.2023
+Attendees:
+XXXX
+
+Who missed the meeting:
+XXXX
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* GPX Export (Exporting the found path to a GPX file, so it can be used in other navigation apps, created a new branch for testing purposes)
+* Implementation of A* Algorithm 
+* Implementation of Stress Factors ( for Every Street of our Database, we have a stress factor, which is used to calculate the best route for the user, based on the stress factors of the streets)
+* Update of Database, Creation takes less time , and the Database is smaller in size
+
+Next week's goals:
+* Tweak the Pathfinding Algorithm, so it also uses the Heuristics
+* Paperwork
+* get the GPX Export working (Exporting the found path to a GPX file, so it can be used in other navigation apps Like Starvia)
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
+* [UML_Chart.pdf](artifacts%2FUML_Chart.pdf)
+
+
 <h2>Week 45</h2>
 Date: 10.11.2023
 Attendees:
