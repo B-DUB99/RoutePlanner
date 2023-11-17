@@ -15,7 +15,7 @@ var closeBtn = document.getElementsByClassName("closePopUp");
 var openBtn = document.getElementsByClassName("white_content");
 let clearBtn = document.getElementById('clear');
 
-output.innerHTML = slider.value; // Display the default slider value
+// output.innerHTML = slider.value; // Display the default slider value
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
 
@@ -36,10 +36,16 @@ function closeNav() {
     openNavBtn.style.cursor = "pointer";
 }
 
+/**
+ * 
+ */
 async function exportGPXFile() {
-    const response = await fetch(`/get_gpx/`, {
-        method: "GET",
-    })
+
+    if (pathArray != undefined) {
+        document.getElementById("export-gpx").href = '/get_gpx/' + JSON.stringify(pathArray);
+    }
+
+
 }
 
 for (var i = 0; i < dropdown.length; i++) {

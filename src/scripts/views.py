@@ -96,9 +96,10 @@ def get_amenities(amen_type):
 
 
 # get the gpx file from the route and return it
-@views.route("/get_gpx/", methods=["GET"])
-def get_gpx():
+@views.route("/get_gpx/<string:path_list>", methods=["GET"])
+def get_gpx(path_list):
     # generate gpx file
+    print("path list: ", path_list)
     file = GPX_export(temp_points)
     file_name = file.export()
 

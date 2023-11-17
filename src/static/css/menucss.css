@@ -30,26 +30,26 @@ img {
     opacity: .8;
 }
 
-    .closebtn, .sidenav h1, .dropdown-btn, #update, #export-gpx {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        text-align: left;
-        background: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        margin: 0;
-        font-weight: normal;
-        transition: 0.3s;
-    }
+.closebtn, .sidenav h1, .dropdown-btn, #update, #export-gpx {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    text-align: left;
+    background: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    margin: 0;
+    font-weight: normal;
+    transition: 0.3s;
+}
 
-        .closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover, #export-gpx:hover {
-            cursor: pointer;
-        }
+.closebtn:hover, .sidenav h1:hover, .dropdown-btn:hover, #update:hover, #export-gpx:hover {
+    cursor: pointer;
+}
 
-        .sidenav h1:hover, .dropdown-btn:hover, #update:hover, #export-gpx:hover {
-            color: #f1f1f1;
-        }
+.sidenav h1:hover, .dropdown-btn:hover, #update:hover, #export-gpx:hover {
+    color: #f1f1f1;
+}
 
 .transport-container p {
     align-self: center;
@@ -107,11 +107,9 @@ input[type=range] {
     appearance: none;
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(0deg);
-    margin-top: 70px;
 }
 input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 1.5em;
+    height: 8em;
     background: white;
     border-radius: 3px;
 }
@@ -119,27 +117,30 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     background-color: green;
-    width: 1rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 8.75em;
     margin-top: -5px;
 }
 
 /* firefox slider */
+input[type='range']::-moz-range-track {
+    width: 7em;
+    height: 12em;
+    background-color: white;
+    border-radius: 3px;
+}
 input[type="range"]::-moz-range-thumb {
     appearance: none;
     background-color: green;
-    height: 1rem;
-    width: 2rem;
+    height: 2rem;
+    width: 9rem;
     border-radius: 0;
 }
 
 #risk-fact {
     display: grid;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr
-}
-#risk-fact > * {
-    justify-self: center;
 }
 
 .leaflet-div-icon {
@@ -182,7 +183,7 @@ input[type="range"]::-moz-range-thumb {
 .dropdown-container-2 {
     display: none;
     padding: 10px 0;
-    height: 10em
+    height: 14em
 }
 .road-btn.active {
     background-color: #0a911c;
@@ -247,8 +248,27 @@ li {
     border-radius: 10px;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    #myRange {
+        margin-top: 50px;
+        width: 15em
+    }
+    #low {
+        position: relative;
+        bottom: -167px
+    }
+}
+
 @-moz-document url-prefix() {
     #myRange {
-      margin-top: 0
+      margin-top: 0;
+      width: 8rem;
+      height: 16em
+    }
+    #high-low {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
   }
