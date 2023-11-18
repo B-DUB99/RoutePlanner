@@ -5,7 +5,8 @@ import os
 class GPX_export:
 	# constructor
 	def __init__(self, path):
-		self.path = path
+		self.path_string = path
+		self.path = []
 
 	def set_path(self, path):
 		self.path = path
@@ -13,9 +14,40 @@ class GPX_export:
 	def get_path(self):
 		return self.path
 
+	def parse_string_to_list(self, input_string):
+		# Remove whitespaces and newlines
+		clean_string = input_string.replace('\n', '').replace('\t', '').replace(' ', '')
+
+		# Remove square brackets at the beginning and end
+		clean_string = clean_string[1:-1]
+
+		# Split the string into individual coordinate strings
+		coordinate_strings = clean_string.split('],[')
+
+		# Initialize an empty list to store the result
+		result_list = []
+
+		# Iterate through the coordinate strings and convert them to lists of floats
+		for coordinate_string in coordinate_strings:
+			# Remove square brackets from each coordinate string
+			coordinate_string = coordinate_string.replace('[', '').replace(']', '')
+
+			# Split the coordinate string into latitude and longitude
+			lat_str, lon_str = coordinate_string.split(',')
+
+			# Convert latitude and longitude to floats and create a list
+			coordinate_list = [float(lat_str), float(lon_str)]
+
+			# Append the coordinate list to the result list
+			result_list.append(coordinate_list)
+
+		self.path = result_list
+
 	def export(self):
+		self.parse_string_to_list(self.path_string)
+
 		# Create a new file:
-		f = open("mygpx.gpx", "w")
+		f = open("my-gpx.gpx", "w")
 
 		# Create a gpx object:
 		gpx = gpxpy.gpx.GPX()
@@ -33,6 +65,9 @@ class GPX_export:
 		# Add the segment to the track:
 		gpx_track.segments.append(gpx_segment)
 
+		# name the track
+		gpx_track.name = "Route Planner"
+
 		# Add the track to the GPX:
 		gpx.tracks.append(gpx_track)
 
@@ -40,16 +75,18 @@ class GPX_export:
 		f.write(gpx.to_xml())
 
 		f.close()
-		
-		return 'mygpx.gpx'
 
-	def clean_up(self):
-		# delete the file
-		os.remove("mygpx.gpx")
+		return 'my-gpx.gpx'
+
+
+# clean up function
+def clean_up():
+	# delete the file
+	os.remove("my-gpx.gpx")
 
 
 # test function
-def main():
+def test():
 	tmp_path = [
 		[42.29127852746485, -85.5919075012207],
 		[42.30918068099292, -85.6549072265625],
@@ -64,8 +101,8 @@ def main():
 	# wait for user input to delete the file
 	input("Press Enter to continue...")
 	# call the clean_up function
-	gpx.clean_up()
+	clean_up()
 
 
 if __name__ == "__main__":
-	main()
+	test()

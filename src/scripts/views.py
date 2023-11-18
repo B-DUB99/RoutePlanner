@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 import json
 from io import BytesIO
 import os
+from datetime import datetime
 
 from .data_retriever import data_retriever
 from .pathfinder import Pathfinder
@@ -9,15 +10,6 @@ from .gpx_export import GPX_export
 
 views = Blueprint("views", __name__, "")
 locs = []
-
-
-temp_points = [
-        [42.29127852746485, -85.5919075012207],
-        [42.30918068099292, -85.6549072265625],
-        [42.26790919743789, -85.65319061279297],
-        [42.291532494305976, -85.58795928955078]
-]
-    
 
 
 @views.route("/", methods=["GET", "POST"])
@@ -28,7 +20,8 @@ def test():
         coords = json.loads(output)
         locs.append(coords)
         print(locs)
-    return render_template("routeplanner.html", temp_points=temp_points, length=len(temp_points))
+    return render_template("routeplanner.html")
+
 
 @views.route('/<string:markerInfo>', methods=['POST'])
 def getMarkers(markerInfo):
@@ -58,7 +51,6 @@ def draw_path(path):
     return render_template("routeplanner.html", temp_points=path, length=len(path))
 
 
-
 # SEND ME THE MARKERS FROM THE MAP ~BDUB
 @views.route("/calculate/<string:userinfo>", methods=["POST"])
 def calculate(userinfo):
@@ -79,7 +71,7 @@ def calculate(userinfo):
     return amens
 
 
-# make this interavtive with the map instead of a button
+# make this interactive with the map instead of a button
 @views.route("/get_amenities/<string:amen_type>", methods=["POST"])
 def get_amenities(amen_type):
     data = json.loads(amen_type)
@@ -99,8 +91,9 @@ def get_amenities(amen_type):
 @views.route("/get_gpx/<string:path_list>", methods=["GET"])
 def get_gpx(path_list):
     # generate gpx file
-    print("path list: ", path_list)
-    file = GPX_export(temp_points)
+
+    # file = GPX_export(temp_points)
+    file = GPX_export(path_list)
     file_name = file.export()
 
     # create binary stream in memory
@@ -113,6 +106,8 @@ def get_gpx(path_list):
     # delete file
     os.remove(file_name)
 
-    # send binary stream to the user
-    return send_file(return_data, mimetype='application/gpx+xml', download_name='mygpx.gpx')
+    current_datetime = datetime.now()
+    time_stamp = current_datetime.strftime("%m-%d-%Y_%H-%M-%S")
 
+    # send binary stream to the user
+    return send_file(return_data, mimetype='application/gpx+xml', download_name=f'route_{time_stamp}.gpx')
