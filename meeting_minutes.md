@@ -29,10 +29,14 @@
 <h2>Week 46</h2>
 Date: 17.11.2023
 Attendees:
-XXXX
+* Austin Miller
+* Bjarne Wilken
+* Christian Fuentes
+* Matthew Phillips
+
 
 Who missed the meeting:
-XXXX
+* Mike Henke - without notice
 
 General meeting Information:
 * 8:30 AM - 10:00 AM (90 minutes)
@@ -43,6 +47,7 @@ What has been done:
 * Implementation of A* Algorithm 
 * Implementation of Stress Factors ( for Every Street of our Database, we have a stress factor, which is used to calculate the best route for the user, based on the stress factors of the streets)
 * Update of Database, Creation takes less time , and the Database is smaller in size
+* fixed a weird bug, where the website would load the map and route, but the line was moved to the left by a couple of pixels, instead of on the actual road / path. (fixed by changing the way the line is drawn on the map, centering the line on the road/path was wrong in the css file)
 
 Next week's goals:
 * Tweak the Pathfinding Algorithm, so it also uses the Heuristics
