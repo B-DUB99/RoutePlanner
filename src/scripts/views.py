@@ -31,12 +31,15 @@ def getMarkers(markerInfo):
     start = info[0]
     end = info[1]
     # create a pathfinder object and pass in the start and end nodes
-    pathfinder = Pathfinder(start, end, transportation_type="walking")
+    pathfinder = Pathfinder(start, end, transportation_type="bike", risk=4)
     # call find_path() to find the path
     # pathfinder.find_path()
-    pathfinder.astar()
-
-    return pathfinder.return_path()
+    error = pathfinder.astar()
+    if error == -1:
+        print("error finding path")
+        return []
+    else:
+        return pathfinder.return_path()
 
 
 # draw the path on the map

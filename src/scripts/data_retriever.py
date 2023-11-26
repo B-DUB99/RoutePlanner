@@ -6,8 +6,28 @@ class data_retriever:
     def __init__(self):
         self.connection = None
         self.cursor = None
-        self.mag = 1 # magnitude
-        self.offset = 0.0000001
+        self._mag = 1 # magnitude
+        self._offset = 0.0000001
+        self._walking_routes = ['path',
+                                'track',
+                                'footway',
+                                'pedestrian',
+                                'steps',
+                                'corridor',
+                                'living_street']
+        self._biking_routes = ['residential',
+                               'service',
+                               'path',
+                               'track',
+                               'trunk_link',
+                               'cycleway',
+                               'tertiary',
+                               'unclassified',
+                               'secondary',
+                               'primary',
+                               'trunk',
+                               'secondary_link',
+                               'living_street']
 
     # use to connect to the database and create a cursor object
     def connect(self):
@@ -43,23 +63,31 @@ class data_retriever:
 
     # gets the closest nodes to the users start node
     # it's up to pathfinder to determine if the node is a corrct start
-    def get_closest_nodes(self, user_marker):
+    def get_closest_nodes(self, user_marker, transport, risk):
         
         while True:
-            east_lon = user_marker[2] + (self.offset * self.mag)
-            west_lon = user_marker[2] - (self.offset * self.mag)
-            north_lat = user_marker[1] + (self.offset * self.mag)
-            south_lat = user_marker[1] - (self.offset * self.mag)
+            east_lon = user_marker[2] + (self._offset * self._mag)
+            west_lon = user_marker[2] - (self._offset * self._mag)
+            north_lat = user_marker[1] + (self._offset * self._mag)
+            south_lat = user_marker[1] - (self._offset * self._mag)
 
             self.cursor.execute("SELECT node_id, lat, lon FROM nodes WHERE lon < "
                                 + f"{east_lon} AND lon > {west_lon} AND lat < "
                                 + f"{north_lat} AND lat > {south_lat}")
             nodes = self.cursor.fetchall()
+            num_of_nodes = len(nodes)
+            for i in range(num_of_nodes):
+                index = num_of_nodes - i - 1
+                if transport == 'walk':
+                    if not self._is_node_walkable(nodes[index][0]):
+                        nodes.pop(index)
+                elif transport == 'bike':
+                    if not self._is_node_bikable(nodes[index][0], risk):
+                        nodes.pop(index)
             if len(nodes) != 0:
                 return nodes
             else:
-                self.mag += 20
-                # print(f"{self.mag}")
+                self._mag += 20
 
     def get_connector_nodes(self, way_id):
         nodes = self.get_nodes(way_id)
@@ -107,7 +135,7 @@ class data_retriever:
     # [name, highway, type, cycleway, oneway]
     # name - name of road
     # highway - way type ex. residential = residential road
-    # type - road type according to Kalamazoo data, stress level
+    # risk - stress level
     # cycleway - type of bike lane is attached to way
     # oneway - is the road a oneway
 
@@ -133,6 +161,69 @@ class data_retriever:
     def get_node_coords(self, n_id):
         self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
         return self.cursor.fetchone()
+
+    def get_walking_neighbors(self, n_id):
+        walking_neighbors = []
+        neighbors = self.get_node_neighbors(n_id)
+        start_ways = self.get_way(n_id)
+        start_len = len(start_ways)
+        for node in neighbors:
+            end_ways = self.get_way(node[0])
+            end_len = len(end_ways)
+            way_id = None
+            if start_len > 1 or end_len > 1:
+                for start in start_ways:
+                    for end in end_ways:
+                        if start == end:
+                            way_id = end
+            else:
+                way_id = end_ways[0]
+            end_way_info = self.get_way_info(way_id)
+            if end_way_info[2] in self._walking_routes:
+                print(end_way_info[2])
+                walking_neighbors.append(node)
+        
+        return walking_neighbors
+    
+    def get_biking_neighbors(self, n_id, risk):
+        biking_neighbors = []
+        neighbors = self.get_node_neighbors(n_id)
+        start_ways = self.get_way(n_id)
+        start_len = len(start_ways)
+        for node in neighbors:
+            end_ways = self.get_way(node[0])
+            end_len = len(end_ways)
+            way_id = None
+            if start_len > 1 or end_len > 1:
+                for start in start_ways:
+                    for end in end_ways:
+                        if start == end:
+                            way_id = end
+            else:
+                way_id = end_ways[0]
+            end_way_info = self.get_way_info(way_id)
+            if end_way_info[2] in self._biking_routes and end_way_info[3] <= risk:
+                biking_neighbors.append(node)
+
+        return biking_neighbors
+
+    def _is_node_walkable(self, n_id):
+        
+        ways = self.get_way(n_id)
+        for way in ways:
+            way_info = self.get_way_info(way)
+            if way_info[2] in self._walking_routes:
+                return True
+        return False
+
+    def _is_node_bikable(self, n_id, risk):
+        
+        ways = self.get_way(n_id)
+        for way in ways:
+            way_info = self.get_way_info(way)
+            if way_info[2] in self._biking_routes and way_info[3] <= risk:
+                return True
+        return False
 
     def reset_mag(self):
         self.mag = 1
