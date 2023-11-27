@@ -85,7 +85,7 @@ def clean_up():
 	os.remove("my-gpx.gpx")
 
 
-# test function
+# test function DELETE ME LATER
 def test():
 	tmp_path = [
 		[42.29127852746485, -85.5919075012207],
