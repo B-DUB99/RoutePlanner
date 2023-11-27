@@ -1,7 +1,9 @@
 # Importing the modules
+import sys
+import os
 from flask import Flask
 from scripts.views import views
-import os
+from scripts.test import test
 from dotenv import load_dotenv
 from time import sleep
 
@@ -22,7 +24,6 @@ def get_env():
     print(f"Host IP: {host_ip}\nHost Port: {host_port}\n")
     return host_ip, host_port, debug
 
-
 # Running the website
 def run_website():
     host_ip, host_port, debug_TF = get_env()
@@ -34,4 +35,10 @@ def run_website():
 
 if __name__ == '__main__':
     sleep(1) # delay for network route to be established
-    run_website()
+    if '-t' in sys.argv or '-test' in sys.argv:
+        test()
+
+    if len(sys.argv) == 1:
+        print("No arguments passed")
+        run_website()
+
