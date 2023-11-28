@@ -1,5 +1,6 @@
 # Python modules
 import sqlite3
+import time
 
 class data_retriever:
     
@@ -8,7 +9,9 @@ class data_retriever:
         self.cursor = None
         self._mag = 1 # magnitude
         self._offset = 0.0000001
-        self._walking_routes = ['path',
+        self._walking_routes = ['residential',
+                                'service',
+                                'path',
                                 'track',
                                 'footway',
                                 'pedestrian',
@@ -146,6 +149,7 @@ class data_retriever:
 
     #returns the neighboring node ids of the provided id
     def get_node_neighbors(self, n_id):
+        start = time.time()
         self.cursor.execute("SELECT node_id FROM nodes n, (SELECT node_id_from, "
                             + f"node_id_to FROM links WHERE node_id_from = {n_id} OR "
                             + f"node_id_to = {n_id}) a WHERE (n.node_id = "
@@ -155,6 +159,9 @@ class data_retriever:
         neighbors = []
         for t in temp:
             neighbors.append(self.get_node_info(t[0]))
+        end = time.time()
+        delta = end - start
+        print(f"{delta}")
         return neighbors
 
     # returns the provided node_id's lat and lon
