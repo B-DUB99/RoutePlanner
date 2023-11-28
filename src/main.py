@@ -34,11 +34,17 @@ def run_website():
 
 
 if __name__ == '__main__':
-    sleep(1) # delay for network route to be established
+    sys.argv = ['.\\main.py', '-t']  # for testing DELETE THIS LINE
+    sys.argv = [arg.lower() for arg in sys.argv]
+    if len(sys.argv) == 1:
+        sleep(1)  # delay for network route to be established
+        run_website()
+
     if '-t' in sys.argv or '-test' in sys.argv:
         test()
+    else:
+        error = "Invalid argument(s)."
+        print(error)
 
-    if len(sys.argv) == 1:
-        print("No arguments passed")
-        run_website()
+
 
