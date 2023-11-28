@@ -3,7 +3,7 @@ import sys
 import os
 from flask import Flask
 from scripts.views import views
-from scripts.test import test
+#from scripts.test import test
 from dotenv import load_dotenv
 from time import sleep
 
@@ -34,8 +34,9 @@ def run_website():
 
 
 if __name__ == '__main__':
-    sys.argv = ['.\\main.py', '-t']  # for testing DELETE THIS LINE
     sys.argv = [arg.lower() for arg in sys.argv]
+    #sys.argv = ['.\\main.py', '-t']  # for testing DELETE THIS LINE
+
     if len(sys.argv) == 1:
         sleep(1)  # delay for network route to be established
         run_website()
