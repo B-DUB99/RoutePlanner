@@ -29,7 +29,7 @@ function createMarker(event) {
 
     } else {
 		//placeholder until we get something better in place
-		alert("You get no marker! \nEither\n Both are placed or\nYou clicked out of bounds");
+		alert("Error! \nEither both markers are placed \nor you clicked out of bounds.");
 	}
 }
 
