@@ -64,7 +64,6 @@ class data_retriever:
     # gets the closest nodes to the users start node
     # it's up to pathfinder to determine if the node is a corrct start
     def get_closest_nodes(self, user_marker, transport, risk):
-        
         while True:
             east_lon = user_marker[2] + (self._offset * self._mag)
             west_lon = user_marker[2] - (self._offset * self._mag)
