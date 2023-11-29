@@ -7,7 +7,7 @@ class data_retriever:
     def __init__(self):
         self.connection = None
         self.cursor = None
-        self._mag = 1 # magnitude
+        self._mag = 50 # magnitude
         self._offset = 0.0000001
         self._walking_routes = ['residential',
                                 'service',
@@ -89,7 +89,7 @@ class data_retriever:
             if len(nodes) != 0:
                 return nodes
             else:
-                self._mag += 20
+                self._mag += 50
 
     def get_connector_nodes(self, way_id):
         nodes = self.get_nodes(way_id)
