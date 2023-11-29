@@ -29,7 +29,7 @@ Who missed the meeting:
 * Christian Fuentes - without notice
 
 General meeting Information:
-* 7:00 pm - 8:00 pm (60 minutes)
+* 7:00 pm - 9:00 pm (120 minutes)
 * Online via Discord
 
 What has been done:
