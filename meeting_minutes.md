@@ -17,13 +17,83 @@
 
 
 
+<h2>Week 47</h2>
+Date: 28.11.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Mike Henke
+
+Who missed the meeting:
+* Christian Fuentes - without notice
+
+General meeting Information:
+* 7:00 pm - 9:00 pm (120 minutes)
+* Online via Discord
+
+What has been done:
+- MUST HAVES:
+- Presentation - @Austin M, @BDUB , @MattP 
+- Design Document - @Mike H 
+- Testing Report - @BDUB  doing tests and report
+- [DONE] Update on requirements Document and double check other docs - @MattP 
+- Traceability matrices - @CS-SeniorDesign 
+- Refactor Code(get rid of bologna) - @CS-SeniorDesign 
+- Github Main page updated to go over the project (Readme) - @CS-SeniorDesign 
+
+WOULD BE NICE TO's:
+- Risk Tolerance slider updated - @cfuentes123
+- Sending back risk and transport type - @cfuentes123 
+- handling markers clearly(we have bugs here) - @cfuentes123 
+- Fix all warnings and errors thrown by the browser - @Austin M 
+- Pathfinding tweaking to make faster - @BDUB, @Mike H, @MattP
+- Faster DB access - @MattP 
+- DB tweaking for more efficiency - @MattP
+
+Next week's goals:
+- MUST HAVES:
 
 
 
 
 
+<h2>Week 47</h2>
+Date: 27.11.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Mike Henke
 
+Who missed the meeting:
+* Christian Fuentes - without notice
 
+General meeting Information:
+* 7:00 pm - 8:00 pm (60 minutes)
+* Online via Discord
+
+What has been done:
+- MUST HAVES:
+- Presentation - @Austin M, @BDUB , @MattP 
+- Design Document - @Mike H 
+- Testing Report - @BDUB  doing tests and report
+- [DONE] Update on requirements Document and double check other docs - @MattP 
+- Traceability matrices - @CS-SeniorDesign 
+- Refactor Code(get rid of bologna) - @CS-SeniorDesign 
+- Github Main page updated to go over the project (Readme) - @CS-SeniorDesign 
+
+WOULD BE NICE TO's:
+- Risk Tolerance slider updated - @cfuentes123
+- Sending back risk and transport type - @cfuentes123 
+- handling markers clearly(we have bugs here) - @cfuentes123 
+- Fix all warnings and errors thrown by the browser - @Austin M 
+- Pathfinding tweaking to make faster - @BDUB, @Mike H, @MattP
+- Faster DB access - @MattP 
+- DB tweaking for more efficiency - @MattP
+
+Next week's goals:
+- MUST HAVES:
 
 
 <h2>Week 46</h2>
