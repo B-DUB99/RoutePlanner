@@ -34,7 +34,6 @@ class Pathfinder:
     # lon - longitude of the node
     # connector - connector status 1 = connector or another 'way' to go 
     #                              0 = only on set path or 'way'
-
     def __init__(self, start, end, transportation_type, risk):
         # conversion of dict to list
         self.user_start = [0, start['lat'], start['lng'], 0]
@@ -43,7 +42,8 @@ class Pathfinder:
         # rest of variables
         self.start_node = []
         self.end_node = []
-        self.current_node = []
+        self.end_connector_node = []
+        self.start_connector_node = []
         self.data_retriever = data_retriever()
         self.data_retriever.connect()
         self.transportation_type = transportation_type
@@ -71,6 +71,7 @@ class Pathfinder:
             ret.append(temp)
         return ret
     
+    # if node is in node_list with bigger f value
     def is_in(self, node, node_list):
         for n in node_list:
             if node.data == n.data and node.get_f() > n.get_f():
@@ -84,15 +85,23 @@ class Pathfinder:
             node = node.parent
             if node == None:
                 break
+        self.path.append(self.start_node)
+        self.path.append(self.user_start)
         self.path.reverse()
         
     def astar(self):
         # find closest node to where user dropped pin
         self.start_node = self.find_next_best_user_node(self.user_start)
         self.end_node = self.find_next_best_user_node(self.user_end)
+        # find the closest connector to streamline pathfinding
+        self.start_connector_node = self.find_closest_connector(self.start_node)
+        self.end_connector_node = self.find_closest_connector(self.end_node)
+        # append end nodes to path
+        self.path.append(self.user_end)
+        self.path.append(self.end_node)
         # initialize open/closed lists
         open_list, closed_list = [], []
-        open_list.append(Node(self.start_node))
+        open_list.append(Node(self.start_connector_node))
         # the algorithm
         found = False
         last_node = None
@@ -100,8 +109,7 @@ class Pathfinder:
             # pop q from the open list
             q = self.get_q(open_list)
             neighbors = []
-            print(q.data)
-            # get q's neighbors
+            # get q's neighbors based on selected user transport type
             if self.transportation_type == 'walk':
                 neighbors = self.data_retriever.get_walking_neighbors(q.data[0], 1)
             elif self.transportation_type == 'bike':
@@ -113,7 +121,7 @@ class Pathfinder:
             # for each neighbor
             for neighbor in neighbors:
                 # is this the target
-                if neighbor.data == self.end_node:
+                if neighbor.data == self.end_connector_node:
                     found = True
                     last_node = neighbor
                     break
@@ -121,7 +129,8 @@ class Pathfinder:
                 neighbor.set_g(q.get_g() + self.calculate_distance_between_nodes(q.data, neighbor.data))
                 # h is what will be updated once we figure out how to better tell which one is good
                 # currently its just the distance from neighbor to end node
-                neighbor.set_h(self.calculate_distance_between_nodes(neighbor.data, self.end_node))
+                neighbor.set_h(self.calculate_distance_between_nodes(neighbor.data,
+                                                                     self.end_connector_node))
                 # if node with same pos is in open list and has lower f skip
                 if self.is_in(neighbor, open_list):
                     continue
@@ -132,6 +141,7 @@ class Pathfinder:
             closed_list.append(q)
             if found:
                 break
+        # no path found -1 displays error message on host
         if last_node == None:
             return -1
         self.denodify(last_node)
@@ -143,6 +153,31 @@ class Pathfinder:
         for n in self.path:
             self.lat_lng.append([n[1], n[2]])
     
+    def find_closest_connector(self, node):
+        # node is already a connector
+        if self.data_retriever.get_node_info(node[0])[3] == 1:
+            return node
+        
+        ways = self.data_retriever.get_way(node[0])
+        connector_nodes = self.data_retriever.get_connector_nodes(ways[0])
+        if len(connector_nodes) == 1:
+            return connector_nodes[0]
+
+        closest_ind = 0
+        shortest_dist = None
+        for i in range(len(connector_nodes)):
+            curr_dist = self.calculate_distance_between_nodes(node,
+                                                              connector_nodes[i])
+            if shortest_dist == None:
+                shortest_dist = self.calculate_distance_between_nodes(node,
+                                                                      connector_nodes[i])
+                closest_ind = i
+            elif shortest_dist > curr_dist:
+                shortest_dist = self.calculate_distance_between_nodes(node,
+                                                                      connector_nodes[i])
+                closest_ind = i
+
+        return connector_nodes[closest_ind]
     # returns the best node around user nodes
     # this is defined as the closest node to start node and target node
     def find_next_best_user_node(self, user_node):

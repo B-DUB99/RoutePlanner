@@ -3,6 +3,7 @@ import json
 from io import BytesIO
 import os
 from datetime import datetime
+import time
 
 from .data_retriever import data_retriever
 from .pathfinder import Pathfinder
@@ -26,15 +27,17 @@ def test():
 @views.route('/<string:markerInfo>', methods=['POST'])
 def getMarkers(markerInfo):
     info = json.loads(markerInfo)
-    # print(markerInfo)
     # retrieve start and end nodes from info
     start = info[0]
     end = info[1]
+    start_time = time.time()
+    print("Pathfinding has started:")
     # create a pathfinder object and pass in the start and end nodes
     pathfinder = Pathfinder(start, end, transportation_type="bike", risk=4)
-    # call find_path() to find the path
-    # pathfinder.find_path()
     error = pathfinder.astar()
+    end_time = time.time()
+    delta = end_time - start_time
+    print(f"{delta} Completion Time")
     if error == -1:
         print("error finding path")
         return []

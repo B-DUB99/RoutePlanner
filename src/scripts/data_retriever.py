@@ -148,7 +148,6 @@ class data_retriever:
 
     #returns the neighboring node ids of the provided id
     def get_node_neighbors(self, n_id):
-        start = time.time()
         self.cursor.execute("SELECT node_id FROM nodes n, (SELECT node_id_from, "
                             + f"node_id_to FROM links WHERE node_id_from = {n_id} OR "
                             + f"node_id_to = {n_id}) a WHERE (n.node_id = "
@@ -158,9 +157,19 @@ class data_retriever:
         neighbors = []
         for t in temp:
             neighbors.append(self.get_node_info(t[0]))
-        end = time.time()
-        delta = end - start
-        print(f"{delta}")
+        return neighbors
+    
+    #returns the neighboring node ids of the provided id
+    def get_connector_node_neighbors(self, n_id):
+        self.cursor.execute("SELECT node_id FROM nodes n, (SELECT node_id_from, "
+                            + f"node_id_to FROM connector_links WHERE node_id_from = {n_id} OR "
+                            + f"node_id_to = {n_id}) a WHERE (n.node_id = "
+                            + "a.node_id_from OR n.node_id = a.node_id_to) AND " 
+                            + f"n.node_id != {n_id}")
+        temp = self.cursor.fetchall()
+        neighbors = []
+        for t in temp:
+            neighbors.append(self.get_node_info(t[0]))
         return neighbors
 
     # returns the provided node_id's lat and lon
@@ -170,7 +179,7 @@ class data_retriever:
 
     def get_walking_neighbors(self, n_id):
         walking_neighbors = []
-        neighbors = self.get_node_neighbors(n_id)
+        neighbors = self.get_connector_node_neighbors(n_id)
         start_ways = self.get_way(n_id)
         start_len = len(start_ways)
         for node in neighbors:
@@ -193,7 +202,7 @@ class data_retriever:
     
     def get_biking_neighbors(self, n_id, risk):
         biking_neighbors = []
-        neighbors = self.get_node_neighbors(n_id)
+        neighbors = self.get_connector_node_neighbors(n_id)
         start_ways = self.get_way(n_id)
         start_len = len(start_ways)
         for node in neighbors:
@@ -232,5 +241,5 @@ class data_retriever:
         return False
 
     def reset_mag(self):
-        self.mag = 1
+        self.mag = 50
 
