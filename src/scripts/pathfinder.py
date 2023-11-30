@@ -34,7 +34,6 @@ class Pathfinder:
     # lon - longitude of the node
     # connector - connector status 1 = connector or another 'way' to go 
     #                              0 = only on set path or 'way'
-
     def __init__(self, start, end, transportation_type, risk):
         # conversion of dict to list
         self.user_start = [0, start['lat'], start['lng'], 0]
@@ -71,6 +70,7 @@ class Pathfinder:
             ret.append(temp)
         return ret
     
+    # if node is in node_list with bigger f value
     def is_in(self, node, node_list):
         for n in node_list:
             if node.data == n.data and node.get_f() > n.get_f():
@@ -100,7 +100,6 @@ class Pathfinder:
             # pop q from the open list
             q = self.get_q(open_list)
             neighbors = []
-            print(q.data)
             # get q's neighbors
             if self.transportation_type == 'walk':
                 neighbors = self.data_retriever.get_walking_neighbors(q.data[0], 1)
