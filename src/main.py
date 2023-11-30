@@ -3,7 +3,7 @@ import sys
 import os
 from flask import Flask
 from scripts.views import views
-#from scripts.test import test
+from scripts.test import Test
 from dotenv import load_dotenv
 from time import sleep
 
@@ -35,14 +35,14 @@ def run_website():
 
 if __name__ == '__main__':
     sys.argv = [arg.lower() for arg in sys.argv]
-    #sys.argv = ['.\\main.py', '-t']  # for testing DELETE THIS LINE
+    # sys.argv = ['.\\main.py', '-t']  # for testing DELETE THIS LINE
 
     if len(sys.argv) == 1:
         sleep(1)  # delay for network route to be established
         run_website()
 
     if '-t' in sys.argv or '-test' in sys.argv:
-        test()
+        Test()
     else:
         error = "Invalid argument(s)."
         print(error)
