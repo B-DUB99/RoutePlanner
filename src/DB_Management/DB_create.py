@@ -29,6 +29,7 @@ def main():
         cursor.execute("DROP TABLE nodes")
         cursor.execute("DROP TABLE ways")
         cursor.execute("DROP TABLE links")
+        cursor.execute("DROP TABLE connector_links")
         cursor.execute("DROP TABLE amenity_types")
         cursor.execute("DROP TABLE amenities")
     except:
@@ -69,6 +70,18 @@ def main():
                        "FOREIGN KEY(way_id) REFERENCES ways(way_id))")
     except Exception as e:
         print(f"something went wrong with table links{e}")
+    
+    try:
+        cursor.execute("CREATE TABLE connector_links(" +
+                       "way_id BIGINT UNSIGNED," +
+                       "node_id_from BIGINT UNSIGNED," +
+                       "node_id_to BIGINT UNSIGNED," +
+                       "FOREIGN KEY(node_id_from) REFERENCES nodes(node_id)," +
+                       "FOREIGN KEY(node_id_to) REFERENCES nodes(node_id)," +
+                       "FOREIGN KEY(way_id) REFERENCES ways(way_id))")
+    except Exception as e:
+        print(f"something went wrong with table links{e}")
+
 
     try:
         cursor.execute("CREATE TABLE amenity_types(" +
@@ -232,46 +245,72 @@ def main():
 
     print(f"{cursor.rowcount} nodes not linked and deleted from DB")
     connection.commit()
+    
+    # not correct will try to fix later
+    '''
     try:
         cursor.execute("UPDATE nodes " +
                        "SET connector = TRUE " +
                        "FROM (SELECT f.n_id AS id, (c1 + c2) AS c3 " +
-                             "FROM (SELECT node_id_from as n_id, COUNT(node_id_from) as c1 " +
+                             "FROM (SELECT node_id_from as n_id, COUNT(way_id) as c1 " +
                                    "FROM links " +
                                    "GROUP BY node_id_from) AS f, " +
-                                   "(SELECT node_id_to AS n_id, COUNT(node_id_to) AS c2 " +
+                                   "(SELECT node_id_to AS n_id, COUNT(way_id) AS c2 " +
                                    "FROM links " +
                                    "GROUP BY node_id_to) AS t " +
                              "WHERE t.n_id = f.n_id) AS a " +
-                       "WHERE node_id = a.id AND a.c3 > 2")
+                       "WHERE node_id = a.id AND a.c3 > 1")
 
         print(f"{cursor.rowcount} nodes set as intersections")
         connection.commit()
     except:
-        cursor.execute("SELECT node_id " +
-                       "FROM nodes")
+    '''
+    cursor.execute("SELECT node_id " +
+                    "FROM nodes")
 
-        node_ids = cursor.fetchall()
+    node_ids = cursor.fetchall()
 
-        for n in node_ids:
-            cursor.execute("SELECT COUNT(*) FROM (" +
-                           "SELECT DISTINCT way_id " +
-                           "FROM links " +
-                           f"WHERE node_id_from = {n[0]} " +
-                           f"OR node_id_to = {n[0]})")
+    for n in node_ids:
+        cursor.execute("SELECT COUNT(*) FROM (" +
+                       "SELECT DISTINCT way_id " +
+                       "FROM links " +
+                       f"WHERE node_id_from = {n[0]} " +
+                       f"OR node_id_to = {n[0]})")
 
-            count = cursor.fetchone()
+        count = cursor.fetchone()
 
-            if count[0] > 1:
-                cursor.execute("UPDATE nodes " +
-                               "SET connector = TRUE " +
-                               f"WHERE node_id = {n[0]}")
-            else:
-                cursor.execute("UPDATE nodes " +
-                               "SET connector = FALSE "
-                               f"WHERE node_id = {n[0]}")
+        if count[0] > 1:
+            cursor.execute("UPDATE nodes " +
+                           "SET connector = TRUE " +
+                           f"WHERE node_id = {n[0]}")
+        else:
+            cursor.execute("UPDATE nodes " +
+                           "SET connector = FALSE "
+                           f"WHERE node_id = {n[0]}")
 
-            print(f"{n} set as a connector node")
+        print(f"{n} set as a connector node")
+
+    connection.commit()
+
+    cursor.execute("SELECT DISTINCT way_id FROM links")
+    ways = cursor.fetchall()
+    for way in ways:
+        cursor.execute("SELECT node_id_from FROM nodes, links WHERE node_id = "
+                       + f"node_id_from AND connector = 1 AND way_id = {way[0]}")
+        from_nodes = cursor.fetchall()
+        cursor.execute("SELECT node_id_to FROM nodes, links WHERE node_id = "
+                       + f"node_id_to AND connector = 1 AND way_id = {way[0]}")
+        to_nodes = cursor.fetchall()
+        length = None
+        if len(from_nodes) < len(to_nodes):
+            length = len(from_nodes)
+        else:
+            length = len(to_nodes)
+
+        for i in range(length):
+            cursor.execute("INSERT INTO connector_links VALUES("
+                           + f"{way[0]}, {from_nodes[i][0]}, {to_nodes[i][0]})")
+            print(f"{from_nodes[i][0]}, {to_nodes[i][0]} connectors linked")
 
     # update risk levels for certain roads and ways
     portage_csv = 'Road_Risk_Levels_Portage.csv'
@@ -300,6 +339,8 @@ def main():
                                f"WHERE way_id = {line[0]}")
             print(f"{line[0]}, {line[1]} updated to risk level {line[2]}")
                     
+    cursor.execute("CREATE INDEX ind_1 ON links(node_id_from)")
+    cursor.execute("CREATE INDEX ind_2 ON links(node_id_to)")
 
     # parse and plug kml into the database
     kml_file = 'ModeShift Kalamazoo.kml'
