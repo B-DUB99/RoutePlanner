@@ -9,6 +9,12 @@ html, body, #map {
     width: 100vw;
     display: grid;
 }
+
+img.logo {
+    display: flex;
+    margin: 0 auto;
+    height: 150px;
+}
 img.center {
     margin: 0 10px
 }
