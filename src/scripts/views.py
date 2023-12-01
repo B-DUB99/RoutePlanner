@@ -42,6 +42,9 @@ def getMarkers(markerInfo):
         print("error finding path")
         return []
     else:
+        directions = pathfinder.return_directions()
+        for direction in directions:
+            print(f"{direction}")
         return pathfinder.return_path()
 
 

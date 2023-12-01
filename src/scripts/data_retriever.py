@@ -243,3 +243,21 @@ class data_retriever:
     def reset_mag(self):
         self.mag = 50
 
+    def get_path_name(self, n_id_one, n_id_two):
+
+        self.cursor.execute("SELECT DISTINCT way_id FROM connector_links "
+                            + f"WHERE (node_id_from = {n_id_one} AND "
+                            + f"node_id_to = {n_id_two}) OR "
+                            + f"(node_id_from = {n_id_two} AND "
+                            + f"node_id_to = {n_id_one})")
+
+        way = self.cursor.fetchone()
+        self.cursor.execute("SELECT name, highway FROM ways "
+                            + f"WHERE way_id = {way[0]}")
+
+        path_info = self.cursor.fetchone()
+        if path_info[0] == None:
+            return path_info[1]
+        else:
+            return path_info[0]
+
