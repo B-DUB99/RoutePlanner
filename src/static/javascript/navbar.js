@@ -15,12 +15,9 @@ var closeBtn = document.getElementsByClassName("closePopUp");
 var openBtn = document.getElementsByClassName("white_content");
 let clearBtn = document.getElementById('clear');
 
-// output.innerHTML = slider.value; // Display the default slider value
-
 var dropdown = document.getElementsByClassName("dropdown-btn");
 
 // js for sidebar
-
 function openNav() {
     sidebar.style.width = "300px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
@@ -30,7 +27,6 @@ function openNav() {
 
 function closeNav() {
     sidebar.style.width = "0";
-    // main.style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
     main.style.opacity = 1;
     openNavBtn.style.cursor = "pointer";
@@ -144,11 +140,6 @@ function clearBoard() {
     am = document.getElementsByClassName('amen-choice');
     for (let i = 0; i < am.length; i++) 
         if (am[i].getElementsByTagName('input')[0].checked == true) am[i].getElementsByTagName('input')[0].checked = false
-}
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    output.innerHTML = this.value;
 }
 
 //set up listeners for inputs
