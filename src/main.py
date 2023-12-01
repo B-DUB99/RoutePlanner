@@ -3,7 +3,7 @@ import sys
 import os
 from flask import Flask
 from scripts.views import views
-from scripts.test import Test
+# from scripts.test import Test
 from dotenv import load_dotenv
 from time import sleep
 
