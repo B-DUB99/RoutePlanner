@@ -26,10 +26,14 @@ def test():
 
 @views.route('/<string:markerInfo>', methods=['POST'])
 def getMarkers(markerInfo):
+    print(markerInfo)
     info = json.loads(markerInfo)
     # retrieve start and end nodes from info
     start = info[0]
     end = info[1]
+    risk_fact = int(info[2])
+    
+
     start_time = time.time()
     print("Pathfinding has started:")
     # create a pathfinder object and pass in the start and end nodes

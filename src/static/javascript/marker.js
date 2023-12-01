@@ -34,9 +34,9 @@ function createMarker(event) {
 }
 
 async function passToFlask() {
-    const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2)])}`, {
+    const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2), myRange.value])}`, {
         method: 'POST',
-        body: JSON.stringify([markers.get(1), markers.get(2)])
+        body: JSON.stringify([markers.get(1), markers.get(2), myRange.value])
     });
 
     pathArray = await response.json();
