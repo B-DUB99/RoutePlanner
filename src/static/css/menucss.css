@@ -115,7 +115,7 @@ input[type=range] {
     -moz-transform: rotate(0deg);
 }
 input[type=range]::-webkit-slider-runnable-track {
-    height: 8em;
+    height: 6em;
     background: white;
     border-radius: 3px;
 }
@@ -123,9 +123,9 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     background-color: green;
-    width: 2.5rem;
+    width: 2rem;
     height: 8.75em;
-    margin-top: -5px;
+    margin-top: -16px;
 }
 
 /* firefox slider */
@@ -257,7 +257,7 @@ li {
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) {
     #myRange {
-        margin-top: 50px;
+        margin-top: 65px;
         width: 15em
     }
     #low {
