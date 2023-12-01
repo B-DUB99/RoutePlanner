@@ -31,8 +31,8 @@ def getMarkers(markerInfo):
     # retrieve start and end nodes from info
     start = info[0]
     end = info[1]
-    risk_fact = int(info[2])
-    
+    risk_factor = int(info[2])
+    transport_type = info[3]
 
     start_time = time.time()
     print("Pathfinding has started:")

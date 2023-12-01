@@ -34,9 +34,10 @@ function createMarker(event) {
 }
 
 async function passToFlask() {
-    const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2), myRange.value])}`, {
+    let chosenTransport = Array.from(document.getElementsByName('transport')).find(ele => ele.checked).value;
+    const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
         method: 'POST',
-        body: JSON.stringify([markers.get(1), markers.get(2), myRange.value])
+        body: JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])
     });
 
     pathArray = await response.json();
@@ -149,3 +150,4 @@ function newCoords() {
 }
 
 map.addEventListener("click", createMarker);
+
