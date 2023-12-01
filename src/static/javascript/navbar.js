@@ -30,22 +30,16 @@ function openNav() {
 
 function closeNav() {
     sidebar.style.width = "0";
-    main.style.marginLeft= "0";
+    // main.style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
     main.style.opacity = 1;
     openNavBtn.style.cursor = "pointer";
 }
 
-/**
- * 
- */
 async function exportGPXFile() {
-
     if (pathArray != undefined) {
         document.getElementById("export-gpx").href = '/get_gpx/' + JSON.stringify(pathArray);
     }
-
-
 }
 
 for (var i = 0; i < dropdown.length; i++) {

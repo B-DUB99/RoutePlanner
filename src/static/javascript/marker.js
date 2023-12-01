@@ -95,15 +95,18 @@ function createAmenMarkers(amens, id) {
 }
 
 function setDest() {
-    let marker = L.marker(dest, {
-        draggable: true, 
-    });
-    marker.id = 2;
-    markers.set(2, marker._latlng);
-    marker.on("click", deleteMarker);
-    marker.on("dragend", newCoords);
-    marker.addTo(markerLayer);
-    markerLayer.addTo(map);
+    if (markers.size >= 2) {
+        let marker = L.marker(dest, {
+            draggable: true, 
+        });
+        marker.id = 2;
+        markers.set(2, marker._latlng);
+        marker.on("click", deleteMarker);
+        marker.on("dragend", newCoords);
+        marker.addTo(markerLayer);
+        markerLayer.addTo(map);
+    }
+
 
     if (markers.size == 2) passToFlask();
 }
