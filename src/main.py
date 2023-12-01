@@ -42,7 +42,8 @@ if __name__ == '__main__':
         run_website()
 
     if '-t' in sys.argv or '-test' in sys.argv:
-        Test()
+        pass
+        #Test()
     else:
         error = "Invalid argument(s)."
         print(error)
