@@ -40,8 +40,8 @@ async function passToFlask() {
         body: JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])
     });
 
-    pathArray = await response.json();
-    drawPathLine(pathArray)
+    data = await response.json();
+    drawPathLine(data[0])
 }
 
 

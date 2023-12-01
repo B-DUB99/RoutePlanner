@@ -31,14 +31,17 @@ def getMarkers(markerInfo):
     # retrieve start and end nodes from info
     start = info[0]
     end = info[1]
-    risk_factor = int(info[2])
+    risk_tol = int(info[2])
     transport_type = info[3]
-
+    error = -1
     start_time = time.time()
     print("Pathfinding has started:")
+    
     # create a pathfinder object and pass in the start and end nodes
-    pathfinder = Pathfinder(start, end, transportation_type="bike", risk=4)
-    error = pathfinder.astar()
+    while error == -1 and risk_tol < 5:
+        pathfinder = Pathfinder(start, end, transport_type, risk_tol)
+        error = pathfinder.astar()
+        risk_tol += 1
     end_time = time.time()
     delta = end_time - start_time
     print(f"{delta} Completion Time")
@@ -46,22 +49,14 @@ def getMarkers(markerInfo):
         print("error finding path")
         return []
     else:
+        data = []
         directions = pathfinder.return_directions()
         for direction in directions:
             print(f"{direction}")
-        return pathfinder.return_path()
-
-
-# draw the path on the map
-@views.route("/", methods=["GET", "POST"])
-def draw_path(path):
-    print("draw_path", path)
-    if request.method == "POST":
-        output = request.get_json()
-        coords = json.loads(output)
-        locs.append(coords)
-        print(locs)
-    return render_template("routeplanner.html", temp_points=path, length=len(path))
+        pathfinder.return_path()
+        data.append(pathfinder.return_path())
+        data.append(pathfinder.return_directions())
+        return data
 
 
 # SEND ME THE MARKERS FROM THE MAP ~BDUB
