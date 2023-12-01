@@ -264,7 +264,7 @@ li {
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) {
     #myRange {
-        margin-top: 65px;
+        margin-top: 80px;
         width: 15em
     }
     #low {
