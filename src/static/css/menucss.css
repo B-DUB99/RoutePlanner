@@ -9,12 +9,6 @@ html, body, #map {
     width: 100vw;
     display: grid;
 }
-
-img.logo {
-    display: flex;
-    margin: 0 auto;
-    height: 150px;
-}
 img.center {
     margin: 0 10px
 }
@@ -121,7 +115,7 @@ input[type=range] {
     -moz-transform: rotate(0deg);
 }
 input[type=range]::-webkit-slider-runnable-track {
-    height: 6em;
+    height: 4em;
     background: white;
     border-radius: 3px;
 }
@@ -136,7 +130,7 @@ input[type=range]::-webkit-slider-thumb {
 
 /* firefox slider */
 input[type='range']::-moz-range-track {
-    width: 7em;
+    width: 5em;
     height: 12em;
     background-color: white;
     border-radius: 3px;
@@ -145,7 +139,7 @@ input[type="range"]::-moz-range-thumb {
     appearance: none;
     background-color: green;
     height: 2rem;
-    width: 9rem;
+    width: 7rem;
     border-radius: 0;
 }
 
