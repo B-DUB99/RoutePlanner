@@ -131,7 +131,7 @@ input[type=range]::-webkit-slider-thumb {
     border: none;
     background-color: green;
     width: 2rem;
-    height: 8.75em;
+    height: 5em;
     margin-top: -16px;
 }
 
