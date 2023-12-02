@@ -35,12 +35,28 @@ img.middle {
     height: 100%;
     width: 0;
     position: fixed;
+    overflow: scroll;
     z-index: 2000;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
     opacity: .8;
+}
+
+.direction-sidebar {
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    z-index: 2000;
+    background-color: #111;
+    transition: 0.3s;
+    opacity: .8;
+    color: #818181
+}
+
+.direction-sidebar > * {
+    padding: 0 15px
 }
 
 .closebtn, .sidenav h1, .dropdown-btn, #update, #export-gpx {

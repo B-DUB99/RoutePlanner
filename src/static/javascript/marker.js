@@ -72,8 +72,8 @@ async function passToFlask() {
 
     data = await response.json();
     drawPathLine(data[0])
+    addDirections(data[1])
 }
-
 
 function drawPathLine(pathArray) {
     for (let i = 0; i < pathArray.length - 1; i++) {
@@ -86,6 +86,27 @@ function drawPathLine(pathArray) {
         lines[i] = line;
         line.addTo(markerLayer);
     }
+}
+
+function addDirections(directions) {
+    dirSidebar = document.querySelector('.direction-sidebar');
+    dirSidebar.style.width = '350px';
+
+    for (var i = 0, totDist = 0; i < directions.length; i++) {
+        totDist += directions[i][2];
+        dirTag = document.createElement('p')
+        dirTag.innerHTML = directions[i][0].slice(0, 8) + directions[i][2].toString() + ' meters ' + directions[i][0].slice(8, directions[i][0].length);
+        dirSidebar.appendChild(dirTag)
+    }
+
+    distTag = document.createElement('p')
+    distTag.innerHTML = 'Total Distance: ' + totDist.toString() + ' meters'
+    dirSidebar.appendChild(distTag)
+}
+
+function hideDirections() {
+    document.querySelector('.direction-sidebar').style.width = '0px';
+    document.querySelectorAll('.direction-sidebar > *').forEach(item => item.remove())
 }
 
 // adjust this so that on mouse hover popup procs or opacity changes
@@ -163,7 +184,9 @@ function setDest() {
     }
 
 
-    if (markers.size == 2) passToFlask();
+    if (markers.size == 2) {
+        passToFlask();
+    }
 }
 
 function deleteAmenMarkers(id) {
@@ -182,6 +205,7 @@ function deleteAllMarkers() {
     lines = [];
     markerLayer.clearLayers()
     map.removeLayer(markerLayer)
+    hideDirections();
 }
 
 function removePathLine() {
@@ -195,11 +219,13 @@ function deleteMarker() {
     lines = [];
     markerLayer.removeLayer(this);
     markers.delete(this.id);
+    hideDirections();
 }
 
 function newCoords() {
     removePathLine();
     markers.set(this.id, this._latlng);
+    document.querySelectorAll('.direction-sidebar > *').forEach(item => item.remove())
     passToFlask();
 }
 
