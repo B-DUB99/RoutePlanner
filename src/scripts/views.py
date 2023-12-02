@@ -14,7 +14,7 @@ locs = []
 
 
 @views.route("/", methods=["GET", "POST"])
-def test():
+def homepage():
     # will be post when you click on the map to put a marker
     if request.method == "POST":
         output = request.get_json()
