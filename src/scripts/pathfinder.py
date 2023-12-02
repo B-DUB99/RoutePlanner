@@ -162,22 +162,24 @@ class Pathfinder:
         previous_dir = ""
         previous_path_name = ""
         distance = 0
-        dir_count = 0
         for i in range(path_len - 2):
             lat_diff = abs(self.path[i][1] - self.path[i+1][1])
             lng_diff = abs(self.path[i][2] - self.path[i+1][2])
             distance += self._calculate_distance_between_nodes(self.path[i], self.path[i+1])
             card_dir = self._get_cardinal_direction(lat_diff, lng_diff, i)
-            
             if i == 1 or i == (path_len - 3):
-                if (self.end_connector_node[0] != self.end_node[0]) or (self.start_connector_node[0] != self.start_node[0]):
+                if i == 1 and (self.start_connector_node[0] != self.start_node[0]):
+                    path_name_risk = self.data_retriever.get_path_name_risk(self.path[i][0],
+                                                                            self.path[i+1][0],
+                                                                            0)
+                elif i == (path_len - 3) and (self.end_connector_node[0] != self.end_node[0]):
                     path_name_risk = self.data_retriever.get_path_name_risk(self.path[i][0],
                                                                             self.path[i+1][0],
                                                                             0)
                 else:
                     path_name_risk = self.data_retriever.get_path_name_risk(self.path[i][0],
-                                                                        self.path[i+1][0],
-                                                                        1)
+                                                                            self.path[i+1][0],
+                                                                            1)
                 if (self.path[i][0] == self.start_node[0]) or (self.path[i+1][0] == self.end_node[0]):
                     if i == 1:
                         self.directions.append(["Proceed " + card_dir + " on " + path_name_risk[0], path_name_risk[1], 0])

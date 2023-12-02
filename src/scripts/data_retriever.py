@@ -252,11 +252,11 @@ class data_retriever:
                             + f"(node_id_from = {n_id_two} AND "
                             + f"node_id_to = {n_id_one})")
         else:
-            self.cursor.execute("SELECT DISTINCT way_id FROM links "
-                            + f"WHERE (node_id_from = {n_id_one} AND "
-                            + f"node_id_to = {n_id_two}) OR "
-                            + f"(node_id_from = {n_id_two} AND "
-                            + f"node_id_to = {n_id_one})")
+            self.cursor.execute("SELECT DISTINCT l.way_id FROM links l, " 
+                                + "(SELECT DISTINCT way_id AS w FROM links "
+                                + f"WHERE (node_id_from = {n_id_one} OR node_id_to = {n_id_one})) "
+                                + f"AS a WHERE a.w = l.way_id AND (node_id_from = {n_id_two} " 
+                                + f"OR node_id_to = {n_id_two})")
         
         way = self.cursor.fetchone()
         self.cursor.execute("SELECT name, highway, risk FROM ways "
