@@ -44,18 +44,16 @@ def getMarkers(markerInfo):
         risk_tol += 1
     end_time = time.time()
     delta = end_time - start_time
-    print(f"{delta} Completion Time")
     if error == -1:
         print("error finding path")
         return []
     else:
         data = []
         directions = pathfinder.return_directions()
-        for direction in directions:
-            print(f"{direction}")
         pathfinder.return_path()
         data.append(pathfinder.return_path())
         data.append(pathfinder.return_directions())
+        print(f"{delta} Completion Time")
         return data
 
 

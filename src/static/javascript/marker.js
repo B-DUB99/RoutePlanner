@@ -79,8 +79,8 @@ function drawPathLine(pathArray) {
     for (let i = 0; i < pathArray.length - 1; i++) {
         var line = new L.Polyline([pathArray[i], pathArray[i + 1]], {
             color: 'red',
-            weight: 3,
-            opacity: 0.5,
+            weight: 5,
+            opacity: 0.75,
             smoothFactor: 1
         });
         lines[i] = line;
@@ -116,7 +116,7 @@ function createAmenMarkers(amens, id) {
 		}).on('click', (e) => {
             dest = e.latlng;
         });
-		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><button onclick='setDest();'>Here</button>", {
+		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><div style='text-align:center'><button onclick='setDest();'>Here</button></div>", {
             offset: [11, 5]
         });
     }
@@ -126,9 +126,33 @@ function createAmenMarkers(amens, id) {
 }
 
 function setDest() {
-    if (markers.size >= 2) {
+    if (markers.size == 0) {
         let marker = L.marker(dest, {
-            draggable: true, 
+            draggable: true,
+            icon: greenIcon 
+        });
+        marker.id = 1;
+        markers.set(1, marker._latlng);
+        marker.on("click", deleteMarker);
+        marker.on("dragend", newCoords);
+        marker.addTo(markerLayer);
+        markerLayer.addTo(map);
+    }else if(markers.size == 1){
+        let marker = L.marker(dest, {
+            draggable: true,
+            icon: redIcon
+        });
+        marker.id = 2;
+        markers.set(2, marker._latlng);
+        marker.on("click", deleteMarker);
+        marker.on("dragend", newCoords);
+        marker.addTo(markerLayer);
+        markerLayer.addTo(map);
+    }else if(markers.size == 2){
+        markers[1].remove()
+        let marker = L.marker(dest, {
+            draggable: true,
+            icon: redIcon
         });
         marker.id = 2;
         markers.set(2, marker._latlng);
