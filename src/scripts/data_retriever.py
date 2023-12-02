@@ -243,21 +243,28 @@ class data_retriever:
     def reset_mag(self):
         self.mag = 50
 
-    def get_path_name(self, n_id_one, n_id_two):
+    def get_path_name_risk(self, n_id_one, n_id_two, query_select):
 
-        self.cursor.execute("SELECT DISTINCT way_id FROM connector_links "
+        if query_select == 1:
+            self.cursor.execute("SELECT DISTINCT way_id FROM connector_links "
                             + f"WHERE (node_id_from = {n_id_one} AND "
                             + f"node_id_to = {n_id_two}) OR "
                             + f"(node_id_from = {n_id_two} AND "
                             + f"node_id_to = {n_id_one})")
-
+        else:
+            self.cursor.execute("SELECT DISTINCT way_id FROM links "
+                            + f"WHERE (node_id_from = {n_id_one} AND "
+                            + f"node_id_to = {n_id_two}) OR "
+                            + f"(node_id_from = {n_id_two} AND "
+                            + f"node_id_to = {n_id_one})")
+        
         way = self.cursor.fetchone()
-        self.cursor.execute("SELECT name, highway FROM ways "
+        self.cursor.execute("SELECT name, highway, risk FROM ways "
                             + f"WHERE way_id = {way[0]}")
 
         path_info = self.cursor.fetchone()
         if path_info[0] == None:
-            return path_info[1]
+            return [path_info[1], path_info[2]]
         else:
-            return path_info[0]
+            return [path_info[0], path_info[2]]
 

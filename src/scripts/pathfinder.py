@@ -87,7 +87,8 @@ class Pathfinder:
             node = node.parent
             if node == None:
                 break
-        self.path.append(self.start_node)
+        if self.start_connector_node[0] != self.start_node[0]:
+            self.path.append(self.start_node)
         self.path.append(self.user_start)
         self.path.reverse()
         
@@ -95,15 +96,20 @@ class Pathfinder:
         # find closest node to where user dropped pin
         self.start_node = self._find_next_best_user_node(self.user_start)
         self.end_node = self._find_next_best_user_node(self.user_end)
+
         # find the closest connector to streamline pathfinding
         self.start_connector_node = self._find_closest_connector(self.start_node)
         self.end_connector_node = self._find_closest_connector(self.end_node)
+        
         # append end nodes to path
         self.path.append(self.user_end)
-        self.path.append(self.end_node)
+        if self.end_node[0] != self.end_connector_node[0]:
+            self.path.append(self.end_node)
+        
         # initialize open/closed lists
         open_list, closed_list = [], []
         open_list.append(Node(self.start_connector_node))
+        
         # the algorithm
         found = False
         last_node = None
@@ -153,36 +159,53 @@ class Pathfinder:
 
     def _assemble_directions(self):
         path_len = len(self.path)
-        north = "North"
-        south = "South"
-        east = "East"
-        west = "West"
-        for i in range(path_len - 3):
-            if i > 1:
-                path_name = self.data_retriever.get_path_name(self.path[i][0],
-                                                              self.path[i+1][0])
-                lat_diff = abs(self.path[i][1] - self.path[i+1][1])
-                lng_diff = abs(self.path[i][2] - self.path[i+1][2])
-                if lat_diff > lng_diff:
-                    if self.path[i][1] < self.path[i+1][1]:
-                        move = "Proceed " + north + " on " + path_name
-                        self.directions.append(move)
-                    else:
-                        move = "Proceed " + south + " on " + path_name
-                        self.directions.append(move)
+        previous_dir = ""
+        previous_path_name = ""
+        distance = 0
+        dir_count = 0
+        for i in range(path_len - 2):
+            lat_diff = abs(self.path[i][1] - self.path[i+1][1])
+            lng_diff = abs(self.path[i][2] - self.path[i+1][2])
+            distance += self._calculate_distance_between_nodes(self.path[i], self.path[i+1])
+            card_dir = self._get_cardinal_direction(lat_diff, lng_diff, i)
+            
+            if i == 1 or i == (path_len - 3):
+                if (self.end_connector_node[0] != self.end_node[0]) or (self.start_connector_node[0] != self.start_node[0]):
+                    path_name_risk = self.data_retriever.get_path_name_risk(self.path[i][0],
+                                                                            self.path[i+1][0],
+                                                                            0)
                 else:
-                    if self.path[i][2] < self.path[i+1][2]:
-                        move = "Proceed " + east + " on " + path_name
-                        self.directions.append(move)
-                    else:
-                        move = "Proceed " + north + " on " + path_name
-                        self.directions.append(move)
-                
+                    path_name_risk = self.data_retriever.get_path_name_risk(self.path[i][0],
+                                                                        self.path[i+1][0],
+                                                                        1)
+                if (self.path[i][0] == self.start_node[0]) or (self.path[i+1][0] == self.end_node[0]):
+                    if i == 1:
+                        self.directions.append(["Proceed " + card_dir + " on " + path_name_risk[0], path_name_risk[1], 0])
+                    elif i == (path_len - 3):
+                        self.directions[len(self.directions)-1][2] = round(distance)
+                    previous_dir = card_dir
+                    previous_path_name = path_name_risk[0]
+                    distance = 0
+            elif i > 1:
+                path_name_risk = self.data_retriever.get_path_name_risk(self.path[i][0],
+                                                                        self.path[i+1][0],
+                                                                        1)
+                if previous_dir != card_dir or path_name_risk[0] != previous_path_name:
+                    self.directions[len(self.directions)-1][2] = round(distance)
+                    self.directions.append(["Proceed " + card_dir + " on " + path_name_risk[0], path_name_risk[1], 0])
+                    previous_dir = card_dir
+                    previous_path_name = path_name_risk[0]
+                    distance = 0
+
+
     # assembles lats and longs to return to flask
     def _assemble_lat_lng(self):
         for n in self.path:
             self.lat_lng.append([n[1], n[2]])
     
+    def _calculate_distance_between_nodes(self, node1, node2):
+        return distance.distance((node1[1], node1[2]), (node2[1], node2[2])).meters
+
     def _find_closest_connector(self, node):
         # node is already a connector
         if self.data_retriever.get_node_info(node[0])[3] == 1:
@@ -223,8 +246,17 @@ class Pathfinder:
                 best_distance_node = node
         return self.data_retriever.get_node_info(best_distance_node[0])
 
-    def _calculate_distance_between_nodes(self, node1, node2):
-        return distance.distance((node1[1], node1[2]), (node2[1], node2[2])).meters
+    def _get_cardinal_direction(self, lat_diff, lng_diff, ind):
+        if lat_diff > lng_diff:
+            if self.path[ind][1] < self.path[ind+1][1]:
+                return "North"
+            else:
+                return "South"
+        else: 
+            if self.path[ind][2] < self.path[ind+1][2]:
+                return "East"
+            else:
+                return "West"
 
     def return_directions(self):
         return self.directions
