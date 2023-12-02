@@ -45,14 +45,13 @@ img.middle {
 }
 
 .direction-sidebar {
-    height: 100%;
     position: fixed;
-    right: 0px;
     z-index: 2000;
     background-color: #111;
     transition: 0.3s;
     opacity: .8;
-    color: #818181
+    color: #818181;
+    overflow: scroll;
 }
 
 .leaflet-right .leaflet-control {
@@ -279,6 +278,7 @@ li {
     padding: 10px;
     z-index: 400;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0)

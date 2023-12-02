@@ -23,6 +23,7 @@ function openNav() {
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     main.style.opacity = 0;
     openNavBtn.style.cursor = "default";
+    if (lines) hideDirections()
 }
 
 function closeNav() {
@@ -30,6 +31,7 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
     main.style.opacity = 1;
     openNavBtn.style.cursor = "pointer";
+    if (lines) addDirections(directions);
 }
 
 async function exportGPXFile() {
@@ -172,4 +174,3 @@ for (i = 0; i < openBtn.length; i++) {
 for (i = 0; i < closeBtn.length; i++) {
     closeBtn[i].addEventListener("click", close);
 }
-openNav()
