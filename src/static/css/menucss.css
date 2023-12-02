@@ -55,6 +55,10 @@ img.middle {
     color: #818181
 }
 
+.leaflet-right .leaflet-control {
+    transition: 0.3s
+}
+
 .direction-sidebar > * {
     padding: 0 15px
 }

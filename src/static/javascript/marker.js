@@ -66,6 +66,7 @@ function createMarker(event) {
 
 async function passToFlask() {
     let chosenTransport = Array.from(document.getElementsByName('transport')).find(ele => ele.checked).value;
+    console.log(myRange.value)
     const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
         method: 'POST',
         body: JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])
@@ -94,6 +95,9 @@ function drawPathLine(pathArray) {
 function addDirections(directions) {
     dirSidebar = document.querySelector('.direction-sidebar');
     dirSidebar.style.width = '350px';
+    document.querySelector('#chngLayer').style.marginRight = '350px'
+    document.querySelector('.leaflet-control-zoom').style.marginRight = '360px';
+    document.querySelector('.leaflet-control-scale').style.marginRight = '360px';
 
     for (var i = 0, totDist = 0; i < directions.length; i++) {
         totDist += directions[i][2];
@@ -109,6 +113,9 @@ function addDirections(directions) {
 
 function hideDirections() {
     document.querySelector('.direction-sidebar').style.width = '0px';
+    document.querySelector('#chngLayer').style.marginRight = '1px'
+    document.querySelector('.leaflet-control-zoom').style.marginRight = '10px';
+    document.querySelector('.leaflet-control-scale').style.marginRight = '10px';
     document.querySelectorAll('.direction-sidebar > *').forEach(item => item.remove())
 }
 
