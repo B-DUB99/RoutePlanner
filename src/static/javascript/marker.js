@@ -4,6 +4,7 @@ var markerLayer = L.layerGroup();
 var layers = [];
 let dest;
 let pathArray;
+let directions;
 
 const redIcon = new L.Icon({
     iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -71,8 +72,10 @@ async function passToFlask() {
     });
 
     data = await response.json();
-    drawPathLine(data[0])
-    addDirections(data[1])
+    pathArray = data[0];
+	directions = data[1];
+	drawPathLine(pathArray);
+    addDirections(directions);
 }
 
 function drawPathLine(pathArray) {
