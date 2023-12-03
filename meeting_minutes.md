@@ -17,6 +17,81 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Week 47</h2>
+Date: 01.12.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Christian Fuentes
+* Mike Henke
+* Dustin (Client)
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 11:30 AM - 13:00 PM (90 minutes)
+* Online via Teams (Client Meeting)
+
+What has been done:
+* Talk with Dustin if there are any last minute changes to the project
+* make sure everything is working as intended
+* inform him about the presentation and the final submission
+
+Next week's goals:
+* Tweak the Pathfinding Algorithm
+* Presentation
+* Bug Fixes for Presentation and Final Submission
+* Paperwork
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+
+
+
+<h2>Week 47</h2>
+Date: 01.12.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Christian Fuentes
+
+Who missed the meeting:
+* Mike Henke - without notice
+
+General meeting Information:
+* 8:30 AM - 10:00 AM (90 minutes)
+* In Class
+
+What has been done:
+* Talk with Shen talk about the project
+
+Next week's goals:
+* Tweak the Pathfinding Algorithm
+* Presentation
+* Bug Fixes for Presentation and Final Submission
+* Paperwork
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+
+
+
+
 <h2>Week 47</h2>
 Date: 28.11.2023
 Attendees:
