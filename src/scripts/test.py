@@ -56,12 +56,13 @@ file_handler.setFormatter(file_formatter)
 
 
 def generate_folder_structure(root_path, ignore_folders, output_file='test_files/output/Project_Structure.md'):
-	if ignore_folders is None:
-		ignore_folders = set()
+    if ignore_folders is None:
+        ignore_folders = set()
 
-	with open(output_file, "w") as file:
-		file.write("# Folder Structure\n\n")
-		generate_folder_structure_recursive(root_path, file, 0, ignore_folders)
+    with open(output_file, "w") as file:
+        file.write("# Folder Structure\n\n")
+        total_size = generate_folder_structure_recursive(root_path, file, 0, ignore_folders)
+        file.write(f"\nTotal Size: {convert_size(total_size)}\n")
 
 
 def convert_size(size_bytes):
@@ -73,32 +74,36 @@ def convert_size(size_bytes):
 
 
 def generate_folder_structure_recursive(folder_path, file, depth, ignore_folders):
-	indent = "  " * depth
-	folder_name = os.path.basename(folder_path)
+    indent = "  " * depth
+    folder_name = os.path.basename(folder_path)
 
-	if folder_name in ignore_folders:
-		return
+    if folder_name in ignore_folders:
+        return 0  # Return 0 for ignored folders
 
-	file.write(f"{indent}- {folder_name}/\n")
+    file.write(f"{indent}- {folder_name}/\n")
 
-	try:
-		entries = os.listdir(folder_path)
-	except OSError:
-		return
+    total_size = 0
 
-	for entry in entries:
-		entry_path = os.path.join(folder_path, entry)
+    try:
+        entries = os.listdir(folder_path)
+    except OSError:
+        return 0
 
-		# get file size
-		try:
-			file_size = convert_size(os.path.getsize(entry_path))
-		except OSError:
-			file_size = 0
+    for entry in entries:
+        entry_path = os.path.join(folder_path, entry)
 
-		if os.path.isdir(entry_path):
-			generate_folder_structure_recursive(entry_path, file, depth + 1, ignore_folders)
-		else:
-			file.write(f"{indent}  - {entry}: {file_size}\n")
+        if os.path.isdir(entry_path):
+            size = generate_folder_structure_recursive(entry_path, file, depth + 1, ignore_folders)
+            total_size += size
+        else:
+            try:
+                file_size = os.path.getsize(entry_path)
+                total_size += file_size
+                file.write(f"{indent}  - {entry}: {convert_size(file_size)}\n")
+            except OSError:
+                pass
+
+    return total_size
 
 
 def helper_get_closest_node(i, transport, risk, location):
