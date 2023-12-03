@@ -511,7 +511,8 @@ class Test:
 
 			# try to export gpx file
 			try:
-				if self.gpx_export.export(path_string) > None:
+				self.gpx_export.parse_string_to_list(path_string)
+				if self.gpx_export.export() > None:
 					self.logger.info(f"GPX_export export successful for {len(path)}")
 					self._passed_tests.append(f"test_gpx_export: gpx_export export successful for {len(path)}")
 				else:
