@@ -1,0 +1,127 @@
+# Folder Structure
+
+- /
+  - .gitignore: 309.76 KB
+  - artifacts/
+    - artifacts.here: 0.00 B
+    - Links_for_Shen.md: 684.00 B
+    - UML_Chart.pdf: 49.37 KB
+  - CODE_OF_CONDUCT.md: 5.21 KB
+  - files_for_markdown/
+    - Readme/
+      - DB_Schema_2.0.jpeg: 22.21 KB
+  - LICENSE: 1.06 KB
+  - meeting_minutes.md: 30.53 KB
+  - README.md: 3.42 KB
+  - src/
+    - db/
+      - db_here_empty_file: 0.00 B
+      - routeplanning.db: 25.99 MB
+      - routeplanning.db.zip: 10.42 MB
+    - DB_Management/
+      - DB_create.py: 18.34 KB
+      - ModeShift Kalamazoo.kml: 317.14 KB
+      - Road_Risk_Levels_Kzoo.csv: 6.69 KB
+      - Road_Risk_Levels_Portage.csv: 523.00 B
+    - install.py: 519.00 B
+    - main.py: 1.45 KB
+    - scripts/
+      - data_retriever.py: 10.96 KB
+      - gpx_export.py: 2.66 KB
+      - pathfinder.py: 11.69 KB
+      - test.py: 18.43 KB
+      - views.py: 3.53 KB
+      - __init__.py: 0.00 B
+    - static/
+      - css/
+        - menucss.css: 5.27 KB
+      - favicon.ico: 30.41 KB
+      - images/
+        - GPS_Icons/
+          - GPS_Art_icon.png: 214.00 B
+          - GPS_Art_round_icon.png: 325.00 B
+          - GPS_Art_XL_round_icon.png: 328.00 B
+          - GPS_bike_icon.png: 211.00 B
+          - GPS_bike_round_icon.png: 326.00 B
+          - GPS_Bike_Shop_and_Reapair_icon.png: 293.00 B
+          - GPS_Bike_Shop_and_Reapair_round_icon.png: 471.00 B
+          - GPS_Bike_Shop_and_Repair_icon.png: 293.00 B
+          - GPS_Bike_Shop_and_Repair_round_icon.png: 471.00 B
+          - GPS_Bike_Shop_and_Repair_XL_round_icon.png: 477.00 B
+          - GPS_Bike_Shop_icon.png: 325.00 B
+          - GPS_Bike_Shop_round_icon.png: 374.00 B
+          - GPS_Bike_Shop_XL_round_icon.png: 404.00 B
+          - GPS_bike_XL_round_icon.png: 348.00 B
+          - GPS_Book_icon.png: 191.00 B
+          - GPS_Book_round_icon.png: 277.00 B
+          - GPS_Book_XL_round_icon.png: 294.00 B
+          - GPS_Business_icon.png: 206.00 B
+          - GPS_Business_round_icon.png: 384.00 B
+          - GPS_Business_XL_round_icon.png: 338.00 B
+          - GPS_Bus_Stop_icon.png: 222.00 B
+          - GPS_Bus_Stop_round_icon.png: 266.00 B
+          - GPS_Bus_Stop_XL_round_icon.png: 304.00 B
+          - GPS_Cafe_icon.png: 237.00 B
+          - GPS_Cafe_round_icon.png: 302.00 B
+          - GPS_Cafe_XL_round_icon.png: 316.00 B
+          - GPS_Community_Hub_icon.png: 219.00 B
+          - GPS_Community_Hub_round_icon.png: 332.00 B
+          - GPS_Community_Hub_XL_round_icon.png: 346.00 B
+          - GPS_Drinking_Fountain_icon.png: 263.00 B
+          - GPS_Drinking_Fountain_round_icon.png: 354.00 B
+          - GPS_Drinking_Fountain_XL_round_icon.png: 374.00 B
+          - GPS_Drink_icon.png: 277.00 B
+          - GPS_Drink_round_icon.png: 393.00 B
+          - GPS_Drink_XL_round_icon.png: 396.00 B
+          - GPS_Grocery_icon.png: 216.00 B
+          - GPS_Grocery_round_icon.png: 319.00 B
+          - GPS_Grocery_XL_round_icon.png: 345.00 B
+          - GPS_Health_and_Wellness_icon.png: 180.00 B
+          - GPS_Health_and_Wellness_round_icon.png: 266.00 B
+          - GPS_Health_and_Wellness_XL_round_icon.png: 284.00 B
+          - GPS_Ice_Cream_icon.png: 246.00 B
+          - GPS_Ice_Cream_round_icon.png: 463.00 B
+          - GPS_Ice_Cream_XL_round_icon.png: 465.00 B
+          - GPS_Restroom_icon.png: 219.00 B
+          - GPS_Restroom_round_icon.png: 310.00 B
+          - GPS_Restroom_XL_round_icon.png: 321.00 B
+          - GPS_Resturants_icon.png: 201.00 B
+          - GPS_Resturants_round_icon.png: 299.00 B
+          - GPS_Resturants_XL_round_icon.png: 313.00 B
+          - GPS_Scuptures_icon.png: 241.00 B
+          - GPS_Scuptures_round_icon.png: 352.00 B
+          - GPS_Scuptures_XL_round_icon.png: 358.00 B
+          - GPS_WoW_icon.png: 275.00 B
+          - GPS_WoW_round_icon.png: 371.00 B
+          - GPS_WoW_XL_round_icon.png: 363.00 B
+        - help_page_images/
+          - Amenities.jpg: 26.85 KB
+          - Clear_button.jpg: 5.98 KB
+          - Custom_route.jpg: 8.74 KB
+          - Export_button.jpg: 2.60 KB
+          - layer_button.jpg: 1.60 KB
+          - marker.jpg: 2.58 KB
+          - transport_tab.jpg: 9.48 KB
+        - hlppage_MSK_lines_logo.png: 14.21 KB
+        - sidenav/
+          - bicycle_clean_icon.png: 1.84 KB
+          - bicycle_icon.png: 454.00 B
+          - bus_clear_icon.png: 939.00 B
+          - bus_icon.png: 370.00 B
+          - sidenav_MSK_lines_logo.png: 8.71 KB
+          - Walking_clear_icon.png: 1.82 KB
+          - walking_icon.png: 455.00 B
+        - thumbnail_MSK_lines_logo.png: 30.41 KB
+      - javascript/
+        - map.js: 1.33 KB
+        - marker.js: 11.96 KB
+        - navbar.js: 5.78 KB
+    - templates/
+      - routeplanner.html: 13.00 KB
+    - test_files/
+      - input/
+        - nodes.csv: 1.77 MB
+      - output/
+        - main_test_logger.md: 1.95 KB
+        - Project_Structure.md: 4.89 KB
+    - update_start.sh: 889.00 B
