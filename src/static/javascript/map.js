@@ -1,3 +1,6 @@
+const mapBox = [[42.157, -85.6995747], [42.157, -85.531], [42.369062, -85.531], [42.369062, -85.6995747], [42.157, -85.6995747]];
+
+
 // Creating a map object
 // center is starting location currenly WMU
 var map = L.map('map', {
@@ -7,6 +10,8 @@ var map = L.map('map', {
     zoomControl: false,
     maxBounds: [[42.12, -85.48], [42.4, -85.8]],
 });
+
+var polyline = L.polyline(mapBox, {color: 'red'}).addTo(map);
 
 // scale 
 L.control.scale({
@@ -46,5 +51,4 @@ function changeLayer() {
 
 // Adding layer to the map
 map.addLayer(osmLayer);
-
 document.getElementById("chngLayer").addEventListener("click", changeLayer);

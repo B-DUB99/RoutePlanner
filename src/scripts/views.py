@@ -24,8 +24,8 @@ def homepage():
     return render_template("routeplanner.html")
 
 
-@views.route('/<string:markerInfo>', methods=['POST'])
-def getMarkers(markerInfo):
+@views.route('calculate_route/<string:markerInfo>', methods=['POST'])
+def calculate_route(markerInfo):
     print(markerInfo)
     info = json.loads(markerInfo)
     # retrieve start and end nodes from info
@@ -56,26 +56,6 @@ def getMarkers(markerInfo):
         data.append(pathfinder.return_directions())
         print(f"{delta} Completion Time")
         return data
-
-
-# SEND ME THE MARKERS FROM THE MAP ~BDUB
-@views.route("/calculate/<string:userinfo>", methods=["POST"])
-def calculate(userinfo):
-    data = json.loads(userinfo)
-    print(data)
-    # call getMarkers() to get the markers from the map
-    # info = getMarkers(markerInfo)
-    # print(info) # this is the list of markers
-
-    d_ret = data_retriever()
-    d_ret.connect()
-    amens = []
-    try:
-        amens = d_ret.get_amenities(data[2][0])
-    except:
-        print("User selected nothing to find!")
-    d_ret.close()
-    return amens
 
 
 # make this interactive with the map instead of a button
