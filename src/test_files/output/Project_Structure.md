@@ -11,7 +11,7 @@
     - Readme/
       - DB_Schema_2.0.jpeg: 22.21 KB
   - LICENSE: 1.06 KB
-  - meeting_minutes.md: 30.53 KB
+  - meeting_minutes.md: 31.80 KB
   - README.md: 3.42 KB
   - src/
     - db/
@@ -29,7 +29,7 @@
       - data_retriever.py: 10.96 KB
       - gpx_export.py: 2.66 KB
       - pathfinder.py: 11.69 KB
-      - test.py: 18.43 KB
+      - test.py: 25.79 KB
       - views.py: 3.53 KB
       - __init__.py: 0.00 B
     - static/
@@ -122,6 +122,8 @@
       - input/
         - nodes.csv: 1.77 MB
       - output/
-        - main_test_logger.md: 1.95 KB
-        - Project_Structure.md: 4.89 KB
+        - main_test_logger.md: 0.00 B
+        - Project_Structure.md: 0.00 B
     - update_start.sh: 889.00 B
+
+Total Size: 39.18 MB
