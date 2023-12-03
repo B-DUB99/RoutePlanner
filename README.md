@@ -1,91 +1,52 @@
 # RoutePlanner
 
 
-***
-## Modules used and how to install them 
+*** 
 
-### 1. `flask`  [![PyPI version](https://badge.fury.io/py/Flask.svg)](https://badge.fury.io/py/Flask)
-<br>`flask` is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.
-<br>To install `flask`:
-```bash
-pip install flask
-```
-<br> 
+### Project Member:
+* [Austin Miller](mailto:austin.j07.miller@wmich.edu)
+* [Bjarne Wilken](mailto:bjarne.wilken@wmich.edu)
+* [Christian Fuentes](mailto:cdd9168@wmich.edu)
+* [Matthew Phillips](mailto:matthew.a.phillips@wmich.edu)
+* [Mike Henke](mailto:mgs8776@wmich.edu)
 
-
-### 2. `dotenv` [![PyPI version](https://badge.fury.io/py/python-dotenv.svg)](https://badge.fury.io/py/python-dotenv)
-
-<br>`python-dotenv` reads key-value pairs from a `.env` file and can set them as environment variables. It is useful for storing configuration in the environment.
-<br>To install `dotenv`:
-```bash
-pip install python-dotenv
-```
-<br>
-
-
-### 3. `OSM-Python-Tools` [![PyPI version](https://badge.fury.io/py/OSMPythonTools.svg)](https://badge.fury.io/py/OSMPythonTools)
-
-<br>`OSM-Python-Tools` is a Python library for accessing OpenStreetMap data. It provides a simple API for querying OpenStreetMap data and for downloading OpenStreetMap data. It is based on the Overpass API and the Overpass Turbo query language.
-<br>To install `OSM-Python-Tools`:
-```bash
-pip install OSMPythonTools
-```
-<br>
-
-
-### 4. `leaflet` [![JavaScript](https://img.shields.io/badge/JavaScript-100%25-yellow.svg)](https://img.shields.io/badge/JavaScript-100%25-yellow.svg)
-
-<br>`leaflet` is a JavaScript library for mobile-friendly interactive maps. It is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms. It is an open-source JavaScript library for mobile-friendly interactive maps.
-<br>To install `leaflet`:
-```bash
-pull the leaflet.js file from https://leafletjs.com/download.html
-```
-<br>
-
-
-### 5. `folium` [![PyPI version](https://badge.fury.io/py/folium.svg)](https://badge.fury.io/py/folium)
-
-<br>`folium` is a Python library for creating interactive maps. It is based on the JavaScript library Leaflet.js. It is designed to work with data in Python and other languages.
-<br>To install `folium`:
-```bash
-pip install folium
-```
-<br>
-
-
-# 6. `sqlite3` [![PyPI version](https://badge.fury.io/py/sqlite3.svg)](https://badge.fury.io/py/sqlite3)
-
-<br> `sqlite3` is a Python library for accessing SQLite databases. It is a self-contained, serverless, zero-configuration, transactional SQL database engine. It is the most widely deployed SQL database engine and the source code for SQLite is in the public domain.
-<br>To install `sqlite3`:
-```bash
-pip install sqlite3
-```
- <br>
-
-# 7. 'gpxpy' [![PyPI version](https://badge.fury.io/py/gpxpy.svg)](https://badge.fury.io/py/gpxpy)
-<br> `gpxpy` is a Python library for parsing GPX files. It is a simple Python GPX parser.
-<br>To install `gpxpy`:
-```bash
-pip install gpxpy
-```
-
-<br>
-
-# 8. 'alive-progress' [![PyPI version](https://badge.fury.io/py/alive-progress.svg)](https://badge.fury.io/py/alive-progress)
-<br> `alive-progress` is a Python library for displaying progress bars. It is a progress bar for Python and CLI.
-<br>To install `alive-progress`:
-```bash
-pip install alive-progress
-```
-
-
-<br>
-
-***
-## Kalamazoo/Portage Routeplanning DB Schema
-
-![DB_Schema_2.0.jpeg](files_for_markdown%2FReadme%2FDB_Schema_2.0.jpeg)
 
 ***
 
-[update_start.sh](dev%2Fupdate_start.sh)
+### Abstract:
+Kalamazoo Route Planner is a website that calculates routes based on user inputs and preferences. 
+The website utilizes common front-end technologies like JavaScript and HTML. 
+
+The back end uses Python and other libraries, like Flask, to run the site and store data in a SQL Database. 
+Walking and bicycling are the main modes of transportation for navigation which differs Kalamazoo Route Planner from other Navigation Applications. 
+
+Given a set of points, the best route is then calculated and drawn on a map of the Kalamazoo area. 
+The algorithm considers some stress factors when doing the calculations. Among them are speed limits, the typology of a road or path, as well as the amount of activity on them. 
+In addition, the website will provide information about nearby amenities like pharmacies, bike parking, grocery stores, and more. 
+
+***
+
+### Setup:
+1. download the repository from GitHub
+2. open the terminal and navigate to the repository
+3. install the requirements by running `python3 install.py`
+4. create the database by running `python3 create_db.py` ([DB_create.py](src%2FDB_Management%2FDB_create.py))
+5. This will create the database and populate it with the data from OSM, Modeshift and Imagine Kalamazoo 2025.
+6. Run the server by running `python3 main.py` ([main.py](src%2Fmain.py))
+7. Open a browser and navigate to `localhost:5000`
+8. The website should now be running
+9. If you want to have the website accessible from other devices on your network, you can access it by using the IP address of the computer running the server instead of `localhost`
+10. If you want to use the website online you can use the port forwarding feature of your router to make the website accessible from the internet.
+
+
+***
+
+### Usage:
+
+manual here
+
+
+
+
+
+
