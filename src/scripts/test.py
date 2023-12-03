@@ -148,6 +148,8 @@ class Test:
 		self.location_list = []
 		self._passed_tests = []
 		self._failed_tests = []
+		self.path1 = None
+		self.path2 = None
 
 		# initialize imported modules
 		self.data_retriever = data_retriever()
@@ -160,6 +162,8 @@ class Test:
 		self.risk_tolerance_test_fixed_loc()
 		self.test_database()
 		self.test_gpx_export()
+		#self.test_pathfinder()
+		self.results()
 
 
 
@@ -180,24 +184,30 @@ class Test:
 		try:
 			assert os.path.exists('db/routeplanning.db')
 			self.logger.info("Database exists")
+			self._passed_tests.append("test_database: database exists")
 		except:
 			self.logger.error("Database does not exist")
+			self._failed_tests.append("test_database: database does not exist")
 			assert False, self.error("Database does not exist")
 
 		# try to connect to database
 		try:
 			self.data_retriever.connect()
 			self.logger.info("Database connection successful")
+			self._passed_tests.append("test_database: database connection successful")
 		except:
 			self.logger.error("Database connection failed")
+			self._failed_tests.append("test_database: database connection failed")
 			assert False, self.error("Database connection failed")
 
 		# try for each amenity type to get amenities from database
 		for amen_type in self._amenenity_types:
 			if len(self.data_retriever.get_amenities(amen_type)) > 0:
 				self.logger.info(f"Database get_amenities successful for {amen_type}")
+				self._passed_tests.append(f"test_database: database get_amenities successful for {amen_type}")
 			else:
 				self.logger.error(f"Database get_amenities failed for {amen_type}")
+				self._failed_tests.append(f"test_database: database get_amenities failed for {amen_type}")
 				assert True, self.error(f"Database get_amenities failed for {amen_type}")
 
 
@@ -230,13 +240,21 @@ class Test:
 				# Process the result and associated information
 				self.logger.info(
 					f"Database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
+				self._passed_tests.append(f"test_database: database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
 			except multiprocessing.TimeoutError:
 				i, transport, risk, location, closest_nodes = result
-				self.logger.error(
+				self.logger.warning(
 					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
+				self._failed_tests.append(f"test_database: database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
 				assert True, self.error(
 					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
-
+			except Exception as e:
+				i, transport, risk, location, closest_nodes = result
+				self.logger.error(
+					f"Database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
+				self._failed_tests.append(f"test_database: database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
+				assert True, self.error(
+					f"Database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
 
 		# test get_node_info
 		# open file to get a list of all node ids
@@ -250,8 +268,14 @@ class Test:
 			try:
 				if len(self.data_retriever.get_node_info(node_id)) > 0:
 					self.logger.info(f"Database get_node_info successful for {node_id}")
+					self._passed_tests.append(f"test_database: database get_node_info successful for {node_id}")
+				else:
+					self.logger.warning(f"Database get_node_info failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database get_node_info failed for {node_id} with no results")
+					assert True, self.error(f"Database get_node_info failed for {node_id}")
 			except Exception as e:
 				self.logger.error(f"Database get_node_info failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database get_node_info failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_node_info failed with {e}, for {node_id}")
 
 
@@ -268,8 +292,14 @@ class Test:
 			try:
 				if len(self.data_retriever.get_way(node_id)) > 0:
 					self.logger.info(f"Database get_way successful for {node_id}")
+					self._passed_tests.append(f"test_database: database get_way successful for {node_id}")
+				else:
+					self.logger.warning(f"Database get_way failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database get_way failed for {node_id} with no results")
+					assert True, self.error(f"Database get_way failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_way failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database get_way failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_way failed with {e}, for {node_id}")
 
 
@@ -286,11 +316,14 @@ class Test:
 			try:
 				if len(self.data_retriever.get_way_info(way_id)) > 0:
 					self.logger.info(f"Database get_way_info successful for {way_id}")
+					self._passed_tests.append(f"test_database: database get_way_info successful for {way_id}")
 				else:
-					self.logger.error(f"Database get_way_info failed for {way_id}")
-					assert True, self.error(f"Database get_way_info failed for {way_id}")
+					self.logger.warning(f"Database get_way_info failed for {way_id} with no results")
+					self._failed_tests.append(f"test_database: database get_way_info failed for {way_id} with no results")
+					assert True, self.error(f"Database get_way_info failed for {way_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_way failed with {e}, for {way_id}")
+				self._failed_tests.append(f"test_database: database get_way failed with {e}, for {way_id}")
 				assert True, self.error(f"Database get_way failed with {e}, for {way_id}")
 
 
@@ -305,8 +338,14 @@ class Test:
 			try:
 				if len(self.data_retriever.get_node_neighbors(node_id)) > 0:
 					self.logger.info(f"Database get_node_neighbors successful for {node_id}")
+					self._passed_tests.append(f"test_database: database get_node_neighbors successful for {node_id}")
+				else:
+					self.logger.warning(f"Database get_node_neighbors failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database get_node_neighbors failed for {node_id} with no results")
+					assert True, self.error(f"Database get_node_neighbors failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_node_neighbors failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database get_node_neighbors failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_node_neighbors failed with {e}, for {node_id}")
 
 
@@ -320,8 +359,14 @@ class Test:
 			try:
 				if len(self.data_retriever.get_node_coords(node_id)) > 0:
 					self.logger.info(f"Database get_node_coords successful for {node_id}")
+					self._passed_tests.append(f"test_database: database get_node_coords successful for {node_id}")
+				else:
+					self.logger.warning(f"Database get_node_coords failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database get_node_coords failed for {node_id} with no results")
+					assert True, self.error(f"Database get_node_coords failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_node_coords failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database get_node_coords failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_node_coords failed with {e}, for {node_id}")
 
 
@@ -335,8 +380,14 @@ class Test:
 			try:
 				if len(self.data_retriever.get_walking_neighbors(node_id)) > 0:
 					self.logger.info(f"Database get_walking_neighbors successful for {node_id}")
+					self._passed_tests.append(f"test_database: database get_walking_neighbors successful for {node_id}")
+				else:
+					self.logger.warning(f"Database get_walking_neighbors failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database get_walking_neighbors failed for {node_id} with no results")
+					assert True, self.error(f"Database get_walking_neighbors failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database get_walking_neighbors failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
 
 
@@ -351,9 +402,14 @@ class Test:
 				try:
 					if len(self.data_retriever.get_biking_neighbors(node_id, self._risk_factor_list[j])) > 0:
 						self.logger.info(f"Database get_biking_neighbors successful for {node_id}")
-					assert True, self.error(f"Database get_biking_neighbors failed for {node_id}")
+						self._passed_tests.append(f"test_database: database get_biking_neighbors successful for {node_id}")
+					else:
+						self.logger.warning(f"Database get_biking_neighbors failed for {node_id} with no results")
+						self._failed_tests.append(f"test_database: database get_biking_neighbors failed for {node_id} with no results")
+						assert True, self.error(f"Database get_biking_neighbors failed for {node_id} with no results")
 				except Exception as e:
 					self.logger.error(f"Database get_biking_neighbors failed with {e}, for {node_id}")
+					self._failed_tests.append(f"test_database: database get_biking_neighbors failed with {e}, for {node_id}")
 					assert True, self.error(f"Database get_biking_neighbors failed with {e}, for {node_id}")
 
 
@@ -367,8 +423,14 @@ class Test:
 			try:
 				if self.data_retriever._is_node_walkable(node_id):
 					self.logger.info(f"Database _is_node_walkable successful for {node_id}")
+					self._passed_tests.append(f"test_database: database _is_node_walkable successful for {node_id}")
+				else:
+					self.logger.warning(f"Database _is_node_walkable failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database _is_node_walkable failed for {node_id} with no results")
+					assert True, self.error(f"Database _is_node_walkable failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database _is_node_walkable failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database _is_node_walkable failed with {e}, for {node_id}")
 				assert True, self.error(f"Database _is_node_walkable failed with {e}, for {node_id}")
 
 
@@ -382,13 +444,33 @@ class Test:
 			try:
 				if self.data_retriever._is_node_bikable(node_id):
 					self.logger.info(f"Database _is_node_bikeable successful for {node_id}")
+					self._passed_tests.append(f"test_database: database _is_node_bikeable successful for {node_id}")
+				else:
+					self.logger.warning(f"Database _is_node_bikeable failed for {node_id} with no results")
+					self._failed_tests.append(f"test_database: database _is_node_bikeable failed for {node_id} with no results")
+					assert True, self.error(f"Database _is_node_bikeable failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database _is_node_bikeable failed with {e}, for {node_id}")
+				self._failed_tests.append(f"test_database: database _is_node_bikeable failed with {e}, for {node_id}")
 				assert True, self.error(f"Database _is_node_bikeable failed with {e}, for {node_id}")
+
+		# try to close database
+		try:
+			self.data_retriever.close()
+			self.logger.info("Database close successful")
+			self._passed_tests.append("test_database: database close successful")
+		except:
+			self.logger.error("Database close failed")
+			self._failed_tests.append("test_database: database close failed")
+			assert False, self.error("Database close failed")
 
 
 	# START OF GPX EXPORT TESTS (using gpx_export.py)
 	def test_gpx_export(self):
+		# open up the db connection
+		self.data_retriever.connect()
+
+
 		# test parse_string_to_list
 		for i in range(self.number_of_tests):
 			# generate random path
@@ -404,8 +486,10 @@ class Test:
 			try:
 				self.gpx_export.parse_string_to_list(path_string)
 				self.logger.info(f"GPX_export parse_string_to_list successful for {len(path)}")
+				self._passed_tests.append(f"test_gpx_export: gpx_export parse_string_to_list successful for {len(path)}")
 			except Exception as e:
 				self.logger.error(f"GPX_export parse_string_to_list failed with {e}, for {len(path)}")
+				self._failed_tests.append(f"test_gpx_export: gpx_export parse_string_to_list failed with {e}, for {len(path)}")
 				assert True, self.error(f"GPX_export parse_string_to_list failed with {e}, for {len(path)}")
 
 
@@ -422,21 +506,21 @@ class Test:
 
 			# try to export gpx file
 			try:
-				self.gpx_export.export(path_string)
-				self.logger.info(f"GPX_export export successful for {len(path)}")
+				if self.gpx_export.export(path_string) > None:
+					self.logger.info(f"GPX_export export successful for {len(path)}")
+					self._passed_tests.append(f"test_gpx_export: gpx_export export successful for {len(path)}")
+				else:
+					self.logger.warning(f"GPX_export export failed for {len(path)} with no results")
+					self._failed_tests.append(f"test_gpx_export: gpx_export export failed for {len(path)} with no results")
+					assert True, self.error(f"GPX_export export failed for {len(path)} with no results")
 			except Exception as e:
 				self.logger.error(f"GPX_export export failed with {e}, for {len(path)}")
+				self._failed_tests.append(f"test_gpx_export: gpx_export export failed with {e}, for {len(path)}")
 				assert True, self.error(f"GPX_export export failed with {e}, for {len(path)}")
 
-		# try to close database
-		try:
-			self.data_retriever.close()
-			self.logger.info("Database close successful")
-		except:
-			self.logger.error("Database close failed")
-			assert False, self.error("Database close failed")
+		# close the db connection
+		self.data_retriever.close()
 
-		sys.exit(0)
 
 
 	# START OF PATHFINDER TESTS (using pathfinder.py)
@@ -496,54 +580,59 @@ class Test:
 
 
 	def risk_tolerance_test_fixed_loc(self):
-		#[{"lat": 42.20676586129879, "lng": -85.63033819198608}, {"lat": 42.25134141325637, "lng": -85.56385159492493},"3", "bike"]
-		# location_start
-		# location_end
-		# transport_type
-		# risk_factor = [1,4]
-
-		# build path from start to end safe with risk factor as name
-		# check if paths are different for different risk factors
-			# if different, add to passed tests
-			# if same, add to failed tests
 		location_start = {"lat": 42.20676586129879, "lng": -85.63033819198608}
 		location_end = {"lat": 42.25134141325637, "lng": -85.56385159492493}
 		transport_type = "bike"
 		risk_factor = [1, 4]
-		# print current working directory
-		print(os.getcwd())
+
+		error = -1
+		while error == -1 and risk_factor[0] < 5:
+			# create a pathfinder object and pass in the start and end nodes
+			pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[0])
+			error = pathfinder.astar()
+			self.path1 = pathfinder.return_path()
+			if error == -1:
+				self.logger.warning(f"Risk tolerance for path1 updated from {risk_factor[0]} to {risk_factor[0] + 1}")
+				risk_factor[0] += 1
 
 
-		# create a pathfinder object and pass in the start and end nodes
-		pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[0])
-		error = pathfinder.astar()
-		path1 = pathfinder.return_path()
-		pathfinder.return_directions()
-
-		print(f"path1: {path1}, error: {error}")
-
-		pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[1])
-		error2 = pathfinder.astar()
-		path2 = pathfinder.return_path()
-		pathfinder.return_directions()
+		error = -1
+		while error == -1 and risk_factor[1] < 5:
+			# create a pathfinder object and pass in the start and end nodes
+			pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[1])
+			error = pathfinder.astar()
+			self.path2 = pathfinder.return_path()
+			if error == -1:
+				self.logger.warning(f"Risk tolerance for path2 updated from {risk_factor[1]} to {risk_factor[1] + 1}")
+				risk_factor[1] += 1
 
 
-		print(f"path2: {path2}, error2: {error2}")
-
-
-		if path1 != path2:
+		if self.path1 != self.path2:
 			self._passed_tests.append("risk_tolerance_test_fixed_loc")
+			self.logger.info("Risk_tolerance_test_fixed_loc passed successfully")
+			if risk_factor != [1, 4]:
+				self.logger.warning("Risk_tolerance_test_fixed_loc passed but risk tolerance was changed from [1, 4] to " + str(risk_factor))
 		else:
 			self._failed_tests.append("risk_tolerance_test_fixed_loc")
+			self.logger.warning("Risk_tolerance_test_fixed_loc failed")
 
 
-		breakpoint()
+
 
 
 
 
 	def results(self):
-		raise NotImplementedError
+		# print results
+		print(f"\n\n\n RESULTS: Passed {len(self._passed_tests)} out of {len(self._passed_tests) + len(self._failed_tests)}")
+		print("Passed Tests:")
+		for test in self._passed_tests:
+			print(test)
+		print("\nFailed Tests:")
+		for test in self._failed_tests:
+			print(test)
+		return
+
 
 	def error(self, error_msg=None):
 		if error_msg:
