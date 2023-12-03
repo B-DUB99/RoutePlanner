@@ -29,7 +29,7 @@
       - data_retriever.py: 10.96 KB
       - gpx_export.py: 2.66 KB
       - pathfinder.py: 11.69 KB
-      - test.py: 25.79 KB
+      - test.py: 25.83 KB
       - views.py: 3.53 KB
       - __init__.py: 0.00 B
     - static/
