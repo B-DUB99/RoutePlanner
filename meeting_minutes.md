@@ -24,9 +24,35 @@
 
 
 
+<h2>Week 47</h2>
+Date: 03.12.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Christian Fuentes
+* Mike Henke
 
+Who missed the meeting:
+* None
 
+General meeting Information:
+* 13:00 PM - 17:00 PM (240 minutes)
 
+What has been done:
+* Presentation Prep 
+* some bug fixes
+* Paperwork
+
+Next week's goals:
+* Presentation
+* Bug Fixes for Presentation and Final Submission
+* Paperwork
+* Final Submission
+* Final Presentation
+
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
 
 
 <h2>Week 47</h2>
