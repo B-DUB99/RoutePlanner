@@ -6,11 +6,11 @@ import sys
 import logging
 import time
 
-
 # Local Imports
 from .data_retriever import data_retriever
 from .gpx_export import GPX_export
 from .pathfinder import Pathfinder
+
 
 # from . import views as Views
 
@@ -56,13 +56,13 @@ file_handler.setFormatter(file_formatter)
 
 
 def generate_folder_structure(root_path, ignore_folders, output_file='test_files/output/Project_Structure.md'):
-    if ignore_folders is None:
-        ignore_folders = set()
+	if ignore_folders is None:
+		ignore_folders = set()
 
-    with open(output_file, "w") as file:
-        file.write("# Folder Structure\n\n")
-        total_size = generate_folder_structure_recursive(root_path, file, 0, ignore_folders)
-        file.write(f"\nTotal Size: {convert_size(total_size)}\n")
+	with open(output_file, "w") as file:
+		file.write("# Folder Structure\n\n")
+		total_size = generate_folder_structure_recursive(root_path, file, 0, ignore_folders)
+		file.write(f"\nTotal Size: {convert_size(total_size)}\n")
 
 
 def convert_size(size_bytes):
@@ -74,36 +74,36 @@ def convert_size(size_bytes):
 
 
 def generate_folder_structure_recursive(folder_path, file, depth, ignore_folders):
-    indent = "  " * depth
-    folder_name = os.path.basename(folder_path)
+	indent = "  " * depth
+	folder_name = os.path.basename(folder_path)
 
-    if folder_name in ignore_folders:
-        return 0  # Return 0 for ignored folders
+	if folder_name in ignore_folders:
+		return 0  # Return 0 for ignored folders
 
-    file.write(f"{indent}- {folder_name}/\n")
+	file.write(f"{indent}- {folder_name}/\n")
 
-    total_size = 0
+	total_size = 0
 
-    try:
-        entries = os.listdir(folder_path)
-    except OSError:
-        return 0
+	try:
+		entries = os.listdir(folder_path)
+	except OSError:
+		return 0
 
-    for entry in entries:
-        entry_path = os.path.join(folder_path, entry)
+	for entry in entries:
+		entry_path = os.path.join(folder_path, entry)
 
-        if os.path.isdir(entry_path):
-            size = generate_folder_structure_recursive(entry_path, file, depth + 1, ignore_folders)
-            total_size += size
-        else:
-            try:
-                file_size = os.path.getsize(entry_path)
-                total_size += file_size
-                file.write(f"{indent}  - {entry}: {convert_size(file_size)}\n")
-            except OSError:
-                pass
+		if os.path.isdir(entry_path):
+			size = generate_folder_structure_recursive(entry_path, file, depth + 1, ignore_folders)
+			total_size += size
+		else:
+			try:
+				file_size = os.path.getsize(entry_path)
+				total_size += file_size
+				file.write(f"{indent}  - {entry}: {convert_size(file_size)}\n")
+			except OSError:
+				pass
 
-    return total_size
+	return total_size
 
 
 def helper_get_closest_node(i, transport, risk, location):
@@ -126,7 +126,7 @@ class Test:
 		self.logger.addHandler(file_handler)
 
 		# initialize variables
-		self.timeout = 20 		# seconds
+		self.timeout = 20  # seconds
 		self.number_of_tests = 2
 		self._amenenity_types = ["Grocery",
 								 "Books",
@@ -159,7 +159,7 @@ class Test:
 		# initialize imported modules
 		self.data_retriever = data_retriever()
 		self.gpx_export = GPX_export(None)
-		#self.pathfinder = Pathfinder(None, None, None, None)
+		# self.pathfinder = Pathfinder(None, None, None, None)
 
 		# self.views = views.views()
 
@@ -167,10 +167,8 @@ class Test:
 		self.risk_tolerance_test_fixed_loc()
 		self.test_database()
 		self.test_gpx_export()
-		#self.test_pathfinder()
+		# self.test_pathfinder()
 		self.results()
-
-
 
 	# TEST FUNCTIONS
 	# generate folder structure
@@ -215,8 +213,6 @@ class Test:
 				self._failed_tests.append(f"test_database: database get_amenities failed for {amen_type}")
 				assert True, self.error(f"Database get_amenities failed for {amen_type}")
 
-
-
 		# try to get_closest_node from database while testing random nodes
 		with multiprocessing.Pool(processes=len(self._transportation_types) * len(self._risk_factor_list)) as pool:
 			processes = []
@@ -236,7 +232,6 @@ class Test:
 			else:
 				results = [process.get(timeout=self.timeout * self.number_of_tests) for process in processes]
 
-
 		# Handle the results as needed
 		for result in results:
 			try:
@@ -245,26 +240,29 @@ class Test:
 				# Process the result and associated information
 				self.logger.info(
 					f"Database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
-				self._passed_tests.append(f"test_database: database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
+				self._passed_tests.append(
+					f"test_database: database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
 			except multiprocessing.TimeoutError:
 				i, transport, risk, location, closest_nodes = result
 				self.logger.warning(
 					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
-				self._failed_tests.append(f"test_database: database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
+				self._failed_tests.append(
+					f"test_database: database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
 				assert True, self.error(
 					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
 			except Exception as e:
 				i, transport, risk, location, closest_nodes = result
 				self.logger.error(
 					f"Database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
-				self._failed_tests.append(f"test_database: database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
+				self._failed_tests.append(
+					f"test_database: database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
 				assert True, self.error(
 					f"Database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
 
 		# test get_node_info
 		# open file to get a list of all node ids
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -276,17 +274,17 @@ class Test:
 					self._passed_tests.append(f"test_database: database get_node_info successful for {node_id}")
 				else:
 					self.logger.warning(f"Database get_node_info failed for {node_id} with no results")
-					self._failed_tests.append(f"test_database: database get_node_info failed for {node_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database get_node_info failed for {node_id} with no results")
 					assert True, self.error(f"Database get_node_info failed for {node_id}")
 			except Exception as e:
 				self.logger.error(f"Database get_node_info failed with {e}, for {node_id}")
 				self._failed_tests.append(f"test_database: database get_node_info failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_node_info failed with {e}, for {node_id}")
 
-
 		# test get_way
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -307,11 +305,9 @@ class Test:
 				self._failed_tests.append(f"test_database: database get_way failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_way failed with {e}, for {node_id}")
 
-
-
 		# test get_way_info
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -324,17 +320,17 @@ class Test:
 					self._passed_tests.append(f"test_database: database get_way_info successful for {way_id}")
 				else:
 					self.logger.warning(f"Database get_way_info failed for {way_id} with no results")
-					self._failed_tests.append(f"test_database: database get_way_info failed for {way_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database get_way_info failed for {way_id} with no results")
 					assert True, self.error(f"Database get_way_info failed for {way_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_way failed with {e}, for {way_id}")
 				self._failed_tests.append(f"test_database: database get_way failed with {e}, for {way_id}")
 				assert True, self.error(f"Database get_way failed with {e}, for {way_id}")
 
-
 		# test get_node_neighbors
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -346,17 +342,17 @@ class Test:
 					self._passed_tests.append(f"test_database: database get_node_neighbors successful for {node_id}")
 				else:
 					self.logger.warning(f"Database get_node_neighbors failed for {node_id} with no results")
-					self._failed_tests.append(f"test_database: database get_node_neighbors failed for {node_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database get_node_neighbors failed for {node_id} with no results")
 					assert True, self.error(f"Database get_node_neighbors failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_node_neighbors failed with {e}, for {node_id}")
 				self._failed_tests.append(f"test_database: database get_node_neighbors failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_node_neighbors failed with {e}, for {node_id}")
 
-
 		# test get_node_coords
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -367,17 +363,17 @@ class Test:
 					self._passed_tests.append(f"test_database: database get_node_coords successful for {node_id}")
 				else:
 					self.logger.warning(f"Database get_node_coords failed for {node_id} with no results")
-					self._failed_tests.append(f"test_database: database get_node_coords failed for {node_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database get_node_coords failed for {node_id} with no results")
 					assert True, self.error(f"Database get_node_coords failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_node_coords failed with {e}, for {node_id}")
 				self._failed_tests.append(f"test_database: database get_node_coords failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_node_coords failed with {e}, for {node_id}")
 
-
 		# test get_walking_neighbors
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -388,17 +384,18 @@ class Test:
 					self._passed_tests.append(f"test_database: database get_walking_neighbors successful for {node_id}")
 				else:
 					self.logger.warning(f"Database get_walking_neighbors failed for {node_id} with no results")
-					self._failed_tests.append(f"test_database: database get_walking_neighbors failed for {node_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database get_walking_neighbors failed for {node_id} with no results")
 					assert True, self.error(f"Database get_walking_neighbors failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
-				self._failed_tests.append(f"test_database: database get_walking_neighbors failed with {e}, for {node_id}")
+				self._failed_tests.append(
+					f"test_database: database get_walking_neighbors failed with {e}, for {node_id}")
 				assert True, self.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
-
 
 		# test get_biking_neighbors
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -407,20 +404,22 @@ class Test:
 				try:
 					if len(self.data_retriever.get_biking_neighbors(node_id, self._risk_factor_list[j])) > 0:
 						self.logger.info(f"Database get_biking_neighbors successful for {node_id}")
-						self._passed_tests.append(f"test_database: database get_biking_neighbors successful for {node_id}")
+						self._passed_tests.append(
+							f"test_database: database get_biking_neighbors successful for {node_id}")
 					else:
 						self.logger.warning(f"Database get_biking_neighbors failed for {node_id} with no results")
-						self._failed_tests.append(f"test_database: database get_biking_neighbors failed for {node_id} with no results")
+						self._failed_tests.append(
+							f"test_database: database get_biking_neighbors failed for {node_id} with no results")
 						assert True, self.error(f"Database get_biking_neighbors failed for {node_id} with no results")
 				except Exception as e:
 					self.logger.error(f"Database get_biking_neighbors failed with {e}, for {node_id}")
-					self._failed_tests.append(f"test_database: database get_biking_neighbors failed with {e}, for {node_id}")
+					self._failed_tests.append(
+						f"test_database: database get_biking_neighbors failed with {e}, for {node_id}")
 					assert True, self.error(f"Database get_biking_neighbors failed with {e}, for {node_id}")
-
 
 		# Test _is_node_walkable
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -431,17 +430,17 @@ class Test:
 					self._passed_tests.append(f"test_database: database _is_node_walkable successful for {node_id}")
 				else:
 					self.logger.warning(f"Database _is_node_walkable failed for {node_id} with no results")
-					self._failed_tests.append(f"test_database: database _is_node_walkable failed for {node_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database _is_node_walkable failed for {node_id} with no results")
 					assert True, self.error(f"Database _is_node_walkable failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database _is_node_walkable failed with {e}, for {node_id}")
 				self._failed_tests.append(f"test_database: database _is_node_walkable failed with {e}, for {node_id}")
 				assert True, self.error(f"Database _is_node_walkable failed with {e}, for {node_id}")
 
-
 		# Test _is_node_bikeable (written as _is_node_bikable in data_retriever.py)
 		with open('test_files/input/nodes.csv', 'r') as f:
-			next(f)		# skip header
+			next(f)  # skip header
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
@@ -452,7 +451,8 @@ class Test:
 					self._passed_tests.append(f"test_database: database _is_node_bikeable successful for {node_id}")
 				else:
 					self.logger.warning(f"Database _is_node_bikeable failed for {node_id} with no results")
-					self._failed_tests.append(f"test_database: database _is_node_bikeable failed for {node_id} with no results")
+					self._failed_tests.append(
+						f"test_database: database _is_node_bikeable failed for {node_id} with no results")
 					assert True, self.error(f"Database _is_node_bikeable failed for {node_id} with no results")
 			except Exception as e:
 				self.logger.error(f"Database _is_node_bikeable failed with {e}, for {node_id}")
@@ -469,12 +469,10 @@ class Test:
 			self._failed_tests.append("test_database: database close failed")
 			assert False, self.error("Database close failed")
 
-
 	# START OF GPX EXPORT TESTS (using gpx_export.py)
 	def test_gpx_export(self):
 		# open up the db connection
 		self.data_retriever.connect()
-
 
 		# test parse_string_to_list
 		for i in range(self.number_of_tests):
@@ -491,12 +489,13 @@ class Test:
 			try:
 				self.gpx_export.parse_string_to_list(path_string)
 				self.logger.info(f"GPX_export parse_string_to_list successful for {len(path)}")
-				self._passed_tests.append(f"test_gpx_export: gpx_export parse_string_to_list successful for {len(path)}")
+				self._passed_tests.append(
+					f"test_gpx_export: gpx_export parse_string_to_list successful for {len(path)}")
 			except Exception as e:
 				self.logger.error(f"GPX_export parse_string_to_list failed with {e}, for {len(path)}")
-				self._failed_tests.append(f"test_gpx_export: gpx_export parse_string_to_list failed with {e}, for {len(path)}")
+				self._failed_tests.append(
+					f"test_gpx_export: gpx_export parse_string_to_list failed with {e}, for {len(path)}")
 				assert True, self.error(f"GPX_export parse_string_to_list failed with {e}, for {len(path)}")
-
 
 		# test export
 		for i in range(self.number_of_tests):
@@ -517,7 +516,8 @@ class Test:
 					self._passed_tests.append(f"test_gpx_export: gpx_export export successful for {len(path)}")
 				else:
 					self.logger.warning(f"GPX_export export failed for {len(path)} with no results")
-					self._failed_tests.append(f"test_gpx_export: gpx_export export failed for {len(path)} with no results")
+					self._failed_tests.append(
+						f"test_gpx_export: gpx_export export failed for {len(path)} with no results")
 					assert True, self.error(f"GPX_export export failed for {len(path)} with no results")
 			except Exception as e:
 				self.logger.error(f"GPX_export export failed with {e}, for {len(path)}")
@@ -526,8 +526,6 @@ class Test:
 
 		# close the db connection
 		self.data_retriever.close()
-
-
 
 	# START OF PATHFINDER TESTS (using pathfinder.py)
 	def test_pathfinder(self):
@@ -573,17 +571,15 @@ class Test:
 		"""
 		raise NotImplementedError
 
-		# Test get_q
-		# Test nodify
-		# Test is_in
-		# Test denodify
-		# Test astar
-		# Test assemble_lat_lng
-		# Test find_next_best_user_node
-		# Test calculate_distance_between_nodes
-		# Test return_path
-
-
+	# Test get_q
+	# Test nodify
+	# Test is_in
+	# Test denodify
+	# Test astar
+	# Test assemble_lat_lng
+	# Test find_next_best_user_node
+	# Test calculate_distance_between_nodes
+	# Test return_path
 
 	def risk_tolerance_test_fixed_loc(self):
 		location_start = {"lat": 42.20676586129879, "lng": -85.63033819198608}
@@ -601,7 +597,6 @@ class Test:
 				self.logger.warning(f"Risk tolerance for path1 updated from {risk_factor[0]} to {risk_factor[0] + 1}")
 				risk_factor[0] += 1
 
-
 		error = -1
 		while error == -1 and risk_factor[1] < 5:
 			# create a pathfinder object and pass in the start and end nodes
@@ -612,25 +607,23 @@ class Test:
 				self.logger.warning(f"Risk tolerance for path2 updated from {risk_factor[1]} to {risk_factor[1] + 1}")
 				risk_factor[1] += 1
 
-
 		if self.path1 != self.path2:
 			self._passed_tests.append("risk_tolerance_test_fixed_loc")
 			self.logger.info("Risk_tolerance_test_fixed_loc passed successfully")
 			if risk_factor != [1, 4]:
-				self.logger.warning("Risk_tolerance_test_fixed_loc passed but risk tolerance was changed from [1, 4] to " + str(risk_factor))
+				self.logger.warning(
+					"Risk_tolerance_test_fixed_loc passed but risk tolerance was changed from [1, 4] to "
+					+ str(risk_factor))
 		else:
 			self._failed_tests.append("risk_tolerance_test_fixed_loc")
 			self.logger.warning("Risk_tolerance_test_fixed_loc failed")
 
 
 
-
-
-
-
 	def results(self):
 		# print results
-		print(f"\n\n\n RESULTS: Passed {len(self._passed_tests)} out of {len(self._passed_tests) + len(self._failed_tests)}")
+		print(
+			f"\n\n\n RESULTS: Passed {len(self._passed_tests)} out of {len(self._passed_tests) + len(self._failed_tests)}")
 		print("Passed Tests:")
 		for test in self._passed_tests:
 			print(test)
@@ -639,14 +632,9 @@ class Test:
 			print(test)
 		return
 
-
 	def error(self, error_msg=None):
 		if error_msg:
 			print("\n\nERROR: " + error_msg)
 		else:
 			print("\n\nERROR: An unknown error has occurred")
 		return
-
-
-
-
