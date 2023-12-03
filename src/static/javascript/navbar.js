@@ -23,7 +23,7 @@ function openNav() {
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     main.style.opacity = 0;
     openNavBtn.style.cursor = "default";
-    if (lines) hideDirections()
+    if (directions.length != 0) hideDirections()
 }
 
 function closeNav() {
@@ -31,7 +31,7 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
     main.style.opacity = 1;
     openNavBtn.style.cursor = "pointer";
-    if (lines) addDirections(directions);
+    if (directions.length != 0) addDirections(directions);
 }
 
 async function exportGPXFile() {
@@ -138,6 +138,7 @@ function changeAmenMarkers(event){
 
 function clearBoard() {
     deleteAllMarkers();
+    directions = [];
     for (let i = 0; i < layers.length; i++) map.removeLayer(layers[i]);
     am = document.getElementsByClassName('amen-choice');
     for (let i = 0; i < am.length; i++) 

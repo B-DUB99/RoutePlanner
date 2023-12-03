@@ -4,7 +4,7 @@ var markerLayer = L.layerGroup();
 var layers = [];
 let dest;
 let pathArray;
-var directions;
+var directions = [];
 
 const redIcon = new L.Icon({
     iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -66,7 +66,6 @@ function createMarker(event) {
 
 async function passToFlask() {
     let chosenTransport = Array.from(document.getElementsByName('transport')).find(ele => ele.checked).value;
-    console.log(myRange.value)
     const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
         method: 'POST',
         body: JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])
@@ -243,6 +242,7 @@ function removePathLine() {
 function deleteMarker() {
     removePathLine();
     lines = [];
+    directions = [];
     markerLayer.removeLayer(this);
     markers.delete(this.id);
     hideDirections();
