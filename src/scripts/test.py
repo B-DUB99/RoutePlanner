@@ -152,11 +152,12 @@ class Test:
 		# initialize imported modules
 		self.data_retriever = data_retriever()
 		self.gpx_export = GPX_export(None)
-		self.pathdinder = Pathfinder(None, None, None, None)
-		# self.pathfinder = pathfinder.Pathfinder(None, None, None, None)
+		#self.pathfinder = Pathfinder(None, None, None, None)
+
 		# self.views = views.views()
 
 		# call test functions
+		self.risk_tolerance_test_fixed_loc()
 		self.test_database()
 		self.test_gpx_export()
 
@@ -386,8 +387,6 @@ class Test:
 				assert True, self.error(f"Database _is_node_bikeable failed with {e}, for {node_id}")
 
 
-
-
 	# START OF GPX EXPORT TESTS (using gpx_export.py)
 	def test_gpx_export(self):
 		# test parse_string_to_list
@@ -496,7 +495,49 @@ class Test:
 
 
 
+	def risk_tolerance_test_fixed_loc(self):
+		#[{"lat": 42.20676586129879, "lng": -85.63033819198608}, {"lat": 42.25134141325637, "lng": -85.56385159492493},"3", "bike"]
+		# location_start
+		# location_end
+		# transport_type
+		# risk_factor = [1,4]
 
+		# build path from start to end safe with risk factor as name
+		# check if paths are different for different risk factors
+			# if different, add to passed tests
+			# if same, add to failed tests
+		location_start = {"lat": 42.20676586129879, "lng": -85.63033819198608}
+		location_end = {"lat": 42.25134141325637, "lng": -85.56385159492493}
+		transport_type = "bike"
+		risk_factor = [1, 4]
+		# print current working directory
+		print(os.getcwd())
+
+
+		# create a pathfinder object and pass in the start and end nodes
+		pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[0])
+		pathfinder.astar()
+		path1 = pathfinder.return_path()
+		pathfinder.return_directions()
+
+
+		pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[1])
+		pathfinder.return_path()
+		path2 = pathfinder.return_path()
+		pathfinder.return_directions()
+
+
+		print("path1: ", path1)
+		print("path2: ", path2)
+
+
+		if path1 != path2:
+			self._passed_tests.append("risk_tolerance_test_fixed_loc")
+		else:
+			self._failed_tests.append("risk_tolerance_test_fixed_loc")
+
+
+		breakpoint()
 
 
 
