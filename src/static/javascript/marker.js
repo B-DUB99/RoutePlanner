@@ -59,23 +59,29 @@ function createMarker(event) {
 		} else removePathLine();
 
     } else {
-		//placeholder until we get something better in place
 		alert("Error! \nEither both markers are placed \nor you clicked out of bounds.");
 	}
 }
 
 async function passToFlask() {
+    addDirSidebar()
+    addLoader();
     let chosenTransport = Array.from(document.getElementsByName('transport')).find(ele => ele.checked).value;
-    const response = await fetch(`calculate_route/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
+    await fetch(`calculate_route/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
         method: 'POST',
         body: JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])
-    });
+    })
+    .then(fetchJSON => fetchJSON.json())
+    .then(pathAndDirs => {
+        // call loading off directions sidebar, the load everything else
+        document.querySelectorAll('.direction-sidebar > *').forEach(item => item.remove());
+        
+        pathArray = pathAndDirs[0];
+        directions = pathAndDirs[1];
 
-    data = await response.json();
-    pathArray = data[0];
-	directions = data[1];
-	drawPathLine(pathArray);
-    addDirections(directions);
+        drawPathLine(pathArray);
+        addDirections(directions);
+    })
 }
 
 function drawPathLine(pathArray) {
@@ -91,7 +97,7 @@ function drawPathLine(pathArray) {
     }
 }
 
-function addDirections(directions) {
+function addDirSidebar() {
     if (mobileAndTabletCheck()) {
         dirSidebar.style.width = '100%'
         dirSidebar.style.height = '200px';
@@ -105,18 +111,34 @@ function addDirections(directions) {
         document.querySelector('.leaflet-control-zoom').style.marginRight = '360px';
         document.querySelector('.leaflet-control-scale').style.marginRight = '360px';
     }
+}
+
+function addLoader() {
+    dirTag = document.createElement('p');
+    dirTag.innerHTML = 'Loading';
+    dirTag.classList.add('loader');
+    for (let i = 0; i < 3; i++) {
+        spanTag = document.createElement('span');
+        spanTag.innerHTML = '.';
+        spanTag.classList.add('loader__dot');
+        dirTag.append(spanTag)
+    }
+    dirSidebar.appendChild(dirTag);
+}
+
+function addDirections(directions) {
+    addDirSidebar()
 
     for (var i = 0, totDist = 0; i < directions.length; i++) {
-        console.log(directions[i])
         totDist += directions[i][2];
         dirTag = document.createElement('p')
         dirTag.innerHTML = directions[i][0].slice(0, 8) + directions[i][2].toString() + ' meters ' + directions[i][0].slice(8, directions[i][0].length);
         dirSidebar.appendChild(dirTag)
     }
 
-    distTag = document.createElement('p')
-    distTag.innerHTML = 'Total Distance: ' + totDist.toString() + ' meters'
-    dirSidebar.appendChild(distTag)
+    distTag = document.createElement('p');
+    distTag.innerHTML = 'Total Distance: ' + totDist.toString() + ' meters';
+    dirSidebar.appendChild(distTag);
 }
 
 function hideDirections() {
