@@ -43,6 +43,7 @@ class GPX_export:
 
 		self.path = result_list
 
+
 	def export(self):
 		self.parse_string_to_list(self.path_string)
 
