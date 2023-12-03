@@ -42,6 +42,7 @@ def getMarkers(markerInfo):
         pathfinder = Pathfinder(start, end, transport_type, risk_tol)
         error = pathfinder.astar()
         risk_tol += 1
+        print(f"Risk tolerance updated to: {risk_tol}")
     end_time = time.time()
     delta = end_time - start_time
     if error == -1:
