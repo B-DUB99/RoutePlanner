@@ -122,8 +122,8 @@
       - input/
         - nodes.csv: 1.77 MB
       - output/
-        - main_test_logger.md: 0.00 B
-        - Project_Structure.md: 0.00 B
+        - main_test_logger.md: 2.33 KB
+        - Project_Structure.md: 4.91 KB
     - update_start.sh: 889.00 B
 
 Total Size: 39.18 MB
