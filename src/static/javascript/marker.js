@@ -29,13 +29,13 @@ function createMarker(event) {
         // used to place marker on top of map
         if (markers.size < 2) {
 			let marker;
-			if (markers.size == 0){
+			if (markers.get(1) == undefined){
                 marker = L.marker(event.latlng, {
                	    draggable: true,
                     icon: greenIcon,
                     title: 'Start'
            	    });
-			}else if(markers.size == 1){
+			}else if(markers.get(2) == undefined){
                 marker = L.marker(event.latlng, {
                     draggable: true,
                     icon: redIcon,
@@ -183,7 +183,7 @@ function setDest() {
         marker.on("dragend", newCoords);
         marker.addTo(markerLayer);
         markerLayer.addTo(map);
-    }else if(markers.size == 1){
+    } else if (markers.get(2) == undefined) {
         let marker = L.marker(dest, {
             draggable: true,
             icon: redIcon
@@ -194,20 +194,18 @@ function setDest() {
         marker.on("dragend", newCoords);
         marker.addTo(markerLayer);
         markerLayer.addTo(map);
-    }else if(markers.size == 2){
-        markers[1].remove()
+    } else if (markers.get(1) == undefined) {
         let marker = L.marker(dest, {
             draggable: true,
-            icon: redIcon
+            icon: greenIcon 
         });
-        marker.id = 2;
-        markers.set(2, marker._latlng);
+        marker.id = 1;
+        markers.set(1, marker._latlng);
         marker.on("click", deleteMarker);
         marker.on("dragend", newCoords);
         marker.addTo(markerLayer);
         markerLayer.addTo(map);
     }
-
 
     if (markers.size == 2) {
         passToFlask();
