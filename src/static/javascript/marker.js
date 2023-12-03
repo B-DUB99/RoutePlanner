@@ -35,7 +35,7 @@ function createMarker(event) {
                     icon: greenIcon,
                     title: 'Start'
            	    });
-			}else if(markers.get(2) == undefined){
+			} else if (markers.get(2) == undefined) {
                 marker = L.marker(event.latlng, {
                     draggable: true,
                     icon: redIcon,
@@ -162,7 +162,7 @@ function createAmenMarkers(amens, id) {
 		}).on('click', (e) => {
             dest = e.latlng;
         });
-		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><div style='text-align:center'><button onclick='setDest();'>Here</button></div>", {
+		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><div style='text-align:center'><button onclick='setDest(dest);'>Here</button></div>", {
             offset: [11, 5]
         });
     }
@@ -172,7 +172,7 @@ function createAmenMarkers(amens, id) {
 }
 
 function setDest() {
-    if (markers.size == 0) {
+    if (markers.get(1) == undefined) {
         let marker = L.marker(dest, {
             draggable: true,
             icon: greenIcon 
@@ -194,20 +194,9 @@ function setDest() {
         marker.on("dragend", newCoords);
         marker.addTo(markerLayer);
         markerLayer.addTo(map);
-    } else if (markers.get(1) == undefined) {
-        let marker = L.marker(dest, {
-            draggable: true,
-            icon: greenIcon 
-        });
-        marker.id = 1;
-        markers.set(1, marker._latlng);
-        marker.on("click", deleteMarker);
-        marker.on("dragend", newCoords);
-        marker.addTo(markerLayer);
-        markerLayer.addTo(map);
-    }
+    } 
 
-    if (markers.size == 2) {
+    if (markers.size == 2 && directions.length == 0) {
         passToFlask();
     }
 }
