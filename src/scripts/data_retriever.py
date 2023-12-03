@@ -112,7 +112,7 @@ class data_retriever:
     # Returns all nodes attached to provided way_id
     def get_nodes(self, way_id):
         self.cursor.execute("SELECT DISTINCT node_id FROM nodes n, (SELECT "
-                            + "node_id_from, node_id_to FROM links l, ways w"
+                            + "node_id_from, node_id_to FROM all_links l, ways w"
                             + f" WHERE w.way_id = l.way_id AND l.way_id = {way_id}"
                             + ") a WHERE n.node_id = a.node_id_from OR n.node_id "
                             + "= a.node_id_to")
@@ -124,7 +124,7 @@ class data_retriever:
 
     # Returns all ways attached to provided node_id
     def get_way(self, n_id: int):
-        self.cursor.execute("SELECT DISTINCT way_id FROM links WHERE "
+        self.cursor.execute("SELECT DISTINCT way_id FROM all_links WHERE "
                             + f"node_id_from = {n_id} OR node_id_to "
                             + f"= {n_id}")
         temp = self.cursor.fetchall()
@@ -149,7 +149,7 @@ class data_retriever:
     #returns the neighboring node ids of the provided id
     def get_node_neighbors(self, n_id):
         self.cursor.execute("SELECT node_id FROM nodes n, (SELECT node_id_from, "
-                            + f"node_id_to FROM links WHERE node_id_from = {n_id} OR "
+                            + f"node_id_to FROM all_links WHERE node_id_from = {n_id} OR "
                             + f"node_id_to = {n_id}) a WHERE (n.node_id = "
                             + "a.node_id_from OR n.node_id = a.node_id_to) AND " 
                             + f"n.node_id != {n_id}")
@@ -252,8 +252,8 @@ class data_retriever:
                             + f"(node_id_from = {n_id_two} AND "
                             + f"node_id_to = {n_id_one})")
         else:
-            self.cursor.execute("SELECT DISTINCT l.way_id FROM links l, " 
-                                + "(SELECT DISTINCT way_id AS w FROM links "
+            self.cursor.execute("SELECT DISTINCT l.way_id FROM all_links l, " 
+                                + "(SELECT DISTINCT way_id AS w FROM all_links "
                                 + f"WHERE (node_id_from = {n_id_one} OR node_id_to = {n_id_one})) "
                                 + f"AS a WHERE a.w = l.way_id AND (node_id_from = {n_id_two} " 
                                 + f"OR node_id_to = {n_id_two})")

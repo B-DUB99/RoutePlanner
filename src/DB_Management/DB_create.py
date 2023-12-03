@@ -7,7 +7,6 @@ import itertools
 import sqlite3
 import csv
 from collections import deque
-from geopy import distance
 from pykml import parser
 from OSMPythonTools.overpass import Overpass
 from OSMPythonTools.overpass import overpassQueryBuilder
@@ -28,7 +27,7 @@ def main():
     try:
         cursor.execute("DROP TABLE nodes")
         cursor.execute("DROP TABLE ways")
-        cursor.execute("DROP TABLE links")
+        cursor.execute("DROP TABLE all_links")
         cursor.execute("DROP TABLE connector_links")
         cursor.execute("DROP TABLE amenity_types")
         cursor.execute("DROP TABLE amenities")
@@ -60,16 +59,15 @@ def main():
         print(f"something went wrong with table ways{e}")
 
     try:
-        cursor.execute("CREATE TABLE links(" +
+        cursor.execute("CREATE TABLE all_links(" +
                        "way_id BIGINT UNSIGNED," +
                        "node_id_from BIGINT UNSIGNED," +
                        "node_id_to BIGINT UNSIGNED," +
-                       "kilo_between FLOAT," +
                        "FOREIGN KEY(node_id_from) REFERENCES nodes(node_id)," +
                        "FOREIGN KEY(node_id_to) REFERENCES nodes(node_id)," +
                        "FOREIGN KEY(way_id) REFERENCES ways(way_id))")
     except Exception as e:
-        print(f"something went wrong with table links{e}")
+        print(f"something went wrong with table all_links{e}")
     
     try:
         cursor.execute("CREATE TABLE connector_links(" +
@@ -207,19 +205,16 @@ def main():
                                f" WHERE node_id = {node_two.id()}")
                 result_two = cursor.fetchone()
 
-            kilos = distance.distance((result_one[1], result_one[2]),
-                                      (result_two[1], result_two[2])).km
             # link current node with current way
-            cursor.execute('INSERT INTO links(way_id, node_id_from, node_id_to,' +
-                           ' kilo_between)' +
+            cursor.execute('INSERT INTO all_links(way_id, node_id_from, node_id_to)' +
                            ' VALUES(' + str(w.id()) + ', ' + str(result_one[0]) +
-                           ', ' + str(result_two[0]) + ', ' + str(kilos) + ')')
+                           ', ' + str(result_two[0]) + ')')
             linkCount = linkCount + 1
             print("links inserted =", linkCount)
 
     # remove ways that are a part of I 94  and US 131
     cursor.execute("SELECT w.way_id, n.node_id" +
-                   " FROM nodes n, links l, ways w" +
+                   " FROM nodes n, all_links l, ways w" +
                    " WHERE (n.node_id = l.node_id_from OR l.node_id_to = " +
                    " n.node_id) AND w.way_id = l.way_id AND (w.highway = " +
                    "'motorway' OR w.highway = 'motorway_link' OR w.highway " +
@@ -230,7 +225,7 @@ def main():
 
     for i in motorInfo:
         if (wayDel != i[0]):
-            cursor.execute('DELETE FROM links' +
+            cursor.execute('DELETE FROM all_links' +
                            ' WHERE way_id = ' + str(i[0]))
             cursor.execute('DELETE FROM ways' +
                            ' WHERE way_id = ' + str(i[0]))
@@ -240,7 +235,7 @@ def main():
 
     #remove nodes from nodes table that are not in 
     cursor.execute("DELETE FROM nodes WHERE node_id NOT IN " +
-                   "(SELECT DISTINCT n.node_id from nodes n, links WHERE " +
+                   "(SELECT DISTINCT n.node_id from nodes n, all_links WHERE " +
                    "n.node_id = node_id_from OR n.node_id = node_id_to)");
 
     print(f"{cursor.rowcount} nodes not linked and deleted from DB")
@@ -273,7 +268,7 @@ def main():
     for n in node_ids:
         cursor.execute("SELECT COUNT(*) FROM (" +
                        "SELECT DISTINCT way_id " +
-                       "FROM links " +
+                       "FROM all_links " +
                        f"WHERE node_id_from = {n[0]} " +
                        f"OR node_id_to = {n[0]})")
 
@@ -292,13 +287,13 @@ def main():
 
     connection.commit()
 
-    cursor.execute("SELECT DISTINCT way_id FROM links")
+    cursor.execute("SELECT DISTINCT way_id FROM all_links")
     ways = cursor.fetchall()
     for way in ways:
-        cursor.execute("SELECT node_id_from FROM nodes, links WHERE node_id = "
+        cursor.execute("SELECT node_id_from FROM nodes, all_links WHERE node_id = "
                        + f"node_id_from AND connector = 1 AND way_id = {way[0]}")
         from_nodes = cursor.fetchall()
-        cursor.execute("SELECT node_id_to FROM nodes, links WHERE node_id = "
+        cursor.execute("SELECT node_id_to FROM nodes, all_links WHERE node_id = "
                        + f"node_id_to AND connector = 1 AND way_id = {way[0]}")
         to_nodes = cursor.fetchall()
         length = None
@@ -308,8 +303,16 @@ def main():
             length = len(to_nodes)
 
         for i in range(length):
-            cursor.execute("INSERT INTO connector_links VALUES("
-                           + f"{way[0]}, {from_nodes[i][0]}, {to_nodes[i][0]})")
+            if from_nodes[i][0] == to_nodes[i][0]:
+                if len(from_nodes) < len(to_nodes):
+                    cursor.execute("INSERT INTO connector_links VALUES("
+                                   + f"{way[0]}, {from_nodes[i][0]}, {to_nodes[i+1][0]})")
+                elif len(from_nodes) > len(to_nodes):
+                    cursor.execute("INSERT INTO connector_links VALUES(" 
+                                   + f"{way[0]}, {from_nodes[i+1][0]}, {to_nodes[i][0]})")
+            else:
+                cursor.execute("INSERT INTO connector_links VALUES("
+                               + f"{way[0]}, {from_nodes[i][0]}, {to_nodes[i][0]})")
             print(f"{from_nodes[i][0]}, {to_nodes[i][0]} connectors linked")
 
     # update risk levels for certain roads and ways
@@ -338,9 +341,14 @@ def main():
                                f"SET risk = {line[2]} " +
                                f"WHERE way_id = {line[0]}")
             print(f"{line[0]}, {line[1]} updated to risk level {line[2]}")
-                    
-    cursor.execute("CREATE INDEX ind_1 ON links(node_id_from)")
-    cursor.execute("CREATE INDEX ind_2 ON links(node_id_to)")
+
+    cursor.execute("CREATE INDEX node_ind ON nodes(node_id)")
+    cursor.execute("CREATE INDEX way_ind ON ways(way_id)")
+    cursor.execute("CREATE INDEX conn_ind_from ON connector_links(node_id_from)")
+    cursor.execute("CREATE INDEX conn_ind_to ON connector_links(node_id_to)")
+    cursor.execute("CREATE INDEX links_ind_from ON all_links(node_id_from)")
+    cursor.execute("CREATE INDEX links_ind_to ON all_links(node_id_to)")
+    
 
     # parse and plug kml into the database
     kml_file = 'ModeShift Kalamazoo.kml'

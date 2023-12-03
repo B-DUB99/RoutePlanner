@@ -516,19 +516,19 @@ class Test:
 
 		# create a pathfinder object and pass in the start and end nodes
 		pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[0])
-		pathfinder.astar()
+		error = pathfinder.astar()
 		path1 = pathfinder.return_path()
 		pathfinder.return_directions()
 
+		print(f"path1: {path1}, error: {error}")
 
 		pathfinder = Pathfinder(location_start, location_end, transport_type, risk_factor[1])
-		pathfinder.return_path()
+		error2 = pathfinder.astar()
 		path2 = pathfinder.return_path()
 		pathfinder.return_directions()
 
 
-		print("path1: ", path1)
-		print("path2: ", path2)
+		print(f"path2: {path2}, error2: {error2}")
 
 
 		if path1 != path2:
