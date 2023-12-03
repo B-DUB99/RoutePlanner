@@ -66,7 +66,7 @@ function createMarker(event) {
 
 async function passToFlask() {
     let chosenTransport = Array.from(document.getElementsByName('transport')).find(ele => ele.checked).value;
-    const response = await fetch(`/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
+    const response = await fetch(`calculate_route/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
         method: 'POST',
         body: JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])
     });
@@ -107,6 +107,7 @@ function addDirections(directions) {
     }
 
     for (var i = 0, totDist = 0; i < directions.length; i++) {
+        console.log(directions[i])
         totDist += directions[i][2];
         dirTag = document.createElement('p')
         dirTag.innerHTML = directions[i][0].slice(0, 8) + directions[i][2].toString() + ' meters ' + directions[i][0].slice(8, directions[i][0].length);

@@ -96,25 +96,6 @@ function get_input() {
     for(i = 0; i < road.length; i++){
         road_info[i] = road[i]["childNodes"][3]["value"];
     }
-    // send to python
-    // transport type will be a string ("" if none were selected)
-    // road types will be a list [speed, car avoidance, bike lane preference, sidewalk preference]
-    // amenities will be a list of names ([] if none were selected)
-    var post_info = [transport_type, road_info];
-    const request = new XMLHttpRequest();
-
-	request.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-			var route = JSON.parse(this.responseText);
-			if (route.length > 0) {
-				//draw_line(route);
-			} else {
-				//deleteAmenMarkers();
-			}
-		}
-    };
-    request.open("POST", `/calculate/${JSON.stringify(post_info)}`);
-    request.send();
 
 }
 
