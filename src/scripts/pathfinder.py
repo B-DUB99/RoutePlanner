@@ -118,7 +118,8 @@ class Pathfinder:
             neighbors = []
             # get q's neighbors based on selected user transport type
             if self.transportation_type == 'walk':
-                neighbors = self.data_retriever.get_walking_neighbors(q.data[0], 1)
+                neighbors = self.data_retriever.get_walking_neighbors(q.data[0],
+                                                                      self.risk_tol)
             elif self.transportation_type == 'bike':
                 neighbors = self.data_retriever.get_biking_neighbors(q.data[0],
                                                                      self.risk_tol)

@@ -176,7 +176,7 @@ class data_retriever:
         self.cursor.execute(f"SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
         return self.cursor.fetchone()
 
-    def get_walking_neighbors(self, n_id):
+    def get_walking_neighbors(self, n_id, risk):
         walking_neighbors = []
         neighbors = self.get_connector_node_neighbors(n_id)
         start_ways = self.get_way(n_id)
