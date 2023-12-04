@@ -194,7 +194,6 @@ class data_retriever:
                 way_id = end_ways[0]
             end_way_info = self.get_way_info(way_id)
             if end_way_info[2] in self._walking_routes:
-                print(end_way_info[2])
                 walking_neighbors.append(node)
         
         return walking_neighbors

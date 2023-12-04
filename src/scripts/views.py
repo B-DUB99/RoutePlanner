@@ -47,7 +47,7 @@ def calculate_route(markerInfo):
     delta = end_time - start_time
     if error == -1:
         print("error finding path")
-        return []
+        return [[],[]]
     else:
         data = []
         directions = pathfinder.return_directions()

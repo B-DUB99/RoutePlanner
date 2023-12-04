@@ -144,19 +144,27 @@ function addDirections(directions) {
 		}
 		dirSidebar.appendChild(dirTag);
     }
-	
-    avgRisk = avgRisk/directions.length;
-    distTag = document.createElement('p');
-    if(userRiskLower == 1){
-		distTag.innerHTML = '<br>-----------------<br>'
-			+ 'Total Distance: ' + totDist.toString() + ' meters<br><br>Avg Risk: ' + avgRisk.toFixed(2).toString() 
-            + '<br><br>Please note path returned is of higher risk than selected.';	
+
+	if(directions.length == 0){
+		errTag = document.createElement('p');
+		errTag.innerHTML = '<br>ERROR: could not find a path!<br><br>Please select different marker locations<br><br>';
+		errTag.style.color = 'white';
+		errTag.style.backgroundColor = 'FireBrick';
+		dirSidebar.appendChild(errTag);
 	}else{
-		distTag.innerHTML = '<br>-----------------<br>'
-			+ 'Total Distance: ' + totDist.toString() + ' meters<br><br>Avg Risk: ' + avgRisk.toFixed(2).toString();
+		avgRisk = avgRisk/directions.length;
+    	distTag = document.createElement('p');
+    	if(userRiskLower == 1){
+			distTag.innerHTML = '<br>-----------------<br>'
+				+ 'Total Distance: ' + totDist.toString() + ' meters<br><br>Avg Risk: ' + avgRisk.toFixed(2).toString() 
+            	+ '<br><br>Please note path returned is of higher risk than selected.';	
+		}else{
+			distTag.innerHTML = '<br>-----------------<br>'
+				+ 'Total Distance: ' + totDist.toString() + ' meters<br><br>Avg Risk: ' + avgRisk.toFixed(2).toString();
+		}
+		distTag.style.color = 'white';
+		dirSidebar.appendChild(distTag);
 	}
-	distTag.style.color = 'white';
-	dirSidebar.appendChild(distTag);
 }
 
 function hideDirections() {
