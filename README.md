@@ -65,7 +65,7 @@ Here you can select the mode of transportation. Currently, there are two options
 ![Risk_Tolerance.jpg](files_for_markdown%2FReadme%2FRisk_Tolerance.jpg)
 
 Here you can select the risk tolerance. The risk tolerance is a value between 0 and 1. The higher the value, the more risk you are willing to take.
-The risk tolerance is used to calculate the route. The algorithm will try to avoid roads with a high risk value.
+The risk tolerance is used to calculate the route. The algorithm will try to avoid roads with a high-risk value.
 A Risk level of 1 means that the algorithm will try to avoid all roads with a risk value higher than 1.
 Therefore the result of this route will be the safest route possible.
 
@@ -75,10 +75,10 @@ If no Route is found for the User Risk Tolerance, the Risk Tolerance will be inc
 #### Amenities 
 ![Amenities.jpg](files_for_markdown%2FReadme%2FAmenities.jpg)
 
-Here you can select the amenities you want to see on the map. The amenities are divided into Multiple categories.
+Here you can select the amenities you want to see on the map. The amenities are divided into multiple categories.
 You can select multiple amenities from multiple categories. The amenities will be displayed on the map as markers.
 If you click on a marker, you will get more information about the amenity. 
-You can also calculate from or to an amenity by clicking on the marker and selecting the Button [HERE](#here).
+You can also calculate from or to an amenity by clicking on the marker and selecting the Button [Travel Here](#here).
 <br><br><br>
 
 #### Export GPX File
