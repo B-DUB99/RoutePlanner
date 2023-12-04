@@ -1,6 +1,5 @@
 # Python modules
 import sqlite3
-import time
 
 class data_retriever:
     
@@ -174,7 +173,7 @@ class data_retriever:
 
     # returns the provided node_id's lat and lon
     def get_node_coords(self, n_id):
-        self.cursor.execute("SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
+        self.cursor.execute(f"SELECT lat, lon FROM nodes WHERE node_id = {n_id}")
         return self.cursor.fetchone()
 
     def get_walking_neighbors(self, n_id):

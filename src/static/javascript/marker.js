@@ -203,7 +203,7 @@ function createAmenMarkers(amens, id) {
 		}).on('click', (e) => {
             dest = e.latlng;
         });
-		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><div style='text-align:center'><button onclick='setDest(dest);'>Here</button></div>", {
+		marker.addTo(amenMarkerLayer).bindPopup(amens[i][0]["name"] + "<br>" + amens[i][0]["desc"] + "<br><img src=\"" + amens[i][0]["pic_loc"] + "\" width = 300><div style='text-align:center'><button onclick='setDest(dest);'>Travel Here</button></div>", {
             offset: [11, 5]
         });
     }
