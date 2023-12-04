@@ -5,6 +5,7 @@ var layers = [];
 let dest;
 let pathArray;
 var directions = [];
+let userRisk;
 
 const redIcon = new L.Icon({
     iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -66,6 +67,7 @@ function createMarker(event) {
 async function passToFlask() {
     addDirSidebar()
     addLoader();
+	userRisk = myRange.value;
     let chosenTransport = Array.from(document.getElementsByName('transport')).find(ele => ele.checked).value;
     await fetch(`calculate_route/${JSON.stringify([markers.get(1), markers.get(2), myRange.value, chosenTransport])}`, {
         method: 'POST',
@@ -128,17 +130,33 @@ function addLoader() {
 
 function addDirections(directions) {
     addDirSidebar()
-
-    for (var i = 0, totDist = 0; i < directions.length; i++) {
-        totDist += directions[i][2];
-        dirTag = document.createElement('p')
-        dirTag.innerHTML = directions[i][0].slice(0, 8) + directions[i][2].toString() + ' meters ' + directions[i][0].slice(8, directions[i][0].length);
-        dirSidebar.appendChild(dirTag)
+	let avgRisk = 0.0;
+    let userRiskLower = 0;
+	for (var i = 0, totDist = 0; i < directions.length; i++) {
+        avgRisk += directions[i][1];
+		totDist += directions[i][2];
+        dirTag = document.createElement('p');
+		dirTag.innerHTML = directions[i][0].slice(0, 8) + directions[i][2].toString() + ' meters ' + directions[i][0].slice(8, directions[i][0].length) + '<br>Path Risk Level: ' + directions[i][1].toString();
+		dirTag.style.color = 'white';
+        if(directions[i][1] > userRisk){
+			userRiskLower = 1;
+            dirTag.style.backgroundColor = 'FireBrick';
+		}
+		dirSidebar.appendChild(dirTag);
     }
-
+	
+    avgRisk = avgRisk/directions.length;
     distTag = document.createElement('p');
-    distTag.innerHTML = 'Total Distance: ' + totDist.toString() + ' meters';
-    dirSidebar.appendChild(distTag);
+    if(userRiskLower == 1){
+		distTag.innerHTML = '<br>-----------------<br>'
+			+ 'Total Distance: ' + totDist.toString() + ' meters<br><br>Avg Risk: ' + avgRisk.toFixed(2).toString() 
+            + '<br><br>Please note path returned is of higher risk than selected.';	
+	}else{
+		distTag.innerHTML = '<br>-----------------<br>'
+			+ 'Total Distance: ' + totDist.toString() + ' meters<br><br>Avg Risk: ' + avgRisk.toFixed(2).toString();
+	}
+	distTag.style.color = 'white';
+	dirSidebar.appendChild(distTag);
 }
 
 function hideDirections() {
