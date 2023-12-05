@@ -1,5 +1,6 @@
 from .data_retriever import data_retriever
 from geopy import distance
+import time
 
 class Node:
     # g: movement cost from starting point to this node following current path
@@ -92,6 +93,8 @@ class Pathfinder:
         self.path.reverse()
         
     def astar(self):
+        start_time = time.time()
+
         # find closest node to where user dropped pin
         self.start_node = self._find_next_best_user_node(self.user_start)
         self.end_node = self._find_next_best_user_node(self.user_end)
@@ -148,6 +151,10 @@ class Pathfinder:
                 open_list.append(neighbor)
             closed_list.append(q)
             if found:
+                break
+            end_time = time.time()
+            if (end_time - start_time) > 40:
+                last_node = None
                 break
         # no path found -1 displays error message on host
         if last_node == None:
