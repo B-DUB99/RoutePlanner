@@ -93,8 +93,9 @@ def get_gpx(path_list):
     # delete file
     os.remove(file_name)
 
-    current_datetime = datetime.now()
-    time_stamp = current_datetime.strftime("%m-%d-%Y_%H-%M-%S")
+    # add 6 hours on top of the current time to account for time zone difference
+    time_stamp = datetime.fromtimestamp(time.mktime(time.localtime(time.time() - 21600))).strftime("%m-%d-%Y_%H-%M-%S")
+
 
     # send binary stream to the user
     return send_file(return_data, mimetype='application/gpx+xml', download_name=f'route_{time_stamp}.gpx')
