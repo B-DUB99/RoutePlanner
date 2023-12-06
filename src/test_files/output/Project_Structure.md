@@ -9,32 +9,42 @@
   - CODE_OF_CONDUCT.md: 5.21 KB
   - files_for_markdown/
     - Readme/
+      - Amenities.jpg: 26.85 KB
+      - Clear_button.jpg: 5.98 KB
       - DB_Schema_2.0.jpeg: 22.21 KB
+      - End_Marker.jpg: 2.86 KB
+      - Export_button.jpg: 2.60 KB
+      - layer_button.jpg: 1.60 KB
+      - marker.jpg: 2.58 KB
+      - Risk_Tolerance.jpg: 10.73 KB
+      - Start_Marker.jpg: 3.55 KB
+      - transport_tab.jpg: 9.48 KB
   - LICENSE: 1.06 KB
-  - meeting_minutes.md: 31.80 KB
-  - README.md: 3.42 KB
+  - meeting_minutes.md: 32.32 KB
+  - qodana.yaml: 992.00 B
+  - README.md: 4.46 KB
   - src/
     - db/
       - db_here_empty_file: 0.00 B
       - routeplanning.db: 25.99 MB
-      - routeplanning.db.zip: 10.42 MB
     - DB_Management/
       - DB_create.py: 18.34 KB
       - ModeShift Kalamazoo.kml: 317.14 KB
       - Road_Risk_Levels_Kzoo.csv: 6.69 KB
       - Road_Risk_Levels_Portage.csv: 523.00 B
     - install.py: 519.00 B
-    - main.py: 1.45 KB
+    - main.py: 1.31 KB
+    - my-gpx.gpx: 2.11 KB
     - scripts/
-      - data_retriever.py: 10.96 KB
-      - gpx_export.py: 2.66 KB
-      - pathfinder.py: 11.69 KB
-      - test.py: 25.83 KB
-      - views.py: 3.53 KB
+      - data_retriever.py: 10.91 KB
+      - gpx_export.py: 2.78 KB
+      - pathfinder.py: 11.95 KB
+      - test.py: 27.91 KB
+      - views.py: 3.11 KB
       - __init__.py: 0.00 B
     - static/
       - css/
-        - menucss.css: 5.27 KB
+        - menucss.css: 5.54 KB
       - favicon.ico: 30.41 KB
       - images/
         - GPS_Icons/
@@ -98,9 +108,12 @@
           - Amenities.jpg: 26.85 KB
           - Clear_button.jpg: 5.98 KB
           - Custom_route.jpg: 8.74 KB
+          - End_Marker.jpg: 2.86 KB
           - Export_button.jpg: 2.60 KB
           - layer_button.jpg: 1.60 KB
           - marker.jpg: 2.58 KB
+          - Risk_Tolerance.jpg: 10.73 KB
+          - Start_Marker.jpg: 3.55 KB
           - transport_tab.jpg: 9.48 KB
         - hlppage_MSK_lines_logo.png: 14.21 KB
         - sidenav/
@@ -113,17 +126,17 @@
           - walking_icon.png: 455.00 B
         - thumbnail_MSK_lines_logo.png: 30.41 KB
       - javascript/
-        - map.js: 1.33 KB
-        - marker.js: 11.96 KB
-        - navbar.js: 5.78 KB
+        - map.js: 1.52 KB
+        - marker.js: 13.38 KB
+        - navbar.js: 5.14 KB
     - templates/
-      - routeplanner.html: 13.00 KB
+      - routeplanner.html: 13.20 KB
     - test_files/
       - input/
         - nodes.csv: 1.77 MB
       - output/
-        - main_test_logger.md: 2.33 KB
-        - Project_Structure.md: 4.91 KB
+        - main_test_logger.md: 282.39 KB
+        - Project_Structure.md: 0.00 B
     - update_start.sh: 889.00 B
 
-Total Size: 39.18 MB
+Total Size: 29.12 MB
