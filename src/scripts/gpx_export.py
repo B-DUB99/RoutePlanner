@@ -43,7 +43,6 @@ class GPX_export:
 
 		self.path = result_list
 
-
 	def export(self, path_string=None):
 		# if a path string is passed in, use it
 		if path_string is not None:
