@@ -1,18 +1,13 @@
 # Python Packages
+import logging
 import multiprocessing
 import os
 import random
-import sys
-import logging
-import time
 
 # Local Imports
 from .data_retriever import data_retriever
 from .gpx_export import GPX_export
 from .pathfinder import Pathfinder
-
-
-# from . import views as Views
 
 
 class MarkdownColoredFormatter(logging.Formatter):
@@ -114,6 +109,16 @@ def helper_get_closest_node(i, transport, risk, location):
 	return i, transport, risk, location, result
 
 
+def helper_pathfinder(i, transport, risk, location_start, location_end):
+	try:
+		pathfinder = Pathfinder(location_start, location_end, transport, risk)
+		error = pathfinder.astar()
+		return i, transport, risk, location_start, location_end, error
+	except multiprocessing.TimeoutError:
+		return i, transport, risk, location_start, location_end, "TimeoutError"
+
+
+
 class Test:
 	def __init__(self):
 		# Create an instance-level logger
@@ -126,9 +131,9 @@ class Test:
 		self.logger.addHandler(file_handler)
 
 		# initialize variables
-		self.timeout = 20  # seconds
-		self.number_of_tests = 2
-		self._amenenity_types = ["Grocery",
+		self.timeout = 60  # seconds
+		self.number_of_tests = 50
+		self.amenenity_types = ["Grocery",
 								 "Books",
 								 "Cafe",
 								 "Drink",
@@ -139,11 +144,11 @@ class Test:
 								 "Pharmacy",
 								 "Bike_Repair",
 								 "Bike_Shops",
-								 "Bathrooms,_Drinking_Fountains",
-								 "Bike_Parking",
-								 "Worlds_of_Wonder",
-								 "Art",
-								 "Sculptures"]
+								"Bathrooms,_Drinking_Fountains",
+								"Bike_Parking",
+								"Worlds_of_Wonder",
+								"Art",
+								"Sculptures"]
 		self._north_bound = 42.369062
 		self._south_bound = 42.157
 		self._west_bound = -85.6995747
@@ -157,24 +162,26 @@ class Test:
 		self.path2 = None
 
 		# initialize imported modules
+		# self.pathfinder = Pathfinder(None, None, None, None)
 		self.data_retriever = data_retriever()
 		self.gpx_export = GPX_export(None)
-		# self.pathfinder = Pathfinder(None, None, None, None)
 
 		# self.views = views.views()
 
 		# call test functions
-		self.risk_tolerance_test_fixed_loc()
+		self.test_pathfinder()
 		self.test_database()
 		self.test_gpx_export()
+
+
 		# self.test_pathfinder()
 		self.results()
 
-	# TEST FUNCTIONS
-	# generate folder structure
-	ignore_folders = {'.git', '.idea', '__pycache__'}
-	generate_folder_structure("../", ignore_folders, "test_files/output/Project_Structure.md")
+		# generate folder structure
+		ignore_folders = {'.git', '.idea', '__pycache__'}
+		generate_folder_structure("../", ignore_folders, "test_files/output/Project_Structure.md")
 
+	# TEST FUNCTIONS
 	# START OF DATABASE TESTS (using data_retriever.py)
 	def test_database(self):
 		# self.logger.debug('This is a debug message')
@@ -188,23 +195,23 @@ class Test:
 			assert os.path.exists('db/routeplanning.db')
 			self.logger.info("Database exists")
 			self._passed_tests.append("test_database: database exists")
-		except:
-			self.logger.error("Database does not exist")
-			self._failed_tests.append("test_database: database does not exist")
-			assert False, self.error("Database does not exist")
+		except AssertionError:
+			self.logger.error("Database does not exist in db folder")
+			self._failed_tests.append("test_database: database does not exist in db folder")
+			assert False, self.error("Database does not exist in db folder")
 
 		# try to connect to database
 		try:
 			self.data_retriever.connect()
 			self.logger.info("Database connection successful")
 			self._passed_tests.append("test_database: database connection successful")
-		except:
-			self.logger.error("Database connection failed")
-			self._failed_tests.append("test_database: database connection failed")
-			assert False, self.error("Database connection failed")
+		except Exception as e:
+			self.logger.error(f"Database connection failed with {e}")
+			self._failed_tests.append(f"test_database: database connection failed with {e}")
+			assert False, self.error(f"Database connection failed with {e}")
 
 		# try for each amenity type to get amenities from database
-		for amen_type in self._amenenity_types:
+		for amen_type in self.amenenity_types:
 			if len(self.data_retriever.get_amenities(amen_type)) > 0:
 				self.logger.info(f"Database get_amenities successful for {amen_type}")
 				self._passed_tests.append(f"test_database: database get_amenities successful for {amen_type}")
@@ -239,25 +246,33 @@ class Test:
 				i, transport, risk, location, closest_nodes = result
 				# Process the result and associated information
 				self.logger.info(
-					f"Database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
+					f"Database get_closest_nodes successful for {i}, transport: "
+					f"{transport}, risk:{risk}, location: {location}")
 				self._passed_tests.append(
-					f"test_database: database get_closest_nodes successful for {i}, transport: {transport}, risk:{risk}, location: {location}")
+					f"test_database: database get_closest_nodes successful for {i}, "
+					f"transport: {transport}, risk:{risk}, location: {location}")
 			except multiprocessing.TimeoutError:
 				i, transport, risk, location, closest_nodes = result
 				self.logger.warning(
-					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
+					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, "
+					f"transport: {transport}, risk:{risk}, location: {location}")
 				self._failed_tests.append(
-					f"test_database: database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
+					f"test_database: database get_closest_nodes for {i} timed out after {self.timeout} s, "
+					f"transport: {transport}, risk:{risk}, location: {location}")
 				assert True, self.error(
-					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: {transport}, risk:{risk}, location: {location}")
+					f"Database get_closest_nodes for {i} timed out after {self.timeout} s, transport: "
+					f"{transport}, risk:{risk}, location: {location}")
 			except Exception as e:
 				i, transport, risk, location, closest_nodes = result
 				self.logger.error(
-					f"Database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
+					f"Database get_closest_nodes failed with {e}, for {i}, transport: "
+					f"{transport}, risk:{risk}, location: {location}")
 				self._failed_tests.append(
-					f"test_database: database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
+					f"test_database: database get_closest_nodes failed with {e}, for {i}, transport: "
+					f"{transport}, risk:{risk}, location: {location}")
 				assert True, self.error(
-					f"Database get_closest_nodes failed with {e}, for {i}, transport: {transport}, risk:{risk}, location: {location}")
+					f"Database get_closest_nodes failed with {e}, for {i}, transport: "
+					f"{transport}, risk:{risk}, location: {location}")
 
 		# test get_node_info
 		# open file to get a list of all node ids
@@ -377,21 +392,23 @@ class Test:
 			node_ids = f.readlines()
 
 		for i in range(self.number_of_tests):
-			node_id = random.choice(node_ids).strip()
-			try:
-				if len(self.data_retriever.get_walking_neighbors(node_id)) > 0:
-					self.logger.info(f"Database get_walking_neighbors successful for {node_id}")
-					self._passed_tests.append(f"test_database: database get_walking_neighbors successful for {node_id}")
-				else:
-					self.logger.warning(f"Database get_walking_neighbors failed for {node_id} with no results")
+			for j in range(len(self._risk_factor_list)):
+				node_id = random.choice(node_ids).strip()
+				try:
+					if len(self.data_retriever.get_walking_neighbors(node_id, j)) > 0:
+						self.logger.info(f"Database get_walking_neighbors successful for {node_id}")
+						self._passed_tests.append(
+							f"test_database: database get_walking_neighbors successful for {node_id}")
+					else:
+						self.logger.warning(f"Database get_walking_neighbors failed for {node_id} with no results")
+						self._failed_tests.append(
+							f"test_database: database get_walking_neighbors failed for {node_id} with no results")
+						assert True, self.error(f"Database get_walking_neighbors failed for {node_id} with no results")
+				except Exception as e:
+					self.logger.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
 					self._failed_tests.append(
-						f"test_database: database get_walking_neighbors failed for {node_id} with no results")
-					assert True, self.error(f"Database get_walking_neighbors failed for {node_id} with no results")
-			except Exception as e:
-				self.logger.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
-				self._failed_tests.append(
-					f"test_database: database get_walking_neighbors failed with {e}, for {node_id}")
-				assert True, self.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
+						f"test_database: database get_walking_neighbors failed with {e}, for {node_id}")
+					assert True, self.error(f"Database get_walking_neighbors failed with {e}, for {node_id}")
 
 		# test get_biking_neighbors
 		with open('test_files/input/nodes.csv', 'r') as f:
@@ -446,7 +463,7 @@ class Test:
 		for i in range(self.number_of_tests):
 			node_id = random.choice(node_ids).strip()
 			try:
-				if self.data_retriever._is_node_bikable(node_id):
+				if self.data_retriever._is_node_bikable(node_id, 4):
 					self.logger.info(f"Database _is_node_bikeable successful for {node_id}")
 					self._passed_tests.append(f"test_database: database _is_node_bikeable successful for {node_id}")
 				else:
@@ -464,10 +481,10 @@ class Test:
 			self.data_retriever.close()
 			self.logger.info("Database close successful")
 			self._passed_tests.append("test_database: database close successful")
-		except:
-			self.logger.error("Database close failed")
-			self._failed_tests.append("test_database: database close failed")
-			assert False, self.error("Database close failed")
+		except Exception as e:
+			self.logger.error("Database close failed with {e}")
+			self._failed_tests.append("test_database: database close failed with {e}")
+			assert False, self.error("Database close failed with {e}")
 
 	# START OF GPX EXPORT TESTS (using gpx_export.py)
 	def test_gpx_export(self):
@@ -478,7 +495,7 @@ class Test:
 		for i in range(self.number_of_tests):
 			# generate random path
 			path = []
-			for j in range(random.randint(1, 10)):
+			for j in range(random.randint(10, 30)):
 				path.append([random.uniform(self._south_bound, self._north_bound),
 							 random.uniform(self._west_bound, self._east_bound)])
 
@@ -492,16 +509,16 @@ class Test:
 				self._passed_tests.append(
 					f"test_gpx_export: gpx_export parse_string_to_list successful for {len(path)}")
 			except Exception as e:
-				self.logger.error(f"GPX_export parse_string_to_list failed with {e}, for {len(path)}")
+				self.logger.error(f"GPX_export parse_string_to_list failed with: {e}, for {len(path)}")
 				self._failed_tests.append(
-					f"test_gpx_export: gpx_export parse_string_to_list failed with {e}, for {len(path)}")
-				assert True, self.error(f"GPX_export parse_string_to_list failed with {e}, for {len(path)}")
+					f"test_gpx_export: gpx_export parse_string_to_list failed with: {e}, for len: {len(path)}")
+				assert True, self.error(f"GPX_export parse_string_to_list failed with: {e}, for len: {len(path)}")
 
 		# test export
 		for i in range(self.number_of_tests):
 			# generate random path
 			path = []
-			for j in range(random.randint(1, 10)):
+			for j in range(random.randint(10, 30)):
 				path.append([random.uniform(self._south_bound, self._north_bound),
 							 random.uniform(self._west_bound, self._east_bound)])
 
@@ -510,76 +527,81 @@ class Test:
 
 			# try to export gpx file
 			try:
-				self.gpx_export.parse_string_to_list(path_string)
-				if self.gpx_export.export() > None:
-					self.logger.info(f"GPX_export export successful for {len(path)}")
-					self._passed_tests.append(f"test_gpx_export: gpx_export export successful for {len(path)}")
+				if self.gpx_export.export(path_string):
+					self.logger.info(f"GPX_export export successful for len: {len(path)}")
+					self._passed_tests.append(f"test_gpx_export: gpx_export export successful for len: {len(path)}")
 				else:
-					self.logger.warning(f"GPX_export export failed for {len(path)} with no results")
+					self.logger.warning(f"GPX_export export failed for len: {len(path)} with no results")
 					self._failed_tests.append(
-						f"test_gpx_export: gpx_export export failed for {len(path)} with no results")
-					assert True, self.error(f"GPX_export export failed for {len(path)} with no results")
+						f"test_gpx_export: gpx_export export failed for len: {len(path)} with no results")
+					assert True, self.error(f"GPX_export export failed for len: {len(path)} with no results")
 			except Exception as e:
-				self.logger.error(f"GPX_export export failed with {e}, for {len(path)}")
-				self._failed_tests.append(f"test_gpx_export: gpx_export export failed with {e}, for {len(path)}")
-				assert True, self.error(f"GPX_export export failed with {e}, for {len(path)}")
+				self.logger.error(f"GPX_export export failed with: {e}, for len: {len(path)}")
+				self._failed_tests.append(f"test_gpx_export: gpx_export export failed with: {e}, for len: {len(path)}")
+				assert True, self.error(f"GPX_export export failed with: {e}, for len: {len(path)}")
 
 		# close the db connection
 		self.data_retriever.close()
 
 	# START OF PATHFINDER TESTS (using pathfinder.py)
 	def test_pathfinder(self):
-		"""
-		@BDUBget_q(node_list)
-		node_list is a list of Node objects (the class above Pathfinder)
-		it returns the node (Node object) in the list with the smallest f value (the f value is just the h value + the g value)
+		# Test pathfinder for a random start and end node with all transport types and risk factors
+		with multiprocessing.Pool(processes=len(self._transportation_types) * len(self._risk_factor_list)) as pool:
+			processes = []
+			results = []
+			for i in range(self.number_of_tests):
+				# generate random start and end locations
+				location_start = {"lat": random.uniform(self._south_bound, self._north_bound),
+								  "lng": random.uniform(self._west_bound, self._east_bound)}
+				location_end = {"lat": random.uniform(self._south_bound, self._north_bound),
+								"lng": random.uniform(self._west_bound, self._east_bound)}
 
-		nodify(node_list, parent)
-		node_list is a list of nodes returned from the dataretriever after get_node_neighbors call
-		parent is a Node object (the class above Pathfinder)
-		turns each node in the node list into a Node object and returns the list
+				for transport in self._transportation_types:
+					for risk in self._risk_factor_list:
+						# Use pool.apply_async to run the helper_pathfinder function in parallel
+						processes.append(
+							pool.apply_async(helper_pathfinder, (i, transport, risk, location_start, location_end)))
 
-		is_in(node, node_list)
-		node is a Node object
-		node_list is a list of Node objects
-		if node is in node list and nodes f is greater than the one in the list return true
-		else return false
+			# try to Collect results immediately after submitting tasks and then wait for the remaining tasks to complete
+			if self.number_of_tests == 1:
+				results = [process.get(timeout=self.timeout * 2) for process in processes]
+			else:
+				results = [process.get(timeout=self.timeout * self.number_of_tests) for process in processes]
 
-		denodify(node)
-		node is the last node in the completed path
-		goes back through each of the parents adding them to the list (this gives the route)
-		reverses the path list
-
-		astar()
-		doesnt return anything but it sets self.path and self.latlng
-
-		assemble_lat_lng()
-		for each node (from the database) in self.path it adds the lat and lng to self.lat_lng
-
-		find_next_best_user_node(user_node)
-		user_node start or end spots from the map
-		returns the closest node in the database to user_node
-
-		calculate_distance_between_nodes(node1, node2)
-		node1 and node2 are nodes from the database
-		returns the distance between the two nodes in meters
-
-		return_path()
-		closes the data retriever
-		returns self.lat_lng
-		:return:
-		"""
-		raise NotImplementedError
-
-	# Test get_q
-	# Test nodify
-	# Test is_in
-	# Test denodify
-	# Test astar
-	# Test assemble_lat_lng
-	# Test find_next_best_user_node
-	# Test calculate_distance_between_nodes
-	# Test return_path
+		# Handle the results as needed
+		for results in results:
+			try:
+				# Access the information from the result tuple
+				i, transport, risk, location_start, location_end, error = results
+				# Process the result and associated information
+				self.logger.info(
+					f"Pathfinder successful for {i}, transport: {transport}, risk:{risk}, "
+					f"location_start: {location_start}, location_end: {location_end}")
+				self._passed_tests.append(
+					f"test_pathfinder: pathfinder successful for {i}, transport: {transport}, "
+					f"risk:{risk}, location_start: {location_start}, location_end: {location_end}")
+			except multiprocessing.TimeoutError:
+				i, transport, risk, location_start, location_end, error = results
+				self.logger.warning(
+					f"Pathfinder for {i} timed out after {self.timeout} s, transport: {transport}, "
+					f"risk:{risk}, location_start: {location_start}, location_end: {location_end}")
+				self._failed_tests.append(
+					f"test_pathfinder: pathfinder for {i} timed out after {self.timeout} s, "
+					f"transport: {transport}, risk:{risk}, location_start: {location_start}, location_end: {location_end}")
+				assert True, self.error(
+					f"Pathfinder for {i} timed out after {self.timeout} s, transport: {transport}, "
+					f"risk:{risk}, location_start: {location_start}, location_end: {location_end}")
+			except Exception as e:
+				i, transport, risk, location_start, location_end, error = results
+				self.logger.error(
+					f"Pathfinder failed with {e}, for {i}, transport: {transport}, risk:{risk}, "
+					f"location_start: {location_start}, location_end: {location_end}")
+				self._failed_tests.append(
+					f"test_pathfinder: pathfinder failed with {e}, for {i}, transport: {transport}, "
+					f"risk:{risk}, location_start: {location_start}, location_end: {location_end}")
+				assert True, self.error(
+					f"Pathfinder failed with {e}, for {i}, transport: {transport}, risk:{risk}, "
+					f"location_start: {location_start}, location_end: {location_end}")
 
 	def risk_tolerance_test_fixed_loc(self):
 		location_start = {"lat": 42.20676586129879, "lng": -85.63033819198608}
@@ -618,12 +640,10 @@ class Test:
 			self._failed_tests.append("risk_tolerance_test_fixed_loc")
 			self.logger.warning("Risk_tolerance_test_fixed_loc failed")
 
-
-
 	def results(self):
 		# print results
 		print(
-			f"\n\n\n RESULTS: Passed {len(self._passed_tests)} out of {len(self._passed_tests) + len(self._failed_tests)}")
+			f"\n\n\nRESULTS: Passed {len(self._passed_tests)} out of {len(self._passed_tests) + len(self._failed_tests)}")
 		print("Passed Tests:")
 		for test in self._passed_tests:
 			print(test)
