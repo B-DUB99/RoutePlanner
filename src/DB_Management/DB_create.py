@@ -236,7 +236,7 @@ def main():
     #remove nodes from nodes table that are not in 
     cursor.execute("DELETE FROM nodes WHERE node_id NOT IN " +
                    "(SELECT DISTINCT n.node_id from nodes n, all_links WHERE " +
-                   "n.node_id = node_id_from OR n.node_id = node_id_to)");
+                   "n.node_id = node_id_from OR n.node_id = node_id_to)")
 
     print(f"{cursor.rowcount} nodes not linked and deleted from DB")
     connection.commit()
