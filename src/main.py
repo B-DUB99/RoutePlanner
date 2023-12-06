@@ -35,8 +35,7 @@ def run_website():
 
 
 if __name__ == '__main__':
-	# sys.argv = [arg.lower() for arg in sys.argv]
-	sys.argv = ['.\\main.py', '-t']  # for testing DELETE THIS LINE
+	sys.argv = [arg.lower() for arg in sys.argv]
 
 	if len(sys.argv) == 1:
 		sleep(1)  # delay for network route to be established
