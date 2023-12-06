@@ -239,7 +239,7 @@ class data_retriever:
         return False
 
     def reset_mag(self):
-        self.mag = 50
+        self._mag = 50
 
     def get_path_name_risk(self, n_id_one, n_id_two, query_select):
 
