@@ -153,7 +153,7 @@ class Pathfinder:
             if found:
                 break
             end_time = time.time()
-            if (end_time - start_time) > 40:
+            if (end_time - start_time) > 60:
                 last_node = None
                 break
         # no path found -1 displays error message on host
