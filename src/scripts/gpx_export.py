@@ -44,7 +44,10 @@ class GPX_export:
 		self.path = result_list
 
 
-	def export(self):
+	def export(self, path_string=None):
+		# if a path string is passed in, use it
+		if path_string is not None:
+			self.path_string = path_string
 		self.parse_string_to_list(self.path_string)
 
 		# Create a new file:
