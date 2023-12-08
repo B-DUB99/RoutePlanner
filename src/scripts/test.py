@@ -463,7 +463,7 @@ class Test:
 		for i in range(self.number_of_tests):
 			node_id = random.choice(node_ids).strip()
 			try:
-				if self.data_retriever._is_node_bikable(node_id, 4):
+				if self.data_retriever._is_node_bikeable(node_id, 4):
 					self.logger.info(f"Database _is_node_bikeable successful for {node_id}")
 					self._passed_tests.append(f"test_database: database _is_node_bikeable successful for {node_id}")
 				else:
