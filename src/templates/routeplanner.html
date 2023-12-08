@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Route-Planner</title>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/menucss.css') }}" />
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -40,8 +40,8 @@
                     <li id="risk-fact">
                         <input type="range" id="myRange" name="Risk" min="1" max="4" step="1" orient="vertical">
                         <div id="high-low">
-                            <label id="high">High</label>
-                            <label id="low">Low</label>
+                            <div id="high">High</div>
+                            <div id="low">Low</div>
                         </div>
                     </li>
                 </ul>
@@ -58,8 +58,9 @@
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Bathrooms,_Drinking_Fountains" name="Restrooms">
-                    <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Restroom_icon.png') }}" alt="Bathroom" class="center" />
-                    <label for="Bathrooms,_Drinking_Fountains">Bathrooms</label>
+                        <img src="{{ url_for('static', filename= 'images/GPS_Icons/GPS_Restroom_icon.png') }}" alt="Bathroom" class="center" />
+                        <label for="Bathrooms,_Drinking_Fountains">Bathrooms</label>
+                    </input>
                 </div>
                 <div class="amen-choice">
                     <input type="checkbox" id="Bike_Parking" name="Bike_Parking">
@@ -212,7 +213,7 @@
     <button id="chngLayer">Layer</button>
 
     <!-- js for the map -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script src="{{ url_for('static', filename='javascript/map.js') }}"></script>
