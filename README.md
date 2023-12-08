@@ -29,7 +29,7 @@ In addition, the website will provide information about nearby amenities like ph
 ### Setup:
 1. download the repository from GitHub
 2. open the terminal and navigate to the repository
-3. install the requirements by running `python3 install.py`
+3. install the requirements by running `python3 install.py` ([install.py](src%2Finstall.py))
 4. create the database by running `python3 create_db.py` ([DB_create.py](src%2FDB_Management%2FDB_create.py))
 5. This will create the database and populate it with the data from OSM, Modeshift and Imagine Kalamazoo 2025.
 6. Run the server by running `python3 main.py` ([main.py](src%2Fmain.py))
@@ -78,7 +78,7 @@ If no Route is found for the User Risk Tolerance, the Risk Tolerance will be inc
 Here you can select the amenities you want to see on the map. The amenities are divided into multiple categories.
 You can select multiple amenities from multiple categories. The amenities will be displayed on the map as markers.
 If you click on a marker, you will get more information about the amenity. 
-You can also calculate from or to an amenity by clicking on the marker and selecting the Button [Travel Here](#here).
+You can also calculate from or to an amenity by clicking on the marker and selecting the Button ("Here").
 <br><br><br>
 
 #### Export GPX File
