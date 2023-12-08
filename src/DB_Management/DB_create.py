@@ -3,7 +3,6 @@
 #don't run this script if thats not what you want
 
 
-import itertools
 import sqlite3
 import csv
 from collections import deque

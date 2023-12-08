@@ -1,5 +1,4 @@
 # pip install all the packages needed for the website to run
-import os
 import sys
 import subprocess
 
