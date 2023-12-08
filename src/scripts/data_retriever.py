@@ -83,7 +83,7 @@ class data_retriever:
                     if not self._is_node_walkable(nodes[index][0]):
                         nodes.pop(index)
                 elif transport == 'bike':
-                    if not self._is_node_bikable(nodes[index][0], risk):
+                    if not self._is_node_bikeable(nodes[index][0], risk):
                         nodes.pop(index)
             if len(nodes) != 0:
                 return nodes
@@ -229,7 +229,7 @@ class data_retriever:
                 return True
         return False
 
-    def _is_node_bikable(self, n_id, risk):
+    def _is_node_bikeable(self, n_id, risk):
         
         ways = self.get_way(n_id)
         for way in ways:
