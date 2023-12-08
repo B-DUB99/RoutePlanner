@@ -16,10 +16,50 @@
 
 
 
+<h2>Week 48</h2>
+Date: 08.12.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Christian Fuentes
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 8:30 AM - 12:00 AM (210 minutes)
+* Study Area C
+
+What has been done:
+* Final Pushes and Artifacts done
+* Final Submission
 
 
+Name / location of the artifacts:
+* Website - http://dyndns.famwilke.de:8125/
+* GIT - https://github.com/B-DUB99/RoutePlanner
 
 
+<h2>Week 48</h2>
+Date: 05.12.2023
+Attendees:
+* Austin Miller
+* Bjarne Wilken
+* Matthew Phillips
+* Christian Fuentes
+* Mike Henke
+
+Who missed the meeting:
+* None
+
+General meeting Information:
+* 11:00 AM - 11:30 AM (30 minutes)
+* FINAL PRESENTATION
+
+What has been done:
+* Final Presentation
 
 
 
@@ -228,7 +268,6 @@ Next week's goals:
 Name / location of the artifacts:
 * Website - http://dyndns.famwilke.de:8125/
 * GIT - https://github.com/B-DUB99/RoutePlanner
-* [UML_Chart.pdf](artifacts%2FUML_Chart.pdf)
 
 
 <h2>Week 45</h2>
@@ -296,7 +335,6 @@ Next week's goals:
 Name / location of the artifacts:
 * Website - http://dyndns.famwilke.de:8125/
 * GIT - https://github.com/B-DUB99/RoutePlanner
-* [UML_Chart.pdf](artifacts%2FUML_Chart.pdf)
 
 
 <h2>Week 44</h2>
@@ -1065,7 +1103,6 @@ Next week's goals:
 Name / location of the artifacts:
 * Website - http://dyndns.famwilke.de:8125/
 * PowerPoint - https://1drv.ms/p/s!AhKEzf-ETZjigbDFYu10W53o_SxbqMM?e=TDLdb8
-* Class diagram - ![RouteplannerDiagram.drawio.png](paperwork%2FRouteplannerDiagram.drawio.png)
 
 
 <h2>Week 10</h2>
@@ -1100,7 +1137,6 @@ Next week's goals:
 
 Name / location of the artifacts:
 * Website - http://dyndns.famwilke.de:8125/
-* DB Schema: ![RP_DB_schema.png](paperwork%2FDB_schema%2FRP_DB_schema.png)
 
 
 <h2>Week 9</h2>
@@ -1156,7 +1192,7 @@ General meeting Information:
 What has been done:
 * Color scheme for the website
 * General scope of the Locations for the Route Planner
-* Prototype logo for Modeshift Kalamazoo ![favicon.ico](testing%2F_development%2Fstatic%2Ffavicon.ico)
+
 
 Next week's goals:
 * Work on the UI design
