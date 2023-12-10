@@ -5,7 +5,7 @@
 
 ### Project Member:
 * [Austin Miller](mailto:austin.j07.miller@wmich.edu)
-* [Bjarne Wilken](mailto:bjarne.wilken@wmich.edu)
+* [Bjarne Wilken](mailto:bjarne@famwilken.de)
 * [Christian Fuentes](mailto:cdd9168@wmich.edu)
 * [Matthew Phillips](mailto:matthew.a.phillips@wmich.edu)
 * [Mike Henke](mailto:mgs8776@wmich.edu)
