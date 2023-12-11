@@ -31,3 +31,4 @@ else
   echo "Server offline, starting"
   screen -S "Senior_Design" -dm python3 main.py &
 fi
+
